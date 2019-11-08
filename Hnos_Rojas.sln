@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAO", "DAO", "{29C8374A-E8A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{E274CDB9-27DE-44F9-A8F4-2CD1307DCCA7}"
 	ProjectSection(SolutionItems) = preProject
-		Prueba.txt = Prueba.txt
+		Rama JoJo Prueba.txt = Rama JoJo Prueba.txt
 	EndProjectSection
 EndProject
 Global
