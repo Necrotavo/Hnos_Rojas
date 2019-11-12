@@ -8,12 +8,12 @@ namespace DO
 {
     public class DO_PlantillaFactura
     {
-        private int numeroTelefono;
-        private String nombreEmpresa;
-        private String direccion;
-        private String cedula;
-        private int turno;
-        private int folio;
+        public int numeroTelefono { set; get; }
+        public String nombreEmpresa { set; get; }
+        public String direccion { set; get; }
+        public String cedula { set; get; }
+        public int turno { set; get; }
+        public int folio { set; get; }
 
         public DO_PlantillaFactura()
         {
