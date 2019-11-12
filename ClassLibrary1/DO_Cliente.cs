@@ -8,13 +8,13 @@ namespace DO
 {
     public class DO_Cliente
     {
-        private String id;
-        private String nombre;
-        private String primerApellido;
-        private String segundoApellido;
-        private String direccion;
-        private int telefono;
-        private String estado;
+        public String id { set; get; }
+        public String nombre { set; get; }
+        public String primerApellido { set; get; }
+        public String segundoApellido { set; get; }
+        public String direccion { set; get; }
+        public int telefono { set; get; }
+        public String estado { set; get; }
 
         public DO_Cliente() {
         }

@@ -8,9 +8,9 @@ namespace DO
 {
     public class DO_Credito
     {
-        private int monto;
-        private int limiteCredito;
-        private List<DO_Factura> listaFactura;
+        public int monto { set; get; }
+        public int limiteCredito { set; get; }
+        public List<DO_Factura> listaFactura { set; get; }
 
         public DO_Credito()
         {

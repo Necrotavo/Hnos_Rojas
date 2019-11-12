@@ -23,7 +23,7 @@ namespace BL
 
 
         public bool crearCredito(int limiteCredito) {
-            
+            if (cliente.)
             DO_Credito creditoNuevo = new DO_Credito(limiteCredito);
             return true;
         }

@@ -8,10 +8,10 @@ namespace DO
 {
     public class DO_Asociado
     {
-        private int telefono;
-        private String primerApellido;
-        private String segundoApellido;
-        private String nombre;
+        public int telefono { set; get; }
+        public String primerApellido { set; get; }
+        public String segundoApellido { set; get; }
+        public String nombre { set; get; }
 
         public DO_Asociado() {
         }
