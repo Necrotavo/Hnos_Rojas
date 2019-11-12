@@ -8,9 +8,9 @@ namespace DO
 {
     public class DO_Usuario
     {
-        private String nombreUsuario;
-        private String tipo;
-        private String contrasena;
+        public String nombreUsuario { set; get; }
+        public String tipo { set; get; }
+        public String contrasena { set; get; }
 
         public DO_Usuario(String _nombreUsuario, String _tipo, String _contrasena)
         {

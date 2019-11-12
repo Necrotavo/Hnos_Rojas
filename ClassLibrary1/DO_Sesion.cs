@@ -8,8 +8,8 @@ namespace DO
 {
     public class DO_Sesion
     {
-        private DO_Usuario usuario;
-        private bool activo;
+        public DO_Usuario usuario { set; get; }
+        public bool activo { set; get; }
 
         public DO_Sesion()
         {
