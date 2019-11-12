@@ -22,5 +22,9 @@ namespace DO
             this.limiteCredito = _limiteCredito;
             this.listaFactura = _listaFactura;
         }
+
+        public List<DO_Factura> getListaFactura() {
+            return listaFactura;
+        }
     }
 }

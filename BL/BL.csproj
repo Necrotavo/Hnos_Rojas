@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Cliente.cs" />
+    <Compile Include="BL_Credito.cs" />
     <Compile Include="BL_Proveedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
