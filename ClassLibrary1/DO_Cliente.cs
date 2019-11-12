@@ -15,5 +15,6 @@ namespace DO
         private String direccion;
         private int telefono;
         private String estado;
+        private DO_Credito credito;
     }
 }
