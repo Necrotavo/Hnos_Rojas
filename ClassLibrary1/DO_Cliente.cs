@@ -15,6 +15,7 @@ namespace DO
         public String direccion { set; get; }
         public int telefono { set; get; }
         public String estado { set; get; }
+        public DO_Credito credito { set; get; }
 
         public DO_Cliente() {
         }
