@@ -8,12 +8,12 @@ namespace DO
 {
     public class DO_Producto
     {
-        public String codigo;
-        public int precioCosto;
-        public int precioVenta;
-        public int cantMinBodega;
-        public String descripcion;
-        public int cantidad;
+        public String codigo { set; get; }
+        public int precioCosto { set; get; }
+        public int precioVenta { set; get; }
+        public int cantMinBodega { set; get; }
+        public String descripcion { set; get; }
+        public int cantidad { set; get; }
 
         public DO_Producto() {
         }

@@ -8,9 +8,9 @@ namespace DO
 {
     public class DO_Proveedor
     {
-        private DateTime fechaVisita;
-        private List<DO_Asociado> listaAsociados;
-        private String nombre;
+        public DateTime fechaVisita { set; get; }
+        public List<DO_Asociado> listaAsociados { set; get; }
+        public String nombre { set; get; }
 
         public DO_Proveedor() {
         }
