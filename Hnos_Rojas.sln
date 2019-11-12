@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnos_Rojas", "Hnos_Rojas\Hnos_Rojas.csproj", "{2828A1EE-23A5-430B-8088-67D6D9620ECA}"
 EndProject
@@ -10,13 +10,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAO", "DAO", "{29C8374A-E8A4-455E-9782-4A2A79B0B6CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{E274CDB9-27DE-44F9-A8F4-2CD1307DCCA7}"
-	ProjectSection(SolutionItems) = preProject
-		Rama JoJo Prueba.txt = Rama JoJo Prueba.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{1E1CF43E-64AC-42CC-B5DE-38DAE1BF2C0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{CA2CB8FD-1139-4885-90DB-A822D26A4C6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DO", "DO", "{4AA99682-09FC-4CF8-85B5-B5110BA8477C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DO", "ClassLibrary1\DO.csproj", "{81F2B3B0-221C-4DAB-9258-FB4658D96626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{6357F44C-4D08-4A25-BB57-A7783BD5A426}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +39,14 @@ Global
 		{CA2CB8FD-1139-4885-90DB-A822D26A4C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA2CB8FD-1139-4885-90DB-A822D26A4C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA2CB8FD-1139-4885-90DB-A822D26A4C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F2B3B0-221C-4DAB-9258-FB4658D96626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F2B3B0-221C-4DAB-9258-FB4658D96626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F2B3B0-221C-4DAB-9258-FB4658D96626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F2B3B0-221C-4DAB-9258-FB4658D96626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6357F44C-4D08-4A25-BB57-A7783BD5A426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6357F44C-4D08-4A25-BB57-A7783BD5A426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6357F44C-4D08-4A25-BB57-A7783BD5A426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6357F44C-4D08-4A25-BB57-A7783BD5A426}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +54,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1E1CF43E-64AC-42CC-B5DE-38DAE1BF2C0C} = {B17CF40B-260F-4E36-AF15-DBA65EA3E164}
 		{CA2CB8FD-1139-4885-90DB-A822D26A4C6B} = {E274CDB9-27DE-44F9-A8F4-2CD1307DCCA7}
+		{81F2B3B0-221C-4DAB-9258-FB4658D96626} = {4AA99682-09FC-4CF8-85B5-B5110BA8477C}
+		{6357F44C-4D08-4A25-BB57-A7783BD5A426} = {29C8374A-E8A4-455E-9782-4A2A79B0B6CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F67EC676-2093-4F9E-98C1-4ECD83E077CD}

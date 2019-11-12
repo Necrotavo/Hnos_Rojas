@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class Proveedor
+    class BL_Cliente
     {
+        
     }
 }

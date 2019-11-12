@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UI
+namespace BL
 {
-    public class Usuario
+    public class BL_Proveedor
     {
+        
     }
 }
