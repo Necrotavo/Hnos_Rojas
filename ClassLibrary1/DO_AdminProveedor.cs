@@ -8,7 +8,7 @@ namespace DO
 {
     public class DO_AdminProveedor
     {
-        private List<DO_Proveedor> listaProveedores;
+        private List<DO_Proveedor> listaProveedores { set; get; }
 
         public DO_AdminProveedor() {
         }

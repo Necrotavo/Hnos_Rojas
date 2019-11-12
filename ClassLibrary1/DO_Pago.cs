@@ -8,11 +8,11 @@ namespace DO
 {
     public class DO_Pago
     {
-        private String id;
-        private DO_Proveedor proveedor;
-        private DO_Usuario usuario;
-        private DateTime fecha;
-        private int monto;
+        private String id { set; get; }
+        private DO_Proveedor proveedor { set; get; }
+        private DO_Usuario usuario { set; get; }
+        private DateTime fecha { set; get; }
+        private int monto { set; get; }
 
         public DO_Pago()
         {

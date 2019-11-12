@@ -8,12 +8,12 @@ namespace DO
 {
     public class DO_Factura
     {
-        private int codigoFactura;
-        private String notas;
-        private String estado;
-        private String tipoPago;
-        private List<DO_Producto> listaProducto;
-        private DO_Usuario usuario;
+        private int codigoFactura { set; get; }
+        private String notas { set; get; }
+        private String estado { set; get; }
+        private String tipoPago { set; get; }
+        private List<DO_Producto> listaProducto { set; get; }
+        private DO_Usuario usuario { set; get; }
 
         public DO_Factura()
         {
