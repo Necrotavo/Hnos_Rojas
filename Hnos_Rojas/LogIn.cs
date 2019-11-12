@@ -31,5 +31,12 @@ namespace Hnos_Rojas
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Principal principal = new Principal(this);
+            principal.Show();
+            this.Hide();
+        }
     }
 }
