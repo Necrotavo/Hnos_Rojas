@@ -4,15 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace DO
 {
-    class DO_Factura
+    public class DO_Factura
     {
-        private int codigoFactura;
-        private String notas;
-        private String estado;
-        private String tipoPago;
-        //private lIST<Producto> listaProducto;
-        //private Usuario usuario;
+        public int codigoFactura { set; get; }
+        public String notas { set; get; }
+        public String estado { set; get; }
+        public String tipoPago { set; get; }
+        public List<DO_Producto> listaProducto { set; get; }
+        public DO_Usuario usuario { set; get; }
+
+        public DO_Factura()
+        {
+        }
+
+        public DO_Factura(int _codigoFactura, String _notas, String _estado, String _tipoPago, 
+            List<DO_Producto> _listaProducto, DO_Usuario _usuario)
+        {
+            this.codigoFactura = _codigoFactura;
+            this.notas = _notas;
+            this.estado = _estado;
+            this.tipoPago = _tipoPago;
+            this.listaProducto = _listaProducto;
+            this.usuario = _usuario;
+        }
     }
 }

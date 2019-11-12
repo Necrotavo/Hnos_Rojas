@@ -41,10 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DO_AdminProveedor.cs" />
+    <Compile Include="DO_Asociado.cs" />
     <Compile Include="DO_Cliente.cs" />
     <Compile Include="DO_Credito.cs" />
     <Compile Include="DO_Factura.cs" />
+    <Compile Include="DO_ListaClientes.cs" />
+    <Compile Include="DO_Pago.cs" />
+    <Compile Include="DO_PlantillaFactura.cs" />
+    <Compile Include="DO_Producto.cs" />
+    <Compile Include="DO_Sesion.cs" />
+    <Compile Include="DO_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DO_Proveedor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
