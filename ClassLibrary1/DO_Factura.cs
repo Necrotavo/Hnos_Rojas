@@ -12,8 +12,12 @@ namespace DO
         public String notas { set; get; }
         public String estado { set; get; }
         public String tipoPago { set; get; }
+        public DateTime fecha { set; get; }
+        public String clienteExterno { set; get; }
         public List<DO_Producto> listaProducto { set; get; }
-        public DO_Usuario usuario { set; get; }
+        public string usuario { set; get; }
+        public int codigoPlantilla { set; get; }
+        public int credito { set; get; }
 
         public DO_Factura()
         {
