@@ -13,7 +13,7 @@ namespace DAO
     {
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
-        public DO_Cliente buscarCliente(String nombre) {
+        public DO_Cliente buscarCliente(int nombre) {
             SqlCommand consulta = new SqlCommand("select * from Cliente where nombre = @nombre", conexion);
             consulta.Parameters.AddWithValue("@nombre", nombre);
             DO_Cliente cliente = new DO_Cliente();
@@ -27,13 +27,17 @@ namespace DAO
                 if (lector.HasRows) {
                     while (lector.Read()) {
                         cliente.id = (String)lector["PER_IDENTIFICADOR"];
+                        cliente.estado = (String)lector["EST_ESTADO"];
+                        cliente.telefono = (int)lector["PER_TELEFONO"];
+                        cliente.nombre = (String)lector["PER_NOMBRE"];
+                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.direccion = (String)lector["CLI_DIRECCION"];
                     }
+                    return cliente;
                 }
-                return cliente;
             }
-            catch (SqlException)
-            {
-            }
+            catch (SqlException){ }
             finally {
                 if (conexion.State != ConnectionState.Closed)
                 {
