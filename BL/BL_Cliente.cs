@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAO;
 using DO;
 
 namespace BL
@@ -19,22 +20,6 @@ namespace BL
         public BL_Cliente()
         {
             cliente = new DO_Cliente();
-        }
-
-        public DO_Credito ObtenerCredito() {
-            if (cliente != null) {
-                return cliente.credito;
-            }
-            return null;
-        }
-
-        public bool CrearCredito(int limiteCredito) {
-            if (cliente.credito == null) {
-                DO_Credito creditoNuevo = new DO_Credito(limiteCredito);
-                //falta del Dao
-                return true;
-            }
-            return false;
         }
     }
 }

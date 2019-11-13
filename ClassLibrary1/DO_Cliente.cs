@@ -8,7 +8,7 @@ namespace DO
 {
     public class DO_Cliente
     {
-        public String id { set; get; }
+        public int id { set; get; }
         public String nombre { set; get; }
         public String primerApellido { set; get; }
         public String segundoApellido { set; get; }

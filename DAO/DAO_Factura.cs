@@ -52,5 +52,36 @@ namespace DAO
             return false;
         }
 
+        public bool agregarAlCredito(int idCredito, int codfactura) {
+            SqlCommand comando = new SqlCommand("Update FACTURA set CRE_IDENTIFICADOR = @idCredito where FAC_CODIGO = @codfactura", conexion);
+            comando.Parameters.AddWithValue("@idCredito", idCredito);
+            comando.Parameters.AddWithValue("@codfactura", codfactura);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
