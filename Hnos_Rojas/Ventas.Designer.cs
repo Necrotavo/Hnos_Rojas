@@ -36,11 +36,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,11 +96,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(22, 75);
+            this.button1.Location = new System.Drawing.Point(22, 95);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 42);
             this.button1.TabIndex = 1;
-            this.button1.Text = "INS Varios";
+            this.button1.Text = "INS Productos";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // textBox1
@@ -129,6 +130,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.button4);
@@ -143,6 +145,26 @@
             this.panel1.Size = new System.Drawing.Size(1277, 144);
             this.panel1.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(991, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 32);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Usuario actual";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(930, 75);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(295, 37);
+            this.comboBox1.TabIndex = 11;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
@@ -150,7 +172,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(598, 75);
+            this.button4.Location = new System.Drawing.Point(598, 95);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 42);
             this.button4.TabIndex = 10;
@@ -164,7 +186,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(406, 75);
+            this.button3.Location = new System.Drawing.Point(406, 95);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 42);
             this.button3.TabIndex = 9;
@@ -178,32 +200,23 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(214, 75);
+            this.button2.Location = new System.Drawing.Point(214, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 42);
             this.button2.TabIndex = 8;
             this.button2.Text = "CTRL+P Art. Común";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(930, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(295, 37);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(991, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 32);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Usuario actual";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 32);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Accesos Directos:";
             // 
             // Ventas
             // 
@@ -238,5 +251,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
