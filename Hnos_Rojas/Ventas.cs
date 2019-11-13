@@ -34,6 +34,16 @@ namespace Hnos_Rojas
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cerrarTicket();
+        }
+
+        private void cerrarTicket()
+        {
+            tabTicket.Controls.Remove(tabTicket.SelectedTab);
+            tabTicket.SelectedTab = tabTicket.TabPages[0];
+        }
         //Creador de tickes
         private TabPage crearTicket(string titulo)
         {
@@ -49,5 +59,7 @@ namespace Hnos_Rojas
         {
 
         }
+
+
     }
 }

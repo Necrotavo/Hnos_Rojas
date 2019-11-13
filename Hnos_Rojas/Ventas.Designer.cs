@@ -36,12 +36,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -145,6 +145,17 @@
             this.panel1.Size = new System.Drawing.Size(1277, 144);
             this.panel1.TabIndex = 8;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 32);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Accesos Directos:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -176,8 +187,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 42);
             this.button4.TabIndex = 10;
-            this.button4.Text = "DEL Borrar Art.";
+            this.button4.Text = "Cerrar Ticket";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -206,17 +218,6 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "CTRL+P Art. Común";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 32);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Accesos Directos:";
             // 
             // Ventas
             // 
