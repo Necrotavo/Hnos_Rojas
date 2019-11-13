@@ -100,11 +100,56 @@ namespace DAO
         }
 
         /// <summary>
+        /// Agrega los productos de determinada factura 
+        /// </summary>
+        /// <param name="codigoFactura">Codigo de la factura a la cual pertenecen los productos</param>
+        /// <param name="listaProductos">La lista de los producto comprados de la factura</param>
+        /// <returns>(True) si se agregaron correctamente.(False) si no se agregaron</returns>
+        public bool AgregarProductoAFactura(String codigoFactura, List<DO_Producto>listaProductos)
+        {
+            SqlCommand consulta = new SqlCommand("insert into FAC_TIENE_PRO (PRO_CODIGO,FAC_CODIGO,FAC_FECHA) values (@codigoProducto,@codigoFactura,@fecha)", conexion);
+
+            
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                foreach(DO_Producto producto in listaProductos)
+                {
+                    consulta.Parameters.AddWithValue("@codigoFactura", codigoFactura);
+                    consulta.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    consulta.Parameters.AddWithValue("@codigoProducto",producto.codigo);
+                }
+
+                if (consulta.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Agrega un nuevo producto al inventario
         /// </summary>
         /// <param name="nuevoProducto">El nuevo producto con sus respectivos datos a agregar</param>
         /// <returns>(True) si el producto se agregó correctamente. (False) si no se agregó</returns>
-        public bool AgregarProducto(DO_Producto nuevoProducto)
+        public bool AgregarProductoInventario(DO_Producto nuevoProducto)
         {
             SqlCommand consulta = new SqlCommand("insert into Producto (PRO_CODIGO,PRO_DESCRIPCION,PRO_CANTIDAD_MINIMA_STOCK" +
                 "PRO_CANTIDAD_DISPONIBLE,PRO_PRECIO_COSTO,PRO_PRECIO_VENTA) values (@codigo,@descripcion,@cantidadMinima," +
@@ -142,8 +187,5 @@ namespace DAO
             }
             return false;
         } 
-
-
-
     }
 }
