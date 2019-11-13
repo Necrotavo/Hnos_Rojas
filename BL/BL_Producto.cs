@@ -15,7 +15,7 @@ namespace BL
         /// </summary>
         /// <param name="codigo">El código del producto a buscar </param>
         /// <returns>El producto enconctrado (DO_Producto) o (null)si no se encontró el producto</returns>
-        public DO_Producto AgregarProductoAFactura(String codigo)
+        public DO_Producto buscarProducto(String codigo)
         {
             DAO_Producto daoProducto = new DAO_Producto();
 

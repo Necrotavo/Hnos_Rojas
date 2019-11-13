@@ -35,6 +35,7 @@ namespace DAO
 
                 if (insert.ExecuteNonQuery() > 0)
                 {
+                    SqlCommand obtenerCodigo = new SqlCommand("Select FAC_CODIGO from FACTURA ORDER BY FAC_CODIGO [DESC]", conexion);
                     return true;
                 }
                 else {

@@ -21,9 +21,9 @@ namespace BL
         {
             double totalFactura = 0;
 
-            foreach(DO_Producto producto in factura.listaProducto)
+            foreach(DO_ProductoEnFactura productoEnFactura in factura.listaProducto)
             {
-                totalFactura += producto.precioVenta;
+                totalFactura += productoEnFactura.producto.precioVenta;
             }
 
             factura.totalFactura = totalFactura;

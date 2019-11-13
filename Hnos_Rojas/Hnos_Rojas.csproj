@@ -52,6 +52,9 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonalTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +115,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{ca2cb8fd-1139-4885-90db-a822d26a4c6b}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassLibrary1\DO.csproj">
+      <Project>{81f2b3b0-221c-4dab-9258-fb4658d96626}</Project>
+      <Name>DO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

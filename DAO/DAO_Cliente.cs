@@ -26,7 +26,7 @@ namespace DAO
                 SqlDataReader lector = consulta.ExecuteReader();
                 if (lector.HasRows) {
                     while (lector.Read()) {
-                        cliente.id = (String)lector["PER_IDENTIFICADOR"];
+                        cliente.id = (int)lector["PER_IDENTIFICADOR"];
                         cliente.estado = (String)lector["EST_ESTADO"];
                         cliente.telefono = (int)lector["PER_TELEFONO"];
                         cliente.nombre = (String)lector["PER_NOMBRE"];
@@ -73,6 +73,48 @@ namespace DAO
                     conexion.Close();
                 }
             }
+        }
+
+        public List<DO_Cliente> obtenerListaClientes() {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from CLIENTE", conexion);
+            DataTable datatable = new DataTable();
+            List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapter.Fill(datatable);
+
+                foreach (DataRow row in datatable.Rows)
+                {
+                    DO_Cliente nuevoCliente = new DO_Cliente();
+
+                    nuevoCliente.id = (int)row["PER_IDENTIFICADOR"];
+                    nuevoCliente.estado = (String)row["EST_ESTADO"];
+                    nuevoCliente.telefono = (int)row["PER_TELEFONO"];
+                    nuevoCliente.primerApellido = (String)row["PER_PRIMER_APELLIDO"];
+                    nuevoCliente.segundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
+                    nuevoCliente.direccion = (String)row["CLI_DIRECCION"];
+
+                    listaClientes.Add(nuevoCliente);
+                }
+
+                return listaClientes;
+            }
+            catch (SqlException) { }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
         }
     }
 }

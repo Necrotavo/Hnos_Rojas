@@ -21,5 +21,7 @@ namespace BL
         {
             cliente = new DO_Cliente();
         }
+
+
     }
 }

@@ -21,5 +21,10 @@ namespace Hnos_Rojas
         {
 
         }
+
+        public void agregarProducto(DO.DO_Producto producto)
+        {
+            gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, producto.precioVenta, 1, producto.cantidadDisponible });
+        }
     }
 }

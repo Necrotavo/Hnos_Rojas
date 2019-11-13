@@ -20,7 +20,7 @@ namespace DO
         public DO_Cliente() {
         }
 
-        public DO_Cliente(String _id, String _nombre, String _primerApellido, String _segundoApellido, String _direccion, int _telefono, String _estado) {
+        public DO_Cliente(int _id, String _nombre, String _primerApellido, String _segundoApellido, String _direccion, int _telefono, String _estado) {
             this.id = _id;
             this.nombre = _nombre;
             this.primerApellido = _primerApellido;
