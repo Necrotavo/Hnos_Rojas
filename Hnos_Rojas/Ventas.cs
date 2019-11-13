@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Hnos_Rojas
 {
-    public partial class test : Form
+    public partial class Ventas : Form
     {
-        public test()
+        public Ventas()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
