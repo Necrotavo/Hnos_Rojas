@@ -23,5 +23,17 @@ namespace Hnos_Rojas
         {
             padre.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            test otropanel = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true } ;
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+        }
     }
 }
