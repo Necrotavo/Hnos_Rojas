@@ -94,12 +94,12 @@ namespace DAO
             return null;
         }
 
-        public List<DO_Producto> obtenerProductosFactura(int codigoFactura) {
+        public List<DO_ProductoEnFactura> obtenerProductosFactura(int codigoFactura) {
             SqlDataAdapter adapterCodigos = new SqlDataAdapter();
             adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
             adapterCodigos.SelectCommand.Parameters.AddWithValue("@codigoFactura", codigoFactura);
             DataTable datatableCodigos = new DataTable();
-            List<DO_Producto> listaProductos = new List<DO_Producto>();
+            List<DO_ProductoEnFactura> listaProductos = new List<DO_ProductoEnFactura>();
 
             try
             {
@@ -112,6 +112,8 @@ namespace DAO
 
                 foreach (DataRow row in datatableCodigos.Rows)
                 {
+                    DO_ProductoEnFactura nuevoProducto = new DO_ProductoEnFactura();
+                    nuevoProducto.cantidadComprada = (int)row["CANTIDAD_COMPRADA"];
                     String codProducto = (String)row["PRO_CODIGO"];
 
                     SqlDataAdapter adapterProductos = new SqlDataAdapter();
@@ -122,14 +124,14 @@ namespace DAO
                     adapterProductos.Fill(datatableProductos);
 
                     foreach (DataRow prodRow in datatableProductos.Rows) {
-                        DO_Producto nuevoProducto = new DO_Producto();
+                        nuevoProducto.producto = new DO_Producto();
 
-                        nuevoProducto.codigo = (String)row["PRO_CODIGO"];
-                        nuevoProducto.descripcion = (String)row["PRO_DESCRIPCION"];
-                        nuevoProducto.cantMinBodega = (int)row["PRO_CANTIDAD_MINIMA_STOCK"];
-                        nuevoProducto.cantidadDisponible = (int)row["PRO_CANTIDAD_DISPONIBLE"];
-                        nuevoProducto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
-                        nuevoProducto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
+                        nuevoProducto.producto.codigo = (String)row["PRO_CODIGO"];
+                        nuevoProducto.producto.descripcion = (String)row["PRO_DESCRIPCION"];
+                        nuevoProducto.producto.cantMinBodega = (int)row["PRO_CANTIDAD_MINIMA_STOCK"];
+                        nuevoProducto.producto.cantidadDisponible = (int)row["PRO_CANTIDAD_DISPONIBLE"];
+                        nuevoProducto.producto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
+                        nuevoProducto.producto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
 
                         listaProductos.Add(nuevoProducto);
                     }
