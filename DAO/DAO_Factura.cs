@@ -15,16 +15,32 @@ namespace DAO
 
         public bool guardarFactura(DO_Factura factura) {
 
-            SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_CODIGO, FAC_NOTAS, FAC_CLIENTE, FAC_FECHA,+"
+            SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_CODIGO, FAC_NOTAS, FAC_CLIENTE_EXTERNO, FAC_FECHA,+"
                +" PLANT_CODIGO, USR_NOMBRE, CRE_IDENTIFICADOR, EST_ESTADO, TP_TIPO) values"+
-               "(@codigo, @notas, @cliente, @fecha, @usrNombre, @credito, @estado, @tipo)", conexion);
-            //falta agregar los paramemtros
+               "(@codigo, @notas, @cliente, @fecha, @plantilla, @usrNombre, @credito, @estado, @tipo)", conexion);
+            insert.Parameters.AddWithValue("@codigo", factura.codigoFactura);
+            insert.Parameters.AddWithValue("@notas", factura.notas);
+            insert.Parameters.AddWithValue("@cliente", factura.clienteExterno);
+            insert.Parameters.AddWithValue("@fecha", factura.fecha);
+            insert.Parameters.AddWithValue("@plantilla", factura.codigoPlantilla);
+            insert.Parameters.AddWithValue("@usrNombre", factura.usuario);
+            insert.Parameters.AddWithValue("@credito", factura.credito);
+            insert.Parameters.AddWithValue("@estado", factura.estado);
+            insert.Parameters.AddWithValue("@tipo", factura.tipoPago);
+            
             try {
                 if (conexion.State != ConnectionState.Open) {
                     conexion.Open();
                 }
-                insert.ExecuteNonQuery();
-                return true;
+
+                if (insert.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+                
             } catch (SqlException) {
             } finally {
                 if (conexion.State != ConnectionState.Closed)
