@@ -47,7 +47,6 @@ namespace DAO
             }
             return null;
         }
-        //SqlCommand comando = new SqlCommand("insert into CREDITO (CRED_LIMITE_CREDITO) Values (@limiteCredito)", conexion);
 
         public List<DO_Factura> obtenerFacturas(int idCliente) {
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -79,6 +78,8 @@ namespace DAO
                     nuevaFactura.estado = (String)row["EST_ESTADO"];
                     nuevaFactura.tipoPago = (String)row["TP_TIPO"];
 
+                    nuevaFactura.listaProducto = obtenerProductosFactura((int)row["FAC_CODIGO"]);
+
                     listaFacturas.Add(nuevaFactura);
                 }
                 return listaFacturas;
@@ -91,6 +92,60 @@ namespace DAO
                 }
             }
             return null;
+        }
+
+        public List<DO_Producto> obtenerProductosFactura(int codigoFactura) {
+            SqlDataAdapter adapterCodigos = new SqlDataAdapter();
+            adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
+            adapterCodigos.SelectCommand.Parameters.AddWithValue("@codigoFactura", codigoFactura);
+            DataTable datatableCodigos = new DataTable();
+            List<DO_Producto> listaProductos = new List<DO_Producto>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapterCodigos.Fill(datatableCodigos);
+
+                foreach (DataRow row in datatableCodigos.Rows)
+                {
+                    String codProducto = (String)row["PRO_CODIGO"];
+
+                    SqlDataAdapter adapterProductos = new SqlDataAdapter();
+                    adapterProductos.SelectCommand = new SqlCommand("select * from PRODUCTO where PRO_CODIGO = @codProducto", conexion);
+                    adapterProductos.SelectCommand.Parameters.AddWithValue("@codProducto", codProducto);
+                    DataTable datatableProductos = new DataTable();
+
+                    adapterProductos.Fill(datatableProductos);
+
+                    foreach (DataRow prodRow in datatableProductos.Rows) {
+                        DO_Producto nuevoProducto = new DO_Producto();
+
+                        nuevoProducto.codigo = (String)row["PRO_CODIGO"];
+                        nuevoProducto.descripcion = (String)row["PRO_DESCRIPCION"];
+                        nuevoProducto.cantMinBodega = (int)row["PRO_CANTIDAD_MINIMA_STOCK"];
+                        nuevoProducto.cantidadDisponible = (int)row["PRO_CANTIDAD_DISPONIBLE"];
+                        nuevoProducto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
+                        nuevoProducto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
+
+                        listaProductos.Add(nuevoProducto);
+                    }
+                }
+                return listaProductos;
+            }
+            catch (SqlException) {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
         }
 
         public bool crearCredito(int idCliente, int limiteCredito) {
