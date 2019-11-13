@@ -16,6 +16,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             tabTicket.TabPages[0].Controls.Add(new Tickets() {TopLevel = false, TopMost = true, Visible = true });
+            tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace Hnos_Rojas
         {
             if (tabTicket.SelectedTab == tabTicket.TabPages["tabAgregar"])
             {
-                string nombreTicket = "Ticket " + tabTicket.TabPages.Count;
+                string nombreTicket = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
                 TabPage tp = crearTicket(nombreTicket);
                 tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
                 tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
