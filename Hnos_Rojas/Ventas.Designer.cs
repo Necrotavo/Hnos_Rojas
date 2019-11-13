@@ -33,7 +33,7 @@
             this.tabAgregar = new System.Windows.Forms.TabPage();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -103,13 +103,13 @@
             this.button1.Text = "INS Productos";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(250, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 35);
-            this.textBox1.TabIndex = 6;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(250, 22);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(268, 35);
+            this.txtCodigo.TabIndex = 6;
             // 
             // btnAgregarProducto
             // 
@@ -137,7 +137,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnAgregarProducto);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtCodigo);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblCodigo);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.TabPage tabAgregar;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;

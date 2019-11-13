@@ -28,36 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.rdoContado = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.gridProductos = new System.Windows.Forms.DataGridView();
             this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existenciaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.rdoContado = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridProductos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.gridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoProducto,
             this.nombreProducto,
             this.cantidadProducto,
             this.precioProducto,
             this.costoTotal,
             this.existenciaProducto});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 251);
-            this.dataGridView1.TabIndex = 0;
+            this.gridProductos.Location = new System.Drawing.Point(-1, 0);
+            this.gridProductos.Name = "gridProductos";
+            this.gridProductos.Size = new System.Drawing.Size(770, 251);
+            this.gridProductos.TabIndex = 0;
+            // 
+            // codigoProducto
+            // 
+            this.codigoProducto.HeaderText = "Código";
+            this.codigoProducto.Name = "codigoProducto";
+            this.codigoProducto.ReadOnly = true;
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.DividerWidth = 1;
+            this.nombreProducto.HeaderText = "Descripción";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
+            this.nombreProducto.Width = 200;
+            // 
+            // cantidadProducto
+            // 
+            this.cantidadProducto.DividerWidth = 1;
+            this.cantidadProducto.HeaderText = "Cantidad";
+            this.cantidadProducto.Name = "cantidadProducto";
+            this.cantidadProducto.ReadOnly = true;
+            // 
+            // precioProducto
+            // 
+            this.precioProducto.DividerWidth = 1;
+            this.precioProducto.HeaderText = "Precio";
+            this.precioProducto.Name = "precioProducto";
+            this.precioProducto.ReadOnly = true;
+            // 
+            // costoTotal
+            // 
+            this.costoTotal.HeaderText = "Total";
+            this.costoTotal.Name = "costoTotal";
+            this.costoTotal.ReadOnly = true;
+            // 
+            // existenciaProducto
+            // 
+            this.existenciaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.existenciaProducto.HeaderText = "Existencia";
+            this.existenciaProducto.Name = "existenciaProducto";
+            this.existenciaProducto.ReadOnly = true;
             // 
             // lblTotal
             // 
@@ -122,47 +163,6 @@
             this.radioButton2.Text = "Crédito";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Código";
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.ReadOnly = true;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.DividerWidth = 1;
-            this.nombreProducto.HeaderText = "Descripción";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
-            this.nombreProducto.Width = 200;
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.DividerWidth = 1;
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.Name = "cantidadProducto";
-            this.cantidadProducto.ReadOnly = true;
-            // 
-            // precioProducto
-            // 
-            this.precioProducto.DividerWidth = 1;
-            this.precioProducto.HeaderText = "Precio";
-            this.precioProducto.Name = "precioProducto";
-            this.precioProducto.ReadOnly = true;
-            // 
-            // costoTotal
-            // 
-            this.costoTotal.HeaderText = "Total";
-            this.costoTotal.Name = "costoTotal";
-            this.costoTotal.ReadOnly = true;
-            // 
-            // existenciaProducto
-            // 
-            this.existenciaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.existenciaProducto.HeaderText = "Existencia";
-            this.existenciaProducto.Name = "existenciaProducto";
-            this.existenciaProducto.ReadOnly = true;
-            // 
             // Tickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,11 +173,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Tickets";
             this.Text = "Ticket";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +185,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridProductos;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
