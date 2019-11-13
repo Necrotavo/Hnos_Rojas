@@ -92,5 +92,35 @@ namespace DAO
             }
             return null;
         }
+
+        public bool crearCredito(int idCliente, int limiteCredito) {
+            SqlCommand comando = new SqlCommand("insert into CREDITO (CRE_IDENTIFICADOR, CRED_LIMITE_CREDITO) Values (@idCliente, @limiteCredito)", conexion);
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@limiteCredito", limiteCredito);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (SqlException) {
+                return false;
+            }
+            finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
