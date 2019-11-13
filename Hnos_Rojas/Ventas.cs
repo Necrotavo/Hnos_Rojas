@@ -14,13 +14,12 @@ namespace Hnos_Rojas
 {
     public partial class Ventas : Form
     {
-        PersonalTabPage paginaActual;
+        PersonalTabPage paginaActual = new PersonalTabPage();
         public Ventas()
         {
             InitializeComponent();
             Tickets primer = new Tickets() { TopLevel = false, TopMost = true, Visible = true };
             tabTicket.TabPages[0].Controls.Add(primer);
-            paginaActual = (PersonalTabPage) tabTicket.TabPages[0];
             paginaActual.tiquete = primer;
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
             

@@ -26,7 +26,7 @@ namespace DAO
                 SqlDataReader lector = consulta.ExecuteReader();
                 if (lector.HasRows) {
                     while (lector.Read()) {
-                        cliente.id = (String)lector["PER_IDENTIFICADOR"];
+                        cliente.id = int.Parse((String)lector["PER_IDENTIFICADOR"]);
                         cliente.estado = (String)lector["EST_ESTADO"];
                         cliente.telefono = (int)lector["PER_TELEFONO"];
                         cliente.nombre = (String)lector["PER_NOMBRE"];
