@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
+using DO;
 
 namespace Hnos_Rojas
 {
@@ -58,9 +60,13 @@ namespace Hnos_Rojas
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            agregarProductoATabla();
         }
 
+        private void agregarProductoATabla()
+        {
+
+        }
 
     }
 }
