@@ -37,7 +37,9 @@ namespace DAO
                     return cliente;
                 }
             }
-            catch (SqlException){ }
+            catch (SqlException){
+                return null;
+            }
             finally {
                 if (conexion.State != ConnectionState.Closed)
                 {
@@ -46,5 +48,33 @@ namespace DAO
             }
             return null;
         }
+
+        public bool modificarEstadoCliente(int idCliente, String estado) {
+            SqlCommand comando = new SqlCommand("Update CLIENTE set EST_ESTADO = @estado where PER_IDENTIFICADOR = @idCliente", conexion);
+            comando.Parameters.AddWithValue("@estado", estado);
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch(SqlException)
+            {
+                return false;
+            }
+            finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+
     }
 }
