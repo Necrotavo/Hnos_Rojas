@@ -15,7 +15,7 @@ namespace Hnos_Rojas
         public Ventas()
         {
             InitializeComponent();
-            tabControl1.TabPages[0].Controls.Add(new Tickets() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, Visible = true });
+            tabTicket.TabPages[0].Controls.Add(new Tickets() {TopLevel = false, TopMost = true, Visible = true });
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -25,12 +25,12 @@ namespace Hnos_Rojas
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab == tabControl1.TabPages["tabAgregar"])
+            if (tabTicket.SelectedTab == tabTicket.TabPages["tabAgregar"])
             {
-                string nombreTicket = "Ticket " + tabControl1.TabPages.Count;
+                string nombreTicket = "Ticket " + tabTicket.TabPages.Count;
                 TabPage tp = crearTicket(nombreTicket);
-                tabControl1.TabPages.Insert(tabControl1.TabPages.Count - 1, tp);
-                tabControl1.SelectedTab = tabControl1.TabPages[tabControl1.TabPages.Count - 2];
+                tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
+                tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
             }
         }
 
@@ -39,10 +39,15 @@ namespace Hnos_Rojas
         {
             TabPage ticket = new TabPage(titulo);
             ticket.BackColor = Color.Aqua;
-            Tickets diseno = new Tickets() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, Visible = true };
+            Tickets diseno = new Tickets() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
             ticket.Controls.Add(diseno);
 
             return ticket;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
