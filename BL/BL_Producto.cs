@@ -8,7 +8,7 @@ using DAO;
 
 namespace BL
 {
-    public class BL_Facturacion
+    public class BL_Producto
     {
         /// <summary>
         /// Método que solicita buscar un determinado producto por su código
@@ -20,7 +20,6 @@ namespace BL
             DAO_Producto daoProducto = new DAO_Producto();
 
             return daoProducto.BuscarProducto(codigo);
-     
         }
         /// <summary>
         /// Modifica la cantidad de elementos disponibles del producto

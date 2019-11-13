@@ -17,7 +17,7 @@ namespace DAO
         /// Busca un determinado producto de la base de datos y lo retorna
         /// </summary>
         /// <param name="codigo">El código del producto a buscar</param>
-        /// <returns>El producto encontrado, o null si no se encuentra registrado (DO_Producto)</returns>
+        /// <returns>El producto encontrado(DO_Producto), o (null) si no se encuentra registrado</returns>
         public DO_Producto BuscarProducto(String codigo) {
 
             SqlCommand consulta = new SqlCommand("select * from Producto where PRO_CODIGO = @codigo", conexion);
