@@ -38,38 +38,52 @@ namespace Hnos_Rojas
             }
             else {
                 DataTable t = new DataTable();
-                t.Columns.Add("codigo");
-                t.Columns.Add("descripcion");
-                t.Columns.Add("cantidad");
-                t.Columns.Add("precioVenta");
-                t.Columns.Add("otros");
-                t.Columns.Add("CantidadDisponible");
-                t.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, "No hay calculo aun", producto.cantidadDisponible);
+                t.Columns.Add("Codigo");
+                t.Columns.Add("Descripción");
+                t.Columns.Add("Cantidad");
+                t.Columns.Add("Precio");
+                t.Columns.Add("Total");
+                t.Columns.Add("Disponibles");
+                t.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, producto.precioVenta, producto.cantidadDisponible);
                 gridProductos.DataSource = t;
             }
+            sumarTotal();
         }
 
         
-        public void actualizarGridProducto(DO.DO_Producto producto) {
+        private void actualizarGridProducto(DO.DO_Producto producto) {
             DataTable dataTable = (DataTable)gridProductos.DataSource;
             
             Boolean check = false;
           
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    if (row["codigo"].ToString().Equals(producto.codigo))
+                    if (row["Codigo"].ToString().Equals(producto.codigo))
                     {
-                        row["cantidad"] = Convert.ToInt32(row[2]) + 1;
+                        row["Cantidad"] = Convert.ToInt32(row[2]) + 1;
+                        row["Total"] = Convert.ToInt32(row[3]) * Convert.ToInt32(row[2]);
                         check = true;
                         break;
                     }
                 }
                 if (!check)
                 {
-                    dataTable.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, "No hay calculo aun", producto.cantidadDisponible);
+                    dataTable.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, producto.precioVenta, producto.cantidadDisponible);
                 }
             
             gridProductos.DataSource = dataTable;
+        }
+
+        private void sumarTotal()
+        {
+            double total = 0;
+            DataTable dataTable = (DataTable)gridProductos.DataSource;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                total += Convert.ToInt32(row["Total"]);
+            }
+
+            lblTotal.Text = "₡" + total.ToString();
         }
 
     }
