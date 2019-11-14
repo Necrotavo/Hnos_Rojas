@@ -22,6 +22,7 @@ namespace Hnos_Rojas
             tabTicket.TabPages[0].Controls.Add(primer);
             listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
+            llenarCboUsuarios();
             
         }
 
@@ -82,9 +83,10 @@ namespace Hnos_Rojas
 
         private void llenarCboUsuarios() {
             //llamar al bl de usuarios
-            //cboUsuarios.DataSource = 
-            //cboUsuarios.ValueMember
-            //cboUsuarios.DisplayMember
+            BL_Usuario blUsuario = new BL_Usuario();
+            cboUsuarios.DataSource = blUsuario.CargarUsuarios();
+            cboUsuarios.ValueMember = "nombreUsuario";
+            cboUsuarios.DisplayMember = "nombreUsuario";
         }
     }
 }
