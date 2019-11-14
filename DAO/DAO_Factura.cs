@@ -13,7 +13,7 @@ namespace DAO
     {
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
-        public bool guardarFactura(DO_Factura factura) {
+        public int guardarFactura(DO_Factura factura) {
 
             SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_CODIGO, FAC_NOTAS, FAC_CLIENTE_EXTERNO, FAC_FECHA,+"
                +" PLANT_CODIGO, USR_NOMBRE, CRE_IDENTIFICADOR, EST_ESTADO, TP_TIPO) values"+
@@ -35,11 +35,11 @@ namespace DAO
 
                 if (insert.ExecuteNonQuery() > 0)
                 {
-                    SqlCommand obtenerCodigo = new SqlCommand("Select FAC_CODIGO from FACTURA ORDER BY FAC_CODIGO [DESC]", conexion);
-                    return true;
+                    SqlCommand obtenerCodigo = new SqlCommand("Select FAC_CODIGO from FACTURA ORDER BY FAC_CODIGO DESC", conexion);
+                    return (int)obtenerCodigo.ExecuteScalar();
                 }
                 else {
-                    return false;
+                    return 0;
                 }
                 
             } catch (SqlException) {
@@ -50,7 +50,7 @@ namespace DAO
                 }
             }
 
-            return false;
+            return 0;
         }
 
         public bool agregarAlCredito(int idCredito, DO_Factura factura) {

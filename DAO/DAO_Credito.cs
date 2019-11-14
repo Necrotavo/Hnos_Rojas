@@ -29,9 +29,9 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                        credito.identificador = (int)lector["CRE_IDENTIFICADOR"];
-                        credito.limiteCredito = (int)lector["CRED_LIMITE_CREDITO"];
-                        credito.monto = (int)lector["CRED_MONTO"];
+                        credito.identificador = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                        credito.limiteCredito = Convert.ToInt32(lector["CRED_LIMITE_CREDITO"]);
+                        credito.monto = Convert.ToInt32(lector["CRED_MONTO"]);
                     }
                     credito.listaFactura = obtenerFacturas(idCliente);
                     return credito;
@@ -68,17 +68,17 @@ namespace DAO
                 {
                     DO_Factura nuevaFactura = new DO_Factura();
 
-                    nuevaFactura.codigoFactura = (int)row["FAC_CODIGO"];
+                    nuevaFactura.codigoFactura = Convert.ToInt32(row["FAC_CODIGO"]);
                     nuevaFactura.notas = (String)row["FAC_NOTAS"];
                     nuevaFactura.clienteExterno = (String)row["FAC_CLIENTE_EXTERNO"];
                     nuevaFactura.fecha = (DateTime)row["FAC_FECHA"];
-                    nuevaFactura.codigoPlantilla = (int)row["PLANT_CODIGO"];
+                    nuevaFactura.codigoPlantilla = Convert.ToInt32(row["PLANT_CODIGO"]);
                     nuevaFactura.usuario = (String)row["USR_NOMBRE"];
-                    nuevaFactura.credito = (int)row["CRE_IDENTIFICADOR"];
+                    nuevaFactura.credito = Convert.ToInt32(row["CRE_IDENTIFICADOR"]);
                     nuevaFactura.estado = (String)row["EST_ESTADO"];
                     nuevaFactura.tipoPago = (String)row["TP_TIPO"];
 
-                    nuevaFactura.listaProducto = obtenerProductosFactura((int)row["FAC_CODIGO"]);
+                    nuevaFactura.listaProducto = obtenerProductosFactura(Convert.ToInt32(row["FAC_CODIGO"]));
 
                     listaFacturas.Add(nuevaFactura);
                 }
@@ -128,8 +128,8 @@ namespace DAO
 
                         nuevoProducto.producto.codigo = (String)row["PRO_CODIGO"];
                         nuevoProducto.producto.descripcion = (String)row["PRO_DESCRIPCION"];
-                        nuevoProducto.producto.cantMinBodega = (int)row["PRO_CANTIDAD_MINIMA_STOCK"];
-                        nuevoProducto.producto.cantidadDisponible = (int)row["PRO_CANTIDAD_DISPONIBLE"];
+                        nuevoProducto.producto.cantMinBodega = Convert.ToInt32(row["PRO_CANTIDAD_MINIMA_STOCK"]);
+                        nuevoProducto.producto.cantidadDisponible = Convert.ToInt32(row["PRO_CANTIDAD_DISPONIBLE"]);
                         nuevoProducto.producto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
                         nuevoProducto.producto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
 
