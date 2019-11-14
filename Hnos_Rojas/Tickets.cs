@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DO;
 
 namespace Hnos_Rojas
 {
     public partial class Tickets : Form
     {
+        public DO_Factura factura = new DO_Factura();
+
         public Tickets()
         {
             InitializeComponent();
+            factura.fecha = DateTime.Now;
         }
 
         private void button1_Click(object sender, EventArgs e)
