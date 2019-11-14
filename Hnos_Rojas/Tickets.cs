@@ -26,6 +26,8 @@ namespace Hnos_Rojas
         private void button1_Click(object sender, EventArgs e)
         {
             confeccionarFactura();
+            PagoContado _pagoCont = new PagoContado(factura);
+            _pagoCont.Show();
         }
 
         public DO_Factura confeccionarFactura() {
