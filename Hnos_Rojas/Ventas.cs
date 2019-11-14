@@ -18,10 +18,11 @@ namespace Hnos_Rojas
         public Ventas()
         {
             InitializeComponent();
-            Tickets primer = new Tickets() { TopLevel = false, TopMost = true, Visible = true };
+            Tickets primer = new Tickets(cboUsuarios.Text) { TopLevel = false, TopMost = true, Visible = true };
             tabTicket.TabPages[0].Controls.Add(primer);
             listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
+            llenarCboUsuarios();
             
         }
 
@@ -58,7 +59,7 @@ namespace Hnos_Rojas
         private TabPage crearTicket(string titulo)
         {
             TabPage ticket = new TabPage(titulo);
-            Tickets diseno = new Tickets() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
+            Tickets diseno = new Tickets(cboUsuarios.Text) {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
             listaTiquetes.Add(diseno);
             ticket.Controls.Add(diseno);
 
@@ -80,5 +81,12 @@ namespace Hnos_Rojas
             }
         }
 
+        private void llenarCboUsuarios() {
+            //llamar al bl de usuarios
+            BL_Usuario blUsuario = new BL_Usuario();
+            cboUsuarios.DataSource = blUsuario.CargarUsuarios();
+            cboUsuarios.ValueMember = "nombreUsuario";
+            cboUsuarios.DisplayMember = "nombreUsuario";
+        }
     }
 }
