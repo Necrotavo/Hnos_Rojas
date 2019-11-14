@@ -50,6 +50,7 @@
     <Compile Include="DO_Pago.cs" />
     <Compile Include="DO_PlantillaFactura.cs" />
     <Compile Include="DO_Producto.cs" />
+    <Compile Include="DO_ProductoEnFactura.cs" />
     <Compile Include="DO_Sesion.cs" />
     <Compile Include="DO_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

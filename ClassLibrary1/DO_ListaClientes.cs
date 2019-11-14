@@ -8,7 +8,7 @@ namespace DO
 {
     public class DO_ListaClientes
     {
-        private List<DO_Cliente> listaClientes { set; get; }
+        public List<DO_Cliente> listaClientes { set; get; }
 
         public DO_ListaClientes()
         {

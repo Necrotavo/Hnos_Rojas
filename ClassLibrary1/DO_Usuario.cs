@@ -12,6 +12,10 @@ namespace DO
         public String tipo { set; get; }
         public String contrasena { set; get; }
 
+        public DO_Usuario()
+        {
+        }
+
         public DO_Usuario(String _nombreUsuario, String _tipo, String _contrasena)
         {
             this.nombreUsuario = _nombreUsuario;

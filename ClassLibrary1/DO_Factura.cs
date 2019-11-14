@@ -8,19 +8,24 @@ namespace DO
 {
     public class DO_Factura
     {
-        private int codigoFactura { set; get; }
-        private String notas { set; get; }
-        private String estado { set; get; }
-        private String tipoPago { set; get; }
-        private List<DO_Producto> listaProducto { set; get; }
-        private DO_Usuario usuario { set; get; }
+        public int codigoFactura { set; get; }
+        public String notas { set; get; }
+        public String estado { set; get; }
+        public String tipoPago { set; get; }
+        public DateTime fecha { set; get; }
+        public String clienteExterno { set; get; }
+        public List<DO_ProductoEnFactura> listaProducto { set; get; }
+        public String usuario { set; get; }
+        public int codigoPlantilla { set; get; }
+        public int credito { set; get; }
+        public double totalFactura { set; get; }
 
         public DO_Factura()
         {
         }
 
         public DO_Factura(int _codigoFactura, String _notas, String _estado, String _tipoPago, 
-            List<DO_Producto> _listaProducto, DO_Usuario _usuario)
+            List<DO_ProductoEnFactura> _listaProducto, String _usuario, double _totalFactura)
         {
             this.codigoFactura = _codigoFactura;
             this.notas = _notas;
@@ -28,6 +33,7 @@ namespace DO
             this.tipoPago = _tipoPago;
             this.listaProducto = _listaProducto;
             this.usuario = _usuario;
+            this.totalFactura = _totalFactura;
         }
     }
 }

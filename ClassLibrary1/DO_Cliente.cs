@@ -8,18 +8,19 @@ namespace DO
 {
     public class DO_Cliente
     {
-        private String id { set; get; }
-        private String nombre { set; get; }
-        private String primerApellido { set; get; }
-        private String segundoApellido { set; get; }
-        private String direccion { set; get; }
-        private int telefono { set; get; }
-        private String estado { set; get; }
+        public int id { set; get; }
+        public String nombre { set; get; }
+        public String primerApellido { set; get; }
+        public String segundoApellido { set; get; }
+        public String direccion { set; get; }
+        public int telefono { set; get; }
+        public String estado { set; get; }
+        public DO_Credito credito { set; get; }
 
         public DO_Cliente() {
         }
 
-        public DO_Cliente(String _id, String _nombre, String _primerApellido, String _segundoApellido, String _direccion, int _telefono, String _estado) {
+        public DO_Cliente(int _id, String _nombre, String _primerApellido, String _segundoApellido, String _direccion, int _telefono, String _estado) {
             this.id = _id;
             this.nombre = _nombre;
             this.primerApellido = _primerApellido;
