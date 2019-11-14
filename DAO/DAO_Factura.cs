@@ -55,8 +55,8 @@ namespace DAO
 
         public bool agregarAlCredito(int idCredito, DO_Factura factura) {
             SqlCommand comando = new SqlCommand("Update FACTURA set CRE_IDENTIFICADOR = @idCredito where FAC_CODIGO = @codfactura", conexion);
-            comando.Parameters.AddWithValue("@idCredito", Convert.ToInt32(idCredito));
-            comando.Parameters.AddWithValue("@codfactura", Convert.ToInt32(factura.codigoFactura));
+            comando.Parameters.AddWithValue("@idCredito", idCredito);
+            comando.Parameters.AddWithValue("@codfactura", factura.codigoFactura);
 
             double monto = obtenerMonto(idCredito);
             double total = monto + factura.totalFactura; 
