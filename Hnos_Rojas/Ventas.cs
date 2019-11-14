@@ -76,7 +76,7 @@ namespace Hnos_Rojas
             DO_Producto _DoProd = prod.buscarProducto(txtCodigo.Text);
             if (_DoProd != null)
             {
-                listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd);
+                listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd, Convert.ToInt32(nmCantidad.Text));
             }
         }
 
