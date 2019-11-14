@@ -26,6 +26,7 @@ namespace Hnos_Rojas
         private void button1_Click(object sender, EventArgs e)
         {
             confeccionarFactura();
+            factura.estado = "Completada";
         }
 
         public DO_Factura confeccionarFactura() {
