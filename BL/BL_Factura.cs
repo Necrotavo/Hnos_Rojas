@@ -13,11 +13,13 @@ namespace BL
         public bool guardarFactura(DO_Factura factura) {
 
             calcularTotal(factura);
-            DAO_Factura dao = new DAO_Factura();
-            int co
-            if ( > 0) {
-
+            DAO_Factura daoFactura = new DAO_Factura();
+            int codigoFactura = daoFactura.guardarFactura(factura);
+            if (codigoFactura > 0) {
+                DAO_Producto daoProducto = new DAO_Producto();
+                return daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.listaProducto);
             }
+            return false;
         }
 
         public void calcularTotal(DO_Factura factura)
@@ -28,9 +30,7 @@ namespace BL
             {
                 totalFactura += productoEnFactura.producto.precioVenta;
             }
-
             factura.totalFactura = totalFactura;
-
         }
     }
 }
