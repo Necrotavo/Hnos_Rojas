@@ -32,5 +32,17 @@ namespace BL
             }
             factura.totalFactura = totalFactura;
         }
+
+        public bool asignarCreditoFactura(DO_Factura factura, int idCredito) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            daoFactura.agregarAlCredito(idCredito, factura);
+            return true;
+        }
+
+        public bool modificarEstadoFactura(int codigoFactura, String estado) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            daoFactura.modificarEstadoFactura(codigoFactura, estado);
+            return true;
+        }
     }
 }
