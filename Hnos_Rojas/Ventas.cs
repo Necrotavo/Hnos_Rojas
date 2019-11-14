@@ -59,7 +59,7 @@ namespace Hnos_Rojas
         private TabPage crearTicket(string titulo)
         {
             TabPage ticket = new TabPage(titulo);
-            Tickets diseno = new Tickets() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
+            Tickets diseno = new Tickets(cboUsuarios.Text) {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
             listaTiquetes.Add(diseno);
             ticket.Controls.Add(diseno);
 
