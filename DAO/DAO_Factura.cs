@@ -53,10 +53,17 @@ namespace DAO
             return 0;
         }
 
-        public bool agregarAlCredito(int idCredito, int codfactura) {
+        public bool agregarAlCredito(int idCredito, DO_Factura factura) {
             SqlCommand comando = new SqlCommand("Update FACTURA set CRE_IDENTIFICADOR = @idCredito where FAC_CODIGO = @codfactura", conexion);
-            comando.Parameters.AddWithValue("@idCredito", idCredito);
-            comando.Parameters.AddWithValue("@codfactura", codfactura);
+            comando.Parameters.AddWithValue("@idCredito", Convert.ToInt32(idCredito));
+            comando.Parameters.AddWithValue("@codfactura", Convert.ToInt32(factura.codigoFactura));
+
+            double monto = obtenerMonto(idCredito);
+            double total = monto + factura.totalFactura; 
+
+            SqlCommand comandoCredito = new SqlCommand("Update CREDITO set CRED_MONTO = @monto where CRE_IDENTIFICADOR = @identificador", conexion);
+            comandoCredito.Parameters.AddWithValue("@monto",total);
+            comandoCredito.Parameters.AddWithValue("@identificador",idCredito);
 
             try
             {
@@ -64,7 +71,7 @@ namespace DAO
                 {
                     conexion.Open();
                 }
-                if (comando.ExecuteNonQuery() > 0)
+                if (comando.ExecuteNonQuery() > 0 && comandoCredito.ExecuteNonQuery() > 0)
                 {
                     return true;
                 }
@@ -83,6 +90,31 @@ namespace DAO
                     conexion.Close();
                 }
             }
+        }
+
+        public int obtenerMonto(int idCredito) {
+            SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRED_IDENTIFICADOR = @idCredito", conexion);
+            comandoMonto.Parameters.AddWithValue("@idCredito",idCredito);
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                int monto = Convert.ToInt32(comandoMonto.ExecuteScalar());
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return 0;
         }
     }
 }
