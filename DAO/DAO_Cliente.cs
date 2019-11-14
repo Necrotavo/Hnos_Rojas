@@ -26,9 +26,9 @@ namespace DAO
                 SqlDataReader lector = consulta.ExecuteReader();
                 if (lector.HasRows) {
                     while (lector.Read()) {
-                        cliente.id = (int)lector["PER_IDENTIFICADOR"];
+                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
                         cliente.estado = (String)lector["EST_ESTADO"];
-                        cliente.telefono = (int)lector["PER_TELEFONO"];
+                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
                         cliente.nombre = (String)lector["PER_NOMBRE"];
                         cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
                         cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
@@ -94,9 +94,9 @@ namespace DAO
                 {
                     DO_Cliente nuevoCliente = new DO_Cliente();
 
-                    nuevoCliente.id = (int)row["PER_IDENTIFICADOR"];
+                    nuevoCliente.id = Convert.ToInt32(row["PER_IDENTIFICADOR"]);
                     nuevoCliente.estado = (String)row["EST_ESTADO"];
-                    nuevoCliente.telefono = (int)row["PER_TELEFONO"];
+                    nuevoCliente.telefono = Convert.ToInt32(row["PER_TELEFONO"]);
                     nuevoCliente.primerApellido = (String)row["PER_PRIMER_APELLIDO"];
                     nuevoCliente.segundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
                     nuevoCliente.direccion = (String)row["CLI_DIRECCION"];
