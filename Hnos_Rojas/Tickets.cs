@@ -24,7 +24,49 @@ namespace Hnos_Rojas
 
         public void agregarProducto(DO.DO_Producto producto)
         {
-            gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
+           
+            
+            
+            //  gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
+            if (gridProductos.RowCount > 1)
+            {
+                actualizarGridProducto(producto);
+            }
+            else {
+                DataTable t = new DataTable();
+                t.Columns.Add("codigo");
+                t.Columns.Add("descripcion");
+                t.Columns.Add("cantidad");
+                t.Columns.Add("precioVenta");
+                t.Columns.Add("otros");
+                t.Columns.Add("CantidadDisponible");
+                t.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, "No hay calculo aun", producto.cantidadDisponible);
+                gridProductos.DataSource = t;
+            }
         }
+
+        
+        public void actualizarGridProducto(DO.DO_Producto producto) {
+            DataTable dataTable = (DataTable)gridProductos.DataSource;
+            
+            Boolean check = false;
+          
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    if (row["codigo"].ToString().Equals(producto.codigo))
+                    {
+                        row["cantidad"] = Convert.ToInt32(row[2]) + 1;
+                        check = true;
+                        break;
+                    }
+                }
+                if (!check)
+                {
+                    dataTable.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, "No hay calculo aun", producto.cantidadDisponible);
+                }
+            
+            gridProductos.DataSource = dataTable;
+        }
+
     }
 }
