@@ -28,11 +28,30 @@ namespace Hnos_Rojas
 
         }
 
+        public DO_Factura confeccionarFactura() {
+            DO_Factura factura = new DO_Factura();
+            factura.listaProducto = new List<DO_ProductoEnFactura>();
+            DataTable tablaProductos = (DataTable)gridProductos.DataSource;
+
+            foreach (DataRow row in tablaProductos.Rows) {
+                DO_ProductoEnFactura prodFactura = new DO_ProductoEnFactura();
+                prodFactura.producto = new DO_Producto();
+                prodFactura.producto.codigo = (String)row["Codigo"];
+                prodFactura.producto.descripcion = (String)row["Descripción"];
+                prodFactura.producto.precioVenta = Convert.ToInt32(row["Precio"]);
+                prodFactura.producto.cantidadDisponible = Convert.ToInt32(row["Disponibles"]);
+
+                prodFactura.cantidadComprada = Convert.ToInt32(row["Cantidad"]);
+
+                factura.listaProducto.Add(prodFactura);
+            }
+            factura.fecha = DateTime.Now;
+
+            return factura;
+        }
+
         public void agregarProducto(DO.DO_Producto producto, int cantidad)
         {
-
-            BL_Factura blFactura = new BL_Factura();
-            //blFactura.AgregarProductoAFactura();
 
             //  gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
             if (gridProductos.RowCount > 1)
