@@ -24,7 +24,7 @@ namespace Hnos_Rojas
 
         public void agregarProducto(DO.DO_Producto producto)
         {
-            gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, producto.precioVenta, 1, producto.cantidadDisponible });
+            gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
         }
     }
 }
