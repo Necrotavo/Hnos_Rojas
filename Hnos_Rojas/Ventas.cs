@@ -69,6 +69,8 @@ namespace Hnos_Rojas
         private void button5_Click(object sender, EventArgs e)
         {
             agregarProductoATabla();
+            nmCantidad.Value = 1;
+            txtCodigo.Clear();
         }
 
         private void agregarProductoATabla()

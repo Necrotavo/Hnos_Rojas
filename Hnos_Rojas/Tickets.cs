@@ -25,9 +25,21 @@ namespace Hnos_Rojas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            confeccionarFactura();
-            PagoContado _pagoCont = new PagoContado(factura);
-            _pagoCont.Show();
+            try
+            {
+                if (!gridProductos.Rows[0].Cells[0].Value.Equals(""))
+                {
+                    confeccionarFactura();
+                    PagoContado _pagoCont = new PagoContado(factura);
+                    _pagoCont.Show();
+                }
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay factura a pagar!!!!");
+            }
+            
         }
 
         public DO_Factura confeccionarFactura() {
@@ -106,6 +118,8 @@ namespace Hnos_Rojas
                 DataRow fila = dataTable.Rows[filaSeleccionada];
                 dataTable.Rows.Remove(fila);
                 gridProductos.DataSource = dataTable;
+                sumarTotal();
+                filaSeleccionada = -1;
             }
             catch (Exception)
             {
