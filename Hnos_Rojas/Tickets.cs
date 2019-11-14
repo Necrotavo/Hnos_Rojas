@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DO;
+using BL;
 
 namespace Hnos_Rojas
 {
@@ -28,9 +29,10 @@ namespace Hnos_Rojas
 
         public void agregarProducto(DO.DO_Producto producto)
         {
-           
-            
-            
+
+            BL_Factura blFactura = new BL_Factura();
+            //blFactura.AgregarProductoAFactura();
+
             //  gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
             if (gridProductos.RowCount > 1)
             {
