@@ -116,5 +116,33 @@ namespace DAO
             }
             return 0;
         }
+
+        public bool modificarEstadoFactura(int codigoFactura, String estado)
+        {
+            SqlCommand comando = new SqlCommand("Update FACTURA set EST_ESTADO = @estado where FAC_CODIGO = @codigoFactura", conexion);
+            comando.Parameters.AddWithValue("@estado", estado);
+            comando.Parameters.AddWithValue("@codigoFactura", codigoFactura);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
