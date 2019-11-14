@@ -14,13 +14,13 @@ namespace Hnos_Rojas
 {
     public partial class Ventas : Form
     {
-        PersonalTabPage paginaActual = new PersonalTabPage();
+        List<Tickets> listaTiquetes = new List<Tickets>();
         public Ventas()
         {
             InitializeComponent();
             Tickets primer = new Tickets() { TopLevel = false, TopMost = true, Visible = true };
             tabTicket.TabPages[0].Controls.Add(primer);
-            paginaActual.tiquete = primer;
+            listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
             
         }
@@ -35,11 +35,11 @@ namespace Hnos_Rojas
             if (tabTicket.SelectedTab == tabTicket.TabPages["tabAgregar"])
             {
                 string nombreTicket = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
-                PersonalTabPage tp = (PersonalTabPage)crearTicket(nombreTicket);
+                TabPage tp = crearTicket(nombreTicket);
                 tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
                 tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
             }
-            paginaActual = (PersonalTabPage)tabTicket.SelectedTab;
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -49,15 +49,17 @@ namespace Hnos_Rojas
 
         private void cerrarTicket()
         {
+            listaTiquetes.RemoveAt(tabTicket.SelectedIndex);
             tabTicket.Controls.Remove(tabTicket.SelectedTab);
+
             tabTicket.SelectedTab = tabTicket.TabPages[0];
         }
         //Creador de tickes
         private TabPage crearTicket(string titulo)
         {
-            PersonalTabPage ticket = (PersonalTabPage)new TabPage(titulo);
+            TabPage ticket = new TabPage(titulo);
             Tickets diseno = new Tickets() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
-            ticket.tiquete = diseno;
+            listaTiquetes.Add(diseno);
             ticket.Controls.Add(diseno);
 
             return ticket;
@@ -74,7 +76,7 @@ namespace Hnos_Rojas
             DO_Producto _DoProd = prod.buscarProducto(txtCodigo.Text);
             if (_DoProd != null)
             {
-                paginaActual.tiquete.agregarProducto(_DoProd);
+                listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd);
             }
         }
 
