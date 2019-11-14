@@ -118,5 +118,6 @@ namespace Hnos_Rojas
             lblTotal.Text = "₡" + total.ToString();
         }
 
+
     }
 }

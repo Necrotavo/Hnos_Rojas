@@ -80,5 +80,11 @@ namespace Hnos_Rojas
             }
         }
 
+        private void llenarCboUsuarios() {
+            //llamar al bl de usuarios
+            //cboUsuarios.DataSource = 
+            //cboUsuarios.ValueMember
+            //cboUsuarios.DisplayMember
+        }
     }
 }
