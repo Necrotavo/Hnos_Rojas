@@ -14,7 +14,10 @@ namespace BL
 
             calcularTotal(factura);
             DAO_Factura dao = new DAO_Factura();
-            return dao.guardarFactura(factura);
+            int co
+            if ( > 0) {
+
+            }
         }
 
         public void calcularTotal(DO_Factura factura)

@@ -22,6 +22,20 @@ namespace BL
             cliente = new DO_Cliente();
         }
 
+        public List<DO_Cliente> obtenerListaClientes() {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.obtenerListaClientes();
+        }
 
+        public DO_Cliente buscarCliente(String nombre) {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.buscarCliente(nombre);
+        }
+
+        public bool modificarEstadoCliente(int idCliente, String estado)
+        {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.modificarEstadoCliente(idCliente, estado);
+        }
     }
 }

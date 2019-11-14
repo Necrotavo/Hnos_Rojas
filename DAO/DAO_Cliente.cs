@@ -13,7 +13,7 @@ namespace DAO
     {
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
-        public DO_Cliente buscarCliente(int nombre) {
+        public DO_Cliente buscarCliente(String nombre) {
             SqlCommand consulta = new SqlCommand("select * from Cliente where nombre = @nombre", conexion);
             consulta.Parameters.AddWithValue("@nombre", nombre);
             DO_Cliente cliente = new DO_Cliente();
