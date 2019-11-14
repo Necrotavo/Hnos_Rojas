@@ -26,5 +26,7 @@ namespace Hnos_Rojas
         {
             gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
         }
+
+
     }
 }
