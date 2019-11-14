@@ -14,11 +14,15 @@ namespace Hnos_Rojas
 {
     public partial class Ventas : Form
     {
+        PersonalTabPage paginaActual = new PersonalTabPage();
         public Ventas()
         {
             InitializeComponent();
-            tabTicket.TabPages[0].Controls.Add(new Tickets() {TopLevel = false, TopMost = true, Visible = true });
+            Tickets primer = new Tickets() { TopLevel = false, TopMost = true, Visible = true };
+            tabTicket.TabPages[0].Controls.Add(primer);
+            paginaActual.tiquete = primer;
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,10 +35,11 @@ namespace Hnos_Rojas
             if (tabTicket.SelectedTab == tabTicket.TabPages["tabAgregar"])
             {
                 string nombreTicket = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
-                TabPage tp = crearTicket(nombreTicket);
+                PersonalTabPage tp = (PersonalTabPage)crearTicket(nombreTicket);
                 tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
                 tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
             }
+            paginaActual = (PersonalTabPage)tabTicket.SelectedTab;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -50,9 +55,9 @@ namespace Hnos_Rojas
         //Creador de tickes
         private TabPage crearTicket(string titulo)
         {
-            TabPage ticket = new TabPage(titulo);
-            ticket.BackColor = Color.Aqua;
+            PersonalTabPage ticket = (PersonalTabPage)new TabPage(titulo);
             Tickets diseno = new Tickets() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
+            ticket.tiquete = diseno;
             ticket.Controls.Add(diseno);
 
             return ticket;
@@ -65,7 +70,12 @@ namespace Hnos_Rojas
 
         private void agregarProductoATabla()
         {
-
+            BL_Producto prod = new BL_Producto();
+            DO_Producto _DoProd = prod.buscarProducto(txtCodigo.Text);
+            if (_DoProd != null)
+            {
+                paginaActual.tiquete.agregarProducto(_DoProd);
+            }
         }
 
     }
