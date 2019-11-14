@@ -14,11 +14,6 @@ namespace BL
         public BL_Credito() {
         }
 
-        public bool agregarFactura(DO_Factura _factura) {
-            
-            return false;
-        }
-
         public DO_Credito ObtenerCredito(int idCliente)
         {
             DAO_Credito daoCredito = new DAO_Credito();

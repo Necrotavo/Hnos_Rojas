@@ -32,5 +32,68 @@ namespace BL
             }
             factura.totalFactura = totalFactura;
         }
+
+        public bool asignarCreditoFactura(DO_Factura factura, int idCredito) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            daoFactura.agregarAlCredito(idCredito, factura);
+            return true;
+        }
+
+        public bool modificarEstadoFactura(int codigoFactura, String estado) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            daoFactura.modificarEstadoFactura(codigoFactura, estado);
+            return true;
+        }
+
+        /// <summary>
+        /// Agrega productos a la factura de forma lógica
+        /// </summary>
+        /// <param name="factura">La factura a la que se le quiere agregar el producto</param>
+        /// <param name="producto">El producto a agregar</param>
+        /// <param name="cantidad">La cantidad del producto</param>
+        /// <returns>La factura con sus producto agregados (DO_Factura)</returns>
+        public DO_Factura AgregarProductoAFactura(DO_Factura factura, DO_Producto producto, int cantidad)
+        {
+            DO_ProductoEnFactura nuevoProducto = new DO_ProductoEnFactura(producto, cantidad);
+            factura.listaProducto.Add(nuevoProducto);
+
+            return factura;
+        }
+
+        /// <summary>
+        /// Calcula el vuelto a entregar
+        /// </summary>
+        /// <param name="totalAPagar">El total a pagar de la compra</param>
+        /// <param name="pago">El pago del cliente</param>
+        /// <returns>El vuelto del cliente (double). (0) si no hay vuelto</returns>
+        public double CalcularVuelto(double totalAPagar, double pago)
+        {
+            if (pago > totalAPagar)
+            {
+                return pago - totalAPagar;
+            }
+
+            return 0;
+        }
+
+        /// <summary>
+        /// Elimina productos de la factura
+        /// </summary>
+        /// <param name="factura">La factura a eliminar el producto</param>
+        /// <param name="codigo">El código del producto a eliminar</param>
+        /// <returns>(True)si se eliminó el producto. (False) si no se eliminó</returns>
+        public bool EliminarProductoDeFactura(DO_Factura factura, String codigo)
+        {
+            foreach(DO_ProductoEnFactura productoEnFactura in factura.listaProducto)
+            {
+                if (codigo == productoEnFactura.producto.codigo)
+                {
+                    factura.listaProducto.Remove(productoEnFactura);
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }

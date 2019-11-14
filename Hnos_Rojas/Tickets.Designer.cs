@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.gridProductos = new System.Windows.Forms.DataGridView();
-            this.codigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existenciaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,59 +41,11 @@
             // 
             this.gridProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.gridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigoProducto,
-            this.nombreProducto,
-            this.cantidadProducto,
-            this.precioProducto,
-            this.costoTotal,
-            this.existenciaProducto});
             this.gridProductos.Location = new System.Drawing.Point(-1, 0);
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.Size = new System.Drawing.Size(770, 251);
             this.gridProductos.TabIndex = 0;
             this.gridProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProductos_CellClick);
-            // 
-            // codigoProducto
-            // 
-            this.codigoProducto.HeaderText = "Código";
-            this.codigoProducto.Name = "codigoProducto";
-            this.codigoProducto.ReadOnly = true;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.DividerWidth = 1;
-            this.nombreProducto.HeaderText = "Descripción";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
-            this.nombreProducto.Width = 200;
-            // 
-            // cantidadProducto
-            // 
-            this.cantidadProducto.DividerWidth = 1;
-            this.cantidadProducto.HeaderText = "Cantidad";
-            this.cantidadProducto.Name = "cantidadProducto";
-            this.cantidadProducto.ReadOnly = true;
-            // 
-            // precioProducto
-            // 
-            this.precioProducto.DividerWidth = 1;
-            this.precioProducto.HeaderText = "Precio";
-            this.precioProducto.Name = "precioProducto";
-            this.precioProducto.ReadOnly = true;
-            // 
-            // costoTotal
-            // 
-            this.costoTotal.HeaderText = "Total";
-            this.costoTotal.Name = "costoTotal";
-            this.costoTotal.ReadOnly = true;
-            // 
-            // existenciaProducto
-            // 
-            this.existenciaProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.existenciaProducto.HeaderText = "Existencia";
-            this.existenciaProducto.Name = "existenciaProducto";
-            this.existenciaProducto.ReadOnly = true;
             // 
             // lblTotal
             // 
@@ -193,11 +139,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RadioButton rdoContado;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costoTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn existenciaProducto;
     }
 }
