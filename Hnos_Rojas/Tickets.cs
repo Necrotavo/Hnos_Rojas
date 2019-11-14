@@ -20,17 +20,15 @@ namespace Hnos_Rojas
         public Tickets(string usuario)
         {
             InitializeComponent();
-            factura.fecha = DateTime.Now;
             factura.usuario = usuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            confeccionarFactura();
         }
 
         public DO_Factura confeccionarFactura() {
-            DO_Factura factura = new DO_Factura();
             factura.listaProducto = new List<DO_ProductoEnFactura>();
             DataTable tablaProductos = (DataTable)gridProductos.DataSource;
 
