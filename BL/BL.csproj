@@ -46,6 +46,7 @@
     <Compile Include="BL_Factura.cs" />
     <Compile Include="BL_Producto.cs" />
     <Compile Include="BL_Proveedor.cs" />
+    <Compile Include="BL_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
