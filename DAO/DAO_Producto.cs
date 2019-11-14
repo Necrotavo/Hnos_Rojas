@@ -38,10 +38,10 @@ namespace DAO
                     {
                         producto.codigo = (String)lector["PRO_CODIGO"];
                         producto.descripcion = (String)lector["PRO_DESCRIPCION"];
-                        producto.cantMinBodega = (int)lector["PRO_CANTIDAD_MINIMA_STOCK"];
-                        producto.cantidadDisponible = (int)lector["PRO_CANTIDAD_DISPONIBLE"];
-                        producto.precioCosto = (double)lector["PRO_PRECIO_COSTO"];
-                        producto.precioVenta = (double)lector["PRO_PRECIO_VENTA"];
+                        producto.cantMinBodega = Convert.ToInt32(lector["PRO_CANTIDAD_MINIMA_STOCK"]);
+                        producto.cantidadDisponible = Convert.ToInt32(lector["PRO_CANTIDAD_DISPONIBLE"]);
+                        producto.precioCosto = Convert.ToDouble(lector["PRO_PRECIO_COSTO"]);
+                        producto.precioVenta = Convert.ToDouble(lector["PRO_PRECIO_VENTA"]);
                     }
                 }
                 return producto;
