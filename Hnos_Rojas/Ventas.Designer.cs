@@ -36,15 +36,16 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.nmCantidad = new System.Windows.Forms.NumericUpDown();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // tabTicket
@@ -131,7 +132,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.txtCantidad);
+            this.panel1.Controls.Add(this.nmCantidad);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBox1);
@@ -146,6 +147,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1277, 168);
             this.panel1.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(134, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 32);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Cantidad:";
             // 
             // label1
             // 
@@ -210,24 +222,23 @@
             this.button2.Text = "CTRL+P Art. Común";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // nmCantidad
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(134, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 32);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Cantidad:";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(250, 64);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(268, 35);
-            this.txtCantidad.TabIndex = 16;
+            this.nmCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmCantidad.Location = new System.Drawing.Point(250, 65);
+            this.nmCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmCantidad.Name = "nmCantidad";
+            this.nmCantidad.Size = new System.Drawing.Size(69, 35);
+            this.nmCantidad.TabIndex = 17;
+            this.nmCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Ventas
             // 
@@ -243,6 +254,7 @@
             this.tabTicket.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,7 +274,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nmCantidad;
     }
 }
