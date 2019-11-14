@@ -45,6 +45,7 @@
             this.gridProductos.Name = "gridProductos";
             this.gridProductos.Size = new System.Drawing.Size(770, 251);
             this.gridProductos.TabIndex = 0;
+            this.gridProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProductos_CellClick);
             // 
             // lblTotal
             // 
@@ -84,6 +85,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "DEL Borrar Producto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // rdoContado
             // 

@@ -16,6 +16,7 @@ namespace Hnos_Rojas
     {
         public DO_Factura factura = new DO_Factura();
 
+        private int filaSeleccionada = -1;
         public Tickets()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Hnos_Rojas
 
         }
 
-        public void agregarProducto(DO.DO_Producto producto)
+        public void agregarProducto(DO.DO_Producto producto, int cantidad)
         {
 
             BL_Factura blFactura = new BL_Factura();
@@ -36,7 +37,7 @@ namespace Hnos_Rojas
             //  gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
             if (gridProductos.RowCount > 1)
             {
-                actualizarGridProducto(producto);
+                actualizarGridProducto(producto, cantidad);
             }
             else {
                 DataTable t = new DataTable();
@@ -46,14 +47,14 @@ namespace Hnos_Rojas
                 t.Columns.Add("Precio");
                 t.Columns.Add("Total");
                 t.Columns.Add("Disponibles");
-                t.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, producto.precioVenta, producto.cantidadDisponible);
+                t.Rows.Add(producto.codigo, producto.descripcion, cantidad, producto.precioVenta, producto.precioVenta * cantidad, producto.cantidadDisponible);
                 gridProductos.DataSource = t;
             }
             sumarTotal();
         }
 
         
-        private void actualizarGridProducto(DO.DO_Producto producto) {
+        private void actualizarGridProducto(DO.DO_Producto producto, int cantidad) {
             DataTable dataTable = (DataTable)gridProductos.DataSource;
             
             Boolean check = false;
@@ -62,7 +63,7 @@ namespace Hnos_Rojas
                 {
                     if (row["Codigo"].ToString().Equals(producto.codigo))
                     {
-                        row["Cantidad"] = Convert.ToInt32(row[2]) + 1;
+                        row["Cantidad"] = Convert.ToInt32(row[2]) + cantidad;
                         row["Total"] = Convert.ToInt32(row[3]) * Convert.ToInt32(row[2]);
                         check = true;
                         break;
@@ -70,12 +71,41 @@ namespace Hnos_Rojas
                 }
                 if (!check)
                 {
-                    dataTable.Rows.Add(producto.codigo, producto.descripcion, 1, producto.precioVenta, producto.precioVenta, producto.cantidadDisponible);
+                    dataTable.Rows.Add(producto.codigo, producto.descripcion, cantidad, producto.precioVenta, producto.precioVenta * cantidad, producto.cantidadDisponible);
                 }
             
             gridProductos.DataSource = dataTable;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //selecciona el producto a eliminar
+            DataTable dataTable = (DataTable)gridProductos.DataSource;
+            try
+            {
+                DataRow fila = dataTable.Rows[filaSeleccionada];
+                dataTable.Rows.Remove(fila);
+                gridProductos.DataSource = dataTable;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally { }
+             
+
+        }
+
+        //es para capturar el index de la fila seleccionada
+        private void gridProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex > -1))
+            {
+                return;
+            }
+
+            filaSeleccionada = e.RowIndex;
+        }
         private void sumarTotal()
         {
             double total = 0;
