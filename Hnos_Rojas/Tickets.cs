@@ -12,6 +12,7 @@ namespace Hnos_Rojas
 {
     public partial class Tickets : Form
     {
+        private int filaSeleccionada = -1;
         public Tickets()
         {
             InitializeComponent();
@@ -68,5 +69,34 @@ namespace Hnos_Rojas
             gridProductos.DataSource = dataTable;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //selecciona el producto a eliminar
+            DataTable dataTable = (DataTable)gridProductos.DataSource;
+            try
+            {
+                DataRow fila = dataTable.Rows[filaSeleccionada];
+                dataTable.Rows.Remove(fila);
+                gridProductos.DataSource = dataTable;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally { }
+             
+
+        }
+
+        //es para capturar el index de la fila seleccionada
+        private void gridProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex > -1))
+            {
+                return;
+            }
+
+            filaSeleccionada = e.RowIndex;
+        }
     }
 }
