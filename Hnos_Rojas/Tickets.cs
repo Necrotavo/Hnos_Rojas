@@ -17,15 +17,16 @@ namespace Hnos_Rojas
         public DO_Factura factura = new DO_Factura();
 
         private int filaSeleccionada = -1;
-        public Tickets()
+        public Tickets(string usuario)
         {
             InitializeComponent();
             factura.fecha = DateTime.Now;
+            factura.usuario = usuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public DO_Factura confeccionarFactura() {
