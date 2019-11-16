@@ -76,7 +76,7 @@ namespace Hnos_Rojas
         private void agregarProductoATabla()
         {
             BL_Producto prod = new BL_Producto();
-            DO_Producto _DoProd = prod.buscarProducto(txtCodigo.Text);
+            DO_Producto _DoProd = prod.BuscarProducto(txtCodigo.Text);
             if (_DoProd != null)
             {
                 listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd, Convert.ToInt32(nmCantidad.Text));
