@@ -14,5 +14,17 @@ namespace BL
             DAO_Proveedor daoProveedor = new DAO_Proveedor();
             return daoProveedor.ingresarProveedor(proveedor);
         }
+
+        public bool modificarProveedor(DO_Proveedor proveedor)
+        {
+            DAO_Proveedor daoProveedor = new DAO_Proveedor();
+            return daoProveedor.modificarProveedor(proveedor);
+        }
+
+        public DO_Proveedor modificarProveedor(String nombreProveedor)
+        {
+            DAO_Proveedor daoProveedor = new DAO_Proveedor();
+            return daoProveedor.obtenerProveedor(nombreProveedor);
+        }
     }
 }
