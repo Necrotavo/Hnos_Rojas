@@ -15,6 +15,7 @@ namespace Hnos_Rojas
         public PagoContado(DO.DO_Factura factura)
         {
             InitializeComponent();
+            lblTotal.Text = factura.totalFactura.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +26,11 @@ namespace Hnos_Rojas
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            lblVuelto.Text = (Convert.ToInt32(lblTotal.Text) - Convert.ToInt32(numericUpDown1.Value)).ToString();
         }
     }
 }
