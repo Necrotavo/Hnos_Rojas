@@ -55,5 +55,36 @@ namespace DAO
             }
             return null;
         }
+
+        public DO_Usuario iniciarSesion(String usuario, String contrasena) {
+            SqlCommand consulta = new SqlCommand("select * from USUARIO where USR_NOMBRE = @nombre and USR_CONTRASENA = @contrasena", conexion);
+            consulta.Parameters.AddWithValue("@nombre",usuario);
+            consulta.Parameters.AddWithValue("@contrasena", contrasena);
+            try {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                DO_Usuario nuevoUsuario = new DO_Usuario();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                       nuevoUsuario = new DO_Usuario((String)lector["USR_NOMBRE"], (String)lector["TP_TIPO"], (String)lector["USR_CONTRASENA"]);
+
+                    }
+                    return nuevoUsuario;
+                }
+
+            } catch (SqlException) {
+            } finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
     }
 }
