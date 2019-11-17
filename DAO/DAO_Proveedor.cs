@@ -82,6 +82,7 @@ namespace DAO
             SqlCommand consultaCredito = new SqlCommand("select * from PROVEEDOR where PROV_NOMBRE = @nombreProveedor", conexion);
             consultaCredito.Parameters.AddWithValue("@nombreProveedor", nombreProveedor);
             DO_Proveedor proveedor = new DO_Proveedor();
+            DAO_Asociado daoAsociado = new DAO_Asociado();
             proveedor.listaAsociados = new List<DO_Asociado>();
             try
             {
@@ -97,7 +98,7 @@ namespace DAO
                         proveedor.nombre = (String)(lector["PROV_NOMBRE"]);
                         proveedor.fechaVisita = Convert.ToDateTime(lector["PROV_FECHA_VISITA"]);
                     }
-                    proveedor.listaAsociados = obtenerAsociados(nombreProveedor);
+                    proveedor.listaAsociados = daoAsociado.ObtenerAsociados(nombreProveedor);
                     return proveedor;
                 }
             }
@@ -115,12 +116,21 @@ namespace DAO
             return null;
         }
 
-        public List<DO_Asociado> obtenerAsociados(String nombreProveedor) {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from ASOCIADO where PROV_NOMBRE = @nombreProveedor", conexion);
-            adapter.SelectCommand.Parameters.AddWithValue("@nombreProveedor", nombreProveedor);
-            DataTable datatable = new DataTable();
-            List<DO_Asociado> listaAsociados = new List<DO_Asociado>();
+        public bool EliminarProveedor(DO_Proveedor proveedor)
+        {
+            DAO_Asociado daoAsociado = new DAO_Asociado();
+
+            foreach(DO_Asociado asociado in proveedor.listaAsociados)
+            {
+                if (daoAsociado.EliminarAsociado(asociado.identificador)!= true)
+                {
+                    return false;
+                }
+                
+            }
+
+            SqlCommand consulta = new SqlCommand("delete from Proveedor Where PROV_NOMBRE = @nombre", conexion);
+            consulta.Parameters.AddWithValue("@nombre", proveedor.nombre);
 
             try
             {
@@ -129,25 +139,15 @@ namespace DAO
                     conexion.Open();
                 }
 
-                adapter.Fill(datatable);
-
-                foreach (DataRow row in datatable.Rows)
+                if (consulta.ExecuteNonQuery() > 0)
                 {
-                    DO_Asociado nuevoAsociada = new DO_Asociado();
-
-                    nuevoAsociada.identificador = Convert.ToInt32(row["PER_IDENTIFICADOR"]);
-                    nuevoAsociada.telefono = (String)row["PER_TELEFONO"];
-                    nuevoAsociada.nombre = (String)row["PER_NOMBRE"];
-                    nuevoAsociada.primerApellido = (String)row["PER_PRIMER_APELLIDO"];
-                    nuevoAsociada.segundoApellido = (String)(row["PER_SEGUNDO_APELLIDO"]);
-                    nuevoAsociada.proveedor = (String)row["PROV_NOMBRE"];
-
-                    listaAsociados.Add(nuevoAsociada);
+                    return true;
                 }
-                return listaAsociados;
+
             }
-            catch (SqlException) {
-                return null;
+            catch (SqlException)
+            {
+
             }
             finally
             {
@@ -156,6 +156,7 @@ namespace DAO
                     conexion.Close();
                 }
             }
+            return false;
         }
 
         public bool pagarProveedor(DO_Pago pago) {

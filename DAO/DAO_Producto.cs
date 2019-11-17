@@ -191,11 +191,10 @@ namespace DAO
         /// </summary>
         /// <param name="productoAModificar">El producto al cual se le modificaron datos</param>
         /// <returns>(True) si se modificó correctamente.(False)si no se modificó</returns>
-        public bool ModificarProducto(DO_Producto productoAModificar, String codigoAnterior)
+        public bool ModificarProducto(DO_Producto productoAModificar)
         {
-            SqlCommand consulta = new SqlCommand("update Producto set PRO_CODIGO = @nuevoCodigo, PRO_DESCRIPCION = @descripcion, PRO_CANTIDAD_MINIMA_STOCK = @cantidadMinima," +
+            SqlCommand consulta = new SqlCommand("update Producto set PRO_DESCRIPCION = @descripcion, PRO_CANTIDAD_MINIMA_STOCK = @cantidadMinima," +
                 "PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible, PRO_PRECIO_COSTO = @precioCosto, PRO_PRECIO_VENTA = @precioVenta where PRO_CODIGO = @codigo", conexion);
-            consulta.Parameters.AddWithValue("@codigo", codigoAnterior);
             consulta.Parameters.AddWithValue("@descripcion", productoAModificar.descripcion);
             consulta.Parameters.AddWithValue("@cantidadMinima", productoAModificar.cantMinBodega);
             consulta.Parameters.AddWithValue("@cantidadDisponible", productoAModificar.cantidadDisponible);
