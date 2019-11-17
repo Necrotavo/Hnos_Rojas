@@ -51,7 +51,8 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            factura fact = new factura();
+            
+            FacturaReporte fact = new FacturaReporte();
             fact.Show();
         }
     }

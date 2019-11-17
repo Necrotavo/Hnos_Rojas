@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hnos_Rojas
 {
-    public partial class factura : Form
+    public partial class FacturaReporte : Form
     {
-        public factura()
+        public FacturaReporte()
         {
             InitializeComponent();
         }
