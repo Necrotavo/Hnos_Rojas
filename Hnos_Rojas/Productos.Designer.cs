@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             this.CantidadDisponible});
             this.grdProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdProductos.Location = new System.Drawing.Point(0, 280);
-            this.grdProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
             this.grdProductos.Name = "grdProductos";
             this.grdProductos.Size = new System.Drawing.Size(1040, 349);
             this.grdProductos.TabIndex = 13;
@@ -171,12 +172,27 @@
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 0;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(417, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(150, 76);
+            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1040, 629);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grdProductos);
@@ -209,5 +225,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
         private System.Windows.Forms.Button btnBuscarProducto;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
