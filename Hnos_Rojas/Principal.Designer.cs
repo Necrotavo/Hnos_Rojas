@@ -116,6 +116,7 @@
             this.btnProductos.TabIndex = 10;
             this.btnProductos.Text = "F3 Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnClientes
             // 
