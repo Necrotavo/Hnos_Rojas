@@ -32,10 +32,18 @@ namespace Hnos_Rojas
                
                 if ((data.Rows.Count > 0))
                 {
+                    if (rdoContado.Checked)
+                    {
+                        confeccionarFactura();
+                        PagoContado _pagoCont = new PagoContado(factura);
+                        _pagoCont.Show();
+                    }
+                    else {
+                        confeccionarFactura();
+                        PagoCredito _pagoCredito = new PagoCredito(factura);
+                        _pagoCredito.Show();
+                    }
                     
-                    confeccionarFactura();
-                    PagoContado _pagoCont = new PagoContado(factura);
-                    _pagoCont.Show();
                 }
                
             }
