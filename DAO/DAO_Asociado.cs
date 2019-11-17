@@ -28,7 +28,7 @@ namespace DAO
             consulta.Parameters.AddWithValue("@nombre", asociado.nombre);
             consulta.Parameters.AddWithValue("@primerApellido", asociado.primerApellido);
             consulta.Parameters.AddWithValue("@segundoApellido", asociado.segundoApellido);
-            consulta.Parameters.AddWithValue("@nombreProveedor", asociado.nombre_Proveedor);
+            consulta.Parameters.AddWithValue("@nombreProveedor", asociado.proveedor);
 
             try
             {
@@ -97,7 +97,7 @@ namespace DAO
         /// </summary>
         /// <param name="nombreProveedor">El proveedor al cuál se le quiere conocer sus asociados</param>
         /// <returns></returns>
-        public List<DO_Asociado> EnlistarAsociadosDeProveedor(String nombreProveedor)
+        public List<DO_Asociado> ObtenerAsociados(String nombreProveedor)
         {
 
             SqlCommand consulta = new SqlCommand("select * from Asociado where PROV_NOMBRE = @nombreProveedor", conexion);
@@ -160,7 +160,7 @@ namespace DAO
                         asociado.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
                         asociado.segundoApellido  = (String)lector["PER_SEGUNDO_APELLIDO"];
                         asociado.nombre = (String)lector["PER_NOMBRE"];
-                        asociado.nombre_Proveedor = (String)lector["PROV_NOMBRE"];
+                        asociado.proveedor = (String)lector["PROV_NOMBRE"];
                     }
                 }
                 return asociado;

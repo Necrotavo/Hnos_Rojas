@@ -77,11 +77,11 @@ namespace BL
         /// <param name="productoAModificar">El producto a modificar</param>
         /// <param name="codigoAntiguo">Si se modificó el código se necesita el antiguo para poder realizar el cambio.</param>
         /// <returns>(True) si se modificó correctamente.(False)si no se modificó</returns>
-        public bool ModificarProducto(DO_Producto productoAModificar, String codigoAntiguo)
+        public bool ModificarProducto(DO_Producto productoAModificar)
         {
             DAO_Producto daoProducto = new DAO_Producto();
 
-            return daoProducto.ModificarProducto(productoAModificar, codigoAntiguo);
+            return daoProducto.ModificarProducto(productoAModificar);
         }
         /// <summary>
         /// Elimina un determinado producto del inventario.

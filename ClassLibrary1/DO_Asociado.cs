@@ -13,7 +13,7 @@ namespace DO
         public String primerApellido { set; get; }
         public String segundoApellido { set; get; }
         public String nombre { set; get; }
-        public String nombre_Proveedor { set; get; }
+        public String proveedor { set; get; }
 
         public DO_Asociado() {
         }
@@ -24,7 +24,7 @@ namespace DO
             this.primerApellido = _primerApellido;
             this.segundoApellido = _segundoApellido;
             this.nombre = _nombre;
-            this.nombre_Proveedor = _nombreProveedor;
+            this.proveedor = _nombreProveedor;
         }
     }
 }
