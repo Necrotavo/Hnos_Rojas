@@ -102,6 +102,11 @@ namespace Hnos_Rojas
                         clientesEjecucion();
                         break;
                     }
+                case Keys.F3:
+                    {
+                        productosEjecucion();
+                        break;
+                    }
             }
         }
 

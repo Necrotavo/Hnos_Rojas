@@ -34,6 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -105,12 +106,27 @@
             this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Buscar:";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(394, 52);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 35);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1304, 629);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -135,5 +151,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button button2;
     }
 }
