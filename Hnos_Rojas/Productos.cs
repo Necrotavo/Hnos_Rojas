@@ -44,10 +44,15 @@ namespace Hnos_Rojas
 
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
-            //Wanda guapo
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
 
         }
