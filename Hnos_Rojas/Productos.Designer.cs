@@ -31,11 +31,17 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdProductos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantMinBodega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,15 +81,22 @@
             this.txtCodigo.Size = new System.Drawing.Size(268, 35);
             this.txtCodigo.TabIndex = 12;
             // 
-            // dataGridView1
+            // grdProductos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 200);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1304, 429);
-            this.dataGridView1.TabIndex = 13;
+            this.grdProductos.BackgroundColor = System.Drawing.Color.White;
+            this.grdProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.PrecioCosto,
+            this.PrecioVenta,
+            this.CantMinBodega,
+            this.descripcion,
+            this.CantidadDisponible});
+            this.grdProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grdProductos.Location = new System.Drawing.Point(0, 200);
+            this.grdProductos.Name = "grdProductos";
+            this.grdProductos.Size = new System.Drawing.Size(1304, 429);
+            this.grdProductos.TabIndex = 13;
             // 
             // pictureBox1
             // 
@@ -120,6 +133,48 @@
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // PrecioCosto
+            // 
+            this.PrecioCosto.DataPropertyName = "precioCosto";
+            this.PrecioCosto.HeaderText = "Precio costo";
+            this.PrecioCosto.Name = "PrecioCosto";
+            this.PrecioCosto.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.DataPropertyName = "precioVenta";
+            this.PrecioVenta.HeaderText = "Precio venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
+            // CantMinBodega
+            // 
+            this.CantMinBodega.DataPropertyName = "cantMinBodega";
+            this.CantMinBodega.HeaderText = "Cantidad mínima en bodega";
+            this.CantMinBodega.Name = "CantMinBodega";
+            this.CantMinBodega.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // CantidadDisponible
+            // 
+            this.CantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.CantidadDisponible.HeaderText = "Cantidad disponible";
+            this.CantidadDisponible.Name = "CantidadDisponible";
+            this.CantidadDisponible.ReadOnly = true;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,14 +184,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdProductos);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
             this.Text = "Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,9 +203,15 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCosto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantMinBodega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
     }
 }
