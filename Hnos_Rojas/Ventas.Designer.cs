@@ -32,17 +32,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabAgregar = new System.Windows.Forms.TabPage();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nmCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboUsuarios = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCerrarTicket = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnArtComun = new System.Windows.Forms.Button();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
@@ -91,19 +91,19 @@
             this.lblCodigo.TabIndex = 5;
             this.lblCodigo.Text = "Codigo de producto:";
             // 
-            // button1
+            // btnProducto
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(21, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "INS Productos";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnProducto.FlatAppearance.BorderSize = 0;
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
+            this.btnProducto.Location = new System.Drawing.Point(21, 114);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(192, 42);
+            this.btnProducto.TabIndex = 1;
+            this.btnProducto.Text = "INS Productos";
+            this.btnProducto.UseVisualStyleBackColor = false;
             // 
             // txtCodigo
             // 
@@ -133,15 +133,15 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.nmCantidad);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblCantidad);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cboUsuarios);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnCerrarTicket);
+            this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.btnArtComun);
             this.panel1.Controls.Add(this.btnAgregarProducto);
             this.panel1.Controls.Add(this.txtCodigo);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnProducto);
             this.panel1.Controls.Add(this.lblCodigo);
             this.panel1.Location = new System.Drawing.Point(12, 2);
             this.panel1.Name = "panel1";
@@ -166,16 +166,16 @@
             0,
             0});
             // 
-            // label3
+            // lblCantidad
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(134, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 32);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Cantidad:";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.lblCantidad.ForeColor = System.Drawing.Color.White;
+            this.lblCantidad.Location = new System.Drawing.Point(134, 64);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(115, 32);
+            this.lblCantidad.TabIndex = 15;
+            this.lblCantidad.Text = "Cantidad:";
             // 
             // label1
             // 
@@ -197,48 +197,48 @@
             this.cboUsuarios.Size = new System.Drawing.Size(224, 37);
             this.cboUsuarios.TabIndex = 11;
             // 
-            // button4
+            // btnCerrarTicket
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(597, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(192, 42);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Cerrar Ticket";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnCerrarTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnCerrarTicket.FlatAppearance.BorderSize = 0;
+            this.btnCerrarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnCerrarTicket.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarTicket.Location = new System.Drawing.Point(597, 114);
+            this.btnCerrarTicket.Name = "btnCerrarTicket";
+            this.btnCerrarTicket.Size = new System.Drawing.Size(192, 42);
+            this.btnCerrarTicket.TabIndex = 10;
+            this.btnCerrarTicket.Text = "Cerrar Ticket";
+            this.btnCerrarTicket.UseVisualStyleBackColor = false;
+            this.btnCerrarTicket.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btnBuscar
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(405, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(192, 42);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "F10 Buscar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(405, 114);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(192, 42);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "F10 Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnArtComun
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(213, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(192, 42);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "CTRL+P Art. Común";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnArtComun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnArtComun.FlatAppearance.BorderSize = 0;
+            this.btnArtComun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArtComun.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnArtComun.ForeColor = System.Drawing.Color.White;
+            this.btnArtComun.Location = new System.Drawing.Point(213, 114);
+            this.btnArtComun.Name = "btnArtComun";
+            this.btnArtComun.Size = new System.Drawing.Size(192, 42);
+            this.btnArtComun.TabIndex = 8;
+            this.btnArtComun.Text = "CTRL+P Art. Común";
+            this.btnArtComun.UseVisualStyleBackColor = false;
             // 
             // Ventas
             // 
@@ -265,16 +265,16 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabAgregar;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProducto;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCerrarTicket;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnArtComun;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboUsuarios;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.NumericUpDown nmCantidad;
     }
 }
