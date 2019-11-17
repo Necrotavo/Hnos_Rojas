@@ -31,7 +31,6 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.reporte1 = new Hnos_Rojas.reporte();
-            this.reporte2 = new Hnos_Rojas.reporte();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -55,7 +54,7 @@
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = this.reporte2;
+            this.crystalReportViewer2.ReportSource = this.reporte1;
             this.crystalReportViewer2.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer2.TabIndex = 1;
             this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -78,6 +77,5 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
         private reporte reporte1;
-        private reporte reporte2;
     }
 }
