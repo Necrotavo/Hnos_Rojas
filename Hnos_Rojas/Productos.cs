@@ -17,11 +17,6 @@ namespace Hnos_Rojas
             InitializeComponent();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            cerrarVentana()
-        }
-
         public void cerrarVentana() {
             this.Close();
         }
@@ -33,7 +28,7 @@ namespace Hnos_Rojas
 
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
-
+            //Wanda guapo
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
