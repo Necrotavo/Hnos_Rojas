@@ -39,21 +39,30 @@ namespace Hnos_Rojas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            aceptar();
+        }
+
+        public void aceptar() {
             BL_Usuario blUsuario = new BL_Usuario();
-            
+
             if (blUsuario.iniciarSesion(cboUsuario.SelectedValue.ToString(), txtContrasena.Text) != null)
             {
                 Principal principal = new Principal(this);
                 principal.Show();
                 this.Hide();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Credenciales incorrectas");
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            cerrarVentana();
+        }
+
+        public void cerrarVentana() {
             this.Close();
         }
 
@@ -63,6 +72,23 @@ namespace Hnos_Rojas
             cboUsuario.ValueMember = "nombreUsuario";
             cboUsuario.DisplayMember = "nombreUsuario";
           
+        }
+
+        private void VentanaPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    {
+                        cerrarVentana();
+                        break;
+                    }
+                case Keys.Enter:
+                    {
+                        aceptar();
+                        break;
+                    }
+            }
         }
     }
 }
