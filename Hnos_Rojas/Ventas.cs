@@ -68,6 +68,7 @@ namespace Hnos_Rojas
 
         private void button5_Click(object sender, EventArgs e)
         {
+
             agregarProductoATabla();
             nmCantidad.Value = 1;
             txtCodigo.Clear();
@@ -80,6 +81,10 @@ namespace Hnos_Rojas
             if (_DoProd != null)
             {
                 listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd, Convert.ToInt32(nmCantidad.Text));
+            } else
+            {
+                MessageBox.Show("No existe el producto!");
+                return;
             }
         }
 
