@@ -63,7 +63,7 @@ namespace Hnos_Rojas
                 factura.listaProducto.Add(prodFactura);
             }
             factura.fecha = DateTime.Now;
-
+            factura.totalFactura = Convert.ToInt32(lblTotal.Text.Substring(1));
             return factura;
         }
 

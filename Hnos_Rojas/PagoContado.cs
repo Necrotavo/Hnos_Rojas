@@ -32,5 +32,10 @@ namespace Hnos_Rojas
         {
             lblVuelto.Text = (Convert.ToInt32(lblTotal.Text) - Convert.ToInt32(numericUpDown1.Value)).ToString();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }
