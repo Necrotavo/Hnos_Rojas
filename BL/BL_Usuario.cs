@@ -21,5 +21,10 @@ namespace BL
 
             return daoUsuario.CargarUsuarios();
         }
+
+        public DO_Usuario iniciarSesion(String usuario, String contrasena) {
+            DAO_Usuario daoUsuario = new DAO_Usuario();
+            return daoUsuario.iniciarSesion(usuario, contrasena);
+        }
     }
 }

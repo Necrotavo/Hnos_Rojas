@@ -13,7 +13,7 @@ namespace Hnos_Rojas
 {
     public partial class VentanaPrincipal : Form
     {
-        private String usuarioSeleccionado = "";
+       
         public VentanaPrincipal()
         {
             InitializeComponent();
@@ -39,16 +39,22 @@ namespace Hnos_Rojas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //BL_Usuario blUsuario = new BL_Usuario();
+            BL_Usuario blUsuario = new BL_Usuario();
             
-            Principal principal = new Principal(this);
-            principal.Show();
-            this.Hide();
+            if (blUsuario.iniciarSesion(cboUsuario.SelectedValue.ToString(), txtContrasena.Text) != null)
+            {
+                Principal principal = new Principal(this);
+                principal.Show();
+                this.Hide();
+            }
+            else {
+                MessageBox.Show("Credenciales incorrectas");
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void llenarCboUsuario() {
@@ -56,7 +62,7 @@ namespace Hnos_Rojas
             cboUsuario.DataSource = blUsuario.CargarUsuarios();
             cboUsuario.ValueMember = "nombreUsuario";
             cboUsuario.DisplayMember = "nombreUsuario";
-            usuarioSeleccionado = cboUsuario.SelectedValue.ToString();
+          
         }
     }
 }
