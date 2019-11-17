@@ -37,7 +37,10 @@ namespace DAO
                     return credito;
                 }
             }
-            catch (SqlException) { }
+            catch (SqlException)
+            {
+                return null;
+            }
             finally
             {
                 if (conexion.State != ConnectionState.Closed)
@@ -173,6 +176,43 @@ namespace DAO
                 return false;
             }
             finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public int abonar(int abono, int idCredito) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            int montoCredito = daoFactura.obtenerMonto(idCredito);
+            int saldo = montoCredito - abono;
+
+            SqlCommand comando = new SqlCommand("update CREDITO set CRED_MONTO = @saldo where CRE_IDENTIFICADOR = @idCredito", conexion);
+            comando.Parameters.AddWithValue("@saldo", saldo);
+            comando.Parameters.AddWithValue("@idCredito", idCredito);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    return saldo;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            finally
+            {
                 if (conexion.State != ConnectionState.Closed)
                 {
                     conexion.Close();
