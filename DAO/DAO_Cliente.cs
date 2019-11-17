@@ -148,5 +148,52 @@ namespace DAO
                 }
             }
         }
+
+        public bool modificarCliente(DO_Cliente cliente) {
+            SqlCommand consulta = new SqlCommand("update CLIENTE set " +
+                "EST_ESTADO = @estado, " +
+                "PER_TELEFONO = @telefono," +  
+                "PER_NOMBRE = @nombre," +
+                "PER_PRIMER_APELLIDO = @primerApellido, " +
+                "PER_SEGUNDO_APELLIDO = @segundoApellido " +
+                "CLI_DIRECCION = @direccion " +
+                "where PER_IDENTIFICADOR = @idCliente", conexion);
+
+            consulta.Parameters.AddWithValue("@estado", cliente.estado);
+            consulta.Parameters.AddWithValue("@telefono", cliente.telefono);
+            consulta.Parameters.AddWithValue("@nombre", cliente.nombre);
+            consulta.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);
+            consulta.Parameters.AddWithValue("@segundoApellido", cliente.segundoApellido);
+            consulta.Parameters.AddWithValue("@direccion", cliente.direccion);
+            consulta.Parameters.AddWithValue("@idCliente", cliente.id);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                if (consulta.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }

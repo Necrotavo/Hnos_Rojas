@@ -26,5 +26,11 @@ namespace BL
             DAO_Proveedor daoProveedor = new DAO_Proveedor();
             return daoProveedor.obtenerProveedor(nombreProveedor);
         }
+
+        public bool modificarProveedor(DO_Pago pago)
+        {
+            DAO_Proveedor daoProveedor = new DAO_Proveedor();
+            return daoProveedor.pagarProveedor(pago);
+        }
     }
 }

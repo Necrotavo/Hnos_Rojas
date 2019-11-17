@@ -9,8 +9,8 @@ namespace DO
     public class DO_Pago
     {
         public String id { set; get; }
-        public DO_Proveedor proveedor { set; get; }
-        public DO_Usuario usuario { set; get; }
+        public String proveedor { set; get; }
+        public String usuario { set; get; }
         public DateTime fecha { set; get; }
         public int monto { set; get; }
 
@@ -18,7 +18,7 @@ namespace DO
         {
         }
 
-        public DO_Pago(String _id, DO_Proveedor _proveedor, DO_Usuario _usuario, DateTime _fecha, int _monto)
+        public DO_Pago(String _id, String _proveedor, String _usuario, DateTime _fecha, int _monto)
         {
             this.id = _id;
             this.proveedor = _proveedor;

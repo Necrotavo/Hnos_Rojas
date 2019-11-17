@@ -28,7 +28,7 @@ namespace DAO
                     return true;
                 }
                 else {
-                    return true;
+                    return false;
 
                 }
             }
@@ -148,6 +148,43 @@ namespace DAO
             }
             catch (SqlException) {
                 return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public bool pagarProveedor(DO_Pago pago) {
+            SqlCommand comando = new SqlCommand("Insert into PAGO (PAG_ID, USR_NOMBRE, PROV_NOMBRE, PAG_MONTO, PAG_FECHA) " +
+                "Values (@idPago, @usuario, @proveedor, @monto, @fecha)", conexion);
+            comando.Parameters.AddWithValue("@idPago", pago.id);
+            comando.Parameters.AddWithValue("@usuario", pago.usuario);
+            comando.Parameters.AddWithValue("@proveedor", pago.proveedor);
+            comando.Parameters.AddWithValue("@monto", pago.monto);
+            comando.Parameters.AddWithValue("@fecha", pago.fecha);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
             }
             finally
             {
