@@ -10,7 +10,6 @@ namespace BL
 {
     public class BL_Credito
     {
-        private DO_Credito credito;
         public BL_Credito() {
         }
 

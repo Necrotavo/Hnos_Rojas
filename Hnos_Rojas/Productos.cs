@@ -24,5 +24,24 @@ namespace Hnos_Rojas
             BL_Producto blProducto = new BL_Producto();
             grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
         }
+
+        public void cerrarVentana() {
+            this.Close();
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevoProd_Click(object sender, EventArgs e)
+        {
+            //Wanda guapo
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
