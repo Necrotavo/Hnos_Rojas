@@ -78,6 +78,16 @@ namespace Hnos_Rojas
             btnClientes.BackColor = Color.FromArgb(24, 107, 94);
         }
 
+        private void productosEjecucion() //evento q se llama al hacer click en el boton o en F3
+        {
+            pnlCenter.Controls.Clear();
+            Productos otropanel = new Productos() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+            restaurarColoresBtns();
+            btnProductos.BackColor = Color.FromArgb(24, 107, 94);
+        }
+
         private void Principal_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -95,5 +105,9 @@ namespace Hnos_Rojas
             }
         }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            productosEjecucion();
+        }
     }
 }
