@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BL;
+using DO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +25,12 @@ namespace Hnos_Rojas
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
+            buscarProd();
+        }
+
+        public void buscarProd() {
+            BL_Producto blProducto = new BL_Producto();
+            DO_Producto doProducto = blProducto.BuscarProducto(this.txtCodigo.Text);
 
         }
 
