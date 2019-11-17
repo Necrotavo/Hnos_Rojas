@@ -37,5 +37,10 @@ namespace BL
             DAO_Cliente dao_cliente = new DAO_Cliente();
             return dao_cliente.modificarEstadoCliente(idCliente, estado);
         }
+
+        public bool registrarClienteCrediticio(DO_Cliente cliente) {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.registrarClienteCrediticio(cliente);
+        }
     }
 }

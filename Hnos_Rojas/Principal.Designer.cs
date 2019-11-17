@@ -130,6 +130,7 @@
             this.btnClientes.TabIndex = 9;
             this.btnClientes.Text = "F2 Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnVentas
             // 

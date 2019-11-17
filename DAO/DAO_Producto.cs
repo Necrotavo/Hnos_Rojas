@@ -98,7 +98,6 @@ namespace DAO
             }
             return false;
         }
-
         /// <summary>
         /// Agrega los productos de determinada factura 
         /// </summary>
@@ -136,9 +135,9 @@ namespace DAO
             }
             finally
             {
-                if (conexion.State != ConnectionState.Open)
+                if (conexion.State != ConnectionState.Closed)
                 {
-                    conexion.Open();
+                    conexion.Close();
                 }
             }
             return false;
@@ -180,12 +179,132 @@ namespace DAO
             }
             finally
             {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Modifica los datos de un producto previamente registrado
+        /// </summary>
+        /// <param name="productoAModificar">El producto al cual se le modificaron datos</param>
+        /// <returns>(True) si se modificó correctamente.(False)si no se modificó</returns>
+        public bool ModificarProducto(DO_Producto productoAModificar, String codigoAnterior)
+        {
+            SqlCommand consulta = new SqlCommand("update Producto set PRO_CODIGO = @nuevoCodigo, PRO_DESCRIPCION = @descripcion, PRO_CANTIDAD_MINIMA_STOCK = @cantidadMinima," +
+                "PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible, PRO_PRECIO_COSTO = @precioCosto, PRO_PRECIO_VENTA = @precioVenta where PRO_CODIGO = @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", codigoAnterior);
+            consulta.Parameters.AddWithValue("@descripcion", productoAModificar.descripcion);
+            consulta.Parameters.AddWithValue("@cantidadMinima", productoAModificar.cantMinBodega);
+            consulta.Parameters.AddWithValue("@cantidadDisponible", productoAModificar.cantidadDisponible);
+            consulta.Parameters.AddWithValue("@precioCosto", productoAModificar.precioCosto);
+            consulta.Parameters.AddWithValue("@precioVenta", productoAModificar.precioVenta);
+            consulta.Parameters.AddWithValue("@nuevoCodigo", productoAModificar.codigo);
+
+            try
+            {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
+
+                if (consulta.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
             }
             return false;
-        } 
+        }
+        /// <summary>
+        /// Elimina un determinado producto del inventario.
+        /// </summary>
+        /// <param name="codigo">Código del producto a eliminar</param>
+        /// <returns>(True)si se eliminó correctamente.(False) si no se eliminó</returns>
+        public bool EliminarProducto(String codigo)
+        {
+            SqlCommand consulta = new SqlCommand("delete from Producto Where PRO_CODIGO = @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", codigo);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                if (consulta.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Obtiene la lista con todos los productos registrados
+        /// </summary>
+        /// <returns>Lista con los productos (List<DO_Producto)></returns>
+        public List<DO_Producto> CargarProductos()
+        {
+            SqlCommand consulta = new SqlCommand("select * from Producto", conexion);
+
+
+            List<DO_Producto> listaProductos = new List<DO_Producto>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        listaProductos.Add(new DO_Producto((String)lector["PRO_CODIGO"], Convert.ToDouble(lector["PRO_PRECIO_COSTO"]), Convert.ToDouble(lector["PRO_PRECIO_VENTA"]), Convert.ToInt32(lector["PRO_CANTIDAD_MINIMA_STOCK"]), (String)lector["PRO_DESCRIPCION"], Convert.ToInt32(lector["PRO_CANTIDAD_DISPONIBLE"])));
+                    }
+                }
+                return listaProductos;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
     }
 }

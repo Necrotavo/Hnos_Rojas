@@ -25,8 +25,21 @@ namespace Hnos_Rojas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            confeccionarFactura();
-            factura.estado = "Completada";
+            try
+            {
+                if (!gridProductos.Rows[0].Cells[0].Value.Equals(""))
+                {
+                    confeccionarFactura();
+                    PagoContado _pagoCont = new PagoContado(factura);
+                    _pagoCont.Show();
+                }
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay factura a pagar!!!!");
+            }
+            
         }
 
         public DO_Factura confeccionarFactura() {
@@ -60,7 +73,7 @@ namespace Hnos_Rojas
             }
             else {
                 DataTable t = new DataTable();
-                t.Columns.Add("Codigo");
+                t.Columns.Add("Código");
                 t.Columns.Add("Descripción");
                 t.Columns.Add("Cantidad");
                 t.Columns.Add("Precio");
@@ -80,7 +93,7 @@ namespace Hnos_Rojas
           
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    if (row["Codigo"].ToString().Equals(producto.codigo))
+                    if (row["Código"].ToString().Equals(producto.codigo))
                     {
                         row["Cantidad"] = Convert.ToInt32(row[2]) + cantidad;
                         row["Total"] = Convert.ToInt32(row[3]) * Convert.ToInt32(row[2]);
@@ -98,19 +111,21 @@ namespace Hnos_Rojas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //selecciona el producto a eliminar
-            DataTable dataTable = (DataTable)gridProductos.DataSource;
-            try
-            {
-                DataRow fila = dataTable.Rows[filaSeleccionada];
-                dataTable.Rows.Remove(fila);
-                gridProductos.DataSource = dataTable;
-            }
-            catch (Exception)
-            {
+            ////selecciona el producto a eliminar
+            //DataTable dataTable = (DataTable)gridProductos.DataSource;
+            //try
+            //{
+            //    DataRow fila = dataTable.Rows[filaSeleccionada];
+            //    dataTable.Rows.Remove(fila);
+            //    gridProductos.DataSource = dataTable;
+            //    sumarTotal();
+            //    filaSeleccionada = -1;
+            //}
+            //catch (Exception)
+            //{
 
-            }
-            finally { }
+            //}
+            //finally { }
              
 
         }
@@ -118,12 +133,12 @@ namespace Hnos_Rojas
         //es para capturar el index de la fila seleccionada
         private void gridProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!(e.RowIndex > -1))
-            {
-                return;
-            }
+            //if (!(e.RowIndex > -1))
+            //{
+            //    return;
+            //}
 
-            filaSeleccionada = e.RowIndex;
+            //filaSeleccionada = e.RowIndex;
         }
         private void sumarTotal()
         {
@@ -137,6 +152,40 @@ namespace Hnos_Rojas
             lblTotal.Text = "₡" + total.ToString();
         }
 
+        private void gridProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // para cambiar el botón eliminar
+            //if (gridProductos.Columns[e.ColumnIndex].Name.Equals("Eliminar")) {
+            //    //DataGridViewImageCell imageCell = (DataGridViewImageCell)gridProductos.Rows[e.RowIndex].Cells[6];
+            //    //imageCell.Value = Image.FromFile("./img/minus.png");
 
+            //}
+            if (e.ColumnIndex == 7) { 
+             
+                e.Value = Properties.Resources.minus;
+            //e.Value = Image.FromFile("./img/minus.png");
+               
+
+        }
+
+        }
+
+        private void gridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dataTable = (DataTable)gridProductos.DataSource;
+            try
+            {
+                DataRow fila = dataTable.Rows[e.RowIndex];
+                dataTable.Rows.Remove(fila);
+                gridProductos.DataSource = dataTable;
+                sumarTotal();
+                filaSeleccionada = -1;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally { }
+        }
     }
 }
