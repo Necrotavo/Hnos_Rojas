@@ -95,6 +95,7 @@ namespace DAO
                     DO_Cliente nuevoCliente = new DO_Cliente();
 
                     nuevoCliente.id = Convert.ToInt32(row["PER_IDENTIFICADOR"]);
+                    nuevoCliente.nombre = (String)row["PER_NOMBRE"];
                     nuevoCliente.estado = (String)row["EST_ESTADO"];
                     nuevoCliente.telefono = Convert.ToInt32(row["PER_TELEFONO"]);
                     nuevoCliente.primerApellido = (String)row["PER_PRIMER_APELLIDO"];
@@ -120,7 +121,7 @@ namespace DAO
         public bool registrarClienteCrediticio(DO_Cliente cliente) {
             SqlCommand comando = new SqlCommand("Insert into CLIENTE (PER_IDENTIFICATOR, EST_ESTADO, PER_TELEFONO, PER_NOMBRE, PER_PRIMER_APELLIDO, PER_SEGUNDO_APELLIDO, CLI_DIRECCION) Values (@identificador,@estado,@telefono,@nombre,@primerApellido,@segundoApellido,@direccion)", conexion);
             comando.Parameters.AddWithValue("@identificador", cliente.id);
-            comando.Parameters.AddWithValue("@estado", "Habilitado"); // el cliente cuando se registra siempre empieza habilitado
+            comando.Parameters.AddWithValue("@estado", "HABILITADO"); // el cliente cuando se registra siempre empieza habilitado
             comando.Parameters.AddWithValue("@telefono", cliente.telefono);
             comando.Parameters.AddWithValue("@nombre", cliente.nombre);
             comando.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);
@@ -147,6 +148,49 @@ namespace DAO
                     conexion.Close();
                 }
             }
+        }
+
+        public List<DO_Cliente> filtrarClientes(String filtro) {
+            List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+            SqlCommand consulta = new SqlCommand("select * from Cliente where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro", conexion);
+            consulta.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+            
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        DO_Cliente cliente = new DO_Cliente();
+                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.estado = (String)lector["EST_ESTADO"];
+                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
+                        cliente.nombre = (String)lector["PER_NOMBRE"];
+                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.direccion = (String)lector["CLI_DIRECCION"];
+                        listaClientes.Add(cliente);
+                    }
+                    return listaClientes;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
         }
     }
 }

@@ -64,6 +64,12 @@
     <Compile Include="PagoContado.Designer.cs">
       <DependentUpon>PagoContado.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoCredito.Designer.cs">
+      <DependentUpon>PagoCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagoContado.resx">
       <DependentUpon>PagoContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoCredito.resx">
+      <DependentUpon>PagoCredito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
