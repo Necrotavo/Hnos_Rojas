@@ -75,7 +75,7 @@ namespace Hnos_Rojas
             pnlCenter.Controls.Add(otropanel);
             otropanel.Show();
             restaurarColoresBtns();
-            btnVentas.BackColor = Color.FromArgb(24, 107, 94);
+            btnClientes.BackColor = Color.FromArgb(24, 107, 94);
         }
 
         private void Principal_KeyDown(object sender, KeyEventArgs e)
