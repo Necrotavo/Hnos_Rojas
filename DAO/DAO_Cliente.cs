@@ -37,7 +37,7 @@ namespace DAO
                     return cliente;
                 }
             }
-            catch (SqlException){
+            catch (SqlException) {
                 return null;
             }
             finally {
@@ -63,7 +63,7 @@ namespace DAO
                 comando.ExecuteNonQuery();
                 return true;
             }
-            catch(SqlException)
+            catch (SqlException)
             {
                 return false;
             }
@@ -115,6 +115,38 @@ namespace DAO
                 }
             }
             return null;
+        }
+
+        public bool registrarClienteCrediticio(DO_Cliente cliente) {
+            SqlCommand comando = new SqlCommand("Insert into CLIENTE (PER_IDENTIFICATOR, EST_ESTADO, PER_TELEFONO, PER_NOMBRE, PER_PRIMER_APELLIDO, PER_SEGUNDO_APELLIDO, CLI_DIRECCION) Values (@identificador,@estado,@telefono,@nombre,@primerApellido,@segundoApellido,@direccion)", conexion);
+            comando.Parameters.AddWithValue("@identificador", cliente.id);
+            comando.Parameters.AddWithValue("@estado", "Habilitado"); // el cliente cuando se registra siempre empieza habilitado
+            comando.Parameters.AddWithValue("@telefono", cliente.telefono);
+            comando.Parameters.AddWithValue("@nombre", cliente.nombre);
+            comando.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);
+            comando.Parameters.AddWithValue("@segundoApellido", cliente.segundoApellido);
+            comando.Parameters.AddWithValue("@direccion", cliente.direccion);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
         }
     }
 }

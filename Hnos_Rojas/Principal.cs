@@ -39,12 +39,15 @@ namespace Hnos_Rojas
             ventasEjecucion();
         }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            clientesEjecucion();
+        }
 
 
-        
 
         //Metodos llamados
-        
+
         private void restaurarColoresBtns() //Restaura el color default de los botones
         {
             Color color = Color.FromArgb(52, 168, 150);
@@ -65,6 +68,16 @@ namespace Hnos_Rojas
             btnVentas.BackColor = Color.FromArgb(24, 107, 94);
         }
 
+        private void clientesEjecucion() //evento q se llama al hacer click en el boton o en F2
+        {
+            pnlCenter.Controls.Clear();
+            Clientes otropanel = new Clientes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+            restaurarColoresBtns();
+            btnVentas.BackColor = Color.FromArgb(24, 107, 94);
+        }
+
         private void Principal_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -74,7 +87,13 @@ namespace Hnos_Rojas
                         ventasEjecucion();
                         break;
                     }
+                case Keys.F2:
+                    {
+                        clientesEjecucion();
+                        break;
+                    }
             }
         }
+
     }
 }
