@@ -30,7 +30,18 @@ namespace Hnos_Rojas
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            lblVuelto.Text = (Convert.ToInt32(lblTotal.Text) - Convert.ToInt32(numericUpDown1.Value)).ToString();
+            int total = (-1 * (Convert.ToInt32(lblTotal.Text) - Convert.ToInt32(numericUpDown1.Value)));
+            
+            if (total<0)
+            {
+                lblVuelto.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblVuelto.ForeColor = Color.White;
+            }
+            lblVuelto.Text = total.ToString();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
