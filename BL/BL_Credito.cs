@@ -25,5 +25,11 @@ namespace BL
             DAO_Credito daoCredito = new DAO_Credito();
             return daoCredito.crearCredito(idCliente, limiteCredito);
         }
+
+        public int abonar(int abono, int idCredito)
+        {
+            DAO_Credito daoCredito = new DAO_Credito();
+            return daoCredito.abonar(abono, idCredito);
+        }
     }
 }
