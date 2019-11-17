@@ -48,5 +48,10 @@ namespace Hnos_Rojas
         {
             this.Visible = false;
         }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
