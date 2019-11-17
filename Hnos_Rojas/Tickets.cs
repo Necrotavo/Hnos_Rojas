@@ -16,18 +16,19 @@ namespace Hnos_Rojas
     {
         public DO_Factura factura = new DO_Factura();
 
-        private int filaSeleccionada = -1;
+        //private int filaSeleccionada = -1;
         public Tickets(string usuario)
         {
             InitializeComponent();
             factura.usuario = usuario;
+           // gridProductos.AllowUserToAddRows = false; sólo me deja añadir una fila
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!gridProductos.Rows[0].Cells[0].Value.Equals(""))
+                if (!gridProductos.Rows[1].Cells[0].Value.Equals(""))
                 {
                     confeccionarFactura();
                     PagoContado _pagoCont = new PagoContado(factura);
@@ -175,11 +176,14 @@ namespace Hnos_Rojas
             DataTable dataTable = (DataTable)gridProductos.DataSource;
             try
             {
-                DataRow fila = dataTable.Rows[e.RowIndex];
-                dataTable.Rows.Remove(fila);
-                gridProductos.DataSource = dataTable;
-                sumarTotal();
-                filaSeleccionada = -1;
+                if (gridProductos.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
+                {
+                    DataRow fila = dataTable.Rows[e.RowIndex];
+                    dataTable.Rows.Remove(fila);
+                    gridProductos.DataSource = dataTable;
+                    sumarTotal();
+                   // filaSeleccionada = -1;
+                }
             }
             catch (Exception)
             {
