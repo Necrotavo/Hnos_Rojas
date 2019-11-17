@@ -28,8 +28,11 @@ namespace Hnos_Rojas
         {
             try
             {
-                if (!gridProductos.Rows[1].Cells[0].Value.Equals(""))
+                DataTable data = (DataTable)gridProductos.DataSource;
+               
+                if ((data.Rows.Count > 0))
                 {
+                    
                     confeccionarFactura();
                     PagoContado _pagoCont = new PagoContado(factura);
                     _pagoCont.Show();
@@ -50,7 +53,7 @@ namespace Hnos_Rojas
             foreach (DataRow row in tablaProductos.Rows) {
                 DO_ProductoEnFactura prodFactura = new DO_ProductoEnFactura();
                 prodFactura.producto = new DO_Producto();
-                prodFactura.producto.codigo = (String)row["Codigo"];
+                prodFactura.producto.codigo = (String)row["Código"];
                 prodFactura.producto.descripcion = (String)row["Descripción"];
                 prodFactura.producto.precioVenta = Convert.ToInt32(row["Precio"]);
                 prodFactura.producto.cantidadDisponible = Convert.ToInt32(row["Disponibles"]);
@@ -67,7 +70,6 @@ namespace Hnos_Rojas
         public void agregarProducto(DO.DO_Producto producto, int cantidad)
         {
 
-            //  gridProductos.Rows.Add(new object[] { producto.codigo, producto.descripcion, 1, producto.precioVenta,"No hay calculo aun", producto.cantidadDisponible });
             if (gridProductos.RowCount > 1)
             {
                 actualizarGridProducto(producto, cantidad);
@@ -155,17 +157,10 @@ namespace Hnos_Rojas
 
         private void gridProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // para cambiar el botón eliminar
-            //if (gridProductos.Columns[e.ColumnIndex].Name.Equals("Eliminar")) {
-            //    //DataGridViewImageCell imageCell = (DataGridViewImageCell)gridProductos.Rows[e.RowIndex].Cells[6];
-            //    //imageCell.Value = Image.FromFile("./img/minus.png");
 
-            //}
             if (e.ColumnIndex == 7) { 
              
-                e.Value = Properties.Resources.minus;
-            //e.Value = Image.FromFile("./img/minus.png");
-               
+                e.Value = Properties.Resources.minus;               
 
         }
 
