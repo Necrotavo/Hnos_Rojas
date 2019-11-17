@@ -18,13 +18,13 @@ namespace DO
         public DO_Producto() {
         }
 
-        public DO_Producto(String _codigo, double _precioCosto, int _precioVenta, int _cantMinBodega, String _descripcion, int _cantidadMinima) {
+        public DO_Producto(String _codigo, double _precioCosto, double _precioVenta, int _cantMinBodega, String _descripcion, int _cantidadDisponible) {
             this.codigo = _codigo;
             this.precioCosto = _precioCosto;
             this.precioVenta = _precioVenta;
             this.cantMinBodega = _cantMinBodega;
             this.descripcion = _descripcion;
-            this.cantidadDisponible = _cantidadMinima;
+            this.cantidadDisponible = _cantidadDisponible;
         }
     }
 }

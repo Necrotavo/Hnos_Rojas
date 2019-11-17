@@ -34,16 +34,26 @@ namespace BL
             return daoProducto.ActualizarInventario(codigoProducto, nuevaCantidad);
         }
         /// <summary>
-        /// Calcula el porcentaje de ganancia esperado y agrega el producto al inventario.
+        /// Obtiene el precio de venta de un producto según el porcentaje de ganancia esperado
+        /// </summary>
+        /// <param name="precioCosto">El precio de costo del producto</param>
+        /// <param name="porcentajeEsperado">El porcentaje de ganancia esperado</param>
+        /// <returns>El precio de venta del producto (double)</returns>
+        public double ObtenerPrecioVenta(double precioCosto, int porcentajeEsperado)
+        {
+            double precioVenta = 0;
+            precioVenta = precioCosto * (porcentajeEsperado / 100);
+
+            return precioVenta;
+        }
+        /// <summary>
+        /// Agrega el producto al inventario.
         /// </summary>
         /// <param name="nuevoProducto">El producto a agregar al inventario</param>
-        /// <param name="porcentajeGanancia">El porcentaje que se desea de ganancia</param>
         /// <returns>(True) si se agregó correctamente.(False) si no se agregó el producto</returns>
-        public bool AgregarProductoAInventario(DO_Producto nuevoProducto, int porcentajeGanancia)
+        public bool AgregarProductoAInventario(DO_Producto nuevoProducto)
         {
             DAO_Producto daoProducto = new DAO_Producto();
-
-            nuevoProducto.precioVenta = nuevoProducto.precioCosto + (nuevoProducto.precioCosto * (porcentajeGanancia / 100));
 
             return daoProducto.AgregarProductoInventario(nuevoProducto);
         }
@@ -83,6 +93,16 @@ namespace BL
             DAO_Producto daoProducto = new DAO_Producto();
 
             return daoProducto.EliminarProducto(codigo);
+        }
+        /// <summary>
+        /// Obtiene la lista con todos los productos registrados.
+        /// </summary>
+        /// <returns>Lista con los productos (List<DO_Producto>)</returns>
+        public List<DO_Producto> ObtenerListaDeProductos()
+        {
+            DAO_Producto daoProducto = new DAO_Producto();
+
+            return daoProducto.CargarProductos();
         }
 
     }

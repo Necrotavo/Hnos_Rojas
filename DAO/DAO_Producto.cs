@@ -265,5 +265,46 @@ namespace DAO
             }
             return false;
         }
+        /// <summary>
+        /// Obtiene la lista con todos los productos registrados
+        /// </summary>
+        /// <returns>Lista con los productos (List<DO_Producto)></returns>
+        public List<DO_Producto> CargarProductos()
+        {
+            SqlCommand consulta = new SqlCommand("select * from Producto", conexion);
+
+
+            List<DO_Producto> listaProductos = new List<DO_Producto>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        listaProductos.Add(new DO_Producto((String)lector["PRO_CODIGO"], Convert.ToDouble(lector["PRO_PRECIO_COSTO"]), Convert.ToDouble(lector["PRO_PRECIO_VENTA"]), Convert.ToInt32(lector["PRO_CANTIDAD_MINIMA_STOCK"]), (String)lector["PRO_DESCRIPCION"], Convert.ToInt32(lector["PRO_CANTIDAD_DISPONIBLE"])));
+                    }
+                }
+                return listaProductos;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
     }
 }
