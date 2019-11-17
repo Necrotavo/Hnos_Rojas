@@ -16,5 +16,29 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            cerrarVentana()
+        }
+
+        public void cerrarVentana() {
+            this.Close();
+        }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevoProd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
