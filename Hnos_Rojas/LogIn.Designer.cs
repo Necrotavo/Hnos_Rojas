@@ -59,6 +59,7 @@
             this.txtContrasena.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(254, 207);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(274, 39);
             this.txtContrasena.TabIndex = 2;
             // 
@@ -73,7 +74,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(87)))), ((int)(((byte)(112)))));
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
