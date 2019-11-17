@@ -35,8 +35,6 @@ namespace Hnos_Rojas
 
         }
 
-   
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             aceptar();
