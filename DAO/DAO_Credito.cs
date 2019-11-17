@@ -37,7 +37,10 @@ namespace DAO
                     return credito;
                 }
             }
-            catch (SqlException) { }
+            catch (SqlException)
+            {
+                return null;
+            }
             finally
             {
                 if (conexion.State != ConnectionState.Closed)
