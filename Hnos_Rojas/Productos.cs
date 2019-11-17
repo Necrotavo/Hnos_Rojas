@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DO;
+using BL;
 
 namespace Hnos_Rojas
 {
@@ -17,6 +19,12 @@ namespace Hnos_Rojas
         public Productos()
         {
             InitializeComponent();
+            llenarGridProductos();
+        }
+
+        private void llenarGridProductos() {
+            BL_Producto blProducto = new BL_Producto();
+            grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
         }
 
         public void cerrarVentana() {
