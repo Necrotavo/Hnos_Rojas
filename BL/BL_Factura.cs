@@ -41,8 +41,7 @@ namespace BL
 
         public bool modificarEstadoFactura(int codigoFactura, String estado) {
             DAO_Factura daoFactura = new DAO_Factura();
-            daoFactura.modificarEstadoFactura(codigoFactura, estado);
-            return true;
+            return daoFactura.modificarEstadoFactura(codigoFactura, estado);
         }
 
         /// <summary>
@@ -95,5 +94,16 @@ namespace BL
             return false;
         }
 
+        public DO_PlantillaFactura obtenerPlantillaFactura()
+        {
+            DAO_Factura daoFactura = new DAO_Factura();
+            return daoFactura.obtenerUltimaPlantilla();
+        }
+
+        public int ingresarPlantillaFactura(DO_PlantillaFactura plantillaFactura)
+        {
+            DAO_Factura daoFactura = new DAO_Factura();
+            return daoFactura.ingresarPlantillaFactura(plantillaFactura);
+        }
     }
 }
