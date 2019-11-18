@@ -54,7 +54,7 @@
             this.btnNuevoProd.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnNuevoProd.ForeColor = System.Drawing.Color.White;
             this.btnNuevoProd.Location = new System.Drawing.Point(825, 23);
-            this.btnNuevoProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevoProd.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevoProd.Name = "btnNuevoProd";
             this.btnNuevoProd.Size = new System.Drawing.Size(264, 94);
             this.btnNuevoProd.TabIndex = 10;
@@ -70,7 +70,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(1097, 23);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(264, 94);
             this.btnModificar.TabIndex = 11;
@@ -82,7 +82,7 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(167, 71);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(356, 41);
             this.txtCodigo.TabIndex = 12;
@@ -98,7 +98,6 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdProductos.Location = new System.Drawing.Point(0, 139);
             this.grdProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdProductos.Name = "grdProductos";
@@ -151,7 +150,7 @@
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
             this.pictureBox1.Location = new System.Drawing.Point(23, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(136, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +184,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(553, 23);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(264, 94);
             this.btnBuscar.TabIndex = 16;
@@ -207,7 +206,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevoProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Productos";
             this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).EndInit();
