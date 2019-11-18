@@ -88,5 +88,17 @@ namespace Hnos_Rojas
                     }
             }
         }
+
+        private void txtContrasena_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    {
+                        aceptar();
+                        break;
+                    }
+            }
+        }
     }
 }
