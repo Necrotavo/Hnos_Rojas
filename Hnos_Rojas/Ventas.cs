@@ -81,7 +81,8 @@ namespace Hnos_Rojas
             if (_DoProd.codigo != null)
             {
                 listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(_DoProd, Convert.ToInt32(nmCantidad.Text));
-            } else
+            }
+            else
             {
                 MessageBox.Show("No existe el producto!");
                 return;

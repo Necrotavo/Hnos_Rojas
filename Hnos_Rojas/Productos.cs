@@ -54,7 +54,23 @@ namespace Hnos_Rojas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            buscarProducto();
+        }
 
+        public void buscarProducto() {
+            BL_Producto blProducto = new BL_Producto();
+            DO_Producto doProducto = blProducto.BuscarProducto(this.txtCodigo.Text);
+
+            DataTable dataTable = new DataTable();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                
+                dataTable.Rows.Add(doProducto.codigo, doProducto.descripcion, doProducto.cantidadDisponible, 
+                    doProducto.precioVenta, doProducto.precioVenta, doProducto.cantidadDisponible);
+            }
+
+            grdProductos.DataSource = dataTable;
         }
     }
 }
