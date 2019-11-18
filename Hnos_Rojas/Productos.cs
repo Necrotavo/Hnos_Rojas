@@ -25,6 +25,14 @@ namespace Hnos_Rojas
         private void llenarGridProductos() {
             BL_Producto blProducto = new BL_Producto();
             grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
+            grdProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+            grdProductos.Columns[0].Width = 250;   //codigo
+            grdProductos.Columns[1].Width = 150;    //precioCosto
+            grdProductos.Columns[2].Width = 150;    //precioCosto
+            grdProductos.Columns[3].Width = 150;    //cantMinBodega
+            grdProductos.Columns[4].Width = 410;    //descripcion
+            grdProductos.Columns[5].Width = 150;    //catDisponible
+            grdProductos.AutoSize = true;
         }
 
         public void cerrarVentana() {
@@ -62,13 +70,15 @@ namespace Hnos_Rojas
             DO_Producto doProducto = blProducto.BuscarProducto(this.txtCodigo.Text);
 
             DataTable dataTable = new DataTable();
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                
-                dataTable.Rows.Add(doProducto.codigo, doProducto.descripcion, doProducto.cantidadDisponible, 
-                    doProducto.precioVenta, doProducto.precioVenta, doProducto.cantidadDisponible);
-            }
+            dataTable.Columns.Add("Código");
+            dataTable.Columns.Add("Precio de Costo");
+            dataTable.Columns.Add("Precio de venta");
+            dataTable.Columns.Add("Cantidad mínima en bodega");
+            dataTable.Columns.Add("Descripción");
+            dataTable.Columns.Add("Cantidad disponible");
+            
+            dataTable.Rows.Add(doProducto.codigo, doProducto.precioCosto, doProducto.precioVenta, 
+                    doProducto.cantMinBodega, doProducto.descripcion, doProducto.cantidadDisponible);
 
             grdProductos.DataSource = dataTable;
         }
