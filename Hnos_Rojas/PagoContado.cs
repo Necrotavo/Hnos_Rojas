@@ -57,13 +57,17 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            //FacturaReporte fact = new FacturaReporte();
-            //fact.Show();
+            registrarFactura();
         }
 
         public void registrarFactura() {
+            this.factura.clienteExterno = this.txtCliente.Text;
+            this.factura.notas = this.txtNotas.Text;
+            this.factura.estado = "PAGADA";
+            this.factura.tipoPago = "CONTADO";
             BL_Factura blFactura = new BL_Factura();
-            //DO_Factura doFactura = 
+
+            blFactura.guardarFactura(factura);
         }
 
         private void PagoContado_Load(object sender, EventArgs e)
