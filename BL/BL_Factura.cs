@@ -14,10 +14,10 @@ namespace BL
 
             calcularTotal(factura);
             DAO_Factura daoFactura = new DAO_Factura();
-            int codigoFactura = daoFactura.guardarFactura(factura);
-            if (codigoFactura > 0) {
+            factura.codigoFactura = daoFactura.guardarFactura(factura);
+            if (factura.codigoFactura > 0) {
                 DAO_Producto daoProducto = new DAO_Producto();
-                return daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.listaProducto);
+                return daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.fecha, factura.listaProducto);
             }
             return false;
         }

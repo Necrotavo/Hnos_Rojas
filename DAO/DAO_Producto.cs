@@ -104,34 +104,29 @@ namespace DAO
         /// <param name="codigoFactura">Codigo de la factura a la cual pertenecen los productos</param>
         /// <param name="listaProductos">La lista de los producto comprados de la factura</param>
         /// <returns>(True) si se agregaron correctamente.(False) si no se agregaron</returns>
-        public bool AgregarProductoAFactura(int codigoFactura, List<DO_ProductoEnFactura>listaProductos)
+        public bool AgregarProductoAFactura(int codigoFactura, DateTime fecha, List<DO_ProductoEnFactura>listaProductos)
         {
-            SqlCommand consulta = new SqlCommand("insert into FAC_TIENE_PRO (PRO_CODIGO,FAC_CODIGO,FAC_FECHA) values (@codigoProducto,@codigoFactura,@fecha)", conexion);
+            SqlCommand consulta = new SqlCommand("insert into FAC_TIENE_PRO (PRO_CODIGO,FAC_CODIGO,FAC_FECHA, CANTIDAD_COMPRADA) values (@codigoProducto,@codigoFactura,@fecha, @cantComprada)", conexion);
+            consulta.Parameters.AddWithValue("@codigoFactura", codigoFactura);
+            consulta.Parameters.AddWithValue("@fecha", fecha);
 
-            
             try
             {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
-
                 foreach(DO_ProductoEnFactura productoVendido in listaProductos)
                 {
-                    consulta.Parameters.AddWithValue("@codigoFactura", codigoFactura);
-                    consulta.Parameters.AddWithValue("@fecha", DateTime.Now);
                     consulta.Parameters.AddWithValue("@codigoProducto",productoVendido.producto.codigo);
+                    consulta.Parameters.AddWithValue("@cantComprada", productoVendido.cantidadComprada);
+                    consulta.ExecuteNonQuery();
                 }
-
-                if (consulta.ExecuteNonQuery() > 0)
-                {
-                    return true;
-                }
-
+                return true;
             }
             catch (SqlException)
             {
-
+                return false;
             }
             finally
             {
@@ -140,7 +135,6 @@ namespace DAO
                     conexion.Close();
                 }
             }
-            return false;
         }
 
         /// <summary>
