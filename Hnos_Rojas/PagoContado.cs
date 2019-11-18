@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using DO;
 
 namespace Hnos_Rojas
 {
     public partial class PagoContado : Form
     {
-        public PagoContado(DO.DO_Factura factura)
+        private DO_Factura factura;
+        public PagoContado(DO_Factura _factura)
         {
             InitializeComponent();
             lblTotal.Text = factura.totalFactura.ToString();
+            factura = _factura;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,8 +57,13 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            FacturaReporte fact = new FacturaReporte();
-            fact.Show();
+            //FacturaReporte fact = new FacturaReporte();
+            //fact.Show();
+        }
+
+        public void registrarFactura() {
+            BL_Factura blFactura = new BL_Factura();
+            DO_Factura doFactura = 
         }
 
         private void PagoContado_Load(object sender, EventArgs e)
