@@ -18,6 +18,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             llenarCboUsuario();
+            this.ActiveControl = txtContrasena;
         }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
