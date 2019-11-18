@@ -104,25 +104,26 @@ namespace DAO
         /// <param name="codigoFactura">Codigo de la factura a la cual pertenecen los productos</param>
         /// <param name="listaProductos">La lista de los producto comprados de la factura</param>
         /// <returns>(True) si se agregaron correctamente.(False) si no se agregaron</returns>
-        public bool AgregarProductoAFactura(int codigoFactura, DateTime fecha, List<DO_ProductoEnFactura>listaProductos)
+        public bool AgregarProductoAFactura(int codigoFactura, DateTime fecha, DO_ProductoEnFactura productoVendido)
         {
             SqlCommand consulta = new SqlCommand("insert into FAC_TIENE_PRO (PRO_CODIGO,FAC_CODIGO,FAC_FECHA, CANTIDAD_COMPRADA) values (@codigoProducto,@codigoFactura,@fecha, @cantComprada)", conexion);
             consulta.Parameters.AddWithValue("@codigoFactura", codigoFactura);
             consulta.Parameters.AddWithValue("@fecha", fecha);
-
+            consulta.Parameters.AddWithValue("@codigoProducto", productoVendido.producto.codigo);
+            consulta.Parameters.AddWithValue("@cantComprada", productoVendido.cantidadComprada);
             try
             {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
-                foreach(DO_ProductoEnFactura productoVendido in listaProductos)
+                if (consulta.ExecuteNonQuery() > 0)
                 {
-                    consulta.Parameters.AddWithValue("@codigoProducto",productoVendido.producto.codigo);
-                    consulta.Parameters.AddWithValue("@cantComprada", productoVendido.cantidadComprada);
-                    consulta.ExecuteNonQuery();
+                    return true;
                 }
-                return true;
+                else {
+                    return false;
+                }
             }
             catch (SqlException)
             {

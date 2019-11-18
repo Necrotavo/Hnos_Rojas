@@ -12,14 +12,24 @@ namespace BL
     {
         public bool guardarFactura(DO_Factura factura) {
 
-            calcularTotal(factura);
+            //calcularTotal(factura);
             DAO_Factura daoFactura = new DAO_Factura();
             factura.codigoFactura = daoFactura.guardarFactura(factura);
-            if (factura.codigoFactura > 0) {
-                DAO_Producto daoProducto = new DAO_Producto();
-                return daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.fecha, factura.listaProducto);
+            if (factura.codigoFactura > 0)
+            {
+                foreach (DO_ProductoEnFactura productoEnFactura in factura.listaProducto)
+                {
+                    DAO_Producto daoProducto = new DAO_Producto();
+                    if (!daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.fecha, productoEnFactura))
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
-            return false;
+            else {
+                return false;
+            }
         }
 
         public void calcularTotal(DO_Factura factura)
