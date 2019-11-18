@@ -18,8 +18,9 @@ namespace Hnos_Rojas
         public PagoContado(DO_Factura _factura)
         {
             InitializeComponent();
-            lblTotal.Text = factura.totalFactura.ToString();
             factura = _factura;
+            lblTotal.Text = factura.totalFactura.ToString();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -73,13 +73,7 @@ namespace Hnos_Rojas
 
         private void listBClientes_SelectedValueChanged(object sender, EventArgs e)
         {
-            BL.BL_Credito _credit = new BL_Credito();
-            BL.BL_Cliente _client = new BL_Cliente();
-            DO.DO_Cliente DO_Client = new DO_Cliente();
-            DO.DO_Credito DO_Credit = new DO_Credito();
-            DO_Client = _client.buscarCliente(listBClientes.SelectedValue.ToString());
-            DO_Credit = _credit.ObtenerCredito(DO_Client.id);
-            lbCreditoDisp.Text = DO_Credit.monto.ToString();
+
         }
     }
 }
