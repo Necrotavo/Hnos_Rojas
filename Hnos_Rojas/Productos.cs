@@ -70,12 +70,12 @@ namespace Hnos_Rojas
             DO_Producto doProducto = blProducto.BuscarProducto(this.txtCodigo.Text);
 
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Código");
-            dataTable.Columns.Add("Precio de Costo");
-            dataTable.Columns.Add("Precio de venta");
-            dataTable.Columns.Add("Cantidad mínima en bodega");
-            dataTable.Columns.Add("Descripción");
-            dataTable.Columns.Add("Cantidad disponible");
+            dataTable.Columns.Add("codigo");
+            dataTable.Columns.Add("precioCosto");
+            dataTable.Columns.Add("precioVenta");
+            dataTable.Columns.Add("cantMinBodega");
+            dataTable.Columns.Add("descripcion");
+            dataTable.Columns.Add("cantidadDisponible");
             
             dataTable.Rows.Add(doProducto.codigo, doProducto.precioCosto, doProducto.precioVenta, 
                     doProducto.cantMinBodega, doProducto.descripcion, doProducto.cantidadDisponible);
