@@ -98,5 +98,19 @@ namespace Hnos_Rojas
 
             grdProductos.DataSource = dataTable;
         }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text!="")
+            {
+                buscarProducto();
+                txtCodigo.Focus();
+            }
+            else
+            {
+                llenarGridProductos();
+            }
+            
+        }
     }
 }
