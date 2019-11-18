@@ -207,6 +207,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Tickets";
             this.Text = "Ticket";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tickets_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -129,6 +129,11 @@ namespace Hnos_Rojas
                         
                         break;
                     }
+                case Keys.F12:
+                    {
+                        listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).pagar();
+                        break;
+                    }
             }
             
         }

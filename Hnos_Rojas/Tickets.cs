@@ -21,15 +21,14 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             factura.usuario = usuario;
-           // gridProductos.AllowUserToAddRows = false; sólo me deja añadir una fila
+            // gridProductos.AllowUserToAddRows = false; sólo me deja añadir una fila
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void pagar()
         {
             try
             {
                 DataTable data = (DataTable)gridProductos.DataSource;
-               
+
                 if ((data.Rows.Count > 0))
                 {
                     if (rdoContado.Checked)
@@ -38,27 +37,34 @@ namespace Hnos_Rojas
                         PagoContado _pagoCont = new PagoContado(factura);
                         _pagoCont.Show();
                     }
-                    else {
+                    else
+                    {
                         confeccionarFactura();
                         PagoCredito _pagoCredito = new PagoCredito(factura);
                         _pagoCredito.Show();
                     }
-                    
+
                 }
-               
+
             }
             catch (Exception)
             {
                 MessageBox.Show("No hay factura a pagar!!!!");
             }
-            
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pagar();
         }
 
-        public DO_Factura confeccionarFactura() {
+        public DO_Factura confeccionarFactura()
+        {
             factura.listaProducto = new List<DO_ProductoEnFactura>();
             DataTable tablaProductos = (DataTable)gridProductos.DataSource;
 
-            foreach (DataRow row in tablaProductos.Rows) {
+            foreach (DataRow row in tablaProductos.Rows)
+            {
                 DO_ProductoEnFactura prodFactura = new DO_ProductoEnFactura();
                 prodFactura.producto = new DO_Producto();
                 prodFactura.producto.codigo = (String)row["Código"];
@@ -82,7 +88,8 @@ namespace Hnos_Rojas
             {
                 actualizarGridProducto(producto, cantidad);
             }
-            else {
+            else
+            {
                 DataTable t = new DataTable();
                 t.Columns.Add("Código");
                 t.Columns.Add("Descripción");
@@ -96,27 +103,28 @@ namespace Hnos_Rojas
             sumarTotal();
         }
 
-        
-        private void actualizarGridProducto(DO.DO_Producto producto, int cantidad) {
+
+        private void actualizarGridProducto(DO.DO_Producto producto, int cantidad)
+        {
             DataTable dataTable = (DataTable)gridProductos.DataSource;
-            
+
             Boolean check = false;
-          
-                foreach (DataRow row in dataTable.Rows)
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row["Código"].ToString().Equals(producto.codigo))
                 {
-                    if (row["Código"].ToString().Equals(producto.codigo))
-                    {
-                        row["Cantidad"] = Convert.ToInt32(row[2]) + cantidad;
-                        row["Total"] = Convert.ToInt32(row[3]) * Convert.ToInt32(row[2]);
-                        check = true;
-                        break;
-                    }
+                    row["Cantidad"] = Convert.ToInt32(row[2]) + cantidad;
+                    row["Total"] = Convert.ToInt32(row[3]) * Convert.ToInt32(row[2]);
+                    check = true;
+                    break;
                 }
-                if (!check)
-                {
-                    dataTable.Rows.Add(producto.codigo, producto.descripcion, cantidad, producto.precioVenta, producto.precioVenta * cantidad, producto.cantidadDisponible);
-                }
-            
+            }
+            if (!check)
+            {
+                dataTable.Rows.Add(producto.codigo, producto.descripcion, cantidad, producto.precioVenta, producto.precioVenta * cantidad, producto.cantidadDisponible);
+            }
+
             gridProductos.DataSource = dataTable;
         }
 
@@ -137,7 +145,7 @@ namespace Hnos_Rojas
 
             //}
             //finally { }
-             
+
 
         }
 
@@ -166,11 +174,12 @@ namespace Hnos_Rojas
         private void gridProductos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
-            if (e.ColumnIndex == 7) { 
-             
-                e.Value = Properties.Resources.minus;               
+            if (e.ColumnIndex == 7)
+            {
 
-        }
+                e.Value = Properties.Resources.minus;
+
+            }
 
         }
 
@@ -185,7 +194,7 @@ namespace Hnos_Rojas
                     dataTable.Rows.Remove(fila);
                     gridProductos.DataSource = dataTable;
                     sumarTotal();
-                   // filaSeleccionada = -1;
+                    // filaSeleccionada = -1;
                 }
             }
             catch (Exception)
@@ -193,6 +202,18 @@ namespace Hnos_Rojas
 
             }
             finally { }
+        }
+
+        private void Tickets_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F12:
+                    {
+                        pagar();
+                        break;
+                    }
+            }
         }
     }
 }
