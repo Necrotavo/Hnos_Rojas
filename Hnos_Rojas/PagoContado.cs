@@ -32,14 +32,13 @@ namespace Hnos_Rojas
         {
 
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void cambioValor()
         {
             BL_Factura blFactura = new BL_Factura();
 
             double total = blFactura.CalcularVuelto(Convert.ToDouble(lblTotal.Text), Convert.ToDouble(nmPaga.Value));
-            
-            if (total<0)
+
+            if (total < 0)
             {
                 lblVuelto.ForeColor = Color.Red;
             }
@@ -74,6 +73,16 @@ namespace Hnos_Rojas
         private void PagoContado_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void nmPaga_KeyUp(object sender, KeyEventArgs e)
+        {
+            cambioValor();
+        }
+
+        private void nmPaga_ValueChanged(object sender, EventArgs e)
+        {
+            cambioValor();
         }
     }
 }
