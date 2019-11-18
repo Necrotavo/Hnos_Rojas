@@ -85,6 +85,7 @@ namespace Hnos_Rojas
             Productos otropanel = new Productos() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pnlCenter.Controls.Add(otropanel);
             otropanel.Show();
+            otropanel.Controls["txtCodigo"].Focus();
             restaurarColoresBtns();
             btnProductos.BackColor = Color.FromArgb(24, 107, 94);
         }
