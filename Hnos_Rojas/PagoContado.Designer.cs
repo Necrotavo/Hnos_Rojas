@@ -98,18 +98,18 @@
             this.lblTotal.ForeColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(190, 117);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(97, 46);
+            this.lblTotal.Size = new System.Drawing.Size(108, 46);
             this.lblTotal.TabIndex = 9;
-            this.lblTotal.Text = "c0.00";
+            this.lblTotal.Text = "₡0.00";
             // 
             // nmPaga
             // 
             this.nmPaga.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmPaga.Location = new System.Drawing.Point(127, 208);
             this.nmPaga.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
+            -1,
+            -1,
+            -1,
             0});
             this.nmPaga.Name = "nmPaga";
             this.nmPaga.Size = new System.Drawing.Size(120, 35);
@@ -134,9 +134,9 @@
             this.lblVuelto.ForeColor = System.Drawing.Color.White;
             this.lblVuelto.Location = new System.Drawing.Point(119, 255);
             this.lblVuelto.Name = "lblVuelto";
-            this.lblVuelto.Size = new System.Drawing.Size(97, 46);
+            this.lblVuelto.Size = new System.Drawing.Size(108, 46);
             this.lblVuelto.TabIndex = 13;
-            this.lblVuelto.Text = "c0.00";
+            this.lblVuelto.Text = "₡0.00";
             // 
             // btnPagar
             // 
@@ -189,6 +189,7 @@
             this.Name = "PagoContado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pago";
+            this.Load += new System.EventHandler(this.PagoContado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmPaga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
 
 namespace Hnos_Rojas
 {
@@ -30,7 +31,9 @@ namespace Hnos_Rojas
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            int total = (-1 * (Convert.ToInt32(lblTotal.Text) - Convert.ToInt32(nmPaga.Value)));
+            BL_Factura blFactura = new BL_Factura();
+
+            double total = blFactura.CalcularVuelto(Convert.ToDouble(lblTotal.Text), Convert.ToDouble(nmPaga.Value));
             
             if (total<0)
             {
@@ -51,9 +54,13 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            
             FacturaReporte fact = new FacturaReporte();
             fact.Show();
+        }
+
+        private void PagoContado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

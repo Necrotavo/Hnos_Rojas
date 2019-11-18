@@ -67,12 +67,7 @@ namespace BL
         /// <returns>El vuelto del cliente (double). (0) si no hay vuelto</returns>
         public double CalcularVuelto(double totalAPagar, double pago)
         {
-            if (pago > totalAPagar)
-            {
-                return pago - totalAPagar;
-            }
-
-            return 0;
+            return pago - totalAPagar;
         }
 
         /// <summary>
