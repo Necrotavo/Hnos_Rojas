@@ -166,6 +166,7 @@
             0,
             0,
             0});
+            this.nmCantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nmCantidad_KeyDown);
             // 
             // lblCantidad
             // 

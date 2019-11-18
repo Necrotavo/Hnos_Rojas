@@ -23,7 +23,7 @@ namespace Hnos_Rojas
             listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
             llenarCboUsuarios();
-            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Hnos_Rojas
                 tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
                 tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
             }
-           
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Hnos_Rojas
         private TabPage crearTicket(string titulo)
         {
             TabPage ticket = new TabPage(titulo);
-            Tickets diseno = new Tickets(cboUsuarios.Text) {Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
+            Tickets diseno = new Tickets(cboUsuarios.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
             listaTiquetes.Add(diseno);
             ticket.Controls.Add(diseno);
 
@@ -69,7 +69,7 @@ namespace Hnos_Rojas
         private void button5_Click(object sender, EventArgs e)
         {
             agregarProductoCompleto();
-            
+
         }
 
         private void agregarProductoCompleto()
@@ -94,7 +94,8 @@ namespace Hnos_Rojas
             }
         }
 
-        private void llenarCboUsuarios() {
+        private void llenarCboUsuarios()
+        {
             //llamar al bl de usuarios
             BL_Usuario blUsuario = new BL_Usuario();
             cboUsuarios.DataSource = blUsuario.CargarUsuarios();
@@ -112,9 +113,9 @@ namespace Hnos_Rojas
                         agregarProductoCompleto();
                         break;
                     }
-                case Keys.Up: 
+                case Keys.Up:
                     {
-                        if(nmCantidad.Value < nmCantidad.Maximum)
+                        if (nmCantidad.Value < nmCantidad.Maximum)
                         {
                             nmCantidad.Value++;
                         }
@@ -126,7 +127,7 @@ namespace Hnos_Rojas
                         {
                             nmCantidad.Value--;
                         }
-                        
+
                         break;
                     }
                 case Keys.F12:
@@ -135,7 +136,20 @@ namespace Hnos_Rojas
                         break;
                     }
             }
-            
+
+        }
+
+        private void nmCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+
+                case Keys.Enter:
+                    {
+                        agregarProductoCompleto();
+                        break;
+                    }
+            }
         }
     }
 }
