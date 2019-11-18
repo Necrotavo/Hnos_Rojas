@@ -63,7 +63,7 @@ namespace Hnos_Rojas
 
         public void registrarFactura() {
             BL_Factura blFactura = new BL_Factura();
-            DO_Factura doFactura = 
+            //DO_Factura doFactura = 
         }
 
         private void PagoContado_Load(object sender, EventArgs e)
