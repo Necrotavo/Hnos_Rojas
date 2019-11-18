@@ -68,6 +68,10 @@ namespace Hnos_Rojas
             BL_Factura blFactura = new BL_Factura();
 
             blFactura.guardarFactura(factura);
+
+            MessageBox.Show("Pago exitoso");
+
+            this.Dispose();
         }
 
         private void PagoContado_Load(object sender, EventArgs e)

@@ -17,19 +17,18 @@ namespace DAO
 
             factura.codigoPlantilla = obtenerCodigoUltimaPlantilla(); //Agarra la ultima plantilla ingresada
 
-            SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_CODIGO, FAC_NOTAS, FAC_CLIENTE_EXTERNO, FAC_FECHA,+"
-               +" PLANT_CODIGO, USR_NOMBRE, CRE_IDENTIFICADOR, EST_ESTADO, TP_TIPO) values"+
-               "(@codigo, @notas, @cliente, @fecha, @plantilla, @usrNombre, @credito, @estado, @tipo)", conexion);
-            insert.Parameters.AddWithValue("@codigo", factura.codigoFactura);
+            SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_NOTAS, FAC_CLIENTE_EXTERNO, FAC_FECHA,"
+               +" PLANT_CODIGO, USR_NOMBRE, EST_ESTADO, TP_TIPO, FAC_MONTO) values"+
+               "(@notas, @cliente, @fecha, @plantilla, @usrNombre, @estado, @tipo, @monto)", conexion);
             insert.Parameters.AddWithValue("@notas", factura.notas);
             insert.Parameters.AddWithValue("@cliente", factura.clienteExterno);
             insert.Parameters.AddWithValue("@fecha", factura.fecha);
             insert.Parameters.AddWithValue("@plantilla", factura.codigoPlantilla);
             insert.Parameters.AddWithValue("@usrNombre", factura.usuario);
-            insert.Parameters.AddWithValue("@credito", factura.credito);
             insert.Parameters.AddWithValue("@estado", factura.estado);
             insert.Parameters.AddWithValue("@tipo", factura.tipoPago);
-            
+            insert.Parameters.AddWithValue("@monto", factura.totalFactura);
+
             try {
                 if (conexion.State != ConnectionState.Open) {
                     conexion.Open();
@@ -44,12 +43,12 @@ namespace DAO
                     return 0;
                 }
                 
-            } catch (SqlException) {
+            } catch (SqlException e) {
                 return 0;
             } finally {
                 if (conexion.State != ConnectionState.Closed)
                 {
-                    conexion.Open();
+                    conexion.Close();
                 }
             }
         }
@@ -185,7 +184,7 @@ namespace DAO
             {
                 if (conexion.State != ConnectionState.Closed)
                 {
-                    conexion.Open();
+                    conexion.Close();
                 }
             }
         }
@@ -218,7 +217,7 @@ namespace DAO
             {
                 if (conexion.State != ConnectionState.Closed)
                 {
-                    conexion.Open();
+                    conexion.Close();
                 }
             }
         }
