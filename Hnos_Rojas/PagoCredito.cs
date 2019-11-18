@@ -68,6 +68,7 @@ namespace Hnos_Rojas
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
             filtrarClientes();
+            txtBuscarCliente.Focus();
         }
     }
 }
