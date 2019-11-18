@@ -68,7 +68,12 @@ namespace Hnos_Rojas
 
         private void button5_Click(object sender, EventArgs e)
         {
+            agregarProductoCompleto();
+            
+        }
 
+        private void agregarProductoCompleto()
+        {
             agregarProductoATabla();
             nmCantidad.Value = 1;
             txtCodigo.Clear();
@@ -95,6 +100,20 @@ namespace Hnos_Rojas
             cboUsuarios.DataSource = blUsuario.CargarUsuarios();
             cboUsuarios.ValueMember = "nombreUsuario";
             cboUsuarios.DisplayMember = "nombreUsuario";
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+
+                case Keys.Enter:
+                    {
+                        agregarProductoCompleto();
+                        break;
+                    }
+            }
+            
         }
     }
 }

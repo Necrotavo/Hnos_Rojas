@@ -112,6 +112,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(268, 35);
             this.txtCodigo.TabIndex = 6;
+            this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // btnAgregarProducto
             // 
