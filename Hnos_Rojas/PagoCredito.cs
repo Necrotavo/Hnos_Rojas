@@ -64,5 +64,10 @@ namespace Hnos_Rojas
             //cliente.monto;
             //cliente.limiteCredito - cliente.monto;
         }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            filtrarClientes();
+        }
     }
 }
