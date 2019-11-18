@@ -181,28 +181,36 @@
             // 
             // listBClientes
             // 
+            this.listBClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBClientes.FormattingEnabled = true;
+            this.listBClientes.ItemHeight = 29;
             this.listBClientes.Location = new System.Drawing.Point(110, 69);
             this.listBClientes.Name = "listBClientes";
-            this.listBClientes.Size = new System.Drawing.Size(239, 95);
+            this.listBClientes.Size = new System.Drawing.Size(239, 91);
             this.listBClientes.TabIndex = 31;
             this.listBClientes.Click += new System.EventHandler(this.listBClientes_Click);
+            this.listBClientes.SelectedValueChanged += new System.EventHandler(this.listBClientes_SelectedValueChanged);
             // 
             // txtBuscarCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(110, 31);
+            this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarCliente.Location = new System.Drawing.Point(110, 17);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(239, 20);
+            this.txtBuscarCliente.Size = new System.Drawing.Size(239, 35);
             this.txtBuscarCliente.TabIndex = 32;
             this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(370, 31);
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(355, 12);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 20);
+            this.btnBuscar.Size = new System.Drawing.Size(110, 42);
             this.btnBuscar.TabIndex = 33;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
