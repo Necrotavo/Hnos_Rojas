@@ -64,6 +64,7 @@ namespace Hnos_Rojas
             Ventas otropanel = new Ventas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pnlCenter.Controls.Add(otropanel);
             otropanel.Show();
+            otropanel.ActiveControl = otropanel.Controls["panel1"].Controls["txtCodigo"];
             restaurarColoresBtns();
             btnVentas.BackColor = Color.FromArgb(24, 107, 94);
         }
