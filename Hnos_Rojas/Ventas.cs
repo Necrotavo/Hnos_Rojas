@@ -112,6 +112,23 @@ namespace Hnos_Rojas
                         agregarProductoCompleto();
                         break;
                     }
+                case Keys.Up: 
+                    {
+                        if(nmCantidad.Value < nmCantidad.Maximum)
+                        {
+                            nmCantidad.Value++;
+                        }
+                        break;
+                    }
+                case Keys.Down:
+                    {
+                        if (nmCantidad.Value > nmCantidad.Minimum)
+                        {
+                            nmCantidad.Value--;
+                        }
+                        
+                        break;
+                    }
             }
             
         }
