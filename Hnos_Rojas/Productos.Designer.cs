@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNuevoProd = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.grdProductos = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantMinBodega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +91,14 @@
             // grdProductos
             // 
             this.grdProductos.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -98,53 +107,11 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Location = new System.Drawing.Point(0, 139);
+            this.grdProductos.Location = new System.Drawing.Point(2, 128);
             this.grdProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdProductos.Name = "grdProductos";
             this.grdProductos.Size = new System.Drawing.Size(1387, 635);
             this.grdProductos.TabIndex = 13;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "codigo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // PrecioCosto
-            // 
-            this.PrecioCosto.DataPropertyName = "precioCosto";
-            this.PrecioCosto.HeaderText = "Precio costo";
-            this.PrecioCosto.Name = "PrecioCosto";
-            this.PrecioCosto.ReadOnly = true;
-            // 
-            // PrecioVenta
-            // 
-            this.PrecioVenta.DataPropertyName = "precioVenta";
-            this.PrecioVenta.HeaderText = "Precio venta";
-            this.PrecioVenta.Name = "PrecioVenta";
-            this.PrecioVenta.ReadOnly = true;
-            // 
-            // CantMinBodega
-            // 
-            this.CantMinBodega.DataPropertyName = "cantMinBodega";
-            this.CantMinBodega.HeaderText = "Cantidad mínima en bodega";
-            this.CantMinBodega.Name = "CantMinBodega";
-            this.CantMinBodega.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // CantidadDisponible
-            // 
-            this.CantidadDisponible.DataPropertyName = "cantidadDisponible";
-            this.CantidadDisponible.HeaderText = "Cantidad disponible";
-            this.CantidadDisponible.Name = "CantidadDisponible";
-            this.CantidadDisponible.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -192,6 +159,48 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // PrecioCosto
+            // 
+            this.PrecioCosto.DataPropertyName = "precioCosto";
+            this.PrecioCosto.HeaderText = "Precio costo";
+            this.PrecioCosto.Name = "PrecioCosto";
+            this.PrecioCosto.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.DataPropertyName = "precioVenta";
+            this.PrecioVenta.HeaderText = "Precio venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
+            // CantMinBodega
+            // 
+            this.CantMinBodega.DataPropertyName = "cantMinBodega";
+            this.CantMinBodega.HeaderText = "Cant. mín. bodega";
+            this.CantMinBodega.Name = "CantMinBodega";
+            this.CantMinBodega.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // CantidadDisponible
+            // 
+            this.CantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.CantidadDisponible.HeaderText = "Cant. disponible";
+            this.CantidadDisponible.Name = "CantidadDisponible";
+            this.CantidadDisponible.ReadOnly = true;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,13 +234,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscarProducto;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCosto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantMinBodega;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
-        private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.Button btnBuscar;
     }
 }

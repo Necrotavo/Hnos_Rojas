@@ -26,12 +26,28 @@ namespace Hnos_Rojas
             BL_Producto blProducto = new BL_Producto();
             grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
             grdProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
-            grdProductos.Columns[0].Width = 250;   //codigo
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            //style.Font = new Font("Microsoft Sans Serif", 14);
+            //style.BackColor = Color.LightGray;
+
+            //grdProductos.Columns[0].HeaderCell.Style = style;
+            grdProductos.Columns[0].Width = 250;    //codigo
+
+            //grdProductos.Columns[1].HeaderCell.Style = style;
             grdProductos.Columns[1].Width = 150;    //precioCosto
+
+            //grdProductos.Columns[2].HeaderCell.Style = style;
             grdProductos.Columns[2].Width = 150;    //precioCosto
+
+           // grdProductos.Columns[3].HeaderCell.Style = style;
             grdProductos.Columns[3].Width = 150;    //cantMinBodega
+
+            //grdProductos.Columns[4].HeaderCell.Style = style;
             grdProductos.Columns[4].Width = 410;    //descripcion
+
+            //grdProductos.Columns[5].HeaderCell.Style = style;
             grdProductos.Columns[5].Width = 150;    //catDisponible
+
             grdProductos.AutoSize = true;
         }
 
