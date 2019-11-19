@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,15 +58,16 @@ namespace Hnos_Rojas
 
         private void listBClientes_Click(object sender, EventArgs e)
         {
-            //cliente = (DO_Cliente)listBClientes.SelectedItem;
-            //BL_Credito blCredito = new BL_Credito();
-            //DO_Credito doCredito = blCredito.obtenerDatosCredito(cliente.id);
-            //lbCreditoActual.Text = ""+ doCredito.monto;//cliente.credito.monto; Aqui es lo que debo
-            //double credDisp = doCredito.limiteCredito - doCredito.monto;
-            //lbCreditoDisp.Text = ""+(credDisp);//cliente.credito.monto; el limite menos lo que debe
-            //if (credDisp < 0) {
-            //    SystemSounds.Exclamation.Play();
-            //}
+            BL_Credito blCredito = new BL_Credito();
+            DO_Credito credito = new DO_Credito();
+
+            cliente = (DO_Cliente)listBClientes.SelectedItem;  
+            credito = blCredito.ObtenerDatosCredito(cliente.id);
+
+            lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
+            lbCreditoDisp.Text = (blCredito.CalcularSaldo(credito.limiteCredito,credito.monto)).ToString();//cliente.credito.monto; el limite menos lo que debe
+            //cliente.monto;
+            //cliente.limiteCredito - cliente.monto;
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
@@ -77,6 +77,11 @@ namespace Hnos_Rojas
         }
 
         private void listBClientes_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PagoCredito_Load(object sender, EventArgs e)
         {
 
         }
