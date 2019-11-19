@@ -25,7 +25,7 @@ namespace Hnos_Rojas
         string fecha = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
         string notas = "NOTAS DE VENTA";
         string cajero;
-        List<string> productos;
+        List<DO_ProductoEnFactura> productos;
         string total;
         string pagaCon;
         string vuelto;
@@ -39,10 +39,23 @@ namespace Hnos_Rojas
         int x = 30;
         int y = 30;
 
-        public FacturaContado()
+        public FacturaContado(string _cajero, string _total, string _pagaCon, string _vuelto, List<DO_ProductoEnFactura> _productos, string _notas)
         {
+            
             InitializeComponent();
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Custom", ancho, largo);
+           
+            if (!_notas.Equals(""))
+            {
+                notas = _notas;
+            }
+            cajero = _cajero;
+            productos = _productos;
+            total = _total;
+            pagaCon = _pagaCon;
+            vuelto = _vuelto;
+            largo = largo + (productos.Count * fuenteGeneral.Height);
+            papelTamano = new PaperSize("Custom", ancho, largo);
+            printDocument1.DefaultPageSettings.PaperSize = papelTamano;
             printPreviewControl1.Document = printDocument1;
             inicializarStrings();
 
@@ -65,11 +78,25 @@ namespace Hnos_Rojas
             e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 12, y + fuenteGeneral.Height);
             e.Graphics.DrawString("Ced: " + ced, fuenteGeneral, Brushes.Black, x + 60, y + (fuenteGeneral.Height * 2));
             e.Graphics.DrawString("Telefono: " + telefono, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 3));
+            e.Graphics.DrawString("Cajero: " + cajero, fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * 4));
+           
+
 
             //body
             e.Graphics.DrawString(fecha, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 6));
             e.Graphics.DrawString(notas, fuenteGeneral, Brushes.Black, x + 43, y + (fuenteGeneral.Height * 7));
             e.Graphics.DrawLine(Pens.Black, x + 10, y + (fuenteGeneral.Height * 9) , ancho - x - 10, y + (fuenteGeneral.Height * 9));
+
+
+            //productos
+            for (int i = 0; i < productos.Count; i++)
+            {
+                e.Graphics.DrawString(productos[i].producto.descripcion, fuenteGeneral, Brushes.Black, x + 23, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString(productos[i].cantidadComprada.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString((productos[i].producto.precioVenta * productos[i].cantidadComprada).ToString(), fuenteGeneral, Brushes.Black, ancho - 100, y + (fuenteGeneral.Height * (9 + i)));
+            }
+
+            e.Graphics.DrawString("TOTAL: " + total, fuenteGeneral, Brushes.Black, ancho - 150, largo - 200);
 
             //pie
             e.Graphics.DrawLine(Pens.Black, x + 10, largo - 90 , ancho - x - 10, largo - 90);

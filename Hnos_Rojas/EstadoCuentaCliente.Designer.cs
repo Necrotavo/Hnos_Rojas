@@ -36,39 +36,39 @@
             // 
             // listBClientes
             // 
+            this.listBClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBClientes.FormattingEnabled = true;
-            this.listBClientes.ItemHeight = 16;
-            this.listBClientes.Location = new System.Drawing.Point(23, 101);
-            this.listBClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBClientes.ItemHeight = 29;
+            this.listBClientes.Location = new System.Drawing.Point(12, 135);
             this.listBClientes.Name = "listBClientes";
-            this.listBClientes.Size = new System.Drawing.Size(423, 116);
+            this.listBClientes.Size = new System.Drawing.Size(318, 91);
             this.listBClientes.TabIndex = 0;
             this.listBClientes.Click += new System.EventHandler(this.listBClientes_Click);
             // 
             // txtEstadoCliente
             // 
-            this.txtEstadoCliente.Location = new System.Drawing.Point(23, 53);
-            this.txtEstadoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEstadoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoCliente.Location = new System.Drawing.Point(12, 70);
             this.txtEstadoCliente.Name = "txtEstadoCliente";
-            this.txtEstadoCliente.Size = new System.Drawing.Size(423, 22);
+            this.txtEstadoCliente.Size = new System.Drawing.Size(318, 35);
             this.txtEstadoCliente.TabIndex = 1;
+            this.txtEstadoCliente.TextChanged += new System.EventHandler(this.txtEstadoCliente_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 17);
+            this.label1.Size = new System.Drawing.Size(439, 29);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Ingrese el nombre o apellido del clliente";
+            this.label1.Text = "Ingrese el nombre o apellido del cliente";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(23, 248);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(12, 262);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -76,14 +76,15 @@
             // 
             // EstadoCuentaCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 491);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(890, 399);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEstadoCliente);
             this.Controls.Add(this.listBClientes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EstadoCuentaCliente";
             this.Text = "EstadoCuentaCliente";
             this.ResumeLayout(false);

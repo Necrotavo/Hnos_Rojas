@@ -57,11 +57,21 @@ namespace Hnos_Rojas
             this.Visible = false;
         }
 
+
         private void btnPagar_Click(object sender, EventArgs e)
         {
             if (Convert.ToDouble(nmPaga.Value) >= Convert.ToDouble(lblTotal.Text))
             {
                 registrarFactura();
+                FacturaContado factOpt = new FacturaContado(
+                    factura.usuario,
+                    factura.totalFactura.ToString(),
+                    nmPaga.Value.ToString(),
+                    lblVuelto.Text,
+                    factura.listaProducto,
+                    txtNotas.Text
+                    );
+                factOpt.Show();
                 padre.cerrarTicket();
                 
             }
