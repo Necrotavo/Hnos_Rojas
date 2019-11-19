@@ -15,12 +15,13 @@ namespace Hnos_Rojas
     public partial class Tickets : Form
     {
         public DO_Factura factura = new DO_Factura();
-
+        Ventas parent;
         //private int filaSeleccionada = -1;
-        public Tickets(string usuario)
+        public Tickets(string usuario, Ventas padre)
         {
             InitializeComponent();
             factura.usuario = usuario;
+            parent = padre;
             // gridProductos.AllowUserToAddRows = false; sólo me deja añadir una fila
         }
         public void pagar()
@@ -34,7 +35,7 @@ namespace Hnos_Rojas
                     if (rdoContado.Checked)
                     {
                         confeccionarFactura();
-                        PagoContado _pagoCont = new PagoContado(factura);
+                        PagoContado _pagoCont = new PagoContado(factura, parent);
                         _pagoCont.Show();
                     }
                     else

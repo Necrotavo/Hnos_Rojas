@@ -20,7 +20,7 @@ namespace Hnos_Rojas
             InitializeComponent();
             llenarCboUsuarios();
             String usr = cboUsuarios.SelectedValue.ToString();
-            Tickets primer = new Tickets(usr) { TopLevel = false, TopMost = true, Visible = true };
+            Tickets primer = new Tickets(usr, this) { TopLevel = false, TopMost = true, Visible = true };
             tabTicket.TabPages[0].Controls.Add(primer);
             listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
@@ -36,7 +36,7 @@ namespace Hnos_Rojas
             if (tabTicket.SelectedTab == tabTicket.TabPages["tabAgregar"])
             {
                 string nombreTicket = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
-                TabPage tp = crearTicket(nombreTicket);
+                TabPage tp = crearTicket(nombreTicket, this);
                 tabTicket.TabPages.Insert(tabTicket.TabPages.Count - 1, tp);
                 tabTicket.SelectedTab = tabTicket.TabPages[tabTicket.TabPages.Count - 2];
             }
@@ -48,7 +48,7 @@ namespace Hnos_Rojas
             cerrarTicket();
         }
 
-        private void cerrarTicket()
+        public void cerrarTicket()
         {
             listaTiquetes.RemoveAt(tabTicket.SelectedIndex);
             tabTicket.Controls.Remove(tabTicket.SelectedTab);
@@ -56,10 +56,10 @@ namespace Hnos_Rojas
             tabTicket.SelectedTab = tabTicket.TabPages[0];
         }
         //Creador de tickes
-        private TabPage crearTicket(string titulo)
+        private TabPage crearTicket(string titulo, Ventas parent)
         {
             TabPage ticket = new TabPage(titulo);
-            Tickets diseno = new Tickets(cboUsuarios.SelectedValue.ToString()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
+            Tickets diseno = new Tickets(cboUsuarios.SelectedValue.ToString(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, Visible = true };
             listaTiquetes.Add(diseno);
             ticket.Controls.Add(diseno);
 

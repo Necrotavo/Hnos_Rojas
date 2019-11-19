@@ -15,10 +15,12 @@ namespace Hnos_Rojas
     public partial class PagoContado : Form
     {
         private DO_Factura factura;
-        public PagoContado(DO_Factura _factura)
+        private Ventas padre;
+        public PagoContado(DO_Factura _factura, Ventas padreVentas)
         {
             InitializeComponent();
             factura = _factura;
+            padre = padreVentas;
             lblTotal.Text = factura.totalFactura.ToString();
             
         }
@@ -60,6 +62,8 @@ namespace Hnos_Rojas
             if (Convert.ToDouble(nmPaga.Value) >= Convert.ToDouble(lblTotal.Text))
             {
                 registrarFactura();
+                padre.cerrarTicket();
+                
             }
             else {
                 MessageBox.Show("El pago es insuficiente");
