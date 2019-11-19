@@ -41,8 +41,9 @@ namespace Hnos_Rojas
         private void btnPagar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(cliente.nombre);
+            MessageBox.Show("En proceso");
             //cliente.credito.monto += factura.totalFactura;
-           // this.Visible = false;
+            // this.Visible = false;
         }
 
         private void filtrarClientes() {
@@ -58,6 +59,7 @@ namespace Hnos_Rojas
         {
             filtrarClientes();
             colorDefaultLblCredDisp();
+            
         }
 
         private void listBClientes_Click(object sender, EventArgs e)
