@@ -40,10 +40,18 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cliente.nombre);
-            MessageBox.Show("En proceso");
-            //cliente.credito.monto += factura.totalFactura;
-            // this.Visible = false;
+           
+            this.factura.clienteExterno = "";
+            this.factura.notas = this.txtNotas.Text;
+            this.factura.estado = "PENDIENTE";
+            this.factura.tipoPago = "CREDITO";
+            BL_Factura blFactura = new BL_Factura();
+
+            blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
+
+            MessageBox.Show("Pago exitoso");
+
+            this.Dispose();
         }
 
         private void filtrarClientes() {

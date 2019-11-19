@@ -221,10 +221,10 @@ namespace DAO
             }
         }
 
-        public int abonar(int abono, int idCredito) {
+        public double abonar(int abono, int idCredito) {
             DAO_Factura daoFactura = new DAO_Factura();
-            int montoCredito = daoFactura.obtenerMonto(idCredito);
-            int saldo = montoCredito - abono;
+            double montoCredito = daoFactura.obtenerMonto(idCredito);
+            double saldo = montoCredito - abono;
 
             SqlCommand comando = new SqlCommand("update CREDITO set CRED_MONTO = @saldo where CRE_IDENTIFICADOR = @idCredito", conexion);
             comando.Parameters.AddWithValue("@saldo", saldo);
