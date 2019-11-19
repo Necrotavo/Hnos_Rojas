@@ -64,8 +64,8 @@ namespace Hnos_Rojas
             cliente = (DO_Cliente)listBClientes.SelectedItem;  
             credito = blCredito.ObtenerDatosCredito(cliente.id);
 
-            lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
-            lbCreditoDisp.Text = (blCredito.CalcularSaldo(credito.limiteCredito,credito.monto)).ToString();//cliente.credito.monto; el limite menos lo que debe
+            lbCreditoActual.Text = "₡" + credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
+            lbCreditoDisp.Text = "₡" + (blCredito.CalcularSaldo(credito.limiteCredito,credito.monto)).ToString();//cliente.credito.monto; el limite menos lo que debe
             //cliente.monto;
             //cliente.limiteCredito - cliente.monto;
         }
