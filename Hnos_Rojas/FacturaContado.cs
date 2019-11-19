@@ -16,7 +16,6 @@ namespace Hnos_Rojas
 {
     public partial class FacturaContado : Form
     {
-        Font fuenteTitulo = new Font("Arial", 15);
         Font fuenteGeneral = new Font("Arial", 12);
         PaperSize papelTamano;
         string nombreLocal;
@@ -60,10 +59,22 @@ namespace Hnos_Rojas
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            
+            //encabezado
             e.Graphics.DrawRectangle(Pens.Black, new Rectangle(x,y,ancho - x - x,largo - y - y));
-            e.Graphics.DrawString(nombreLocal, fuenteTitulo, Brushes.Black, x + 60, y);
-            e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 10, y + fuenteTitulo.Height);
+            e.Graphics.DrawString(nombreLocal, fuenteGeneral, Brushes.Black, x + 3, y);
+            e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 12, y + fuenteGeneral.Height);
+            e.Graphics.DrawString("Ced: " + ced, fuenteGeneral, Brushes.Black, x + 60, y + (fuenteGeneral.Height * 2));
+            e.Graphics.DrawString("Telefono: " + telefono, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 3));
+
+            //body
+            e.Graphics.DrawString(fecha, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 6));
+            e.Graphics.DrawString(notas, fuenteGeneral, Brushes.Black, x + 43, y + (fuenteGeneral.Height * 7));
+            e.Graphics.DrawLine(Pens.Black, x + 10, y + (fuenteGeneral.Height * 9) , ancho - x - 10, y + (fuenteGeneral.Height * 9));
+
+            //pie
+            e.Graphics.DrawLine(Pens.Black, x + 10, largo - 90 , ancho - x - 10, largo - 90);
+            e.Graphics.DrawString("Gracias por su compra!!!", fuenteGeneral, Brushes.Black, x + 25, largo - 60);
+
 
 
         }
