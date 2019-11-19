@@ -17,9 +17,11 @@ namespace Hnos_Rojas
     {
         private DO_Cliente cliente = new DO_Cliente();
         private DO_Factura factura = new DO_Factura();
-        public PagoCredito(DO.DO_Factura _factura)
+        private Ventas parent;
+        public PagoCredito(DO.DO_Factura _factura, Ventas padre)
         {
             InitializeComponent();
+            parent = padre;
             factura = _factura;
             lblTotal.Text = factura.totalFactura.ToString();
             filtrarClientes();
@@ -50,7 +52,7 @@ namespace Hnos_Rojas
             blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
 
             MessageBox.Show("Pago exitoso");
-
+            parent.cerrarTicket();
             this.Dispose();
         }
 
@@ -114,6 +116,11 @@ namespace Hnos_Rojas
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             //llamar a la ventana de Agregar cliente
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
