@@ -41,7 +41,7 @@ namespace Hnos_Rojas
                     else
                     {
                         confeccionarFactura();
-                        PagoCredito _pagoCredito = new PagoCredito(factura);
+                        PagoCredito _pagoCredito = new PagoCredito(factura, parent);
                         _pagoCredito.Show();
                     }
 
