@@ -25,7 +25,7 @@ namespace Hnos_Rojas
         string fecha = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
         string notas = "NOTAS DE VENTA";
         string cajero;
-        List<string> productos;
+        List<DO_ProductoEnFactura> productos;
         string total;
         string pagaCon;
         string vuelto;
@@ -39,7 +39,7 @@ namespace Hnos_Rojas
         int x = 30;
         int y = 30;
 
-        public FacturaContado(string _cajero, string _total, string _pagaCon, string _vuelto, List<string> _productos, string _notas)
+        public FacturaContado(string _cajero, string _total, string _pagaCon, string _vuelto, List<DO_ProductoEnFactura> _productos, string _notas)
         {
             
             InitializeComponent();
@@ -91,8 +91,12 @@ namespace Hnos_Rojas
             //productos
             for (int i = 0; i < productos.Count; i++)
             {
-                e.Graphics.DrawString(productos[i], fuenteGeneral, Brushes.Black, x + 20, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString(productos[i].producto.descripcion, fuenteGeneral, Brushes.Black, x + 23, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString(productos[i].cantidadComprada.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString((productos[i].producto.precioVenta * productos[i].cantidadComprada).ToString(), fuenteGeneral, Brushes.Black, ancho - 100, y + (fuenteGeneral.Height * (9 + i)));
             }
+
+            e.Graphics.DrawString("TOTAL: " + total, fuenteGeneral, Brushes.Black, ancho - 150, largo - 200);
 
             //pie
             e.Graphics.DrawLine(Pens.Black, x + 10, largo - 90 , ancho - x - 10, largo - 90);

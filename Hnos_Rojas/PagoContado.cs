@@ -57,16 +57,6 @@ namespace Hnos_Rojas
             this.Visible = false;
         }
 
-        private List<string> productosAString()
-        {
-            List<string> productos = new List<string>();
-            List<DO_ProductoEnFactura> dO_Productos = factura.listaProducto;
-            foreach (DO_ProductoEnFactura item in dO_Productos)
-            {
-                productos.Add(item.producto.descripcion);
-            }
-            return productos;
-        }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
@@ -78,7 +68,7 @@ namespace Hnos_Rojas
                     factura.totalFactura.ToString(),
                     nmPaga.Value.ToString(),
                     lblVuelto.Text,
-                    productosAString(),
+                    factura.listaProducto,
                     txtNotas.Text
                     );
                 factOpt.Show();
