@@ -15,6 +15,7 @@ namespace Hnos_Rojas
         public NuevoCliente()
         {
             InitializeComponent();
+            //esto es nuevo
         }
     }
 }
