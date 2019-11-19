@@ -42,7 +42,7 @@ namespace Hnos_Rojas
         {
             MessageBox.Show(cliente.nombre);
             //cliente.credito.monto += factura.totalFactura;
-            this.Visible = false;
+           // this.Visible = false;
         }
 
         private void filtrarClientes() {
