@@ -34,13 +34,13 @@ namespace BL
             return daoCredito.crearCredito(idCliente, limiteCredito);
         }
 
-        public int abonar(int abono, int idCredito)
+        public double abonar(int abono, int idCredito)
         {
             DAO_Credito daoCredito = new DAO_Credito();
             return daoCredito.abonar(abono, idCredito);
         }
 
-        public int obtenerMonto(int idCredito) {
+        public double obtenerMonto(int idCredito) {
             DAO_Factura daoFactura = new DAO_Factura();
             return daoFactura.obtenerMonto(idCredito);
         }
