@@ -15,9 +15,11 @@ namespace Hnos_Rojas
     public partial class PagoCredito : Form
     {
         private DO_Cliente cliente = new DO_Cliente();
-        public PagoCredito(DO.DO_Factura factura)
+        private DO_Factura factura = new DO_Factura();
+        public PagoCredito(DO.DO_Factura _factura)
         {
             InitializeComponent();
+            factura = _factura;
             lblTotal.Text = factura.totalFactura.ToString();
             filtrarClientes();
         }
@@ -74,6 +76,11 @@ namespace Hnos_Rojas
         private void listBClientes_SelectedValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            //llamar a la ventana de Agregar cliente
         }
     }
 }
