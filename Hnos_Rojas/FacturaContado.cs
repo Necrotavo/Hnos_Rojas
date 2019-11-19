@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Drawing;
+using BL;
+using DO;
 
 namespace Hnos_Rojas
 {
@@ -48,12 +50,12 @@ namespace Hnos_Rojas
         }
         private void inicializarStrings()
         {
-            string path = System.IO.Directory.GetParent( System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName ) + "\\OpcionesFacturaContado.txt";
-            string[] textos = System.IO.File.ReadAllText(path).Split('_');
-            nombreLocal = textos[0];
-            direccion = textos[1];
-            ced = textos[2];
-            telefono = textos[3];
+            BL_Factura blFactura = new BL_Factura();
+            DO_PlantillaFactura plantilla = blFactura.obtenerPlantillaFactura();
+            nombreLocal = plantilla.nombreEmpresa;
+            direccion = plantilla.direccion;
+            ced = plantilla.cedula;
+            telefono = plantilla.numeroTelefono;
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
