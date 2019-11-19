@@ -93,15 +93,26 @@ namespace DAO
         }
 
         public double obtenerMonto(int idCredito) {
-            SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRED_IDENTIFICADOR = @idCredito", conexion);
+            SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRE_IDENTIFICADOR = @idCredito", conexion);
             comandoMonto.Parameters.AddWithValue("@idCredito",idCredito);
+            
             try
             {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
-                int monto = Convert.ToInt32(comandoMonto.ExecuteNonQuery());
+
+                SqlDataReader lector = comandoMonto.ExecuteReader();
+                double monto = 0;
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        monto = Convert.ToDouble( lector["CRED_MONTO"]);
+                    }
+                }
+               
                 return monto;
             }
             catch (SqlException)
