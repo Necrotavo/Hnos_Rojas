@@ -13,6 +13,44 @@ namespace DAO
     {
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
+        public DO_Credito ObtenerDatosCredito(int idCliente)
+        {
+            SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
+            consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);
+            DO_Credito credito = new DO_Credito();
+            
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consultaCredito.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        credito.identificador = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                        credito.limiteCredito = Convert.ToInt32(lector["CRED_LIMITE_CREDITO"]);
+                        credito.monto = Convert.ToInt32(lector["CRED_MONTO"]);
+                    }
+                    
+                    return credito;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
         public DO_Credito ObtenerCredito(int idCliente) {
             SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
             consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);

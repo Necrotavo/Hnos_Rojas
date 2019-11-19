@@ -238,6 +238,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "PagoCredito";
             this.Text = "Credito";
+            this.Load += new System.EventHandler(this.PagoCredito_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
