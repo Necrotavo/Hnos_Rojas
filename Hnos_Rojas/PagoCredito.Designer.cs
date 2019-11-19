@@ -43,6 +43,7 @@
             this.listBClientes = new System.Windows.Forms.ListBox();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -214,6 +215,21 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCliente.Location = new System.Drawing.Point(355, 69);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(160, 33);
+            this.btnAgregarCliente.TabIndex = 34;
+            this.btnAgregarCliente.Text = "Agregar Cliente";
+            this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarCliente.UseVisualStyleBackColor = false;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            // 
             // PagoCredito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +237,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(545, 356);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscarCliente);
             this.Controls.Add(this.listBClientes);
@@ -261,5 +278,6 @@
         private System.Windows.Forms.ListBox listBClientes;
         private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnAgregarCliente;
     }
 }
