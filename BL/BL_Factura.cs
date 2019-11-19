@@ -32,6 +32,30 @@ namespace BL
             }
         }
 
+        public bool guardarFacturaCredito(DO_Factura factura, int idCredito)
+        {
+
+            //calcularTotal(factura);
+            DAO_Factura daoFactura = new DAO_Factura();
+            factura.codigoFactura = daoFactura.guardarFactura(factura);
+            if (factura.codigoFactura > 0)
+            {
+                foreach (DO_ProductoEnFactura productoEnFactura in factura.listaProducto)
+                {
+                    DAO_Producto daoProducto = new DAO_Producto();
+                    if (!daoProducto.AgregarProductoAFactura(factura.codigoFactura, factura.fecha, productoEnFactura))
+                    {
+                        return false;
+                    }
+                }
+                daoFactura.agregarAlCredito(idCredito,factura);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
         public void calcularTotal(DO_Factura factura)
         {
             double totalFactura = 0;
