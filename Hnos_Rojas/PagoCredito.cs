@@ -57,6 +57,7 @@ namespace Hnos_Rojas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             filtrarClientes();
+            colorDefaultLblCredDisp();
         }
 
         private void listBClientes_Click(object sender, EventArgs e)
@@ -75,6 +76,13 @@ namespace Hnos_Rojas
                 SystemSounds.Exclamation.Play();
                 lbCreditoDisp.BackColor = Color.Maroon;
             }
+            else {
+                colorDefaultLblCredDisp();
+            }
+        }
+
+        public void colorDefaultLblCredDisp() {
+            lbCreditoDisp.BackColor = Color.FromArgb(24, 107, 94);
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)

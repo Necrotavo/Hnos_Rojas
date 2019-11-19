@@ -54,7 +54,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(512, 370);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(199, 59);
             this.btnCancelar.TabIndex = 26;
@@ -70,7 +70,7 @@
             this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnPagar.ForeColor = System.Drawing.Color.White;
             this.btnPagar.Location = new System.Drawing.Point(512, 304);
-            this.btnPagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPagar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(199, 59);
             this.btnPagar.TabIndex = 25;
@@ -130,7 +130,7 @@
             // 
             this.txtNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotas.Location = new System.Drawing.Point(147, 228);
-            this.txtNotas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNotas.Margin = new System.Windows.Forms.Padding(4);
             this.txtNotas.Name = "txtNotas";
             this.txtNotas.Size = new System.Drawing.Size(317, 41);
             this.txtNotas.TabIndex = 17;
@@ -139,7 +139,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(183, -46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(317, 41);
             this.textBox1.TabIndex = 16;
@@ -198,7 +198,7 @@
             this.listBClientes.FormattingEnabled = true;
             this.listBClientes.ItemHeight = 36;
             this.listBClientes.Location = new System.Drawing.Point(147, 85);
-            this.listBClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBClientes.Margin = new System.Windows.Forms.Padding(4);
             this.listBClientes.Name = "listBClientes";
             this.listBClientes.Size = new System.Drawing.Size(317, 76);
             this.listBClientes.TabIndex = 31;
@@ -209,7 +209,7 @@
             // 
             this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarCliente.Location = new System.Drawing.Point(147, 21);
-            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(317, 41);
             this.txtBuscarCliente.TabIndex = 32;
@@ -221,7 +221,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(512, 21);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(199, 59);
             this.btnBuscar.TabIndex = 33;
@@ -236,9 +236,9 @@
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(355, 69);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(512, 87);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(160, 33);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(199, 59);
             this.btnAgregarCliente.TabIndex = 34;
             this.btnAgregarCliente.Text = "Agregar Cliente";
             this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -268,7 +268,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNotas);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PagoCredito";
             this.Text = "Credito";
             this.Load += new System.EventHandler(this.PagoCredito_Load);
