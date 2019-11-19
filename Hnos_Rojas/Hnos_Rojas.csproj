@@ -59,6 +59,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoCuentaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoCuentaCliente.Designer.cs">
+      <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoCliente.Designer.cs">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="PagoContado.cs">
       <SubType>Form</SubType>
@@ -123,11 +135,17 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EstadoCuentaCliente.resx">
+      <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaReporte.resx">
       <DependentUpon>FacturaReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagoContado.resx">
       <DependentUpon>PagoContado.cs</DependentUpon>

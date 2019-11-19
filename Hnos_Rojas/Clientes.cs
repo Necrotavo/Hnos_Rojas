@@ -15,6 +15,31 @@ namespace Hnos_Rojas
         public Clientes()
         {
             InitializeComponent();
+            estadoCuentaCliente();
+        }
+
+        public void estadoCuentaCliente() {
+            panelClientes.Controls.Clear();
+            EstadoCuentaCliente otropanel = new EstadoCuentaCliente() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            panelClientes.Controls.Add(otropanel);
+            otropanel.Show();
+        }
+
+        public void nuevoCliente() {
+            panelClientes.Controls.Clear();
+            NuevoCliente otropanel = new NuevoCliente() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            panelClientes.Controls.Add(otropanel);
+            otropanel.Show();
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            nuevoCliente();
+        }
+
+        private void btnEstadoCuenta_Click(object sender, EventArgs e)
+        {
+            estadoCuentaCliente();
         }
     }
 }
