@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +16,11 @@ namespace Hnos_Rojas
     public partial class PagoCredito : Form
     {
         private DO_Cliente cliente = new DO_Cliente();
-        public PagoCredito(DO.DO_Factura factura)
+        private DO_Factura factura = new DO_Factura();
+        public PagoCredito(DO.DO_Factura _factura)
         {
             InitializeComponent();
+            factura = _factura;
             lblTotal.Text = factura.totalFactura.ToString();
             filtrarClientes();
         }
@@ -61,13 +64,17 @@ namespace Hnos_Rojas
             BL_Credito blCredito = new BL_Credito();
             DO_Credito credito = new DO_Credito();
 
-            cliente = (DO_Cliente)listBClientes.SelectedItem;  
+            cliente = (DO_Cliente)listBClientes.SelectedItem;
             credito = blCredito.ObtenerDatosCredito(cliente.id);
 
-            lbCreditoActual.Text = "₡" + credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
-            lbCreditoDisp.Text = "₡" + (blCredito.CalcularSaldo(credito.limiteCredito,credito.monto)).ToString();//cliente.credito.monto; el limite menos lo que debe
-            //cliente.monto;
-            //cliente.limiteCredito - cliente.monto;
+            lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
+            Double credDisp = blCredito.CalcularSaldo(credito.limiteCredito, credito.monto);
+            lbCreditoDisp.Text = (credDisp).ToString();//cliente.credito.monto; el limite menos lo que debe
+            if (credDisp <= 0)
+            {
+                SystemSounds.Exclamation.Play();
+                lbCreditoDisp.BackColor = Color.Maroon;
+            }
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
@@ -84,6 +91,11 @@ namespace Hnos_Rojas
         private void PagoCredito_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            //llamar a la ventana de Agregar cliente
         }
     }
 }
