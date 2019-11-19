@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPagar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -47,22 +46,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(512, 370);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(149, 48);
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
             // btnPagar
             // 
             this.btnPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
@@ -70,7 +53,7 @@
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Location = new System.Drawing.Point(438, 224);
+            this.btnPagar.Location = new System.Drawing.Point(438, 313);
             this.btnPagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(149, 48);
@@ -84,7 +67,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 295);
+            this.label4.Location = new System.Drawing.Point(12, 384);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 32);
             this.label4.TabIndex = 23;
@@ -95,7 +78,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(468, 158);
+            this.lblTotal.Location = new System.Drawing.Point(468, 247);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(97, 46);
             this.lblTotal.TabIndex = 21;
@@ -106,7 +89,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 185);
+            this.label2.Location = new System.Drawing.Point(12, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 32);
             this.label2.TabIndex = 19;
@@ -126,7 +109,7 @@
             // txtNotas
             // 
             this.txtNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotas.Location = new System.Drawing.Point(147, 191);
+            this.txtNotas.Location = new System.Drawing.Point(147, 280);
             this.txtNotas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNotas.Name = "txtNotas";
             this.txtNotas.Size = new System.Drawing.Size(239, 35);
@@ -146,7 +129,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 99);
+            this.label5.Location = new System.Drawing.Point(12, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 32);
             this.label5.TabIndex = 27;
@@ -157,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 238);
+            this.label3.Location = new System.Drawing.Point(12, 327);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 32);
             this.label3.TabIndex = 20;
@@ -168,7 +151,7 @@
             this.lbCreditoActual.AutoSize = true;
             this.lbCreditoActual.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
             this.lbCreditoActual.ForeColor = System.Drawing.Color.White;
-            this.lbCreditoActual.Location = new System.Drawing.Point(161, 228);
+            this.lbCreditoActual.Location = new System.Drawing.Point(161, 317);
             this.lbCreditoActual.Name = "lbCreditoActual";
             this.lbCreditoActual.Size = new System.Drawing.Size(97, 46);
             this.lbCreditoActual.TabIndex = 29;
@@ -179,7 +162,7 @@
             this.lbCreditoDisp.AutoSize = true;
             this.lbCreditoDisp.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
             this.lbCreditoDisp.ForeColor = System.Drawing.Color.White;
-            this.lbCreditoDisp.Location = new System.Drawing.Point(161, 285);
+            this.lbCreditoDisp.Location = new System.Drawing.Point(161, 374);
             this.lbCreditoDisp.Name = "lbCreditoDisp";
             this.lbCreditoDisp.Size = new System.Drawing.Size(97, 46);
             this.lbCreditoDisp.TabIndex = 30;
@@ -187,13 +170,13 @@
             // 
             // listBClientes
             // 
-            this.listBClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBClientes.FormattingEnabled = true;
-            this.listBClientes.ItemHeight = 29;
+            this.listBClientes.ItemHeight = 25;
             this.listBClientes.Location = new System.Drawing.Point(147, 85);
             this.listBClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBClientes.Name = "listBClientes";
-            this.listBClientes.Size = new System.Drawing.Size(239, 33);
+            this.listBClientes.Size = new System.Drawing.Size(239, 154);
             this.listBClientes.TabIndex = 31;
             this.listBClientes.Click += new System.EventHandler(this.listBClientes_Click);
             this.listBClientes.SelectedValueChanged += new System.EventHandler(this.listBClientes_SelectedValueChanged);
@@ -245,7 +228,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(438, 280);
+            this.btnSalir.Location = new System.Drawing.Point(438, 369);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(149, 48);
@@ -259,7 +242,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(604, 356);
+            this.ClientSize = new System.Drawing.Size(636, 461);
             this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregarCliente);
@@ -269,7 +252,6 @@
             this.Controls.Add(this.lbCreditoDisp);
             this.Controls.Add(this.lbCreditoActual);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblTotal);
@@ -288,8 +270,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotal;
