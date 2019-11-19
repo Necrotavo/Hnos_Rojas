@@ -57,7 +57,13 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            registrarFactura();
+            if (Convert.ToDouble(nmPaga.Value) > Convert.ToDouble(lblTotal.Text))
+            {
+                registrarFactura();
+            }
+            else {
+                MessageBox.Show("El pago es insuficiente");
+            }
         }
 
         public void registrarFactura() {
