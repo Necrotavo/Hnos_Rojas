@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,9 +66,13 @@ namespace Hnos_Rojas
             credito = blCredito.ObtenerDatosCredito(cliente.id);
 
             lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
-            lbCreditoDisp.Text = (blCredito.CalcularSaldo(credito.limiteCredito,credito.monto)).ToString();//cliente.credito.monto; el limite menos lo que debe
-            //cliente.monto;
-            //cliente.limiteCredito - cliente.monto;
+            Double credDisp = blCredito.CalcularSaldo(credito.limiteCredito, credito.monto);
+            lbCreditoDisp.Text = (credDisp).ToString();//cliente.credito.monto; el limite menos lo que debe
+            if (credDisp <= 0)
+            {
+                SystemSounds.Exclamation.Play();
+                lbCreditoDisp.BackColor = Color.Maroon;
+            }
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
