@@ -13,6 +13,44 @@ namespace DAO
     {
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
+        public DO_Credito ObtenerDatosCredito(int idCliente)
+        {
+            SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
+            consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);
+            DO_Credito credito = new DO_Credito();
+            
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consultaCredito.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        credito.identificador = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                        credito.limiteCredito = Convert.ToInt32(lector["CRED_LIMITE_CREDITO"]);
+                        credito.monto = Convert.ToInt32(lector["CRED_MONTO"]);
+                    }
+                    
+                    return credito;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
         public DO_Credito ObtenerCredito(int idCliente) {
             SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
             consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);
@@ -183,10 +221,10 @@ namespace DAO
             }
         }
 
-        public int abonar(int abono, int idCredito) {
+        public double abonar(int abono, int idCredito) {
             DAO_Factura daoFactura = new DAO_Factura();
-            int montoCredito = daoFactura.obtenerMonto(idCredito);
-            int saldo = montoCredito - abono;
+            double montoCredito = daoFactura.obtenerMonto(idCredito);
+            double saldo = montoCredito - abono;
 
             SqlCommand comando = new SqlCommand("update CREDITO set CRED_MONTO = @saldo where CRE_IDENTIFICADOR = @idCredito", conexion);
             comando.Parameters.AddWithValue("@saldo", saldo);

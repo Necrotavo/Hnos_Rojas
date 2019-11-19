@@ -65,6 +65,12 @@
     <Compile Include="EstadoCuentaCliente.Designer.cs">
       <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacturaContado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaContado.Designer.cs">
+      <DependentUpon>FacturaContado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="EstadoCuentaCliente.resx">
       <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FacturaContado.resx">
+      <DependentUpon>FacturaContado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaReporte.resx">
       <DependentUpon>FacturaReporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +217,7 @@
     <None Include="Resources\minus.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OpcionesFacturaContado.txt" />
     <Content Include="Resources\Delete %281%29.png" />
     <Content Include="Resources\Delete.png" />
     <None Include="Resources\Search.png" />

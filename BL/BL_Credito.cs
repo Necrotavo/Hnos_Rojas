@@ -13,6 +13,15 @@ namespace BL
         public BL_Credito() {
         }
 
+        public double CalcularSaldo(double limite, double monto)
+        {
+            return limite - monto;
+        }
+        public DO_Credito ObtenerDatosCredito(int idCliente)
+        {
+            DAO_Credito daoCredito = new DAO_Credito();
+            return daoCredito.ObtenerDatosCredito(idCliente);
+        }
         public DO_Credito ObtenerCredito(int idCliente)
         {
             DAO_Credito daoCredito = new DAO_Credito();
@@ -25,13 +34,13 @@ namespace BL
             return daoCredito.crearCredito(idCliente, limiteCredito);
         }
 
-        public int abonar(int abono, int idCredito)
+        public double abonar(int abono, int idCredito)
         {
             DAO_Credito daoCredito = new DAO_Credito();
             return daoCredito.abonar(abono, idCredito);
         }
 
-        public int obtenerMonto(int idCredito) {
+        public double obtenerMonto(int idCredito) {
             DAO_Factura daoFactura = new DAO_Factura();
             return daoFactura.obtenerMonto(idCredito);
         }

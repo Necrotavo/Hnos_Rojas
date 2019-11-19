@@ -88,6 +88,7 @@
             this.btnConfiguracion.TabIndex = 11;
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnInventario
             // 

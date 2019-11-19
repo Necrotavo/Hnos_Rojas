@@ -116,5 +116,11 @@ namespace Hnos_Rojas
         {
             productosEjecucion();
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            FacturaContado factOpt = new FacturaContado();
+            factOpt.Show();
+        }
     }
 }

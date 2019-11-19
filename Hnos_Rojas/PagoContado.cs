@@ -57,7 +57,7 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(nmPaga.Value) > Convert.ToDouble(lblTotal.Text))
+            if (Convert.ToDouble(nmPaga.Value) >= Convert.ToDouble(lblTotal.Text))
             {
                 registrarFactura();
             }

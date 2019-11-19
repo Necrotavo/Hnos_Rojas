@@ -92,7 +92,7 @@ namespace DAO
             }
         }
 
-        public int obtenerMonto(int idCredito) {
+        public double obtenerMonto(int idCredito) {
             SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRED_IDENTIFICADOR = @idCredito", conexion);
             comandoMonto.Parameters.AddWithValue("@idCredito",idCredito);
             try
@@ -101,7 +101,7 @@ namespace DAO
                 {
                     conexion.Open();
                 }
-                int monto = Convert.ToInt32(comandoMonto.ExecuteScalar());
+                int monto = Convert.ToInt32(comandoMonto.ExecuteNonQuery());
                 return monto;
             }
             catch (SqlException)
