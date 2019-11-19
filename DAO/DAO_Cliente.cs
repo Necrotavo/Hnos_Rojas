@@ -119,9 +119,8 @@ namespace DAO
         }
 
         public bool registrarClienteCrediticio(DO_Cliente cliente) {
-            SqlCommand comando = new SqlCommand("Insert into CLIENTE (PER_IDENTIFICATOR, EST_ESTADO, PER_TELEFONO, PER_NOMBRE, PER_PRIMER_APELLIDO, PER_SEGUNDO_APELLIDO, CLI_DIRECCION) Values (@identificador,@estado,@telefono,@nombre,@primerApellido,@segundoApellido,@direccion)", conexion);
-            comando.Parameters.AddWithValue("@identificador", cliente.id);
-            comando.Parameters.AddWithValue("@estado", "HABILITADO"); // el cliente cuando se registra siempre empieza habilitado
+            SqlCommand comando = new SqlCommand("Insert into CLIENTE (EST_ESTADO, PER_TELEFONO, PER_NOMBRE, PER_PRIMER_APELLIDO, PER_SEGUNDO_APELLIDO, CLI_DIRECCION) Values (@estado,@telefono,@nombre,@primerApellido,@segundoApellido,@direccion)", conexion);
+            comando.Parameters.AddWithValue("@estado", cliente.estado); // el cliente cuando se registra siempre empieza habilitado
             comando.Parameters.AddWithValue("@telefono", cliente.telefono);
             comando.Parameters.AddWithValue("@nombre", cliente.nombre);
             comando.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);

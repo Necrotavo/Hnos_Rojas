@@ -26,10 +26,10 @@ namespace Hnos_Rojas
         }
 
         public void nuevoCliente() {
-            //panelClientes.Controls.Clear();
-            //NuevoCliente otropanel = new NuevoCliente() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //panelClientes.Controls.Add(otropanel);
-            //otropanel.Show();
+            panelClientes.Controls.Clear();
+            ClienteNuevo otropanel = new ClienteNuevo() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            panelClientes.Controls.Add(otropanel);
+            otropanel.Show();
         }
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
