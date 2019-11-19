@@ -58,8 +58,11 @@ namespace Hnos_Rojas
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+            
             e.Graphics.DrawRectangle(Pens.Black, new Rectangle(x,y,ancho - x - x,largo - y - y));
-            e.Graphics.DrawString(nombreLocal, fuenteTitulo, Brushes.Black, x + fuenteTitulo.Height, y + nombreLocal.Length);
+            e.Graphics.DrawString(nombreLocal, fuenteTitulo, Brushes.Black, x + 60, y);
+            e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 10, y + fuenteTitulo.Height);
+
 
         }
     }
