@@ -15,9 +15,11 @@ namespace Hnos_Rojas
 {
     public partial class PagoCredito : Form
     {
-        private DO_Cliente cliente = new DO_Cliente();
+        private int cliente = 0;
         private DO_Factura factura = new DO_Factura();
         private Ventas parent;
+        BL_Credito blCredito = new BL_Credito();
+        DO_Credito credito = new DO_Credito();
         public PagoCredito(DO.DO_Factura _factura, Ventas padre)
         {
             InitializeComponent();
@@ -60,9 +62,22 @@ namespace Hnos_Rojas
 
             BL_Cliente clientes = new BL_Cliente();
             List<DO_Cliente> listaClientes = clientes.filtrarClientes(txtBuscarCliente.Text.Trim());
-            listBClientes.DataSource = listaClientes;
+            DataTable tablaClientes = new DataTable();
+            tablaClientes.Columns.Add("id");
+            tablaClientes.Columns.Add("nombre");
+            foreach (DO_Cliente doCliente in listaClientes) {
+                tablaClientes.Rows.Add(doCliente.id, doCliente.nombre + " " 
+                    + doCliente.primerApellido + " " + doCliente.segundoApellido);
+            }
+            listBClientes.DataSource = tablaClientes;
             listBClientes.DisplayMember = "nombre";
             listBClientes.ValueMember = "id";
+
+            this.ActiveControl = this.txtBuscarCliente;
+
+            listBClientes.SelectedItem = 0;
+
+            obtenerCreditoSeleccionado();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -74,22 +89,27 @@ namespace Hnos_Rojas
 
         private void listBClientes_Click(object sender, EventArgs e)
         {
-            BL_Credito blCredito = new BL_Credito();
-            DO_Credito credito = new DO_Credito();
+            obtenerCreditoSeleccionado();
+            this.ActiveControl = this.txtBuscarCliente;
+        }
 
-            cliente = (DO_Cliente)listBClientes.SelectedItem;
-            credito = blCredito.ObtenerDatosCredito(cliente.id);
+        public void obtenerCreditoSeleccionado() {
+            cliente = Convert.ToInt32(listBClientes.SelectedValue);
+            if (blCredito.ObtenerDatosCredito(cliente) != null) {
+                credito = blCredito.ObtenerDatosCredito(cliente);
 
-            lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
-            Double credDisp = blCredito.CalcularSaldo(credito.limiteCredito, credito.monto);
-            lbCreditoDisp.Text = (credDisp).ToString();//cliente.credito.monto; el limite menos lo que debe
-            if (credDisp <= 0)
-            {
-                SystemSounds.Exclamation.Play();
-                lbCreditoDisp.BackColor = Color.Maroon;
-            }
-            else {
-                colorDefaultLblCredDisp();
+                lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
+                Double credDisp = blCredito.CalcularSaldo(credito.limiteCredito, credito.monto);
+                lbCreditoDisp.Text = (credDisp).ToString();//cliente.credito.monto; el limite menos lo que debe
+                if (credDisp <= 0)
+                {
+                    SystemSounds.Exclamation.Play();
+                    lbCreditoDisp.BackColor = Color.Maroon;
+                }
+                else
+                {
+                    colorDefaultLblCredDisp();
+                }
             }
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
 
 namespace Hnos_Rojas
 {
@@ -16,6 +17,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             estadoCuentaCliente();
+
         }
 
         public void estadoCuentaCliente() {
@@ -38,6 +40,12 @@ namespace Hnos_Rojas
         }
 
         private void btnEstadoCuenta_Click(object sender, EventArgs e)
+        {
+            estadoCuentaCliente();
+        }
+
+
+        private void Clientes_Load(object sender, EventArgs e)
         {
             estadoCuentaCliente();
         }
