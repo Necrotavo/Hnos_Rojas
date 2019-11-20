@@ -39,7 +39,6 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtLimiteCredito = new System.Windows.Forms.TextBox();
             this.btnGuardarCliente = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPriApellido = new System.Windows.Forms.TextBox();
@@ -112,47 +111,38 @@
             this.txtNombre.Location = new System.Drawing.Point(133, 63);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(170, 20);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(133, 202);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(265, 20);
-            this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(133, 244);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(114, 20);
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TabIndex = 4;
             // 
             // txtLimiteCredito
             // 
             this.txtLimiteCredito.Location = new System.Drawing.Point(133, 290);
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Size = new System.Drawing.Size(114, 20);
-            this.txtLimiteCredito.TabIndex = 9;
+            this.txtLimiteCredito.TabIndex = 5;
             // 
             // btnGuardarCliente
             // 
             this.btnGuardarCliente.Location = new System.Drawing.Point(51, 349);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(111, 23);
-            this.btnGuardarCliente.TabIndex = 10;
+            this.btnGuardarCliente.TabIndex = 6;
             this.btnGuardarCliente.Text = "Guardar Cliente";
             this.btnGuardarCliente.UseVisualStyleBackColor = true;
             this.btnGuardarCliente.Click += new System.EventHandler(this.btnGuardarCliente_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(228, 349);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -177,14 +167,14 @@
             this.txtPriApellido.Location = new System.Drawing.Point(133, 111);
             this.txtPriApellido.Name = "txtPriApellido";
             this.txtPriApellido.Size = new System.Drawing.Size(170, 20);
-            this.txtPriApellido.TabIndex = 14;
+            this.txtPriApellido.TabIndex = 1;
             // 
             // txtSegApellido
             // 
             this.txtSegApellido.Location = new System.Drawing.Point(133, 158);
             this.txtSegApellido.Name = "txtSegApellido";
             this.txtSegApellido.Size = new System.Drawing.Size(170, 20);
-            this.txtSegApellido.TabIndex = 15;
+            this.txtSegApellido.TabIndex = 2;
             // 
             // label9
             // 
@@ -255,7 +245,6 @@
             this.Controls.Add(this.txtPriApellido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardarCliente);
             this.Controls.Add(this.txtLimiteCredito);
             this.Controls.Add(this.txtTelefono);
@@ -288,7 +277,6 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtLimiteCredito;
         private System.Windows.Forms.Button btnGuardarCliente;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPriApellido;

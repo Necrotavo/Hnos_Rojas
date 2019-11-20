@@ -45,6 +45,7 @@
     <Compile Include="DAO_Cliente.cs" />
     <Compile Include="DAO_Credito.cs" />
     <Compile Include="DAO_Factura.cs" />
+    <Compile Include="DAO_Persona.cs" />
     <Compile Include="DAO_Producto.cs" />
     <Compile Include="DAO_Proveedor.cs" />
     <Compile Include="DAO_Usuario.cs" />

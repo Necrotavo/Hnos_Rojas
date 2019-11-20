@@ -48,6 +48,7 @@
     <Compile Include="DO_Factura.cs" />
     <Compile Include="DO_ListaClientes.cs" />
     <Compile Include="DO_Pago.cs" />
+    <Compile Include="DO_Persona.cs" />
     <Compile Include="DO_PlantillaFactura.cs" />
     <Compile Include="DO_Producto.cs" />
     <Compile Include="DO_ProductoEnFactura.cs" />

@@ -192,8 +192,9 @@ namespace DAO
         }
 
         public bool crearCredito(int idCliente, int limiteCredito) {
-            SqlCommand comando = new SqlCommand("insert into CREDITO (CRE_IDENTIFICADOR, CRED_LIMITE_CREDITO) Values (@idCliente, @limiteCredito)", conexion);
+            SqlCommand comando = new SqlCommand("insert into CREDITO (CRE_IDENTIFICADOR, CRED_MONTO, CRED_LIMITE_CREDITO) Values (@idCliente, @creditoMonto, @limiteCredito)", conexion);
             comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@creditoMonto", 0);
             comando.Parameters.AddWithValue("@limiteCredito", limiteCredito);
 
             try

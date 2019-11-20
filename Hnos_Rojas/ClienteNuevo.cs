@@ -19,27 +19,55 @@ namespace Hnos_Rojas
             InitializeComponent();
         }
 
+        public int NuevaPersona(DO_Persona nuevaPersona) {
+            BL_Persona daoPersona = new BL_Persona();
+            return daoPersona.registrarPersona(nuevaPersona);
+        }
+
         public void NuevoCliente(DO_Cliente nuevoCliente) {
             BL_Cliente daoCliente = new BL_Cliente();
             daoCliente.registrarClienteCrediticio(nuevoCliente);
         }
 
+        public void vaciarCamposTexto() {
+            txtDireccion.Text = "";
+            txtLimiteCredito.Text = "";
+            txtNombre.Text = "";
+            txtPriApellido.Text = "";
+            txtSegApellido.Text = "";
+            txtTelefono.Text = "";
+
+            MessageBox.Show("CLIENTE AGREGADO EXITÓSAMENTE");
+        }
+
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Equals("") || txtPriApellido.Equals("") || txtDireccion.Equals("") || txtTelefono.Equals("") || txtLimiteCredito.Equals(""))
+            if (txtNombre.Text.Equals("") || txtPriApellido.Text.Equals("") || txtDireccion.Text.Equals("") || txtTelefono.Text.Equals("") || txtLimiteCredito.Text.Equals(""))
             {
                 MessageBox.Show("EXISTEN CAMPOS OBLIGATORIOS POR LLENAR");
             } else {
+                DO_Persona persona = new DO_Persona();
+                persona.perTelefono = Convert.ToInt32(txtTelefono.Text.Trim());
+                persona.perNombre = txtNombre.Text.Trim();
+                persona.perPrimerApellido = txtPriApellido.Text.Trim();
+                persona.perSegundoApellido = txtSegApellido.Text.Trim();
+                int identificadorCliente = NuevaPersona(persona);
+
                 DO_Cliente nuevoCliente = new DO_Cliente();
-                nuevoCliente.nombre = txtNombre.Text.Trim();
+                nuevoCliente.id = identificadorCliente;
+                nuevoCliente.nombre = persona.perNombre;
                 nuevoCliente.estado = "HABILITADO";
-                nuevoCliente.primerApellido = txtPriApellido.Text.Trim();
-                nuevoCliente.segundoApellido = txtSegApellido.Text.Trim();
+                nuevoCliente.primerApellido = persona.perPrimerApellido;
+                nuevoCliente.segundoApellido = persona.perSegundoApellido;
                 nuevoCliente.direccion = txtDireccion.Text.Trim();
-                nuevoCliente.telefono = Convert.ToInt32(txtTelefono.Text.Trim());
+                nuevoCliente.telefono = Convert.ToInt32(persona.perTelefono);
                 NuevoCliente(nuevoCliente);
-            } //seguir aqui
-            int limiteCredito = Convert.ToInt32(txtLimiteCredito.Text.Trim());
+
+                BL_Credito daoCredito = new BL_Credito();
+                daoCredito.CrearCredito(nuevoCliente.id, Convert.ToInt32(txtLimiteCredito.Text.Trim()));
+                vaciarCamposTexto();
+            }
+            
         }
     }
 }
