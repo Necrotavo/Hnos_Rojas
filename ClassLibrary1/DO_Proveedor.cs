@@ -8,14 +8,14 @@ namespace DO
 {
     public class DO_Proveedor
     {
-        public DateTime fechaVisita { set; get; }
+        public String fechaVisita { set; get; }
         public List<DO_Asociado> listaAsociados { set; get; }
         public String nombre { set; get; }
 
         public DO_Proveedor() {
         }
 
-        public DO_Proveedor(DateTime _fechaVisita, List<DO_Asociado> _listaAsociado, String _nombre) {
+        public DO_Proveedor(String _fechaVisita, List<DO_Asociado> _listaAsociado, String _nombre) {
             this.fechaVisita = _fechaVisita;
             this.listaAsociados = _listaAsociado;
             this.nombre = _nombre;

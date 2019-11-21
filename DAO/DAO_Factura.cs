@@ -58,8 +58,10 @@ namespace DAO
             comando.Parameters.AddWithValue("@idCredito", idCredito);
             comando.Parameters.AddWithValue("@codfactura", factura.codigoFactura);
 
-            double monto = obtenerMonto(idCredito);
-            double total = monto + factura.totalFactura; 
+            DAO_Credito daoCredito = new DAO_Credito();
+
+            double monto = daoCredito.obtenerMonto(idCredito);
+            double total = monto + factura.saldo; 
 
             SqlCommand comandoCredito = new SqlCommand("Update CREDITO set CRED_MONTO = @monto where CRE_IDENTIFICADOR = @identificador", conexion);
             comandoCredito.Parameters.AddWithValue("@monto",total);
@@ -82,42 +84,6 @@ namespace DAO
             catch (SqlException)
             {
                 return false;
-            }
-            finally
-            {
-                if (conexion.State != ConnectionState.Closed)
-                {
-                    conexion.Close();
-                }
-            }
-        }
-
-        public double obtenerMonto(int idCredito) {
-            SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRE_IDENTIFICADOR = @idCredito", conexion);
-            comandoMonto.Parameters.AddWithValue("@idCredito",idCredito);
-            
-            try
-            {
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-
-                SqlDataReader lector = comandoMonto.ExecuteReader();
-                double monto = 0;
-                if (lector.HasRows)
-                {
-                    while (lector.Read())
-                    {
-                        monto = Convert.ToDouble( lector["CRED_MONTO"]);
-                    }
-                }
-               
-                return monto;
-            }
-            catch (SqlException)
-            {
-                return 0;
             }
             finally
             {
@@ -264,6 +230,103 @@ namespace DAO
             {
                 return null;
             }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+
+        public bool actualizarSaldoFactura(DO_Factura factura, double abono) {
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                DAO_Credito daoCredito = new DAO_Credito();
+                double credMonto = daoCredito.obtenerMonto(factura.credito);
+
+                SqlCommand actualizarMontoCred = new SqlCommand("update CREDITO set CRED_MONTO = @monto WHERE CRE_IDENTIFICADOR = @idCredito", conexion);
+                actualizarMontoCred.Parameters.AddWithValue("@monto", (credMonto - abono));
+                actualizarMontoCred.Parameters.AddWithValue("@idCredito", factura.credito);
+
+                if (actualizarMontoCred.ExecuteNonQuery() > 0)
+                {
+                    factura.saldo = factura.saldo - abono;
+                    SqlCommand actualizarSaldo = new SqlCommand("update FACTURA set FAC_SALDO = @saldo WHERE FAC_CODIGO = @codigo", conexion);
+                    actualizarSaldo.Parameters.AddWithValue("@codigo", factura.codigoFactura);
+                    actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
+                    if (actualizarSaldo.ExecuteNonQuery() > 0) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public List<DO_Factura> obtenerFacturasCredito(int idCliente)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente", conexion);
+            adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
+            DataTable datatable = new DataTable();
+            List<DO_Factura> listaFacturas = new List<DO_Factura>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapter.Fill(datatable);
+
+                foreach (DataRow row in datatable.Rows)
+                {
+                    DO_Factura nuevaFactura = new DO_Factura();
+
+                    nuevaFactura.codigoFactura = Convert.ToInt32(row["FAC_CODIGO"]);
+                    nuevaFactura.notas = (String)row["FAC_NOTAS"];
+                    nuevaFactura.clienteExterno = (String)row["FAC_CLIENTE_EXTERNO"];
+                    nuevaFactura.fecha = (DateTime)row["FAC_FECHA"];
+                    nuevaFactura.codigoPlantilla = Convert.ToInt32(row["PLANT_CODIGO"]);
+                    nuevaFactura.usuario = (String)row["USR_NOMBRE"];
+                    nuevaFactura.credito = Convert.ToInt32(row["CRE_IDENTIFICADOR"]);
+                    nuevaFactura.estado = (String)row["EST_ESTADO"];
+                    nuevaFactura.tipoPago = (String)row["TP_TIPO"];
+                    nuevaFactura.totalFactura = Convert.ToDouble(row["EST_ESTADO"]);
+                    nuevaFactura.saldo = Convert.ToDouble(row["TP_TIPO"]);
+
+                    DAO_Producto daoProducto = new DAO_Producto();
+                    nuevaFactura.listaProducto = daoProducto.obtenerProductosFactura(Convert.ToInt32(row["FAC_CODIGO"]));
+
+                    listaFacturas.Add(nuevaFactura);
+                }
+                return listaFacturas;
+            }
+            catch (SqlException) { }
             finally
             {
                 if (conexion.State != ConnectionState.Closed)

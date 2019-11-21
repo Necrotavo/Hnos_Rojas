@@ -300,5 +300,64 @@ namespace DAO
             }
             return null;
         }
+
+        public List<DO_ProductoEnFactura> obtenerProductosFactura(int codigoFactura)
+        {
+            SqlDataAdapter adapterCodigos = new SqlDataAdapter();
+            adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
+            adapterCodigos.SelectCommand.Parameters.AddWithValue("@codigoFactura", codigoFactura);
+            DataTable datatableCodigos = new DataTable();
+            List<DO_ProductoEnFactura> listaProductos = new List<DO_ProductoEnFactura>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapterCodigos.Fill(datatableCodigos);
+
+                foreach (DataRow row in datatableCodigos.Rows)
+                {
+                    DO_ProductoEnFactura nuevoProducto = new DO_ProductoEnFactura();
+                    nuevoProducto.cantidadComprada = (int)row["CANTIDAD_COMPRADA"];
+                    String codProducto = (String)row["PRO_CODIGO"];
+
+                    SqlDataAdapter adapterProductos = new SqlDataAdapter();
+                    adapterProductos.SelectCommand = new SqlCommand("select * from PRODUCTO where PRO_CODIGO = @codProducto", conexion);
+                    adapterProductos.SelectCommand.Parameters.AddWithValue("@codProducto", codProducto);
+                    DataTable datatableProductos = new DataTable();
+
+                    adapterProductos.Fill(datatableProductos);
+
+                    foreach (DataRow prodRow in datatableProductos.Rows)
+                    {
+                        nuevoProducto.producto = new DO_Producto();
+
+                        nuevoProducto.producto.codigo = (String)row["PRO_CODIGO"];
+                        nuevoProducto.producto.descripcion = (String)row["PRO_DESCRIPCION"];
+                        nuevoProducto.producto.cantMinBodega = Convert.ToInt32(row["PRO_CANTIDAD_MINIMA_STOCK"]);
+                        nuevoProducto.producto.cantidadDisponible = Convert.ToInt32(row["PRO_CANTIDAD_DISPONIBLE"]);
+                        nuevoProducto.producto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
+                        nuevoProducto.producto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
+
+                        listaProductos.Add(nuevoProducto);
+                    }
+                }
+                return listaProductos;
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }

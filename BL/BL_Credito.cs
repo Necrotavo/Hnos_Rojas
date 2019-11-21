@@ -41,8 +41,24 @@ namespace BL
         }
 
         public double obtenerMonto(int idCredito) {
-            DAO_Factura daoFactura = new DAO_Factura();
+            DAO_Credito daoFactura = new DAO_Credito();
             return daoFactura.obtenerMonto(idCredito);
+        }
+
+        public double calcularMonto(int idCredito)
+        {
+            List<DO_Factura> listaFacturas = new List<DO_Factura>();
+            DAO_Factura daoFactura = new DAO_Factura();
+            listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
+
+            double monto = 0;
+
+            foreach (DO_Factura factura in listaFacturas)
+            {
+                monto += factura.saldo;
+            }
+
+            return monto;
         }
     }
 }

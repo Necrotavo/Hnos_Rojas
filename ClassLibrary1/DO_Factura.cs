@@ -19,13 +19,14 @@ namespace DO
         public int codigoPlantilla { set; get; }
         public int credito { set; get; }
         public double totalFactura { set; get; }
+        public double saldo { set; get; }
 
         public DO_Factura()
         {
         }
 
         public DO_Factura(int _codigoFactura, String _notas, String _estado, String _tipoPago, 
-            List<DO_ProductoEnFactura> _listaProducto, String _usuario, double _totalFactura)
+            List<DO_ProductoEnFactura> _listaProducto, String _usuario, double _totalFactura, double _saldo)
         {
             this.codigoFactura = _codigoFactura;
             this.notas = _notas;
@@ -34,6 +35,7 @@ namespace DO
             this.listaProducto = _listaProducto;
             this.usuario = _usuario;
             this.totalFactura = _totalFactura;
+            this.saldo = _saldo;
         }
     }
 }

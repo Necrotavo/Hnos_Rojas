@@ -96,7 +96,7 @@ namespace DAO
                     while (lector.Read())
                     {
                         proveedor.nombre = (String)(lector["PROV_NOMBRE"]);
-                        proveedor.fechaVisita = Convert.ToDateTime(lector["PROV_FECHA_VISITA"]);
+                        proveedor.fechaVisita = (String)(lector["PROV_FECHA_VISITA"]);
                     }
                     proveedor.listaAsociados = daoAsociado.ObtenerAsociados(nombreProveedor);
                     return proveedor;

@@ -134,5 +134,10 @@ namespace BL
             DAO_Factura daoFactura = new DAO_Factura();
             return daoFactura.ingresarPlantillaFactura(plantillaFactura);
         }
+
+        public bool abonarFactura(DO_Factura factura, double abono) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            return daoFactura.actualizarSaldoFactura(factura, abono);
+        }
     }
 }

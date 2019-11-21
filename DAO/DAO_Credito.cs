@@ -71,7 +71,9 @@ namespace DAO
                         credito.limiteCredito = Convert.ToInt32(lector["CRED_LIMITE_CREDITO"]);
                         credito.monto = Convert.ToInt32(lector["CRED_MONTO"]);
                     }
-                    credito.listaFactura = obtenerFacturas(idCliente);
+
+                    DAO_Factura daoFactura = new DAO_Factura();
+                    credito.listaFactura = daoFactura.obtenerFacturasCredito(idCliente);
                     return credito;
                 }
             }
@@ -87,108 +89,6 @@ namespace DAO
                 }
             }
             return null;
-        }
-
-        public List<DO_Factura> obtenerFacturas(int idCliente) {
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente", conexion);
-            adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
-            DataTable datatable = new DataTable();
-            List<DO_Factura> listaFacturas = new List<DO_Factura>();
-
-            try
-            {
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-
-                adapter.Fill(datatable);
-
-                foreach (DataRow row in datatable.Rows)
-                {
-                    DO_Factura nuevaFactura = new DO_Factura();
-
-                    nuevaFactura.codigoFactura = Convert.ToInt32(row["FAC_CODIGO"]);
-                    nuevaFactura.notas = (String)row["FAC_NOTAS"];
-                    nuevaFactura.clienteExterno = (String)row["FAC_CLIENTE_EXTERNO"];
-                    nuevaFactura.fecha = (DateTime)row["FAC_FECHA"];
-                    nuevaFactura.codigoPlantilla = Convert.ToInt32(row["PLANT_CODIGO"]);
-                    nuevaFactura.usuario = (String)row["USR_NOMBRE"];
-                    nuevaFactura.credito = Convert.ToInt32(row["CRE_IDENTIFICADOR"]);
-                    nuevaFactura.estado = (String)row["EST_ESTADO"];
-                    nuevaFactura.tipoPago = (String)row["TP_TIPO"];
-
-                    nuevaFactura.listaProducto = obtenerProductosFactura(Convert.ToInt32(row["FAC_CODIGO"]));
-
-                    listaFacturas.Add(nuevaFactura);
-                }
-                return listaFacturas;
-            }
-            catch (SqlException) { }
-            finally {
-                if (conexion.State != ConnectionState.Closed)
-                {
-                    conexion.Close();
-                }
-            }
-            return null;
-        }
-
-        public List<DO_ProductoEnFactura> obtenerProductosFactura(int codigoFactura) {
-            SqlDataAdapter adapterCodigos = new SqlDataAdapter();
-            adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
-            adapterCodigos.SelectCommand.Parameters.AddWithValue("@codigoFactura", codigoFactura);
-            DataTable datatableCodigos = new DataTable();
-            List<DO_ProductoEnFactura> listaProductos = new List<DO_ProductoEnFactura>();
-
-            try
-            {
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-
-                adapterCodigos.Fill(datatableCodigos);
-
-                foreach (DataRow row in datatableCodigos.Rows)
-                {
-                    DO_ProductoEnFactura nuevoProducto = new DO_ProductoEnFactura();
-                    nuevoProducto.cantidadComprada = (int)row["CANTIDAD_COMPRADA"];
-                    String codProducto = (String)row["PRO_CODIGO"];
-
-                    SqlDataAdapter adapterProductos = new SqlDataAdapter();
-                    adapterProductos.SelectCommand = new SqlCommand("select * from PRODUCTO where PRO_CODIGO = @codProducto", conexion);
-                    adapterProductos.SelectCommand.Parameters.AddWithValue("@codProducto", codProducto);
-                    DataTable datatableProductos = new DataTable();
-
-                    adapterProductos.Fill(datatableProductos);
-
-                    foreach (DataRow prodRow in datatableProductos.Rows) {
-                        nuevoProducto.producto = new DO_Producto();
-
-                        nuevoProducto.producto.codigo = (String)row["PRO_CODIGO"];
-                        nuevoProducto.producto.descripcion = (String)row["PRO_DESCRIPCION"];
-                        nuevoProducto.producto.cantMinBodega = Convert.ToInt32(row["PRO_CANTIDAD_MINIMA_STOCK"]);
-                        nuevoProducto.producto.cantidadDisponible = Convert.ToInt32(row["PRO_CANTIDAD_DISPONIBLE"]);
-                        nuevoProducto.producto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
-                        nuevoProducto.producto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
-
-                        listaProductos.Add(nuevoProducto);
-                    }
-                }
-                return listaProductos;
-            }
-            catch (SqlException) {
-                return null;
-            }
-            finally
-            {
-                if (conexion.State != ConnectionState.Closed)
-                {
-                    conexion.Close();
-                }
-            }
         }
 
         public bool crearCredito(int idCliente, int limiteCredito) {
@@ -223,8 +123,7 @@ namespace DAO
         }
 
         public double abonar(int abono, int idCredito) {
-            DAO_Factura daoFactura = new DAO_Factura();
-            double montoCredito = daoFactura.obtenerMonto(idCredito);
+            double montoCredito = obtenerMonto(idCredito);
             double saldo = montoCredito - abono;
 
             SqlCommand comando = new SqlCommand("update CREDITO set CRED_MONTO = @saldo where CRE_IDENTIFICADOR = @idCredito", conexion);
@@ -245,6 +144,43 @@ namespace DAO
                 {
                     return 0;
                 }
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public double obtenerMonto(int idCredito)
+        {
+            SqlCommand comandoMonto = new SqlCommand("Select CRED_MONTO from CREDITO where CRE_IDENTIFICADOR = @idCredito", conexion);
+            comandoMonto.Parameters.AddWithValue("@idCredito", idCredito);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                SqlDataReader lector = comandoMonto.ExecuteReader();
+                double monto = 0;
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        monto = Convert.ToDouble(lector["CRED_MONTO"]);
+                    }
+                }
+
+                return monto;
             }
             catch (SqlException)
             {
