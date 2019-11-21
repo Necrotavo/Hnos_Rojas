@@ -321,7 +321,7 @@ namespace DAO
                 foreach (DataRow row in datatableCodigos.Rows)
                 {
                     DO_ProductoEnFactura nuevoProducto = new DO_ProductoEnFactura();
-                    nuevoProducto.cantidadComprada = (int)row["CANTIDAD_COMPRADA"];
+                    nuevoProducto.cantidadComprada = Convert.ToInt32(row["CANTIDAD_COMPRADA"]);
                     String codProducto = (String)row["PRO_CODIGO"];
 
                     SqlDataAdapter adapterProductos = new SqlDataAdapter();
@@ -335,12 +335,12 @@ namespace DAO
                     {
                         nuevoProducto.producto = new DO_Producto();
 
-                        nuevoProducto.producto.codigo = (String)row["PRO_CODIGO"];
-                        nuevoProducto.producto.descripcion = (String)row["PRO_DESCRIPCION"];
-                        nuevoProducto.producto.cantMinBodega = Convert.ToInt32(row["PRO_CANTIDAD_MINIMA_STOCK"]);
-                        nuevoProducto.producto.cantidadDisponible = Convert.ToInt32(row["PRO_CANTIDAD_DISPONIBLE"]);
-                        nuevoProducto.producto.precioCosto = (Double)row["PRO_PRECIO_COSTO"];
-                        nuevoProducto.producto.precioVenta = (Double)row["PRO_PRECIO_VENTA"];
+                        nuevoProducto.producto.codigo = (String)prodRow["PRO_CODIGO"];
+                        nuevoProducto.producto.descripcion = (String)prodRow["PRO_DESCRIPCION"];
+                        nuevoProducto.producto.cantMinBodega = Convert.ToInt32(prodRow["PRO_CANTIDAD_MINIMA_STOCK"]);
+                        nuevoProducto.producto.cantidadDisponible = Convert.ToInt32(prodRow["PRO_CANTIDAD_DISPONIBLE"]);
+                        nuevoProducto.producto.precioCosto = Convert.ToDouble(prodRow["PRO_PRECIO_COSTO"]);
+                        nuevoProducto.producto.precioVenta = Convert.ToDouble(prodRow["PRO_PRECIO_VENTA"]);
 
                         listaProductos.Add(nuevoProducto);
                     }

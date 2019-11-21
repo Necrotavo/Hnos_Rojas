@@ -84,7 +84,6 @@ namespace Hnos_Rojas
         {
             filtrarClientes();
             colorDefaultLblCredDisp();
-            
         }
 
         private void listBClientes_Click(object sender, EventArgs e)
@@ -141,6 +140,11 @@ namespace Hnos_Rojas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void listBClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

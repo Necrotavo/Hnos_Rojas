@@ -14,7 +14,7 @@ namespace DAO
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
         public DO_Cliente buscarCliente(String nombre) {
-            SqlCommand consulta = new SqlCommand("select * from Cliente where nombre = @nombre", conexion);
+            SqlCommand consulta = new SqlCommand("select * from CLIENTE where PER_NOMBRE = @nombre", conexion);
             consulta.Parameters.AddWithValue("@nombre", nombre);
             DO_Cliente cliente = new DO_Cliente();
             try
@@ -41,6 +41,47 @@ namespace DAO
                 return null;
             }
             finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+
+        public DO_Cliente buscarCliente(int idCliente)
+        {
+            SqlCommand consulta = new SqlCommand("select * from CLIENTE where PER_IDENTIFICADOR = @idCliente", conexion);
+            consulta.Parameters.AddWithValue("@idCliente", idCliente);
+            DO_Cliente cliente = new DO_Cliente();
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.estado = (String)lector["EST_ESTADO"];
+                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
+                        cliente.nombre = (String)lector["PER_NOMBRE"];
+                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.direccion = (String)lector["CLI_DIRECCION"];
+                    }
+                    return cliente;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
                 if (conexion.State != ConnectionState.Closed)
                 {
                     conexion.Close();

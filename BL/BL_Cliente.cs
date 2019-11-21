@@ -32,6 +32,12 @@ namespace BL
             return dao_cliente.buscarCliente(nombre);
         }
 
+        public DO_Cliente buscarCliente(int idCliente)
+        {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.buscarCliente(idCliente);
+        }
+
         public bool modificarEstadoCliente(int idCliente, String estado)
         {
             DAO_Cliente dao_cliente = new DAO_Cliente();

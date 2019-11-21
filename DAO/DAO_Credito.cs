@@ -51,6 +51,7 @@ namespace DAO
             }
             return null;
         }
+
         public DO_Credito ObtenerCredito(int idCliente) {
             SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
             consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);

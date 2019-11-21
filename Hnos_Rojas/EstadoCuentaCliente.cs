@@ -25,16 +25,34 @@ namespace Hnos_Rojas
         private void llenarListBox()
         {
             BL_Cliente clientes = new BL_Cliente();
+
             List<DO_Cliente> listaClientes = clientes.filtrarClientes(txtEstadoCliente.Text.Trim());
-            listBClientes.DataSource = listaClientes;
+
+            DataTable tablaClientes = new DataTable();
+            tablaClientes.Columns.Add("id");
+            tablaClientes.Columns.Add("nombre");
+
+            foreach (DO_Cliente doCliente in listaClientes)
+            {
+                tablaClientes.Rows.Add(doCliente.id, doCliente.nombre + " "
+                    + doCliente.primerApellido + " " + doCliente.segundoApellido);
+            }
+
+            listBClientes.DataSource = tablaClientes;
             listBClientes.DisplayMember = "nombre";
             listBClientes.ValueMember = "id";
+
+            listBClientes.SelectedItem = 0;
         }
 
         private void listBClientes_Click(object sender, EventArgs e)
         {
-            //llamar a la venta de detallesEstado
-            //cliente = (DO_Cliente)listBClientes.SelectedItem;
+            //llamar a la venta de detallesEstado\
+            BL_Cliente blCliente = new BL_Cliente();
+            cliente = blCliente.buscarCliente(Convert.ToInt32(this.listBClientes.SelectedValue));
+
+            DetallesEstadoCuenta detallesEstadoCuenta = new DetallesEstadoCuenta(cliente);
+            detallesEstadoCuenta.Show();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -45,6 +63,11 @@ namespace Hnos_Rojas
         private void txtEstadoCliente_TextChanged(object sender, EventArgs e)
         {
             llenarListBox();
+        }
+
+        private void EstadoCuentaCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
