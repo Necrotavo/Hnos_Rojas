@@ -50,9 +50,12 @@ namespace Hnos_Rojas
             //llamar a la venta de detallesEstado\
             BL_Cliente blCliente = new BL_Cliente();
             cliente = blCliente.buscarCliente(Convert.ToInt32(this.listBClientes.SelectedValue));
-
-            DetallesEstadoCuenta detallesEstadoCuenta = new DetallesEstadoCuenta(cliente);
+            
+            DetallesEstadoCuenta detallesEstadoCuenta = new DetallesEstadoCuenta(cliente) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            
+            Parent.Controls.Add(detallesEstadoCuenta);
             detallesEstadoCuenta.Show();
+            this.Dispose();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNuevoProd = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.grdProductos = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,26 +55,11 @@
             this.btnNuevoProd.ForeColor = System.Drawing.Color.White;
             this.btnNuevoProd.Location = new System.Drawing.Point(619, 19);
             this.btnNuevoProd.Name = "btnNuevoProd";
-            this.btnNuevoProd.Size = new System.Drawing.Size(198, 76);
+            this.btnNuevoProd.Size = new System.Drawing.Size(409, 76);
             this.btnNuevoProd.TabIndex = 10;
-            this.btnNuevoProd.Text = "Nuevo";
+            this.btnNuevoProd.Text = "Nuevo/Modificar";
             this.btnNuevoProd.UseVisualStyleBackColor = false;
             this.btnNuevoProd.Click += new System.EventHandler(this.btnNuevoProd_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(823, 19);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(198, 76);
-            this.btnModificar.TabIndex = 11;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtCodigo
             // 
@@ -106,7 +90,7 @@
             this.descripcion,
             this.CantidadDisponible});
             this.grdProductos.Location = new System.Drawing.Point(2, 104);
-            this.grdProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
             this.grdProductos.Name = "grdProductos";
             this.grdProductos.Size = new System.Drawing.Size(1040, 516);
             this.grdProductos.TabIndex = 13;
@@ -207,7 +191,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grdProductos);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevoProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
@@ -222,7 +205,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnNuevoProd;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.DataGridView grdProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
