@@ -166,11 +166,13 @@ namespace DAO
                 {
                     return true;
                 }
-
+                else {
+                    return false;
+                }
             }
             catch (SqlException)
             {
-
+                return false;
             }
             finally
             {
@@ -179,7 +181,6 @@ namespace DAO
                     conexion.Close();
                 }
             }
-            return false;
         }
         /// <summary>
         /// Modifica los datos de un producto previamente registrado
