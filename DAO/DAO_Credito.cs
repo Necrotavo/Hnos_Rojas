@@ -122,7 +122,7 @@ namespace DAO
             }
         }
 
-        public double abonar(int abono, int idCredito) {
+        public double abonar(double abono, int idCredito) {
             double montoCredito = obtenerMonto(idCredito);
             double saldo = montoCredito - abono;
 
@@ -138,6 +138,23 @@ namespace DAO
                 }
                 if (comando.ExecuteNonQuery() > 0)
                 {
+                    DAO_Factura daoFactura = new DAO_Factura();
+                    List<DO_Factura> listaFacturas = new List<DO_Factura>();
+                    listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
+                    for (int i = 0; i <= listaFacturas.Count; i++) {
+                        double result = listaFacturas[i].saldo - abono;
+                        if (result > 0)
+                        {
+                            abono = abono - listaFacturas[i].saldo;
+                            daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
+                            daoFactura.modificarEstadoFactura(listaFacturas[i].codigoFactura, "PAGADA");
+                        }
+                        else {
+                            daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
+                            break;
+                        }
+                    }
+
                     return saldo;
                 }
                 else

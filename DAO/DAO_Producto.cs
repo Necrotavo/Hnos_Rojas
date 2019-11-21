@@ -304,7 +304,7 @@ namespace DAO
         public List<DO_ProductoEnFactura> obtenerProductosFactura(int codigoFactura)
         {
             SqlDataAdapter adapterCodigos = new SqlDataAdapter();
-            adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
+            adapterCodigos.SelectCommand = new SqlCommand("select PRO_CODIGO, CANTIDAD_COMPRADA from FAC_TIENE_PRO where FAC_CODIGO = @codigoFactura", conexion);
             adapterCodigos.SelectCommand.Parameters.AddWithValue("@codigoFactura", codigoFactura);
             DataTable datatableCodigos = new DataTable();
             List<DO_ProductoEnFactura> listaProductos = new List<DO_ProductoEnFactura>();

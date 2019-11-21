@@ -252,15 +252,31 @@ namespace DAO
                 double credMonto = daoCredito.obtenerMonto(factura.credito);
 
                 SqlCommand actualizarMontoCred = new SqlCommand("update CREDITO set CRED_MONTO = @monto WHERE CRE_IDENTIFICADOR = @idCredito", conexion);
-                actualizarMontoCred.Parameters.AddWithValue("@monto", (credMonto - abono));
+                if ((credMonto - abono) <= 0)
+                {
+                    actualizarMontoCred.Parameters.AddWithValue("@monto", 0);
+                }
+                else {
+                    actualizarMontoCred.Parameters.AddWithValue("@monto", (credMonto - abono));
+                }
                 actualizarMontoCred.Parameters.AddWithValue("@idCredito", factura.credito);
+
+
 
                 if (actualizarMontoCred.ExecuteNonQuery() > 0)
                 {
                     factura.saldo = factura.saldo - abono;
                     SqlCommand actualizarSaldo = new SqlCommand("update FACTURA set FAC_SALDO = @saldo WHERE FAC_CODIGO = @codigo", conexion);
+                    if (factura.saldo <= 0)
+                    {
+                        actualizarSaldo.Parameters.AddWithValue("@saldo", 0);
+                    }
+                    else
+                    {
+                        actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
+                    }
                     actualizarSaldo.Parameters.AddWithValue("@codigo", factura.codigoFactura);
-                    actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
+                    
                     if (actualizarSaldo.ExecuteNonQuery() > 0) {
                         return true;
                     }
@@ -289,7 +305,7 @@ namespace DAO
         public List<DO_Factura> obtenerFacturasCredito(int idCliente)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente", conexion);
+            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente ORDER BY FAC_FECHA", conexion);
             adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
             DataTable datatable = new DataTable();
             List<DO_Factura> listaFacturas = new List<DO_Factura>();
@@ -316,8 +332,8 @@ namespace DAO
                     nuevaFactura.credito = Convert.ToInt32(row["CRE_IDENTIFICADOR"]);
                     nuevaFactura.estado = (String)row["EST_ESTADO"];
                     nuevaFactura.tipoPago = (String)row["TP_TIPO"];
-                    nuevaFactura.totalFactura = Convert.ToDouble(row["EST_ESTADO"]);
-                    nuevaFactura.saldo = Convert.ToDouble(row["TP_TIPO"]);
+                    nuevaFactura.totalFactura = Convert.ToDouble(row["FAC_MONTO"]);
+                    nuevaFactura.saldo = Convert.ToDouble(row["FAC_SALDO"]);
 
                     DAO_Producto daoProducto = new DAO_Producto();
                     nuevaFactura.listaProducto = daoProducto.obtenerProductosFactura(Convert.ToInt32(row["FAC_CODIGO"]));
