@@ -115,6 +115,7 @@
             this.nmPaga.Size = new System.Drawing.Size(120, 35);
             this.nmPaga.TabIndex = 11;
             this.nmPaga.ValueChanged += new System.EventHandler(this.nmPaga_ValueChanged);
+            this.nmPaga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nmPaga_KeyDown);
             this.nmPaga.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nmPaga_KeyUp);
             // 
             // label4

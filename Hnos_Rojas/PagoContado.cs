@@ -21,8 +21,13 @@ namespace Hnos_Rojas
             InitializeComponent();
             factura = _factura;
             padre = padreVentas;
-            lblTotal.Text = factura.totalFactura.ToString();
             
+            lblTotal.Text = factura.totalFactura.ToString();
+            nmPaga.Value = Convert.ToDecimal(factura.totalFactura);
+            nmPaga.Select();
+            nmPaga.Select(0, nmPaga.Text.Length);
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,8 +62,7 @@ namespace Hnos_Rojas
             this.Visible = false;
         }
 
-
-        private void btnPagar_Click(object sender, EventArgs e)
+        private void hacerPago()
         {
             if (Convert.ToDouble(nmPaga.Value) >= Convert.ToDouble(lblTotal.Text))
             {
@@ -73,11 +77,16 @@ namespace Hnos_Rojas
                     );
                 factOpt.Show();
                 padre.cerrarTicket();
-                
+
             }
-            else {
+            else
+            {
                 MessageBox.Show("El pago es insuficiente");
             }
+        }
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            hacerPago();
         }
 
         public void registrarFactura() {
@@ -107,6 +116,15 @@ namespace Hnos_Rojas
         private void nmPaga_ValueChanged(object sender, EventArgs e)
         {
             cambioValor();
+        }
+
+
+        private void nmPaga_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                hacerPago();
+            }
         }
     }
 }
