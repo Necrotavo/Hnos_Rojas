@@ -15,6 +15,13 @@ namespace Hnos_Rojas
     public partial class ProductoNuevo : Form
     {
         Productos padre;
+        bool accesoDirecto = false;
+        public ProductoNuevo()
+        {
+            InitializeComponent();
+            accesoDirecto = true;
+            
+        }
         public ProductoNuevo(Productos parent)
         {
             InitializeComponent();
@@ -49,7 +56,10 @@ namespace Hnos_Rojas
                );
                     blProducto.AgregarProductoAInventario(doProducto);
                     clearControls();
-                    padre.llenarGridProductos();
+                    if (!accesoDirecto)
+                    {
+                        padre.llenarGridProductos();
+                    }
                     MessageBox.Show("producto insertado");
                 }
                 else

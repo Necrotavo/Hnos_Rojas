@@ -104,6 +104,7 @@
             this.btnProducto.TabIndex = 1;
             this.btnProducto.Text = "INS Productos";
             this.btnProducto.UseVisualStyleBackColor = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // txtCodigo
             // 
