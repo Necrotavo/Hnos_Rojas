@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdAgregar = new System.Windows.Forms.RadioButton();
+            this.rdMod = new System.Windows.Forms.RadioButton();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrecioCosto = new System.Windows.Forms.Label();
@@ -45,27 +45,27 @@
             this.btnEjecutar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // rdAgregar
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(505, 41);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Agregar";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdAgregar.AutoSize = true;
+            this.rdAgregar.Location = new System.Drawing.Point(505, 41);
+            this.rdAgregar.Name = "rdAgregar";
+            this.rdAgregar.Size = new System.Drawing.Size(62, 17);
+            this.rdAgregar.TabIndex = 0;
+            this.rdAgregar.TabStop = true;
+            this.rdAgregar.Text = "Agregar";
+            this.rdAgregar.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdMod
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(505, 76);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(68, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Modificar";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdMod.AutoSize = true;
+            this.rdMod.Location = new System.Drawing.Point(505, 76);
+            this.rdMod.Name = "rdMod";
+            this.rdMod.Size = new System.Drawing.Size(68, 17);
+            this.rdMod.TabIndex = 1;
+            this.rdMod.TabStop = true;
+            this.rdMod.Text = "Modificar";
+            this.rdMod.UseVisualStyleBackColor = true;
             // 
             // lblCodigo
             // 
@@ -192,8 +192,8 @@
             this.Controls.Add(this.lblPrecioCosto);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdMod);
+            this.Controls.Add(this.rdAgregar);
             this.Name = "ProductoNuevo";
             this.Text = "ProductoNuevo";
             this.ResumeLayout(false);
@@ -203,8 +203,8 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdAgregar;
+        private System.Windows.Forms.RadioButton rdMod;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrecioCosto;

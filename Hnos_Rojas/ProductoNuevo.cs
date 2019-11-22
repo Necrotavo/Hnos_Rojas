@@ -37,7 +37,9 @@ namespace Hnos_Rojas
             BL_Producto blProducto = new BL_Producto();
             try
             {
-                DO_Producto doProducto = new DO_Producto(
+                if (rdAgregar.Checked)
+                {
+                    DO_Producto doProducto = new DO_Producto(
                txtCod.Text,
                Convert.ToDouble(txtPCost.Text),
                Convert.ToDouble(txtPVent.Text),
@@ -45,10 +47,16 @@ namespace Hnos_Rojas
                txtDescr.Text,
                Convert.ToInt32(txtCant.Text)
                );
-                blProducto.AgregarProductoAInventario(doProducto);
-                clearControls();
-                padre.llenarGridProductos();
-                MessageBox.Show("producto insertado");
+                    blProducto.AgregarProductoAInventario(doProducto);
+                    clearControls();
+                    padre.llenarGridProductos();
+                    MessageBox.Show("producto insertado");
+                }
+                else
+                {
+
+                }
+                
 
             }
             catch (Exception er)

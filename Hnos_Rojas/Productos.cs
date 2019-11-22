@@ -68,6 +68,7 @@ namespace Hnos_Rojas
 
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
+
             ProductoNuevo productoNuevo = new ProductoNuevo(this);
             productoNuevo.Show();
             
