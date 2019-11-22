@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DO
 {
+
+    //cambio
     public class DO_Pago
     {
         public String id { set; get; }

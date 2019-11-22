@@ -46,7 +46,8 @@
             this.ClienteNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Abonar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abonar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +108,7 @@
             this.ClienteNombre,
             this.Estado,
             this.Monto,
+            this.Saldo,
             this.Abonar});
             this.grdFacturas.Location = new System.Drawing.Point(390, 66);
             this.grdFacturas.Name = "grdFacturas";
@@ -122,6 +124,7 @@
             this.grdFacturas.RowTemplate.Height = 24;
             this.grdFacturas.Size = new System.Drawing.Size(1223, 477);
             this.grdFacturas.TabIndex = 5;
+            this.grdFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellContentClick);
             // 
             // lblMsgTotal
             // 
@@ -195,39 +198,52 @@
             // 
             // Codigo
             // 
+            this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             // 
             // Fecha
             // 
+            this.Fecha.DataPropertyName = "Fecha";
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
             // 
             // Usuario
             // 
+            this.Usuario.DataPropertyName = "Usuario";
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
             // 
             // ClienteNombre
             // 
+            this.ClienteNombre.DataPropertyName = "ClienteNombre";
             this.ClienteNombre.HeaderText = "Cliente";
             this.ClienteNombre.Name = "ClienteNombre";
             this.ClienteNombre.ReadOnly = true;
             // 
             // Estado
             // 
+            this.Estado.DataPropertyName = "Estado";
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
             // Monto
             // 
+            this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
+            // 
+            // Saldo
+            // 
+            this.Saldo.DataPropertyName = "Saldo";
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
             // 
             // Abonar
             // 
@@ -278,6 +294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Abonar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
+        private System.Windows.Forms.DataGridViewImageColumn Abonar;
     }
 }
