@@ -36,8 +36,8 @@ namespace Hnos_Rojas
 
 
         //punto de inicio
-        int x = 30;
-        int y = 30;
+        int x = 0;
+        int y = 0;
 
         public FacturaContado(string _cajero, string _total, string _pagaCon, string _vuelto, List<DO_ProductoEnFactura> _productos, string _notas)
         {
