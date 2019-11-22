@@ -21,18 +21,18 @@ namespace BL
 
             return daoProducto.BuscarProducto(codigo);
         }
-        /// <summary>
-        /// Modifica la cantidad de elementos disponibles del producto
-        /// </summary>
-        /// <param name="codigoProducto">Código del producto a modificar</param>
-        /// <param name="nuevaCantidad">Nueva cantidad disponible</param>
-        /// <returns>(True) si se actualizó correctamente.(False)si no se actualizó</returns>
-        public bool ModificarCantidadInventario(String codigoProducto, int nuevaCantidad, int cantidadComprada)
-        {
-            DAO_Producto daoProducto = new DAO_Producto();
+        ///// <summary>
+        ///// Modifica la cantidad de elementos disponibles del producto
+        ///// </summary>
+        ///// <param name="codigoProducto">Código del producto a modificar</param>
+        ///// <param name="nuevaCantidad">Nueva cantidad disponible</param>
+        ///// <returns>(True) si se actualizó correctamente.(False)si no se actualizó</returns>
+        //public bool ModificarCantidadInventario(String codigoProducto, int nuevaCantidad, int cantidadComprada)
+        //{
+        //    DAO_Producto daoProducto = new DAO_Producto();
 
-            return daoProducto.ActualizarInventario(codigoProducto, nuevaCantidad, cantidadComprada);
-        }
+        //    return daoProducto.ActualizarInventario(codigoProducto, nuevaCantidad);
+        //}
         /// <summary>
         /// Obtiene el precio de venta de un producto según el porcentaje de ganancia esperado
         /// </summary>
