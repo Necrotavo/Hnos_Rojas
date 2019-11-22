@@ -24,7 +24,7 @@ namespace Hnos_Rojas
 
         public void obtenerCredito() {
             BL_Credito blCredito = new BL_Credito();
-            cliente.credito = blCredito.ObtenerCredito(cliente.id);
+            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
 
             DataTable tablaFacturas = new DataTable();
             tablaFacturas.Columns.Add("Cod. Factura");
@@ -37,7 +37,7 @@ namespace Hnos_Rojas
 
             foreach (DO_Factura doFactura in cliente.credito.listaFactura) {
                 tablaFacturas.Rows.Add(doFactura.codigoFactura, doFactura.fecha, doFactura.usuario,
-                    cliente.nombre + " " + cliente.primerApellido + " " + cliente.segundoApellido,
+                    cliente.perNombre + " " + cliente.perPrimerApellido + " " + cliente.perSegundoApellido,
                     doFactura.estado, doFactura.totalFactura, doFactura.saldo);
             }
 
