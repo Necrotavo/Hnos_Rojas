@@ -151,5 +151,11 @@ namespace Hnos_Rojas
                     }
             }
         }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            ProductoNuevo productoNuevo = new ProductoNuevo();
+            productoNuevo.Show();
+        }
     }
 }

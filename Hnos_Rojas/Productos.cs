@@ -22,7 +22,7 @@ namespace Hnos_Rojas
             llenarGridProductos();
         }
 
-        private void llenarGridProductos() {
+        public void llenarGridProductos() {
             BL_Producto blProducto = new BL_Producto();
             grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
             grdProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
@@ -68,8 +68,10 @@ namespace Hnos_Rojas
 
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
-            ProductoNuevo productoNuevo = new ProductoNuevo();
+
+            ProductoNuevo productoNuevo = new ProductoNuevo(this);
             productoNuevo.Show();
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

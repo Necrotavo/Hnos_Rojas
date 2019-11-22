@@ -14,17 +14,39 @@ namespace Hnos_Rojas
 {
     public partial class ProductoNuevo : Form
     {
+        Productos padre;
+        bool accesoDirecto = false;
         public ProductoNuevo()
         {
             InitializeComponent();
+            accesoDirecto = true;
+            
+        }
+        public ProductoNuevo(Productos parent)
+        {
+            InitializeComponent();
+            padre = parent;
         }
 
+        private void clearControls()
+        {
+            string empty = "";
+            txtCant.Text = empty;
+            txtCantMin.Text = empty;
+            txtCod.Text = empty;
+            txtDescr.Text = empty;
+            txtPCost.Text = empty;
+            txtPVent.Text = empty;
+
+        }
         private void btnEjecutar_Click(object sender, EventArgs e)
         {
             BL_Producto blProducto = new BL_Producto();
             try
             {
-                DO_Producto doProducto = new DO_Producto(
+                if (rdAgregar.Checked)
+                {
+                    DO_Producto doProducto = new DO_Producto(
                txtCod.Text,
                Convert.ToDouble(txtPCost.Text),
                Convert.ToDouble(txtPVent.Text),
@@ -32,7 +54,20 @@ namespace Hnos_Rojas
                txtDescr.Text,
                Convert.ToInt32(txtCant.Text)
                );
-                blProducto.AgregarProductoAInventario(doProducto);
+                    blProducto.AgregarProductoAInventario(doProducto);
+                    clearControls();
+                    if (!accesoDirecto)
+                    {
+                        padre.llenarGridProductos();
+                    }
+                    MessageBox.Show("producto insertado");
+                }
+                else
+                {
+
+                }
+                
+
             }
             catch (Exception er)
             {

@@ -89,10 +89,13 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Location = new System.Drawing.Point(2, 104);
+            this.grdProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grdProductos.Location = new System.Drawing.Point(0, 98);
             this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
+            this.grdProductos.MinimumSize = new System.Drawing.Size(1040, 531);
             this.grdProductos.Name = "grdProductos";
-            this.grdProductos.Size = new System.Drawing.Size(1040, 516);
+            this.grdProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.grdProductos.Size = new System.Drawing.Size(1040, 531);
             this.grdProductos.TabIndex = 13;
             // 
             // Codigo
