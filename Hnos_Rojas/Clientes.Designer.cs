@@ -41,9 +41,10 @@
             this.btnEstadoCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoCuenta.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnEstadoCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoCuenta.Location = new System.Drawing.Point(24, 23);
+            this.btnEstadoCuenta.Location = new System.Drawing.Point(32, 28);
+            this.btnEstadoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEstadoCuenta.Name = "btnEstadoCuenta";
-            this.btnEstadoCuenta.Size = new System.Drawing.Size(192, 42);
+            this.btnEstadoCuenta.Size = new System.Drawing.Size(339, 52);
             this.btnEstadoCuenta.TabIndex = 16;
             this.btnEstadoCuenta.Text = "Estado de Cuenta";
             this.btnEstadoCuenta.UseVisualStyleBackColor = false;
@@ -56,9 +57,10 @@
             this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(244, 23);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(701, 28);
+            this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(192, 42);
+            this.btnNuevoCliente.Size = new System.Drawing.Size(334, 52);
             this.btnNuevoCliente.TabIndex = 17;
             this.btnNuevoCliente.Text = "Nuevo Cliente";
             this.btnNuevoCliente.UseVisualStyleBackColor = false;
@@ -71,31 +73,34 @@
             this.btnModificarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnModificarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnModificarCliente.Location = new System.Drawing.Point(464, 23);
+            this.btnModificarCliente.Location = new System.Drawing.Point(1378, 28);
+            this.btnModificarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(192, 42);
+            this.btnModificarCliente.Size = new System.Drawing.Size(327, 52);
             this.btnModificarCliente.TabIndex = 18;
             this.btnModificarCliente.Text = "Modificar Cliente";
             this.btnModificarCliente.UseVisualStyleBackColor = false;
             // 
             // panelClientes
             // 
-            this.panelClientes.Location = new System.Drawing.Point(24, 101);
+            this.panelClientes.Location = new System.Drawing.Point(32, 102);
+            this.panelClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelClientes.Name = "panelClientes";
-            this.panelClientes.Size = new System.Drawing.Size(1000, 430);
+            this.panelClientes.Size = new System.Drawing.Size(1673, 684);
             this.panelClientes.TabIndex = 19;
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1375, 554);
+            this.ClientSize = new System.Drawing.Size(1735, 814);
             this.Controls.Add(this.panelClientes);
             this.Controls.Add(this.btnModificarCliente);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.btnEstadoCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Clientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Clientes_Load);

@@ -98,6 +98,7 @@ namespace DAO
             }
             return false;
         }
+
         /// <summary>
         /// Agrega los productos de determinada factura 
         /// </summary>
@@ -182,11 +183,13 @@ namespace DAO
                 }
             }
         }
+
         /// <summary>
         /// Modifica los datos de un producto previamente registrado
         /// </summary>
         /// <param name="productoAModificar">El producto al cual se le modificaron datos</param>
         /// <returns>(True) si se modificó correctamente.(False)si no se modificó</returns>
+
         public bool ModificarProducto(DO_Producto productoAModificar)
         {
             SqlCommand consulta = new SqlCommand("update Producto set PRO_DESCRIPCION = @descripcion, PRO_CANTIDAD_MINIMA_STOCK = @cantidadMinima," +
@@ -229,6 +232,7 @@ namespace DAO
         /// </summary>
         /// <param name="codigo">Código del producto a eliminar</param>
         /// <returns>(True)si se eliminó correctamente.(False) si no se eliminó</returns>
+
         public bool EliminarProducto(String codigo)
         {
             SqlCommand consulta = new SqlCommand("delete from Producto Where PRO_CODIGO = @codigo", conexion);
@@ -264,6 +268,7 @@ namespace DAO
         /// Obtiene la lista con todos los productos registrados
         /// </summary>
         /// <returns>Lista con los productos (List<DO_Producto)></returns>
+
         public List<DO_Producto> CargarProductos()
         {
             SqlCommand consulta = new SqlCommand("select * from Producto", conexion);

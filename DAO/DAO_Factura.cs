@@ -18,8 +18,8 @@ namespace DAO
             factura.codigoPlantilla = obtenerCodigoUltimaPlantilla(); //Agarra la ultima plantilla ingresada
 
             SqlCommand insert = new SqlCommand("insert into FACTURA (FAC_NOTAS, FAC_CLIENTE_EXTERNO, FAC_FECHA,"
-               +" PLANT_CODIGO, USR_NOMBRE, EST_ESTADO, TP_TIPO, FAC_MONTO) values"+
-               "(@notas, @cliente, @fecha, @plantilla, @usrNombre, @estado, @tipo, @monto)", conexion);
+               +" PLANT_CODIGO, USR_NOMBRE, EST_ESTADO, TP_TIPO, FAC_MONTO, FAC_SALDO) values"+
+               "(@notas, @cliente, @fecha, @plantilla, @usrNombre, @estado, @tipo, @monto, @saldo)", conexion);
             insert.Parameters.AddWithValue("@notas", factura.notas);
             insert.Parameters.AddWithValue("@cliente", factura.clienteExterno);
             insert.Parameters.AddWithValue("@fecha", factura.fecha);
@@ -28,6 +28,7 @@ namespace DAO
             insert.Parameters.AddWithValue("@estado", factura.estado);
             insert.Parameters.AddWithValue("@tipo", factura.tipoPago);
             insert.Parameters.AddWithValue("@monto", factura.totalFactura);
+            insert.Parameters.AddWithValue("@saldo", factura.saldo);
 
             try {
                 if (conexion.State != ConnectionState.Open) {

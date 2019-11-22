@@ -42,7 +42,14 @@ namespace Hnos_Rojas
             }
 
             grdFacturas.DataSource = tablaFacturas;
-            //grdFacturas.bi
+
+            grdFacturas.Columns[0].Width = 100;    //codigo
+            grdFacturas.Columns[1].Width = 150;    //Fecha
+            grdFacturas.Columns[2].Width = 70;    //Usuario
+            grdFacturas.Columns[3].Width = 200;    //Cliente
+            grdFacturas.Columns[4].Width = 70;    //Estado
+            grdFacturas.Columns[5].Width = 70;    //Saldo
+            grdFacturas.Columns[5].Width = 70;    //Monto
         }
     }
 }
