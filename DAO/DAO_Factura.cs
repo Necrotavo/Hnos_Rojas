@@ -353,5 +353,60 @@ namespace DAO
             }
             return null;
         }
+        public List<DO_Factura> obtenerFacturasCredito(int idCliente, DateTime desde, DateTime hasta)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from FACTURA "+
+                "where CRE_IDENTIFICADOR = @idCliente "+
+                "and FAC_FECHA >= @desde and FAC_FECHA < @hasta " +
+                "ORDER BY FAC_FECHA ", conexion);
+            adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
+            adapter.SelectCommand.Parameters.AddWithValue("@desde", desde);
+            adapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
+            DataTable datatable = new DataTable();
+            List<DO_Factura> listaFacturas = new List<DO_Factura>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapter.Fill(datatable);
+
+                foreach (DataRow row in datatable.Rows)
+                {
+                    DO_Factura nuevaFactura = new DO_Factura();
+
+                    nuevaFactura.codigoFactura = Convert.ToInt32(row["FAC_CODIGO"]);
+                    nuevaFactura.notas = (String)row["FAC_NOTAS"];
+                    nuevaFactura.clienteExterno = (String)row["FAC_CLIENTE_EXTERNO"];
+                    nuevaFactura.fecha = (DateTime)row["FAC_FECHA"];
+                    nuevaFactura.codigoPlantilla = Convert.ToInt32(row["PLANT_CODIGO"]);
+                    nuevaFactura.usuario = (String)row["USR_NOMBRE"];
+                    nuevaFactura.credito = Convert.ToInt32(row["CRE_IDENTIFICADOR"]);
+                    nuevaFactura.estado = (String)row["EST_ESTADO"];
+                    nuevaFactura.tipoPago = (String)row["TP_TIPO"];
+                    nuevaFactura.totalFactura = Convert.ToDouble(row["FAC_MONTO"]);
+                    nuevaFactura.saldo = Convert.ToDouble(row["FAC_SALDO"]);
+
+                    DAO_Producto daoProducto = new DAO_Producto();
+                    nuevaFactura.listaProducto = daoProducto.obtenerProductosFactura(Convert.ToInt32(row["FAC_CODIGO"]));
+
+                    listaFacturas.Add(nuevaFactura);
+                }
+                return listaFacturas;
+            }
+            catch (SqlException) { }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
     }
 }

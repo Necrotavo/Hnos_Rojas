@@ -53,9 +53,10 @@
             this.btnNuevoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoProd.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnNuevoProd.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoProd.Location = new System.Drawing.Point(619, 19);
+            this.btnNuevoProd.Location = new System.Drawing.Point(825, 23);
+            this.btnNuevoProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevoProd.Name = "btnNuevoProd";
-            this.btnNuevoProd.Size = new System.Drawing.Size(409, 76);
+            this.btnNuevoProd.Size = new System.Drawing.Size(545, 94);
             this.btnNuevoProd.TabIndex = 10;
             this.btnNuevoProd.Text = "Nuevo/Modificar";
             this.btnNuevoProd.UseVisualStyleBackColor = false;
@@ -64,9 +65,10 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(125, 58);
+            this.txtCodigo.Location = new System.Drawing.Point(167, 71);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(268, 35);
+            this.txtCodigo.Size = new System.Drawing.Size(356, 41);
             this.txtCodigo.TabIndex = 12;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
@@ -89,13 +91,10 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grdProductos.Location = new System.Drawing.Point(0, 98);
-            this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
-            this.grdProductos.MinimumSize = new System.Drawing.Size(1040, 531);
+            this.grdProductos.Location = new System.Drawing.Point(-12, 128);
+            this.grdProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdProductos.Name = "grdProductos";
-            this.grdProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.grdProductos.Size = new System.Drawing.Size(1040, 531);
+            this.grdProductos.Size = new System.Drawing.Size(1387, 635);
             this.grdProductos.TabIndex = 13;
             // 
             // Codigo
@@ -143,9 +142,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(136, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -155,9 +155,10 @@
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
-            this.lblCodigo.Location = new System.Drawing.Point(125, 18);
+            this.lblCodigo.Location = new System.Drawing.Point(167, 22);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(89, 32);
+            this.lblCodigo.Size = new System.Drawing.Size(111, 41);
             this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Buscar:";
             // 
@@ -175,9 +176,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(415, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(553, 23);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(198, 76);
+            this.btnBuscar.Size = new System.Drawing.Size(264, 94);
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -185,10 +187,10 @@
             // 
             // Productos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1040, 629);
+            this.ClientSize = new System.Drawing.Size(1387, 774);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pictureBox1);
@@ -196,6 +198,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnNuevoProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Productos";
             this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).EndInit();

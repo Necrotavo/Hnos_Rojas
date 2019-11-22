@@ -9,7 +9,7 @@ namespace DO
     public class DO_Persona
     {
         public int perIdentificador { set; get; }
-        public String perTelefono { set; get; }
+        public int perTelefono { set; get; }
         public String perNombre { set; get; }
         public String perPrimerApellido { set; get; }
         public String perSegundoApellido { set; get; }
@@ -17,7 +17,7 @@ namespace DO
         public DO_Persona() {
         }
 
-        public DO_Persona(int _perIdentificador, String _perTelefono, String _perNombre, String _perPrimerApellido, String _perSegundoApellido) {
+        public DO_Persona(int _perIdentificador, int _perTelefono, String _perNombre, String _perPrimerApellido, String _perSegundoApellido) {
             this.perIdentificador = _perIdentificador;
             this.perTelefono = _perTelefono;
             this.perNombre = _perNombre;
