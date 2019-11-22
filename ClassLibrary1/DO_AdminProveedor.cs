@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO
 {
+    //Cambio
     public class DO_AdminProveedor
     {
         public List<DO_Proveedor> listaProveedores { set; get; }

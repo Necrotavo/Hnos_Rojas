@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO
 {
+    //cambio
     public class DO_ProductoEnFactura
     {
         public DO_Producto producto { set; get; }

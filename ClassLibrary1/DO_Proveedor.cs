@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DO
 {
+    //cambio
     public class DO_Proveedor
     {
         public String fechaVisita { set; get; }

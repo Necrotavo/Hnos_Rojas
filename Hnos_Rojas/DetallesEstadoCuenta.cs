@@ -28,10 +28,10 @@ namespace Hnos_Rojas
 
         public void llenarGrid() {
             DataTable tablaFacturas = new DataTable();
-            tablaFacturas.Columns.Add("Cod. Factura");
+            tablaFacturas.Columns.Add("Codigo");
             tablaFacturas.Columns.Add("Fecha");
             tablaFacturas.Columns.Add("Usuario");
-            tablaFacturas.Columns.Add("Cliente");
+            tablaFacturas.Columns.Add("ClienteNombre");
             tablaFacturas.Columns.Add("Estado");
             tablaFacturas.Columns.Add("Monto");
             tablaFacturas.Columns.Add("Saldo");
@@ -75,6 +75,27 @@ namespace Hnos_Rojas
             cliente.credito = blCredito.ObtenerCredito(cliente.id, desdeFecha, hastaFecha);
 
             llenarGrid();
+            formatoGrid();
+        }
+
+        private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dataTable = (DataTable)grdFacturas.DataSource;
+            try
+            {
+                if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Abonar"))
+                {
+                    DataRow fila = dataTable.Rows[e.RowIndex];
+                    dataTable.Rows.Remove(fila);
+                    grdFacturas.DataSource = dataTable;
+                    // filaSeleccionada = -1;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally { }
         }
     }
 }
