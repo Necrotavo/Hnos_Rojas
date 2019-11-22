@@ -104,7 +104,6 @@
             this.btnProducto.TabIndex = 1;
             this.btnProducto.Text = "INS Productos";
             this.btnProducto.UseVisualStyleBackColor = false;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // txtCodigo
             // 
@@ -226,7 +225,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(192, 42);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "F10 Pagos";
+            this.btnBuscar.Text = "F10 Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnArtComun

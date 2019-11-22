@@ -1,4 +1,4 @@
-using BL;
+﻿using BL;
 using DO;
 using System;
 using System.Collections.Generic;
@@ -26,8 +26,7 @@ namespace Hnos_Rojas
 
         }
 
-        public void llenarGrid()
-        {
+        public void llenarGrid() {
             DataTable tablaFacturas = new DataTable();
             tablaFacturas.Columns.Add("Cod. Factura");
             tablaFacturas.Columns.Add("Fecha");
@@ -37,8 +36,7 @@ namespace Hnos_Rojas
             tablaFacturas.Columns.Add("Monto");
             tablaFacturas.Columns.Add("Saldo");
 
-            foreach (DO_Factura doFactura in cliente.credito.listaFactura)
-            {
+            foreach (DO_Factura doFactura in cliente.credito.listaFactura) {
                 tablaFacturas.Rows.Add(doFactura.codigoFactura, doFactura.fecha, doFactura.usuario,
                     cliente.nombre + " " + cliente.primerApellido + " " + cliente.segundoApellido,
                     doFactura.estado, doFactura.totalFactura, doFactura.saldo);
@@ -49,8 +47,7 @@ namespace Hnos_Rojas
             this.lblMontoCred.Text = cliente.credito.monto.ToString();
         }
 
-        public void formatoGrid()
-        {
+        public void formatoGrid() {
             grdFacturas.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             grdFacturas.Columns[0].Width = 154;    //codigo
             grdFacturas.Columns[1].Width = 200;    //Fecha
@@ -68,7 +65,7 @@ namespace Hnos_Rojas
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            DateTime desdeFecha = new DateTime(calDesde.SelectionStart.Year, calDesde.SelectionStart.Month,
+            DateTime desdeFecha = new DateTime(calDesde.SelectionStart.Year, calDesde.SelectionStart.Month, 
                 calDesde.SelectionStart.Day, 0, 0, 0);
 
             DateTime hastaFecha = new DateTime(calHasta.SelectionStart.Year, calHasta.SelectionStart.Month,

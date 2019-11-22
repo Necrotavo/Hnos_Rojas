@@ -67,10 +67,10 @@ namespace DAO
         /// <param name="codigo">El código del producto</param>
         /// <param name="cantidadDisponible">La nueva cantidad disponible del producto</param>
         /// <returns>(True) si se actualizó la cantidad. (False) si no se actualizó</returns>
-        public bool ActualizarInventario(String codigo, int cantidadDisponible, int cantidadComprada)
+        public bool ActualizarInventario(String codigo, int cantidadDisponible)
         {
             SqlCommand consulta = new SqlCommand("update Producto set PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible", conexion);
-            consulta.Parameters.AddWithValue("@cantidadDisponible", cantidadDisponible - cantidadComprada);
+            consulta.Parameters.AddWithValue("@cantidadDisponible", cantidadDisponible);
 
             try
             {
@@ -120,7 +120,6 @@ namespace DAO
                 }
                 if (consulta.ExecuteNonQuery() > 0)
                 {
-                    ActualizarInventario(productoVendido.producto.codigo,productoVendido.producto.cantidadDisponible,productoVendido.cantidadComprada);
                     return true;
                 }
                 else {
@@ -147,7 +146,7 @@ namespace DAO
         /// <returns>(True) si el producto se agregó correctamente. (False) si no se agregó</returns>
         public bool AgregarProductoInventario(DO_Producto nuevoProducto)
         {
-            SqlCommand consulta = new SqlCommand("insert into Producto (PRO_CODIGO,PRO_DESCRIPCION,PRO_CANTIDAD_MINIMA_STOCK," +
+            SqlCommand consulta = new SqlCommand("insert into Producto (PRO_CODIGO,PRO_DESCRIPCION,PRO_CANTIDAD_MINIMA_STOCK" +
                 "PRO_CANTIDAD_DISPONIBLE,PRO_PRECIO_COSTO,PRO_PRECIO_VENTA) values (@codigo,@descripcion,@cantidadMinima," +
                 "@cantidadDisponible,@precioCosto,@precioVenta)", conexion);
             consulta.Parameters.AddWithValue("@codigo", nuevoProducto.codigo);

@@ -122,7 +122,7 @@ namespace DAO
 
             foreach(DO_Asociado asociado in proveedor.listaAsociados)
             {
-                if (daoAsociado.EliminarAsociado(asociado.perIdentificador)!= true)
+                if (daoAsociado.EliminarAsociado(asociado.identificador)!= true)
                 {
                     return false;
                 }

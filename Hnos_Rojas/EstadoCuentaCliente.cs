@@ -34,8 +34,8 @@ namespace Hnos_Rojas
 
             foreach (DO_Cliente doCliente in listaClientes)
             {
-                tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " "
-                    + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
+                tablaClientes.Rows.Add(doCliente.id, doCliente.nombre + " "
+                    + doCliente.primerApellido + " " + doCliente.segundoApellido);
             }
 
             listBClientes.DataSource = tablaClientes;
