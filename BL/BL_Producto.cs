@@ -31,7 +31,7 @@ namespace BL
         {
             DAO_Producto daoProducto = new DAO_Producto();
 
-            return daoProducto.ActualizarInventario(codigoProducto, nuevaCantidad, cantidadComprada);
+            return daoProducto.ActualizarInventario(codigoProducto, nuevaCantidad);
         }
         /// <summary>
         /// Obtiene el precio de venta de un producto según el porcentaje de ganancia esperado
