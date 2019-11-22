@@ -17,6 +17,7 @@ namespace Hnos_Rojas
         {
             padre = pariente;
             InitializeComponent();
+            ventasEjecucion();
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
