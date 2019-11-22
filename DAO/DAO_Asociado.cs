@@ -23,11 +23,11 @@ namespace DAO
             SqlCommand consulta = new SqlCommand("insert into Asociado (PER_IDENTIFICADOR],"+
            "PER_TELEFONO,PER_NOMBRE,PER_PRIMER_APELLIDO,PER_SEGUNDO_APELLIDO,PROV_NOMBRE)" +
            "values (@identificador,@telefono,@nombre, @primerApellido,@segundoApellido,@nombreProveedor)",conexion);
-            consulta.Parameters.AddWithValue("@identificador", asociado.identificador);
-            consulta.Parameters.AddWithValue("@telefono", asociado.telefono);
-            consulta.Parameters.AddWithValue("@nombre", asociado.nombre);
-            consulta.Parameters.AddWithValue("@primerApellido", asociado.primerApellido);
-            consulta.Parameters.AddWithValue("@segundoApellido", asociado.segundoApellido);
+            consulta.Parameters.AddWithValue("@identificador", asociado.perIdentificador);
+            consulta.Parameters.AddWithValue("@telefono", asociado.perTelefono);
+            consulta.Parameters.AddWithValue("@nombre", asociado.perNombre);
+            consulta.Parameters.AddWithValue("@primerApellido", asociado.perPrimerApellido);
+            consulta.Parameters.AddWithValue("@segundoApellido", asociado.perSegundoApellido);
             consulta.Parameters.AddWithValue("@nombreProveedor", asociado.proveedor);
 
             try
@@ -61,7 +61,7 @@ namespace DAO
         /// </summary>
         /// <param name="identificador">El identificador del asociado</param>
         /// <returns>(True) si se eliminó correctamente.(False) si no se eliminó.</returns>
-        public bool EliminarAsociado(String identificador)
+        public bool EliminarAsociado(int identificador)
         {
             SqlCommand consulta = new SqlCommand("delete from Asociado Where Per_Identificador = @identificador", conexion);
             consulta.Parameters.AddWithValue("@identificador", identificador);
@@ -116,7 +116,7 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                        listaDeAsociados.Add(new DO_Asociado((String)lector["PER_IDENTIFICADOR"], (String)lector["PER_TELEFONO"], (String)lector["PER_PRIMER_APELLIDO"], (String)lector["PER_SEGUNDO_APELLIDO"], (String)lector["PER_NOMBRE"], (String)lector["PROV_NOMBRE"]));
+                        listaDeAsociados.Add(new DO_Asociado(Convert.ToInt32(lector["PER_IDENTIFICADOR"]), (String)lector["PER_TELEFONO"], (String)lector["PER_PRIMER_APELLIDO"], (String)lector["PER_SEGUNDO_APELLIDO"], (String)lector["PER_NOMBRE"], (String)lector["PROV_NOMBRE"]));
                     }
                 }
                 return listaDeAsociados;
@@ -155,11 +155,11 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                        asociado.identificador = (String)lector["PER_IDENTIFICADOR"];
-                        asociado.telefono = (String)lector["PER_TELEFONO"];
-                        asociado.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
-                        asociado.segundoApellido  = (String)lector["PER_SEGUNDO_APELLIDO"];
-                        asociado.nombre = (String)lector["PER_NOMBRE"];
+                        asociado.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        asociado.perTelefono = (String)lector["PER_TELEFONO"];
+                        asociado.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        asociado.perSegundoApellido  = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        asociado.perNombre = (String)lector["PER_NOMBRE"];
                         asociado.proveedor = (String)lector["PROV_NOMBRE"];
                     }
                 }

@@ -66,8 +66,8 @@ namespace Hnos_Rojas
             tablaClientes.Columns.Add("id");
             tablaClientes.Columns.Add("nombre");
             foreach (DO_Cliente doCliente in listaClientes) {
-                tablaClientes.Rows.Add(doCliente.id, doCliente.nombre + " " 
-                    + doCliente.primerApellido + " " + doCliente.segundoApellido);
+                tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " " 
+                    + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
             }
             listBClientes.DataSource = tablaClientes;
             listBClientes.DisplayMember = "nombre";

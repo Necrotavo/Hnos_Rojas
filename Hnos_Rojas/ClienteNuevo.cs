@@ -46,25 +46,20 @@ namespace Hnos_Rojas
             {
                 MessageBox.Show("EXISTEN CAMPOS OBLIGATORIOS POR LLENAR");
             } else {
-                DO_Persona persona = new DO_Persona();
-                persona.perTelefono = Convert.ToInt32(txtTelefono.Text.Trim());
-                persona.perNombre = txtNombre.Text.Trim();
-                persona.perPrimerApellido = txtPriApellido.Text.Trim();
-                persona.perSegundoApellido = txtSegApellido.Text.Trim();
-                int identificadorCliente = NuevaPersona(persona);
-
-                DO_Cliente nuevoCliente = new DO_Cliente();
-                nuevoCliente.id = identificadorCliente;
-                nuevoCliente.nombre = persona.perNombre;
-                nuevoCliente.estado = "HABILITADO";
-                nuevoCliente.primerApellido = persona.perPrimerApellido;
-                nuevoCliente.segundoApellido = persona.perSegundoApellido;
-                nuevoCliente.direccion = txtDireccion.Text.Trim();
-                nuevoCliente.telefono = Convert.ToInt32(persona.perTelefono);
-                NuevoCliente(nuevoCliente);
+                DO_Cliente cliente = new DO_Cliente();
+                cliente.perTelefono = txtTelefono.Text.Trim();
+                cliente.perNombre = txtNombre.Text.Trim();
+                cliente.perPrimerApellido = txtPriApellido.Text.Trim();
+                cliente.perSegundoApellido = txtSegApellido.Text.Trim();
+                cliente.direccion = txtDireccion.Text.Trim();
+                cliente.estado = "HABILITADO";
+                int identificadorCliente = NuevaPersona(cliente);
+                cliente.perIdentificador = identificadorCliente;
+                
+                NuevoCliente(cliente);
 
                 BL_Credito daoCredito = new BL_Credito();
-                daoCredito.CrearCredito(nuevoCliente.id, Convert.ToInt32(txtLimiteCredito.Text.Trim()));
+                daoCredito.CrearCredito(cliente.perIdentificador, Convert.ToInt32(txtLimiteCredito.Text.Trim()));
                 vaciarCamposTexto();
             }
             

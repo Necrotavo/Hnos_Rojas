@@ -147,7 +147,7 @@ namespace DAO
         /// <returns>(True) si el producto se agregó correctamente. (False) si no se agregó</returns>
         public bool AgregarProductoInventario(DO_Producto nuevoProducto)
         {
-            SqlCommand consulta = new SqlCommand("insert into Producto (PRO_CODIGO,PRO_DESCRIPCION,PRO_CANTIDAD_MINIMA_STOCK" +
+            SqlCommand consulta = new SqlCommand("insert into Producto (PRO_CODIGO,PRO_DESCRIPCION,PRO_CANTIDAD_MINIMA_STOCK," +
                 "PRO_CANTIDAD_DISPONIBLE,PRO_PRECIO_COSTO,PRO_PRECIO_VENTA) values (@codigo,@descripcion,@cantidadMinima," +
                 "@cantidadDisponible,@precioCosto,@precioVenta)", conexion);
             consulta.Parameters.AddWithValue("@codigo", nuevoProducto.codigo);

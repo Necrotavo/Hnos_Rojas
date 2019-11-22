@@ -26,12 +26,12 @@ namespace DAO
                 SqlDataReader lector = consulta.ExecuteReader();
                 if (lector.HasRows) {
                     while (lector.Read()) {
-                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
                         cliente.estado = (String)lector["EST_ESTADO"];
-                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
-                        cliente.nombre = (String)lector["PER_NOMBRE"];
-                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
-                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.perTelefono = (String)(lector["PER_TELEFONO"]);
+                        cliente.perNombre = (String)lector["PER_NOMBRE"];
+                        cliente.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.perSegundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
                         cliente.direccion = (String)lector["CLI_DIRECCION"];
                     }
                     return cliente;
@@ -65,12 +65,12 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
                         cliente.estado = (String)lector["EST_ESTADO"];
-                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
-                        cliente.nombre = (String)lector["PER_NOMBRE"];
-                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
-                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.perTelefono = (String)(lector["PER_TELEFONO"]);
+                        cliente.perNombre = (String)lector["PER_NOMBRE"];
+                        cliente.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.perSegundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
                         cliente.direccion = (String)lector["CLI_DIRECCION"];
                     }
                     return cliente;
@@ -135,12 +135,12 @@ namespace DAO
                 {
                     DO_Cliente nuevoCliente = new DO_Cliente();
 
-                    nuevoCliente.id = Convert.ToInt32(row["PER_IDENTIFICADOR"]);
-                    nuevoCliente.nombre = (String)row["PER_NOMBRE"];
+                    nuevoCliente.perIdentificador = Convert.ToInt32(row["PER_IDENTIFICADOR"]);
+                    nuevoCliente.perNombre = (String)row["PER_NOMBRE"];
                     nuevoCliente.estado = (String)row["EST_ESTADO"];
-                    nuevoCliente.telefono = Convert.ToInt32(row["PER_TELEFONO"]);
-                    nuevoCliente.primerApellido = (String)row["PER_PRIMER_APELLIDO"];
-                    nuevoCliente.segundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
+                    nuevoCliente.perTelefono = (String)(row["PER_TELEFONO"]);
+                    nuevoCliente.perPrimerApellido = (String)row["PER_PRIMER_APELLIDO"];
+                    nuevoCliente.perSegundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
                     nuevoCliente.direccion = (String)row["CLI_DIRECCION"];
 
                     listaClientes.Add(nuevoCliente);
@@ -161,12 +161,12 @@ namespace DAO
 
         public bool registrarClienteCrediticio(DO_Cliente cliente) {
             SqlCommand comando = new SqlCommand("Insert into CLIENTE (PER_IDENTIFICADOR, EST_ESTADO, PER_TELEFONO, PER_NOMBRE, PER_PRIMER_APELLIDO, PER_SEGUNDO_APELLIDO, CLI_DIRECCION) Values (@identificador,@estado,@telefono,@nombre,@primerApellido,@segundoApellido,@direccion)", conexion);
-            comando.Parameters.AddWithValue("@identificador", cliente.id);
+            comando.Parameters.AddWithValue("@identificador", cliente.perIdentificador);
             comando.Parameters.AddWithValue("@estado", cliente.estado); // el cliente cuando se registra siempre empieza habilitado
-            comando.Parameters.AddWithValue("@telefono", cliente.telefono);
-            comando.Parameters.AddWithValue("@nombre", cliente.nombre);
-            comando.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);
-            comando.Parameters.AddWithValue("@segundoApellido", cliente.segundoApellido);
+            comando.Parameters.AddWithValue("@telefono", cliente.perTelefono);
+            comando.Parameters.AddWithValue("@nombre", cliente.perNombre);
+            comando.Parameters.AddWithValue("@primerApellido", cliente.perPrimerApellido);
+            comando.Parameters.AddWithValue("@segundoApellido", cliente.perSegundoApellido);
             comando.Parameters.AddWithValue("@direccion", cliente.direccion);
 
             try
@@ -208,12 +208,12 @@ namespace DAO
                     while (lector.Read())
                     {
                         DO_Cliente cliente = new DO_Cliente();
-                        cliente.id = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
                         cliente.estado = (String)lector["EST_ESTADO"];
-                        cliente.telefono = Convert.ToInt32(lector["PER_TELEFONO"]);
-                        cliente.nombre = (String)lector["PER_NOMBRE"];
-                        cliente.primerApellido = (String)lector["PER_PRIMER_APELLIDO"];
-                        cliente.segundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.perTelefono = (String)(lector["PER_TELEFONO"]);
+                        cliente.perNombre = (String)lector["PER_NOMBRE"];
+                        cliente.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.perSegundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
                         cliente.direccion = (String)lector["CLI_DIRECCION"];
                         listaClientes.Add(cliente);
                     }
@@ -245,12 +245,12 @@ namespace DAO
                 "where PER_IDENTIFICADOR = @idCliente", conexion);
 
             consulta.Parameters.AddWithValue("@estado", cliente.estado);
-            consulta.Parameters.AddWithValue("@telefono", cliente.telefono);
-            consulta.Parameters.AddWithValue("@nombre", cliente.nombre);
-            consulta.Parameters.AddWithValue("@primerApellido", cliente.primerApellido);
-            consulta.Parameters.AddWithValue("@segundoApellido", cliente.segundoApellido);
+            consulta.Parameters.AddWithValue("@telefono", cliente.perTelefono);
+            consulta.Parameters.AddWithValue("@nombre", cliente.perNombre);
+            consulta.Parameters.AddWithValue("@primerApellido", cliente.perPrimerApellido);
+            consulta.Parameters.AddWithValue("@segundoApellido", cliente.perSegundoApellido);
             consulta.Parameters.AddWithValue("@direccion", cliente.direccion);
-            consulta.Parameters.AddWithValue("@idCliente", cliente.id);
+            consulta.Parameters.AddWithValue("@idCliente", cliente.perIdentificador);
 
             try
             {
