@@ -92,6 +92,47 @@ namespace DAO
             return null;
         }
 
+        public DO_Credito ObtenerCredito(int idCliente, DateTime desde, DateTime hasta)
+        {
+            SqlCommand consultaCredito = new SqlCommand("select * from CREDITO where CRE_IDENTIFICADOR = @idCliente", conexion);
+            consultaCredito.Parameters.AddWithValue("@idCliente", idCliente);
+            DO_Credito credito = new DO_Credito();
+            credito.listaFactura = new List<DO_Factura>();
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consultaCredito.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        credito.identificador = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                        credito.limiteCredito = Convert.ToInt32(lector["CRED_LIMITE_CREDITO"]);
+                        credito.monto = Convert.ToInt32(lector["CRED_MONTO"]);
+                    }
+
+                    DAO_Factura daoFactura = new DAO_Factura();
+                    credito.listaFactura = daoFactura.obtenerFacturasCredito(idCliente, desde, hasta);
+                    return credito;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+
         public bool crearCredito(int idCliente, int limiteCredito) {
             SqlCommand comando = new SqlCommand("insert into CREDITO (CRE_IDENTIFICADOR, CRED_MONTO, CRED_LIMITE_CREDITO) Values (@idCliente, @creditoMonto, @limiteCredito)", conexion);
             comando.Parameters.AddWithValue("@idCliente", idCliente);
@@ -212,5 +253,6 @@ namespace DAO
                 }
             }
         }
+        
     }
 }

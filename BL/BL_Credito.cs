@@ -28,6 +28,12 @@ namespace BL
             return daoCredito.ObtenerCredito(idCliente);
         }
 
+        public DO_Credito ObtenerCredito(int idCliente, DateTime desde, DateTime hasta)
+        {
+            DAO_Credito daoCredito = new DAO_Credito();
+            return daoCredito.ObtenerCredito(idCliente, desde, hasta);
+        }
+
         public bool CrearCredito(int idCliente, int limiteCredito)
         {
             DAO_Credito daoCredito = new DAO_Credito();
