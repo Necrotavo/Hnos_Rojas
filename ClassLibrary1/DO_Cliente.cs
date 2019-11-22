@@ -8,9 +8,12 @@ namespace DO
 {
     public class DO_Cliente : DO_Persona
     {
-
+        //public int id { set; get; }
+        //public String nombre { set; get; }
+        //public String primerApellido { set; get; }
+        //public String segundoApellido { set; get; }
         public String direccion { set; get; }
-        
+        //public int telefono { set; get; }
         public String estado { set; get; }
         public DO_Credito credito { set; get; }
 
