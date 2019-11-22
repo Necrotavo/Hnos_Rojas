@@ -14,9 +14,11 @@ namespace Hnos_Rojas
 {
     public partial class ProductoNuevo : Form
     {
-        public ProductoNuevo()
+        Productos padre;
+        public ProductoNuevo(Productos parent)
         {
             InitializeComponent();
+            padre = parent;
         }
 
         private void clearControls()
@@ -45,6 +47,7 @@ namespace Hnos_Rojas
                );
                 blProducto.AgregarProductoAInventario(doProducto);
                 clearControls();
+                padre.llenarGridProductos();
                 MessageBox.Show("producto insertado");
 
             }
