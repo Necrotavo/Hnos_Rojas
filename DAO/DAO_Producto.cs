@@ -67,10 +67,10 @@ namespace DAO
         /// <param name="codigo">El código del producto</param>
         /// <param name="cantidadDisponible">La nueva cantidad disponible del producto</param>
         /// <returns>(True) si se actualizó la cantidad. (False) si no se actualizó</returns>
-        public bool ActualizarInventario(String codigo, int cantidadDisponible)
+        public bool ActualizarInventario(String codigo, int cantidadDisponible, int cantidadComprada)
         {
             SqlCommand consulta = new SqlCommand("update Producto set PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible", conexion);
-            consulta.Parameters.AddWithValue("@cantidadDisponible", cantidadDisponible);
+            consulta.Parameters.AddWithValue("@cantidadDisponible", cantidadDisponible - cantidadComprada);
 
             try
             {
@@ -120,6 +120,7 @@ namespace DAO
                 }
                 if (consulta.ExecuteNonQuery() > 0)
                 {
+                    ActualizarInventario(productoVendido.producto.codigo,productoVendido.producto.cantidadDisponible,productoVendido.cantidadComprada);
                     return true;
                 }
                 else {
