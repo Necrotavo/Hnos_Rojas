@@ -225,7 +225,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(192, 42);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "F10 Buscar";
+            this.btnBuscar.Text = "F10 Pagos";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnArtComun

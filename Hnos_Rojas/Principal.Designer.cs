@@ -101,7 +101,7 @@
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(166, 88);
             this.btnInventario.TabIndex = 10;
-            this.btnInventario.Text = "F4 Inventario";
+            this.btnInventario.Text = "Proveedores";
             this.btnInventario.UseVisualStyleBackColor = false;
             // 
             // btnProductos
