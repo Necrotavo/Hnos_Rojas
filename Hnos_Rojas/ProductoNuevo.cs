@@ -19,6 +19,17 @@ namespace Hnos_Rojas
             InitializeComponent();
         }
 
+        private void clearControls()
+        {
+            string empty = "";
+            txtCant.Text = empty;
+            txtCantMin.Text = empty;
+            txtCod.Text = empty;
+            txtDescr.Text = empty;
+            txtPCost.Text = empty;
+            txtPVent.Text = empty;
+
+        }
         private void btnEjecutar_Click(object sender, EventArgs e)
         {
             BL_Producto blProducto = new BL_Producto();
@@ -33,6 +44,9 @@ namespace Hnos_Rojas
                Convert.ToInt32(txtCant.Text)
                );
                 blProducto.AgregarProductoAInventario(doProducto);
+                clearControls();
+                MessageBox.Show("producto insertado");
+
             }
             catch (Exception er)
             {
