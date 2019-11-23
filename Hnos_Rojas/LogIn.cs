@@ -13,6 +13,7 @@ namespace Hnos_Rojas
 {
     public partial class VentanaPrincipal : Form
     {
+        public int indexUsuario;
        
         public VentanaPrincipal()
         {
@@ -43,7 +44,7 @@ namespace Hnos_Rojas
 
         public void aceptar() {
             BL_Usuario blUsuario = new BL_Usuario();
-
+            indexUsuario = cboUsuario.SelectedIndex;
             if (blUsuario.iniciarSesion(cboUsuario.SelectedValue.ToString(), txtContrasena.Text) != null)
             {
                 Principal principal = new Principal(this);

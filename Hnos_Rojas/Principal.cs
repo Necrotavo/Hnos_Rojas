@@ -12,8 +12,8 @@ namespace Hnos_Rojas
 {
     public partial class Principal : Form
     {
-        Form padre;
-        public Principal(Form pariente)
+        VentanaPrincipal padre;
+        public Principal(VentanaPrincipal pariente)
         {
             padre = pariente;
             InitializeComponent();
@@ -61,8 +61,9 @@ namespace Hnos_Rojas
         }
         private void ventasEjecucion() //evento q se llama al hacer click en el boton o en F1
         {
+
             pnlCenter.Controls.Clear();
-            Ventas otropanel = new Ventas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Ventas otropanel = new Ventas(padre.indexUsuario) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             pnlCenter.Controls.Add(otropanel);
             otropanel.Show();
             otropanel.ActiveControl = otropanel.Controls["panel1"].Controls["txtCodigo"];

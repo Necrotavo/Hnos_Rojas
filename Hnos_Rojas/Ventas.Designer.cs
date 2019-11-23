@@ -36,6 +36,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.nmCantidad = new System.Windows.Forms.NumericUpDown();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +44,8 @@
             this.btnCerrarTicket = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnArtComun = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
@@ -134,6 +136,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtContrasena);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.nmCantidad);
             this.panel1.Controls.Add(this.lblCantidad);
@@ -150,6 +154,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1277, 168);
             this.panel1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(789, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 42);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Reimprimir Factura";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // nmCantidad
             // 
@@ -186,7 +205,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1105, 21);
+            this.label1.Location = new System.Drawing.Point(1105, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 32);
             this.label1.TabIndex = 12;
@@ -196,10 +215,11 @@
             // 
             this.cboUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUsuarios.FormattingEnabled = true;
-            this.cboUsuarios.Location = new System.Drawing.Point(1046, 59);
+            this.cboUsuarios.Location = new System.Drawing.Point(1046, 35);
             this.cboUsuarios.Name = "cboUsuarios";
             this.cboUsuarios.Size = new System.Drawing.Size(224, 37);
             this.cboUsuarios.TabIndex = 11;
+            this.cboUsuarios.SelectionChangeCommitted += new System.EventHandler(this.cboUsuarios_SelectionChangeCommitted);
             // 
             // btnCerrarTicket
             // 
@@ -244,20 +264,25 @@
             this.btnArtComun.Text = "CTRL+P Art. Común";
             this.btnArtComun.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // label2
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(789, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 42);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Reimprimir Factura";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(1157, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 32);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Password";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(1046, 121);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(224, 39);
+            this.txtContrasena.TabIndex = 21;
             // 
             // Ventas
             // 
@@ -296,5 +321,7 @@
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.NumericUpDown nmCantidad;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtContrasena;
     }
 }

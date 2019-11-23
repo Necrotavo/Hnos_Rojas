@@ -15,13 +15,15 @@ namespace Hnos_Rojas
     public partial class Ventas : Form
     {
         List<Tickets> listaTiquetes = new List<Tickets>();
+        private int usuario;
         public bool facturaImpresa;
         public bool facturaContadoRealizada = false;
         public bool facturaCreditoRealizada = false;
         public FacturaContado facturaContadoTemp;
-        public Ventas()
+        public Ventas(int _usuario)
         {
             InitializeComponent();
+            usuario = _usuario;
             llenarCboUsuarios();
             String usr = cboUsuarios.SelectedValue.ToString();
             Tickets primer = new Tickets(usr, this) { TopLevel = false, TopMost = true, Visible = true };
@@ -107,6 +109,7 @@ namespace Hnos_Rojas
             cboUsuarios.DataSource = blUsuario.CargarUsuarios();
             cboUsuarios.ValueMember = "nombreUsuario";
             cboUsuarios.DisplayMember = "nombreUsuario";
+            cboUsuarios.SelectedIndex = usuario;
         }
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
@@ -171,6 +174,21 @@ namespace Hnos_Rojas
             if (!facturaCreditoRealizada && !facturaContadoRealizada)
             {
                 //reproducir sonidito
+            }
+        }
+
+        private void cboUsuarios_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            BL_Usuario blUsuario = new BL_Usuario();
+
+            if (blUsuario.iniciarSesion(cboUsuarios.SelectedValue.ToString(), txtContrasena.Text) != null)
+            {
+                txtContrasena.Clear();
+            }
+            else
+            {
+                cboUsuarios.SelectedItem = cboUsuarios.Items[usuario];
+                MessageBox.Show("Credenciales incorrectas");
             }
         }
     }
