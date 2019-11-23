@@ -76,6 +76,10 @@ namespace Hnos_Rojas
             printDocument1.DefaultPageSettings.PaperSize = papelTamano;
             printPreviewControl1.Document = printDocument1;
             inicializarStrings();
+            imprimir();
+        }
+        public void imprimir()
+        {
             printDocument1.Print();
 
         }

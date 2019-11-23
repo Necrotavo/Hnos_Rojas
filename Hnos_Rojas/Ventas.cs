@@ -15,6 +15,10 @@ namespace Hnos_Rojas
     public partial class Ventas : Form
     {
         List<Tickets> listaTiquetes = new List<Tickets>();
+        public bool facturaImpresa;
+        public bool facturaContadoRealizada = false;
+        public bool facturaCreditoRealizada = false;
+        public FacturaContado facturaContadoTemp;
         public Ventas()
         {
             InitializeComponent();
@@ -25,6 +29,8 @@ namespace Hnos_Rojas
             listaTiquetes.Add(primer);
             tabTicket.TabPages[0].Text = "Ticket " + DateTime.Now.ToString("hh:mm:ss");
         }
+
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -149,6 +155,22 @@ namespace Hnos_Rojas
                         agregarProductoCompleto();
                         break;
                     }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (facturaContadoRealizada)
+            {
+                facturaContadoTemp.imprimir();
+            }
+            if (facturaCreditoRealizada)
+            {
+                //reimprimir factura credito
+            }
+            if (!facturaCreditoRealizada && !facturaContadoRealizada)
+            {
+                //reproducir sonidito
             }
         }
     }

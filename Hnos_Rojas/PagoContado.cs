@@ -76,6 +76,7 @@ namespace Hnos_Rojas
                     txtNotas.Text,
                     txtCliente.Text
                     );
+                padre.facturaContadoTemp = factOpt;
                 padre.cerrarTicket();
                 this.Dispose();
             }
@@ -87,6 +88,9 @@ namespace Hnos_Rojas
         private void btnPagar_Click(object sender, EventArgs e)
         {
             hacerPago();
+            padre.facturaContadoRealizada = true;
+            padre.facturaCreditoRealizada = false;
+            
         }
 
         public void registrarFactura() {
