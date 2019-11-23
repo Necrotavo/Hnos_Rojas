@@ -20,8 +20,8 @@ namespace DAO
         /// <returns>El producto encontrado(DO_Producto), o (null) si no se encuentra registrado</returns>
         public DO_Producto BuscarProducto(String codigo) {
 
-            SqlCommand consulta = new SqlCommand("select * from Producto where PRO_CODIGO = @codigo", conexion);
-            consulta.Parameters.AddWithValue("@codigo", codigo);
+            SqlCommand consulta = new SqlCommand("select * from Producto where PRO_CODIGO like @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", codigo + "%" );
 
             DO_Producto producto = new DO_Producto();
 
@@ -69,7 +69,8 @@ namespace DAO
         /// <returns>(True) si se actualizó la cantidad. (False) si no se actualizó</returns>
         public bool ActualizarInventario(String codigo, int cantidadDisponible, int cantidadComprada)
         {
-            SqlCommand consulta = new SqlCommand("update Producto set PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible", conexion);
+            SqlCommand consulta = new SqlCommand("update Producto set PRO_CANTIDAD_DISPONIBLE = @cantidadDisponible Where PRO_CODIGO = @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", codigo);
             consulta.Parameters.AddWithValue("@cantidadDisponible", cantidadDisponible - cantidadComprada);
 
             try
