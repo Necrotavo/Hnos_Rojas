@@ -17,6 +17,8 @@ namespace Hnos_Rojas
     public partial class FacturaContado : Form
     {
         Font fuenteGeneral = new Font("Arial", 12);
+        Font fuenteGrande = new Font("Arial", 16);
+        Font fuentePeque = new Font("Arial", 8);
         PaperSize papelTamano;
         string nombreLocal;
         string direccion;
@@ -29,8 +31,10 @@ namespace Hnos_Rojas
         string total;
         string pagaCon;
         string vuelto;
+        string cliente;
+        int cantidadTotalProductos = 0;
         int ancho = 300;
-        int largo = 500;
+        int largo = 450;
 
 
 
@@ -39,17 +43,31 @@ namespace Hnos_Rojas
         int x = 0;
         int y = 0;
 
-        public FacturaContado(string _cajero, string _total, string _pagaCon, string _vuelto, List<DO_ProductoEnFactura> _productos, string _notas)
+        public FacturaContado(string _cajero,
+            string _total,
+            string _pagaCon,
+            string _vuelto,
+            List<DO_ProductoEnFactura> _productos,
+            string _notas,
+            string _cliente)
         {
             
             InitializeComponent();
-           
-            if (!_notas.Equals(""))
-            {
-                notas = _notas;
-            }
+            cliente = _cliente;
+            notas = _notas;
             cajero = _cajero;
             productos = _productos;
+            foreach (DO_ProductoEnFactura item in productos)
+            {
+                cantidadTotalProductos += item.cantidadComprada;
+                DO_Producto doProd = item.producto;
+                if (doProd.descripcion.Length > 20)
+                {
+                    item.producto.descripcion = item.producto.descripcion.Substring(0, 20) + "...";
+                }
+                
+            }
+            
             total = _total;
             pagaCon = _pagaCon;
             vuelto = _vuelto;
@@ -58,6 +76,7 @@ namespace Hnos_Rojas
             printDocument1.DefaultPageSettings.PaperSize = papelTamano;
             printPreviewControl1.Document = printDocument1;
             inicializarStrings();
+            printDocument1.Print();
 
         }
         private void inicializarStrings()
@@ -74,46 +93,44 @@ namespace Hnos_Rojas
         {
             //encabezado
             e.Graphics.DrawRectangle(Pens.Black, new Rectangle(x,y,ancho - x - x,largo - y - y));
-            e.Graphics.DrawString(nombreLocal, fuenteGeneral, Brushes.Black, x + 3, y);
-            e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 12, y + fuenteGeneral.Height);
-            e.Graphics.DrawString("Ced: " + ced, fuenteGeneral, Brushes.Black, x + 60, y + (fuenteGeneral.Height * 2));
-            e.Graphics.DrawString("Telefono: " + telefono, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 3));
-            e.Graphics.DrawString("Cajero: " + cajero, fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * 4));
-           
+            e.Graphics.DrawString(nombreLocal, fuenteGeneral, Brushes.Black, x + 40, y);
+            e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 50, y + fuenteGeneral.Height);
+            e.Graphics.DrawString("Ced: " + ced, fuenteGeneral, Brushes.Black, x + 75, y + (fuenteGeneral.Height * 2));
+            e.Graphics.DrawString("Telefono: " + telefono, fuenteGeneral, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 4));
+            e.Graphics.DrawString("Cajero: " + cajero, fuenteGeneral, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 5));
+            e.Graphics.DrawString("Cliente: " + cliente, fuenteGeneral, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 6));
 
 
             //body
-            e.Graphics.DrawString(fecha, fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * 6));
-            e.Graphics.DrawString(notas, fuenteGeneral, Brushes.Black, x + 43, y + (fuenteGeneral.Height * 7));
-            e.Graphics.DrawLine(Pens.Black, x + 10, y + (fuenteGeneral.Height * 9) , ancho - x - 10, y + (fuenteGeneral.Height * 9));
+            e.Graphics.DrawString(fecha, fuenteGeneral, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 7));
+            e.Graphics.DrawString(notas, fuenteGeneral, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 8));
+            e.Graphics.DrawString("CANT.   DESCRIPCION                              IMPORTE",
+                fuentePeque, Brushes.Black, x + 10, y + (fuenteGeneral.Height * 10));
 
+            e.Graphics.DrawLine(Pens.Black, x + 10, y + (fuenteGeneral.Height * 11) , ancho - x - 10, y + (fuenteGeneral.Height * 11));
 
+            
             //productos
             for (int i = 0; i < productos.Count; i++)
             {
-                e.Graphics.DrawString(productos[i].producto.descripcion, fuenteGeneral, Brushes.Black, x + 23, y + (fuenteGeneral.Height * (9 + i)));
-                e.Graphics.DrawString(productos[i].cantidadComprada.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (9 + i)));
-                e.Graphics.DrawString((productos[i].producto.precioVenta * productos[i].cantidadComprada).ToString(), fuenteGeneral, Brushes.Black, ancho - 100, y + (fuenteGeneral.Height * (9 + i)));
+                e.Graphics.DrawString(productos[i].producto.descripcion, fuenteGeneral, Brushes.Black, x + 30, y + (fuenteGeneral.Height * (12 + i)));
+                e.Graphics.DrawString(productos[i].cantidadComprada.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (12 + i)));
+                e.Graphics.DrawString((productos[i].producto.precioVenta * productos[i].cantidadComprada).ToString(), fuenteGeneral, Brushes.Black, ancho - 60, y + (fuenteGeneral.Height * (12 + i)));
             }
+            e.Graphics.DrawString("Cant. Articulos: " + cantidadTotalProductos.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (12 + productos.Count)));
 
-            e.Graphics.DrawString("TOTAL: " + total, fuenteGeneral, Brushes.Black, ancho - 150, largo - 200);
+            e.Graphics.DrawString("TOTAL: " + total, fuenteGrande, Brushes.Black, ancho - 230, fuenteGeneral.Height * (14 + productos.Count));
+            e.Graphics.DrawString("PAGÓ CON: " + pagaCon, fuenteGrande, Brushes.Black, ancho - 250, fuenteGeneral.Height * (16 + productos.Count));
+            e.Graphics.DrawString("SU CAMBIO: " + vuelto, fuenteGrande, Brushes.Black, ancho - 240, fuenteGeneral.Height * (18 + productos.Count));
 
             //pie
-            e.Graphics.DrawLine(Pens.Black, x + 10, largo - 90 , ancho - x - 10, largo - 90);
-            e.Graphics.DrawString("Gracias por su compra!!!", fuenteGeneral, Brushes.Black, x + 25, largo - 60);
+            e.Graphics.DrawLine(Pens.Black, x + 10, largo - 80 , ancho - x - 10, largo - 80);
+            e.Graphics.DrawString("Gracias por su compra!!!", fuenteGeneral, Brushes.Black, x + 50, largo - 60);
+            e.Graphics.DrawString("I.V.A", fuenteGeneral, Brushes.Black, x + 115, largo - 45);
 
 
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            printDialog1.AllowSelection = true;
-            printDialog1.AllowSomePages = true;
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
         }
     }
 }

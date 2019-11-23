@@ -73,11 +73,11 @@ namespace Hnos_Rojas
                     nmPaga.Value.ToString(),
                     lblVuelto.Text,
                     factura.listaProducto,
-                    txtNotas.Text
+                    txtNotas.Text,
+                    txtCliente.Text
                     );
-                factOpt.Show();
                 padre.cerrarTicket();
-
+                this.Dispose();
             }
             else
             {
@@ -100,7 +100,6 @@ namespace Hnos_Rojas
 
             MessageBox.Show("Pago exitoso");
 
-            this.Dispose();
         }
 
         private void PagoContado_Load(object sender, EventArgs e)
