@@ -30,12 +30,12 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblMontoAbono = new System.Windows.Forms.Label();
-            this.txtMonto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblMontoCredito = new System.Windows.Forms.Label();
             this.lblSaldoAbono = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
             this.lblSaldo = new System.Windows.Forms.Label();
+            this.txtAbono = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -61,15 +61,6 @@
             this.lblMontoAbono.Size = new System.Drawing.Size(258, 41);
             this.lblMontoAbono.TabIndex = 5;
             this.lblMontoAbono.Text = "Monto del abono:";
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonto.Location = new System.Drawing.Point(315, 132);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(197, 41);
-            this.txtMonto.TabIndex = 6;
             // 
             // label1
             // 
@@ -120,6 +111,7 @@
             this.btnPagar.TabIndex = 15;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // lblSaldo
             // 
@@ -132,18 +124,29 @@
             this.lblSaldo.Size = new System.Drawing.Size(0, 41);
             this.lblSaldo.TabIndex = 16;
             // 
+            // txtAbono
+            // 
+            this.txtAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAbono.Location = new System.Drawing.Point(315, 131);
+            this.txtAbono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAbono.Name = "txtAbono";
+            this.txtAbono.Size = new System.Drawing.Size(198, 41);
+            this.txtAbono.TabIndex = 17;
+            this.txtAbono.TextChanged += new System.EventHandler(this.txtAbono_TextChanged);
+            this.txtAbono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbono_KeyPress);
+            // 
             // AbonarCredito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(548, 445);
+            this.Controls.Add(this.txtAbono);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.lblSaldoAbono);
             this.Controls.Add(this.lblMontoCredito);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.lblMontoAbono);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -158,11 +161,11 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblMontoAbono;
-        private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMontoCredito;
         private System.Windows.Forms.Label lblSaldoAbono;
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Label lblSaldo;
+        private System.Windows.Forms.TextBox txtAbono;
     }
 }
