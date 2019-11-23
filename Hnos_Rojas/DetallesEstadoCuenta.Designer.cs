@@ -54,13 +54,15 @@
             // 
             // calDesde
             // 
-            this.calDesde.Location = new System.Drawing.Point(64, 66);
+            this.calDesde.Location = new System.Drawing.Point(48, 54);
+            this.calDesde.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.calDesde.Name = "calDesde";
             this.calDesde.TabIndex = 0;
             // 
             // calHasta
             // 
-            this.calHasta.Location = new System.Drawing.Point(64, 336);
+            this.calHasta.Location = new System.Drawing.Point(48, 273);
+            this.calHasta.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.calHasta.Name = "calHasta";
             this.calHasta.TabIndex = 1;
             // 
@@ -69,10 +71,9 @@
             this.lblDesde.AutoSize = true;
             this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesde.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDesde.Location = new System.Drawing.Point(141, 21);
-            this.lblDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDesde.Location = new System.Drawing.Point(106, 17);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(100, 36);
+            this.lblDesde.Size = new System.Drawing.Size(84, 29);
             this.lblDesde.TabIndex = 3;
             this.lblDesde.Text = "Desde";
             // 
@@ -81,10 +82,9 @@
             this.lblHasta.AutoSize = true;
             this.lblHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHasta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblHasta.Location = new System.Drawing.Point(150, 291);
-            this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHasta.Location = new System.Drawing.Point(112, 236);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(91, 36);
+            this.lblHasta.Size = new System.Drawing.Size(74, 29);
             this.lblHasta.TabIndex = 4;
             this.lblHasta.Text = "Hasta";
             // 
@@ -111,7 +111,8 @@
             this.Monto,
             this.Saldo,
             this.Abonar});
-            this.grdFacturas.Location = new System.Drawing.Point(390, 66);
+            this.grdFacturas.Location = new System.Drawing.Point(292, 54);
+            this.grdFacturas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdFacturas.Name = "grdFacturas";
             this.grdFacturas.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -123,7 +124,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdFacturas.RowTemplate.Height = 24;
-            this.grdFacturas.Size = new System.Drawing.Size(1223, 477);
+            this.grdFacturas.Size = new System.Drawing.Size(917, 388);
             this.grdFacturas.TabIndex = 5;
             this.grdFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellContentClick);
             // 
@@ -132,10 +133,9 @@
             this.lblMsgTotal.AutoSize = true;
             this.lblMsgTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsgTotal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMsgTotal.Location = new System.Drawing.Point(859, 596);
-            this.lblMsgTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMsgTotal.Location = new System.Drawing.Point(644, 484);
             this.lblMsgTotal.Name = "lblMsgTotal";
-            this.lblMsgTotal.Size = new System.Drawing.Size(89, 36);
+            this.lblMsgTotal.Size = new System.Drawing.Size(74, 29);
             this.lblMsgTotal.TabIndex = 6;
             this.lblMsgTotal.Text = "Total:";
             // 
@@ -144,10 +144,9 @@
             this.lblMontoCred.AutoSize = true;
             this.lblMontoCred.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoCred.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMontoCred.Location = new System.Drawing.Point(968, 596);
-            this.lblMontoCred.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontoCred.Location = new System.Drawing.Point(726, 484);
             this.lblMontoCred.Name = "lblMontoCred";
-            this.lblMontoCred.Size = new System.Drawing.Size(0, 36);
+            this.lblMontoCred.Size = new System.Drawing.Size(0, 29);
             this.lblMontoCred.TabIndex = 7;
             // 
             // btnSalir
@@ -157,10 +156,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1434, 581);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(1076, 472);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(179, 62);
+            this.btnSalir.Size = new System.Drawing.Size(134, 50);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Retroceder";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -173,10 +171,9 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(64, 584);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFiltrar.Location = new System.Drawing.Point(48, 474);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(305, 59);
+            this.btnFiltrar.Size = new System.Drawing.Size(229, 48);
             this.btnFiltrar.TabIndex = 19;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -189,10 +186,9 @@
             this.btnAbonarCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonarCredito.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAbonarCredito.ForeColor = System.Drawing.Color.White;
-            this.btnAbonarCredito.Location = new System.Drawing.Point(1108, 583);
-            this.btnAbonarCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbonarCredito.Location = new System.Drawing.Point(831, 474);
             this.btnAbonarCredito.Name = "btnAbonarCredito";
-            this.btnAbonarCredito.Size = new System.Drawing.Size(305, 59);
+            this.btnAbonarCredito.Size = new System.Drawing.Size(229, 48);
             this.btnAbonarCredito.TabIndex = 20;
             this.btnAbonarCredito.Text = "Abonar Credito";
             this.btnAbonarCredito.UseVisualStyleBackColor = false;
@@ -206,7 +202,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 96;
             // 
             // Codigo
             // 
@@ -215,7 +210,7 @@
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 121;
+            this.Codigo.Width = 96;
             // 
             // Fecha
             // 
@@ -224,7 +219,7 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 109;
+            this.Fecha.Width = 89;
             // 
             // Usuario
             // 
@@ -233,7 +228,7 @@
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 125;
+            this.Usuario.Width = 99;
             // 
             // ClienteNombre
             // 
@@ -242,7 +237,7 @@
             this.ClienteNombre.HeaderText = "Cliente";
             this.ClienteNombre.Name = "ClienteNombre";
             this.ClienteNombre.ReadOnly = true;
-            this.ClienteNombre.Width = 118;
+            this.ClienteNombre.Width = 93;
             // 
             // Estado
             // 
@@ -251,7 +246,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 117;
+            this.Estado.Width = 93;
             // 
             // Monto
             // 
@@ -260,7 +255,7 @@
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
-            this.Monto.Width = 109;
+            this.Monto.Width = 88;
             // 
             // Saldo
             // 
@@ -269,7 +264,7 @@
             this.Saldo.HeaderText = "Saldo";
             this.Saldo.Name = "Saldo";
             this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 105;
+            this.Saldo.Width = 83;
             // 
             // Abonar
             // 
@@ -277,18 +272,17 @@
             this.Abonar.DataPropertyName = "Abonar";
             this.Abonar.HeaderText = "Abonar";
             this.Abonar.Image = global::Hnos_Rojas.Properties.Resources.pagar3;
-            this.Abonar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Abonar.Name = "Abonar";
             this.Abonar.ReadOnly = true;
             this.Abonar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Abonar.Width = 96;
+            this.Abonar.Width = 78;
             // 
             // DetallesEstadoCuenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1673, 684);
+            this.ClientSize = new System.Drawing.Size(1040, 556);
             this.Controls.Add(this.btnAbonarCredito);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnSalir);
@@ -300,6 +294,7 @@
             this.Controls.Add(this.calHasta);
             this.Controls.Add(this.calDesde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DetallesEstadoCuenta";
             this.Text = "DetallesEstadoCuenta";
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).EndInit();
