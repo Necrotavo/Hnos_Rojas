@@ -49,13 +49,14 @@ namespace Hnos_Rojas
 
         public void formatoGrid() {
             grdFacturas.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
-            grdFacturas.Columns[0].Width = 154;    //codigo
+            grdFacturas.Columns[0].Width = 50;    //codigo
             grdFacturas.Columns[1].Width = 200;    //Fecha
             grdFacturas.Columns[2].Width = 100;    //Usuario
-            grdFacturas.Columns[3].Width = 170;    //Cliente
-            grdFacturas.Columns[4].Width = 100;    //Estado
-            grdFacturas.Columns[5].Width = 75;    //Monto
-            grdFacturas.Columns[6].Width = 75;    //Saldo
+            grdFacturas.Columns[3].Width = 150;    //Cliente
+            grdFacturas.Columns[4].Width = 70;    //Estado
+            grdFacturas.Columns[5].Width = 50;     //Monto
+            grdFacturas.Columns[6].Width = 50;     //Saldo
+            grdFacturas.Columns[7].Width = 20;     //Abonar
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -80,22 +81,22 @@ namespace Hnos_Rojas
 
         private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dataTable = (DataTable)grdFacturas.DataSource;
-            try
-            {
-                if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Abonar"))
-                {
-                    DataRow fila = dataTable.Rows[e.RowIndex];
-                    dataTable.Rows.Remove(fila);
-                    grdFacturas.DataSource = dataTable;
-                    // filaSeleccionada = -1;
-                }
-            }
-            catch (Exception)
-            {
+            //DataTable dataTable = (DataTable)grdFacturas.DataSource;
+            //try
+            //{
+            //    if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Abonar"))
+            //    {
+            //        DataRow fila = dataTable.Rows[e.RowIndex];
+            //        dataTable.Rows.Remove(fila);
+            //        grdFacturas.DataSource = dataTable;
+            //        // filaSeleccionada = -1;
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
-            }
-            finally { }
+            //}
+            //finally { }
         }
     }
 }

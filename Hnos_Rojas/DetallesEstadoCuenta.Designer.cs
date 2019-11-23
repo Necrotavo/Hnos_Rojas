@@ -40,6 +40,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnAbonarCredito = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,60 +197,91 @@
             this.btnAbonarCredito.Text = "Abonar Credito";
             this.btnAbonarCredito.UseVisualStyleBackColor = false;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "Abonar";
+            this.dataGridViewImageColumn1.Image = global::Hnos_Rojas.Properties.Resources.pagar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 96;
+            // 
             // Codigo
             // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Codigo.DataPropertyName = "Codigo";
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 121;
             // 
             // Fecha
             // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Fecha.DataPropertyName = "Fecha";
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 109;
             // 
             // Usuario
             // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Usuario.DataPropertyName = "Usuario";
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 125;
             // 
             // ClienteNombre
             // 
+            this.ClienteNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ClienteNombre.DataPropertyName = "ClienteNombre";
             this.ClienteNombre.HeaderText = "Cliente";
             this.ClienteNombre.Name = "ClienteNombre";
             this.ClienteNombre.ReadOnly = true;
+            this.ClienteNombre.Width = 118;
             // 
             // Estado
             // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Estado.DataPropertyName = "Estado";
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
+            this.Estado.Width = 117;
             // 
             // Monto
             // 
+            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Monto.DataPropertyName = "Monto";
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
+            this.Monto.Width = 109;
             // 
             // Saldo
             // 
+            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Saldo.DataPropertyName = "Saldo";
             this.Saldo.HeaderText = "Saldo";
             this.Saldo.Name = "Saldo";
             this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 105;
             // 
             // Abonar
             // 
+            this.Abonar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Abonar.DataPropertyName = "Abonar";
             this.Abonar.HeaderText = "Abonar";
+            this.Abonar.Image = global::Hnos_Rojas.Properties.Resources.pagar3;
+            this.Abonar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Abonar.Name = "Abonar";
             this.Abonar.ReadOnly = true;
+            this.Abonar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abonar.Width = 96;
             // 
             // DetallesEstadoCuenta
             // 
@@ -288,6 +320,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnAbonarCredito;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
