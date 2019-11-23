@@ -21,6 +21,12 @@ namespace BL
 
             return daoProducto.BuscarProducto(codigo);
         }
+        public List<DO_Producto> BuscarListaProducto(String codigo)
+        {
+            DAO_Producto daoProducto = new DAO_Producto();
+
+            return daoProducto.BuscarListaProductos(codigo);
+        }
         ///// <summary>
         ///// Modifica la cantidad de elementos disponibles del producto
         ///// </summary>
@@ -41,10 +47,9 @@ namespace BL
         /// <returns>El precio de venta del producto (double)</returns>
         public double ObtenerPrecioVenta(double precioCosto, int porcentajeEsperado)
         {
-            double precioVenta = 0;
-            precioVenta = precioCosto * (porcentajeEsperado / 100);
+            decimal precioVenta = (decimal)precioCosto +  (decimal)precioCosto * ((decimal)porcentajeEsperado / 100);
 
-            return precioVenta;
+            return Convert.ToDouble(precioVenta);
         }
         /// <summary>
         /// Agrega el producto al inventario.
@@ -67,7 +72,7 @@ namespace BL
         {
             int porcentaje = 0;
 
-            porcentaje = Convert.ToInt32(Math.Round((precioVenta - precioCosto) * 100 / precioCosto));
+            porcentaje = Convert.ToInt32(Math.Round(((decimal)precioVenta - (decimal)precioCosto) * 100 / (decimal)precioCosto));
 
             return porcentaje;
         }

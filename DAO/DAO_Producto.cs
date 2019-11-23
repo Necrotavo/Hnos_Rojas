@@ -20,8 +20,8 @@ namespace DAO
         /// <returns>El producto encontrado(DO_Producto), o (null) si no se encuentra registrado</returns>
         public DO_Producto BuscarProducto(String codigo) {
 
-            SqlCommand consulta = new SqlCommand("select * from Producto where PRO_CODIGO like @codigo", conexion);
-            consulta.Parameters.AddWithValue("@codigo", codigo + "%" );
+            SqlCommand consulta = new SqlCommand("select * from Producto where PRO_CODIGO = @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", codigo);
 
             DO_Producto producto = new DO_Producto();
 
@@ -45,6 +45,44 @@ namespace DAO
                     }
                 }
                 return producto;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+
+        public List<DO_Producto> BuscarListaProductos(String codigo)
+        {
+            SqlCommand consulta = new SqlCommand("select * from Producto Where PRO_CODIGO LIKE @codigo OR PRO_DESCRIPCION LIKE @codigo", conexion);
+            consulta.Parameters.AddWithValue("@codigo", "%" + codigo + "%");
+
+            List<DO_Producto> listaProductos = new List<DO_Producto>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        listaProductos.Add(new DO_Producto((String)lector["PRO_CODIGO"], Convert.ToDouble(lector["PRO_PRECIO_COSTO"]), Convert.ToDouble(lector["PRO_PRECIO_VENTA"]), Convert.ToInt32(lector["PRO_CANTIDAD_MINIMA_STOCK"]), (String)lector["PRO_DESCRIPCION"], Convert.ToInt32(lector["PRO_CANTIDAD_DISPONIBLE"])));
+                    }
+                }
+                return listaProductos;
 
             }
             catch (SqlException)
@@ -201,7 +239,7 @@ namespace DAO
             consulta.Parameters.AddWithValue("@cantidadDisponible", productoAModificar.cantidadDisponible);
             consulta.Parameters.AddWithValue("@precioCosto", productoAModificar.precioCosto);
             consulta.Parameters.AddWithValue("@precioVenta", productoAModificar.precioVenta);
-            consulta.Parameters.AddWithValue("@nuevoCodigo", productoAModificar.codigo);
+            consulta.Parameters.AddWithValue("@codigo", productoAModificar.codigo);
 
             try
             {

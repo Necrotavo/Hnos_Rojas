@@ -50,6 +50,7 @@ namespace Hnos_Rojas
 
             grdProductos.AutoSize = true;
         }
+        
 
         public void cerrarVentana() {
             this.Close();
@@ -68,7 +69,8 @@ namespace Hnos_Rojas
 
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
-            
+            NuevoProducto ventanaNuevoProducto = new NuevoProducto();
+            ventanaNuevoProducto.Show();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace Hnos_Rojas
 
         public void buscarProducto() {
             BL_Producto blProducto = new BL_Producto();
-            DO_Producto doProducto = blProducto.BuscarProducto(this.txtCodigo.Text);
+           List<DO_Producto> listaProductos = blProducto.BuscarListaProducto(this.txtCodigo.Text);
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("codigo");
@@ -92,10 +94,12 @@ namespace Hnos_Rojas
             dataTable.Columns.Add("cantMinBodega");
             dataTable.Columns.Add("descripcion");
             dataTable.Columns.Add("cantidadDisponible");
-            
-            dataTable.Rows.Add(doProducto.codigo, doProducto.precioCosto, doProducto.precioVenta, 
-                    doProducto.cantMinBodega, doProducto.descripcion, doProducto.cantidadDisponible);
 
+            foreach (DO_Producto productoEncontado in listaProductos)
+            {
+                dataTable.Rows.Add(productoEncontado.codigo, productoEncontado.precioCosto, productoEncontado.precioVenta,
+                    productoEncontado.cantMinBodega, productoEncontado.descripcion, productoEncontado.cantidadDisponible);
+            }
             grdProductos.DataSource = dataTable;
         }
 
