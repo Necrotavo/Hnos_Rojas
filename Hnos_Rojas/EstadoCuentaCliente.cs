@@ -19,7 +19,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             llenarListBox();
-            txtEstadoCliente.Focus();
+            this.ActiveControl = txtEstadoCliente;
         }
 
         private void llenarListBox()
