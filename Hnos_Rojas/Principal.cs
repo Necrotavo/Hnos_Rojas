@@ -121,7 +121,17 @@ namespace Hnos_Rojas
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            
+            configEjecucion();
+        }
+
+        private void configEjecucion()
+        {
+            pnlCenter.Controls.Clear();
+            Configuraciones otropanel = new Configuraciones() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+            restaurarColoresBtns();
+            btnConfiguracion.BackColor = Color.FromArgb(24, 107, 94);
         }
     }
 }
