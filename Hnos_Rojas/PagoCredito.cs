@@ -53,6 +53,18 @@ namespace Hnos_Rojas
 
             blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
 
+            FacturaCredito factCred = new FacturaCredito(
+                factura.usuario,
+                factura.totalFactura.ToString(),
+                lbCreditoDisp.Text,
+                factura.listaProducto,
+                txtNotas.Text,
+                listBClientes.Text,
+                lbCreditoActual.Text);
+            parent.facturaCreditoTemp = factCred;
+            parent.facturaContadoRealizada = false;
+            parent.facturaCreditoRealizada = true;
+
             MessageBox.Show("Pago exitoso");
             parent.cerrarTicket();
             this.Dispose();

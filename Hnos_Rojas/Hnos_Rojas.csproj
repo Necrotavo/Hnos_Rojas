@@ -83,6 +83,12 @@
     <Compile Include="FacturaContado.Designer.cs">
       <DependentUpon>FacturaContado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacturaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaCredito.Designer.cs">
+      <DependentUpon>FacturaCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaContado.resx">
       <DependentUpon>FacturaContado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturaCredito.resx">
+      <DependentUpon>FacturaCredito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaReporte.resx">
       <DependentUpon>FacturaReporte.cs</DependentUpon>

@@ -20,6 +20,7 @@ namespace Hnos_Rojas
         public bool facturaContadoRealizada = false;
         public bool facturaCreditoRealizada = false;
         public FacturaContado facturaContadoTemp;
+        public FacturaCredito facturaCreditoTemp;
         public Ventas(int _usuario)
         {
             InitializeComponent();
@@ -169,7 +170,7 @@ namespace Hnos_Rojas
             }
             if (facturaCreditoRealizada)
             {
-                //reimprimir factura credito
+                facturaCreditoTemp.imprimir();
             }
             if (!facturaCreditoRealizada && !facturaContadoRealizada)
             {
