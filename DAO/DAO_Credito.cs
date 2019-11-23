@@ -178,9 +178,9 @@ namespace DAO
                 DAO_Factura daoFactura = new DAO_Factura();
                 List<DO_Factura> listaFacturas = new List<DO_Factura>();
                 listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
-                for (int i = 0; i <= listaFacturas.Count; i++) {
+                for (int i = 0; i < listaFacturas.Count; i++) {
                     double result = listaFacturas[i].saldo - abono;
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         abono = abono - listaFacturas[i].saldo;
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
@@ -188,6 +188,7 @@ namespace DAO
                     }
                     else {
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
+                        i = listaFacturas.Count;
                         saldo = 0;
                     }
                 }
