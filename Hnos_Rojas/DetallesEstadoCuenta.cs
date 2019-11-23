@@ -98,5 +98,12 @@ namespace Hnos_Rojas
             //}
             //finally { }
         }
+
+        private void btnAbonarCredito_Click(object sender, EventArgs e)
+        {
+            AbonarCredito abonarCredito = new AbonarCredito(cliente);
+            abonarCredito.Show();
+            this.Hide();
+        }
     }
 }
