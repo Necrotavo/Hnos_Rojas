@@ -98,5 +98,10 @@ namespace Hnos_Rojas
             //}
             //finally { }
         }
+
+        private void btnAbonarCredito_Click(object sender, EventArgs e)
+        {
+            BL_Credito blCredito = new BL_Credito();
+        }
     }
 }
