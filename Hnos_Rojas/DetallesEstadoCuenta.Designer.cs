@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.calDesde = new System.Windows.Forms.MonthCalendar();
             this.calHasta = new System.Windows.Forms.MonthCalendar();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.grdFacturas = new System.Windows.Forms.DataGridView();
-            this.lblMsgTotal = new System.Windows.Forms.Label();
-            this.lblMontoCred = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnAbonarCredito = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +43,12 @@
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abonar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblMsgTotal = new System.Windows.Forms.Label();
+            this.lblMontoCred = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnAbonarCredito = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             this.lblHasta.AutoSize = true;
             this.lblHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHasta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblHasta.Location = new System.Drawing.Point(150, 291);
+            this.lblHasta.Location = new System.Drawing.Point(149, 290);
             this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(91, 36);
@@ -92,14 +93,14 @@
             this.grdFacturas.AllowUserToAddRows = false;
             this.grdFacturas.AllowUserToDeleteRows = false;
             this.grdFacturas.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -110,28 +111,103 @@
             this.Monto,
             this.Saldo,
             this.Abonar});
-            this.grdFacturas.Location = new System.Drawing.Point(390, 66);
+            this.grdFacturas.Location = new System.Drawing.Point(412, 66);
+            this.grdFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdFacturas.Name = "grdFacturas";
             this.grdFacturas.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grdFacturas.RowTemplate.Height = 24;
-            this.grdFacturas.Size = new System.Drawing.Size(1223, 477);
+            this.grdFacturas.Size = new System.Drawing.Size(1215, 477);
             this.grdFacturas.TabIndex = 5;
             this.grdFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 121;
+            // 
+            // Fecha
+            // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 109;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 125;
+            // 
+            // ClienteNombre
+            // 
+            this.ClienteNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ClienteNombre.DataPropertyName = "ClienteNombre";
+            this.ClienteNombre.HeaderText = "Cliente";
+            this.ClienteNombre.Name = "ClienteNombre";
+            this.ClienteNombre.ReadOnly = true;
+            this.ClienteNombre.Width = 118;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 117;
+            // 
+            // Monto
+            // 
+            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Monto.DataPropertyName = "Monto";
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            this.Monto.Width = 109;
+            // 
+            // Saldo
+            // 
+            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Saldo.DataPropertyName = "Saldo";
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 105;
+            // 
+            // Abonar
+            // 
+            this.Abonar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Abonar.DataPropertyName = "Abonar";
+            this.Abonar.HeaderText = "Abonar";
+            this.Abonar.Image = global::Hnos_Rojas.Properties.Resources.pagar3;
+            this.Abonar.Name = "Abonar";
+            this.Abonar.ReadOnly = true;
+            this.Abonar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abonar.Width = 96;
             // 
             // lblMsgTotal
             // 
             this.lblMsgTotal.AutoSize = true;
             this.lblMsgTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsgTotal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMsgTotal.Location = new System.Drawing.Point(859, 596);
+            this.lblMsgTotal.Location = new System.Drawing.Point(870, 596);
             this.lblMsgTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsgTotal.Name = "lblMsgTotal";
             this.lblMsgTotal.Size = new System.Drawing.Size(89, 36);
@@ -143,7 +219,7 @@
             this.lblMontoCred.AutoSize = true;
             this.lblMontoCred.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoCred.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMontoCred.Location = new System.Drawing.Point(968, 596);
+            this.lblMontoCred.Location = new System.Drawing.Point(979, 596);
             this.lblMontoCred.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoCred.Name = "lblMontoCred";
             this.lblMontoCred.Size = new System.Drawing.Size(0, 36);
@@ -156,8 +232,8 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1434, 581);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(1446, 581);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(179, 62);
             this.btnSalir.TabIndex = 18;
@@ -172,8 +248,8 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(64, 584);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFiltrar.Location = new System.Drawing.Point(64, 583);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(305, 59);
             this.btnFiltrar.TabIndex = 19;
@@ -188,68 +264,24 @@
             this.btnAbonarCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonarCredito.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAbonarCredito.ForeColor = System.Drawing.Color.White;
-            this.btnAbonarCredito.Location = new System.Drawing.Point(1108, 583);
-            this.btnAbonarCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAbonarCredito.Location = new System.Drawing.Point(1119, 583);
+            this.btnAbonarCredito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAbonarCredito.Name = "btnAbonarCredito";
             this.btnAbonarCredito.Size = new System.Drawing.Size(305, 59);
             this.btnAbonarCredito.TabIndex = 20;
             this.btnAbonarCredito.Text = "Abonar Credito";
             this.btnAbonarCredito.UseVisualStyleBackColor = false;
+            this.btnAbonarCredito.Click += new System.EventHandler(this.btnAbonarCredito_Click);
             // 
-            // Codigo
+            // dataGridViewImageColumn1
             // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.DataPropertyName = "Usuario";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // ClienteNombre
-            // 
-            this.ClienteNombre.DataPropertyName = "ClienteNombre";
-            this.ClienteNombre.HeaderText = "Cliente";
-            this.ClienteNombre.Name = "ClienteNombre";
-            this.ClienteNombre.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Monto
-            // 
-            this.Monto.DataPropertyName = "Monto";
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            // 
-            // Saldo
-            // 
-            this.Saldo.DataPropertyName = "Saldo";
-            this.Saldo.HeaderText = "Saldo";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            // 
-            // Abonar
-            // 
-            this.Abonar.HeaderText = "Abonar";
-            this.Abonar.Name = "Abonar";
-            this.Abonar.ReadOnly = true;
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "Abonar";
+            this.dataGridViewImageColumn1.Image = global::Hnos_Rojas.Properties.Resources.pagar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // DetallesEstadoCuenta
             // 
@@ -268,6 +300,7 @@
             this.Controls.Add(this.calHasta);
             this.Controls.Add(this.calDesde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetallesEstadoCuenta";
             this.Text = "DetallesEstadoCuenta";
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).EndInit();
@@ -288,6 +321,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Button btnAbonarCredito;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;

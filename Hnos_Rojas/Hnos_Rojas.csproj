@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbonarCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbonarCredito.Designer.cs">
+      <DependentUpon>AbonarCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones.Designer.cs">
+      <DependentUpon>Configuraciones.cs</DependentUpon>
     </Compile>
     <Compile Include="DetallesEstadoCuenta.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,12 @@
     <Compile Include="PagoCredito.Designer.cs">
       <DependentUpon>PagoCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlantillaConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlantillaConfig.Designer.cs">
+      <DependentUpon>PlantillaConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,17 +174,29 @@
     <Compile Include="Tickets.Designer.cs">
       <DependentUpon>Tickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuarioConfig.Designer.cs">
+      <DependentUpon>UsuarioConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AbonarCredito.resx">
+      <DependentUpon>AbonarCredito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClienteNuevo.resx">
       <DependentUpon>ClienteNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones.resx">
+      <DependentUpon>Configuraciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetallesEstadoCuenta.resx">
       <DependentUpon>DetallesEstadoCuenta.cs</DependentUpon>
@@ -195,6 +225,9 @@
     <EmbeddedResource Include="PagoCredito.resx">
       <DependentUpon>PagoCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlantillaConfig.resx">
+      <DependentUpon>PlantillaConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tickets.resx">
       <DependentUpon>Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuarioConfig.resx">
+      <DependentUpon>UsuarioConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -253,6 +289,7 @@
     <Content Include="OpcionesFacturaContado.txt" />
     <Content Include="Resources\Delete %281%29.png" />
     <Content Include="Resources\Delete.png" />
+    <None Include="Resources\pagar.png" />
     <None Include="Resources\Search.png" />
   </ItemGroup>
   <ItemGroup>

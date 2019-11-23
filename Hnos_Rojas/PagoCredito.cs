@@ -44,14 +44,14 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-           
+            
             this.factura.clienteExterno = "";
             this.factura.notas = this.txtNotas.Text;
             this.factura.estado = "PENDIENTE";
             this.factura.tipoPago = "CREDITO";
             BL_Factura blFactura = new BL_Factura();
-
             blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
+
 
             FacturaCredito factCred = new FacturaCredito(
                 factura.usuario,
@@ -60,7 +60,9 @@ namespace Hnos_Rojas
                 factura.listaProducto,
                 txtNotas.Text,
                 listBClientes.Text,
-                lbCreditoActual.Text);
+                lbCreditoAnterior.Text);
+
+            
             parent.facturaCreditoTemp = factCred;
             parent.facturaContadoRealizada = false;
             parent.facturaCreditoRealizada = true;
@@ -109,13 +111,14 @@ namespace Hnos_Rojas
             if (blCredito.ObtenerDatosCredito(cliente) != null) {
                 credito = blCredito.ObtenerDatosCredito(cliente);
 
-                lbCreditoActual.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
+                lbCreditoAnterior.Text = credito.monto.ToString();//cliente.credito.monto; Aqui es lo que debo
                 Double credDisp = blCredito.CalcularSaldo(credito.limiteCredito, credito.monto);
                 lbCreditoDisp.Text = (credDisp).ToString();//cliente.credito.monto; el limite menos lo que debe
+                lblCredActual.Text = (factura.totalFactura + credito.monto).ToString();
                 if (credDisp <= 0)
                 {
                     SystemSounds.Exclamation.Play();
-                    lbCreditoDisp.BackColor = Color.Maroon;
+                    lblCredActual.BackColor = Color.Maroon;
                 }
                 else
                 {
@@ -125,7 +128,7 @@ namespace Hnos_Rojas
         }
 
         public void colorDefaultLblCredDisp() {
-            lbCreditoDisp.BackColor = Color.FromArgb(24, 107, 94);
+            lblCredActual.BackColor = Color.FromArgb(24, 107, 94);
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
@@ -158,5 +161,7 @@ namespace Hnos_Rojas
         {
 
         }
+
+   
     }
 }

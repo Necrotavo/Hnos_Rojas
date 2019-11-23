@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnos_Rojas", "Hnos_Rojas\Hnos_Rojas.csproj", "{2828A1EE-23A5-430B-8088-67D6D9620ECA}"
 EndProject
@@ -24,6 +24,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{B76F3A20-8240-444B-B7D7-8BDF2F81C369}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\Desktop\minus.png = ..\..\..\..\Desktop\minus.png
+		..\..\..\Desktop\pagar.png = ..\..\..\Desktop\pagar.png
 	EndProjectSection
 EndProject
 Global

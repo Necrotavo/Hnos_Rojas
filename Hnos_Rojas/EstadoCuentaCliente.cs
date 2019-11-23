@@ -19,7 +19,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             llenarListBox();
-            txtEstadoCliente.Focus();
+            this.ActiveControl = txtEstadoCliente;
         }
 
         private void llenarListBox()
@@ -31,12 +31,15 @@ namespace Hnos_Rojas
             DataTable tablaClientes = new DataTable();
             tablaClientes.Columns.Add("id");
             tablaClientes.Columns.Add("nombre");
-
-            foreach (DO_Cliente doCliente in listaClientes)
+            if (listaClientes != null)
             {
-                tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " "
-                    + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
+                foreach (DO_Cliente doCliente in listaClientes)
+                {
+                    tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " "
+                        + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
+                }
             }
+            
 
             listBClientes.DataSource = tablaClientes;
             listBClientes.DisplayMember = "nombre";

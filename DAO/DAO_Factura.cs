@@ -249,41 +249,22 @@ namespace DAO
                     conexion.Open();
                 }
 
-                DAO_Credito daoCredito = new DAO_Credito();
-                double credMonto = daoCredito.obtenerMonto(factura.credito);
-
-                SqlCommand actualizarMontoCred = new SqlCommand("update CREDITO set CRED_MONTO = @monto WHERE CRE_IDENTIFICADOR = @idCredito", conexion);
-                if ((credMonto - abono) <= 0)
+                factura.saldo = factura.saldo - abono;
+                SqlCommand actualizarSaldo = new SqlCommand("update FACTURA set FAC_SALDO = @saldo WHERE FAC_CODIGO = @codigo", conexion);
+                if (factura.saldo <= 0)
                 {
-                    actualizarMontoCred.Parameters.AddWithValue("@monto", 0);
+                    actualizarSaldo.Parameters.AddWithValue("@saldo", 0);
                 }
-                else {
-                    actualizarMontoCred.Parameters.AddWithValue("@monto", (credMonto - abono));
-                }
-                actualizarMontoCred.Parameters.AddWithValue("@idCredito", factura.credito);
-
-
-
-                if (actualizarMontoCred.ExecuteNonQuery() > 0)
+                else
                 {
-                    factura.saldo = factura.saldo - abono;
-                    SqlCommand actualizarSaldo = new SqlCommand("update FACTURA set FAC_SALDO = @saldo WHERE FAC_CODIGO = @codigo", conexion);
-                    if (factura.saldo <= 0)
-                    {
-                        actualizarSaldo.Parameters.AddWithValue("@saldo", 0);
-                    }
-                    else
-                    {
-                        actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
-                    }
-                    actualizarSaldo.Parameters.AddWithValue("@codigo", factura.codigoFactura);
-                    
-                    if (actualizarSaldo.ExecuteNonQuery() > 0) {
-                        return true;
-                    }
-                    else {
-                        return false;
-                    }
+                    actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
+                }
+                actualizarSaldo.Parameters.AddWithValue("@codigo", factura.codigoFactura);
+
+                if (actualizarSaldo.ExecuteNonQuery() > 0) {
+                    DAO_Credito daoCredito = new DAO_Credito();
+                    daoCredito.actualizarMontoCredito(factura.credito);
+                    return true;
                 }
                 else
                 {
@@ -353,6 +334,7 @@ namespace DAO
             }
             return null;
         }
+
         public List<DO_Factura> obtenerFacturasCredito(int idCliente, DateTime desde, DateTime hasta)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
