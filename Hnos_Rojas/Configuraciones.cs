@@ -16,5 +16,21 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
         }
+
+        private void btnUsuariosConf_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            UsuarioConfig otropanel = new UsuarioConfig() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            panel2.Controls.Add(otropanel);
+            otropanel.Show();
+        }
+
+        private void btnPlantilla_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            PlantillaConfig otropanel = new PlantillaConfig() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            panel2.Controls.Add(otropanel);
+            otropanel.Show();
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.btnPlantilla.TabIndex = 9;
             this.btnPlantilla.Text = "Plantilla Factura";
             this.btnPlantilla.UseVisualStyleBackColor = false;
+            this.btnPlantilla.Click += new System.EventHandler(this.btnPlantilla_Click);
             // 
             // btnUsuariosConf
             // 
@@ -62,6 +63,7 @@
             this.btnUsuariosConf.TabIndex = 10;
             this.btnUsuariosConf.Text = "Usuarios";
             this.btnUsuariosConf.UseVisualStyleBackColor = false;
+            this.btnUsuariosConf.Click += new System.EventHandler(this.btnUsuariosConf_Click);
             // 
             // panel1
             // 
