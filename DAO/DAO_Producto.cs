@@ -239,7 +239,7 @@ namespace DAO
             consulta.Parameters.AddWithValue("@cantidadDisponible", productoAModificar.cantidadDisponible);
             consulta.Parameters.AddWithValue("@precioCosto", productoAModificar.precioCosto);
             consulta.Parameters.AddWithValue("@precioVenta", productoAModificar.precioVenta);
-            consulta.Parameters.AddWithValue("@nuevoCodigo", productoAModificar.codigo);
+            consulta.Parameters.AddWithValue("@codigo", productoAModificar.codigo);
 
             try
             {

@@ -72,7 +72,7 @@ namespace BL
         {
             int porcentaje = 0;
 
-            porcentaje = Convert.ToInt32(Math.Round((precioVenta - precioCosto) * 100 / precioCosto));
+            porcentaje = Convert.ToInt32(Math.Round(((decimal)precioVenta - (decimal)precioCosto) * 100 / (decimal)precioCosto));
 
             return porcentaje;
         }

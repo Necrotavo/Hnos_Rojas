@@ -50,6 +50,7 @@ namespace Hnos_Rojas
 
             grdProductos.AutoSize = true;
         }
+        
 
         public void cerrarVentana() {
             this.Close();

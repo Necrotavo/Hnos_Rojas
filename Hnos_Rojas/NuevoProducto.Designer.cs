@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabProductos = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tabControlProducto = new System.Windows.Forms.TabControl();
+            this.tpFormulario = new System.Windows.Forms.TabPage();
+            this.nUDGanancia = new System.Windows.Forms.NumericUpDown();
+            this.btCalcular = new System.Windows.Forms.Button();
+            this.cbProductoEnInventario = new System.Windows.Forms.CheckBox();
+            this.tbCantidadDisponible = new System.Windows.Forms.TextBox();
             this.tbPrecioVenta = new System.Windows.Forms.TextBox();
             this.tbPrecioCosto = new System.Windows.Forms.TextBox();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
@@ -42,52 +47,107 @@
             this.lblPrecioCosto = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.tbCantidadDisponible = new System.Windows.Forms.TextBox();
+            this.tpModificar = new System.Windows.Forms.TabPage();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.cbProductoEnInventario = new System.Windows.Forms.CheckBox();
-            this.btCalcular = new System.Windows.Forms.Button();
-            this.nUDGanancia = new System.Windows.Forms.NumericUpDown();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabProductos.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.lbCodigo = new System.Windows.Forms.Label();
+            this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControlProducto.SuspendLayout();
+            this.tpFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).BeginInit();
+            this.tpModificar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabProductos
+            // tabControlProducto
             // 
-            this.tabProductos.Controls.Add(this.tabPage1);
-            this.tabProductos.Controls.Add(this.tabPage2);
-            this.tabProductos.Location = new System.Drawing.Point(1, 2);
-            this.tabProductos.Name = "tabProductos";
-            this.tabProductos.SelectedIndex = 0;
-            this.tabProductos.Size = new System.Drawing.Size(433, 304);
-            this.tabProductos.TabIndex = 0;
+            this.tabControlProducto.Controls.Add(this.tpFormulario);
+            this.tabControlProducto.Controls.Add(this.tpModificar);
+            this.tabControlProducto.Location = new System.Drawing.Point(1, 2);
+            this.tabControlProducto.Name = "tabControlProducto";
+            this.tabControlProducto.SelectedIndex = 0;
+            this.tabControlProducto.Size = new System.Drawing.Size(981, 526);
+            this.tabControlProducto.TabIndex = 0;
             // 
-            // tabPage1
+            // tpFormulario
             // 
-            this.tabPage1.Controls.Add(this.nUDGanancia);
-            this.tabPage1.Controls.Add(this.btCalcular);
-            this.tabPage1.Controls.Add(this.cbProductoEnInventario);
-            this.tabPage1.Controls.Add(this.tbCantidadDisponible);
-            this.tabPage1.Controls.Add(this.tbPrecioVenta);
-            this.tabPage1.Controls.Add(this.tbPrecioCosto);
-            this.tabPage1.Controls.Add(this.tbDescripcion);
-            this.tabPage1.Controls.Add(this.tbCodigo);
-            this.tabPage1.Controls.Add(this.lblCantidadDisponible);
-            this.tabPage1.Controls.Add(this.lblProductoInventario);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.lblPrecioVenta);
-            this.tabPage1.Controls.Add(this.lblPorcentaje);
-            this.tabPage1.Controls.Add(this.lblPrecioCosto);
-            this.tabPage1.Controls.Add(this.lblDescripcion);
-            this.tabPage1.Controls.Add(this.lblCodigo);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(425, 278);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Formulario";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpFormulario.Controls.Add(this.btGuardar);
+            this.tpFormulario.Controls.Add(this.nUDGanancia);
+            this.tpFormulario.Controls.Add(this.btCalcular);
+            this.tpFormulario.Controls.Add(this.cbProductoEnInventario);
+            this.tpFormulario.Controls.Add(this.tbCantidadDisponible);
+            this.tpFormulario.Controls.Add(this.tbPrecioVenta);
+            this.tpFormulario.Controls.Add(this.tbPrecioCosto);
+            this.tpFormulario.Controls.Add(this.tbDescripcion);
+            this.tpFormulario.Controls.Add(this.tbCodigo);
+            this.tpFormulario.Controls.Add(this.lblCantidadDisponible);
+            this.tpFormulario.Controls.Add(this.lblProductoInventario);
+            this.tpFormulario.Controls.Add(this.panel1);
+            this.tpFormulario.Controls.Add(this.lblPrecioVenta);
+            this.tpFormulario.Controls.Add(this.lblPorcentaje);
+            this.tpFormulario.Controls.Add(this.lblPrecioCosto);
+            this.tpFormulario.Controls.Add(this.lblDescripcion);
+            this.tpFormulario.Controls.Add(this.lblCodigo);
+            this.tpFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpFormulario.Location = new System.Drawing.Point(4, 22);
+            this.tpFormulario.Name = "tpFormulario";
+            this.tpFormulario.Size = new System.Drawing.Size(973, 500);
+            this.tpFormulario.TabIndex = 0;
+            this.tpFormulario.Text = "Formulario";
+            this.tpFormulario.UseVisualStyleBackColor = true;
+            // 
+            // nUDGanancia
+            // 
+            this.nUDGanancia.Location = new System.Drawing.Point(159, 116);
+            this.nUDGanancia.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nUDGanancia.Name = "nUDGanancia";
+            this.nUDGanancia.Size = new System.Drawing.Size(81, 20);
+            this.nUDGanancia.TabIndex = 18;
+            this.nUDGanancia.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // btCalcular
+            // 
+            this.btCalcular.Location = new System.Drawing.Point(257, 116);
+            this.btCalcular.Name = "btCalcular";
+            this.btCalcular.Size = new System.Drawing.Size(64, 20);
+            this.btCalcular.TabIndex = 17;
+            this.btCalcular.Text = "Calcular";
+            this.btCalcular.UseVisualStyleBackColor = true;
+            this.btCalcular.Click += new System.EventHandler(this.btCalcular_Click);
+            // 
+            // cbProductoEnInventario
+            // 
+            this.cbProductoEnInventario.AutoSize = true;
+            this.cbProductoEnInventario.Checked = true;
+            this.cbProductoEnInventario.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbProductoEnInventario.Location = new System.Drawing.Point(278, 208);
+            this.cbProductoEnInventario.Name = "cbProductoEnInventario";
+            this.cbProductoEnInventario.Size = new System.Drawing.Size(15, 14);
+            this.cbProductoEnInventario.TabIndex = 16;
+            this.cbProductoEnInventario.UseVisualStyleBackColor = true;
+            // 
+            // tbCantidadDisponible
+            // 
+            this.tbCantidadDisponible.Location = new System.Drawing.Point(159, 239);
+            this.tbCantidadDisponible.Name = "tbCantidadDisponible";
+            this.tbCantidadDisponible.Size = new System.Drawing.Size(54, 20);
+            this.tbCantidadDisponible.TabIndex = 15;
             // 
             // tbPrecioVenta
             // 
@@ -188,16 +248,23 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // tbCantidadDisponible
+            // tpModificar
             // 
-            this.tbCantidadDisponible.Location = new System.Drawing.Point(159, 239);
-            this.tbCantidadDisponible.Name = "tbCantidadDisponible";
-            this.tbCantidadDisponible.Size = new System.Drawing.Size(54, 20);
-            this.tbCantidadDisponible.TabIndex = 15;
+            this.tpModificar.Controls.Add(this.dgvProductos);
+            this.tpModificar.Controls.Add(this.btBuscar);
+            this.tpModificar.Controls.Add(this.tbBuscarCodigo);
+            this.tpModificar.Controls.Add(this.lbCodigo);
+            this.tpModificar.Location = new System.Drawing.Point(4, 22);
+            this.tpModificar.Name = "tpModificar";
+            this.tpModificar.Size = new System.Drawing.Size(973, 500);
+            this.tpModificar.TabIndex = 1;
+            this.tpModificar.Text = "Modificar Producto";
+            this.tpModificar.UseVisualStyleBackColor = true;
+            this.tpModificar.Click += new System.EventHandler(this.tpModificar_Click);
             // 
             // btGuardar
             // 
-            this.btGuardar.Location = new System.Drawing.Point(332, 308);
+            this.btGuardar.Location = new System.Drawing.Point(668, 273);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(88, 32);
             this.btGuardar.TabIndex = 1;
@@ -205,67 +272,126 @@
             this.btGuardar.UseVisualStyleBackColor = true;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
-            // cbProductoEnInventario
+            // lbCodigo
             // 
-            this.cbProductoEnInventario.AutoSize = true;
-            this.cbProductoEnInventario.Location = new System.Drawing.Point(278, 208);
-            this.cbProductoEnInventario.Name = "cbProductoEnInventario";
-            this.cbProductoEnInventario.Size = new System.Drawing.Size(15, 14);
-            this.cbProductoEnInventario.TabIndex = 16;
-            this.cbProductoEnInventario.UseVisualStyleBackColor = true;
+            this.lbCodigo.AutoSize = true;
+            this.lbCodigo.Location = new System.Drawing.Point(283, 37);
+            this.lbCodigo.Name = "lbCodigo";
+            this.lbCodigo.Size = new System.Drawing.Size(197, 13);
+            this.lbCodigo.TabIndex = 0;
+            this.lbCodigo.Text = "Ingrese el código o nombre del producto";
             // 
-            // btCalcular
+            // tbBuscarCodigo
             // 
-            this.btCalcular.Location = new System.Drawing.Point(257, 116);
-            this.btCalcular.Name = "btCalcular";
-            this.btCalcular.Size = new System.Drawing.Size(64, 20);
-            this.btCalcular.TabIndex = 17;
-            this.btCalcular.Text = "Calcular";
-            this.btCalcular.UseVisualStyleBackColor = true;
-            this.btCalcular.Click += new System.EventHandler(this.btCalcular_Click);
+            this.tbBuscarCodigo.Location = new System.Drawing.Point(328, 65);
+            this.tbBuscarCodigo.Name = "tbBuscarCodigo";
+            this.tbBuscarCodigo.Size = new System.Drawing.Size(100, 20);
+            this.tbBuscarCodigo.TabIndex = 1;
             // 
-            // nUDGanancia
+            // btBuscar
             // 
-            this.nUDGanancia.Location = new System.Drawing.Point(159, 116);
-            this.nUDGanancia.Name = "nUDGanancia";
-            this.nUDGanancia.Size = new System.Drawing.Size(81, 20);
-            this.nUDGanancia.TabIndex = 18;
-            this.nUDGanancia.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
+            this.btBuscar.Location = new System.Drawing.Point(340, 100);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btBuscar.TabIndex = 2;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
-            // tabPage2
+            // dgvProductos
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(425, 278);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Modificar Producto";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.Modificar,
+            this.Descripcion,
+            this.PrecioCosto,
+            this.PrecioVenta,
+            this.CantidadDisponible,
+            this.CantidadMinima});
+            this.dgvProductos.Location = new System.Drawing.Point(3, 136);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(945, 325);
+            this.dgvProductos.TabIndex = 3;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.Name = "Modificar";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // PrecioCosto
+            // 
+            this.PrecioCosto.DataPropertyName = "precioCosto";
+            this.PrecioCosto.HeaderText = "Precio Costo";
+            this.PrecioCosto.Name = "PrecioCosto";
+            this.PrecioCosto.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.DataPropertyName = "precioVenta";
+            this.PrecioVenta.HeaderText = "Precio venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            // 
+            // CantidadDisponible
+            // 
+            this.CantidadDisponible.DataPropertyName = "cantidadDisponible";
+            this.CantidadDisponible.HeaderText = "Cantidad disponible";
+            this.CantidadDisponible.Name = "CantidadDisponible";
+            this.CantidadDisponible.ReadOnly = true;
+            // 
+            // CantidadMinima
+            // 
+            this.CantidadMinima.DataPropertyName = "cantMinBodega";
+            this.CantidadMinima.HeaderText = "Cantidad mínima";
+            this.CantidadMinima.Name = "CantidadMinima";
+            this.CantidadMinima.ReadOnly = true;
             // 
             // NuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 341);
-            this.Controls.Add(this.btGuardar);
-            this.Controls.Add(this.tabProductos);
+            this.ClientSize = new System.Drawing.Size(982, 518);
+            this.Controls.Add(this.tabControlProducto);
             this.Name = "NuevoProducto";
             this.Text = "NuevoProducto";
-            this.tabProductos.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Load += new System.EventHandler(this.NuevoProducto_Load);
+            this.tabControlProducto.ResumeLayout(false);
+            this.tpFormulario.ResumeLayout(false);
+            this.tpFormulario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).EndInit();
+            this.tpModificar.ResumeLayout(false);
+            this.tpModificar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabProductos;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControlProducto;
+        private System.Windows.Forms.TabPage tpFormulario;
         private System.Windows.Forms.Label lblPrecioCosto;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblCodigo;
@@ -283,6 +409,17 @@
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btCalcular;
         private System.Windows.Forms.NumericUpDown nUDGanancia;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tpModificar;
+        private System.Windows.Forms.Label lbCodigo;
+        private System.Windows.Forms.Button btBuscar;
+        private System.Windows.Forms.TextBox tbBuscarCodigo;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCosto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadMinima;
     }
 }
