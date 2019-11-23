@@ -92,7 +92,6 @@ namespace Hnos_Rojas
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             //encabezado
-            e.Graphics.DrawRectangle(Pens.Black, new Rectangle(x,y,ancho - x - x,largo - y - y));
             e.Graphics.DrawString(nombreLocal, fuenteGeneral, Brushes.Black, x + 40, y);
             e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 50, y + fuenteGeneral.Height);
             e.Graphics.DrawString("Ced: " + ced, fuenteGeneral, Brushes.Black, x + 75, y + (fuenteGeneral.Height * 2));
