@@ -165,44 +165,37 @@ namespace DAO
         }
 
         public double abonar(double abono, int idCredito) {
-            double montoCredito = obtenerMonto(idCredito);
-            double saldo = montoCredito - abono;
-
-            SqlCommand comando = new SqlCommand("update CREDITO set CRED_MONTO = @saldo where CRE_IDENTIFICADOR = @idCredito", conexion);
-            comando.Parameters.AddWithValue("@saldo", saldo);
-            comando.Parameters.AddWithValue("@idCredito", idCredito);
-
             try
             {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
-                if (comando.ExecuteNonQuery() > 0)
-                {
-                    DAO_Factura daoFactura = new DAO_Factura();
-                    List<DO_Factura> listaFacturas = new List<DO_Factura>();
-                    listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
-                    for (int i = 0; i <= listaFacturas.Count; i++) {
-                        double result = listaFacturas[i].saldo - abono;
-                        if (result > 0)
-                        {
-                            abono = abono - listaFacturas[i].saldo;
-                            daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
-                            daoFactura.modificarEstadoFactura(listaFacturas[i].codigoFactura, "PAGADA");
-                        }
-                        else {
-                            daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
-                            break;
-                        }
-                    }
 
-                    return saldo;
+                double montoCredito = obtenerMonto(idCredito);
+                double saldo = montoCredito - abono;
+
+                DAO_Factura daoFactura = new DAO_Factura();
+                List<DO_Factura> listaFacturas = new List<DO_Factura>();
+                listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
+                for (int i = 0; i <= listaFacturas.Count; i++) {
+                    double result = listaFacturas[i].saldo - abono;
+                    if (result >= 0)
+                    {
+                        abono = abono - listaFacturas[i].saldo;
+                        daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
+                        daoFactura.modificarEstadoFactura(listaFacturas[i].codigoFactura, "PAGADA");
+                    }
+                    else {
+                        daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
+                        saldo = 0;
+                    }
                 }
-                else
-                {
-                    return 0;
-                }
+
+                actualizarMontoCredito(idCredito);
+
+                return saldo;
+                
             }
             catch (SqlException)
             {
@@ -253,6 +246,48 @@ namespace DAO
                 }
             }
         }
-        
+
+        public bool actualizarMontoCredito(int idCredito) {
+            try
+            {
+                List<DO_Factura> listaFacturas = new List<DO_Factura>();
+                DAO_Factura daoFactura = new DAO_Factura();
+                listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
+
+                double monto = 0;
+
+                foreach (DO_Factura factura in listaFacturas)
+                {
+                    monto += factura.saldo;
+                }
+
+                SqlCommand comandoMonto = new SqlCommand("Update CREDITO set @monto where CRE_IDENTIFICADOR = @idCredito", conexion);
+                comandoMonto.Parameters.AddWithValue("@idCredito", idCredito);
+                comandoMonto.Parameters.AddWithValue("@monto", monto);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comandoMonto.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
