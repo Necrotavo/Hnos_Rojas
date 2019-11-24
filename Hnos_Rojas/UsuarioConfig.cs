@@ -33,6 +33,23 @@ namespace Hnos_Rojas
 
         private void button1_Click(object sender, EventArgs e)
         {
+            BL_Usuario blUsuario = new BL_Usuario();
+
+            if (blUsuario.iniciarSesion(listBoxUsuarios.SelectedValue.ToString(), txtContrasena.Text) != null)
+            {
+                txtNombreUsuarioCrear.Text = listBoxUsuarios.SelectedValue.ToString();
+                txtContrasenaCrear.Text = txtContrasena.Text;
+                txtNombreUsuarioCrear.ReadOnly = true;
+                tabControlUsuarios.SelectedTab = tabCrearUsuario;
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas");
+            }
+        }
+
+        private void btnUsuariosConf_Click(object sender, EventArgs e)
+        {
 
         }
     }
