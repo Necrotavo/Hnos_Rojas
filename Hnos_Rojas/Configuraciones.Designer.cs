@@ -67,7 +67,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(140)))), ((int)(((byte)(120)))));
             this.panel1.Controls.Add(this.btnPlantilla);
             this.panel1.Controls.Add(this.btnUsuariosConf);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;

@@ -16,13 +16,22 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
         }
-
+        private void restaurarColoresBtns() //Restaura el color default de los botones
+        {
+            Color color = Color.FromArgb(52, 168, 150);
+            btnUsuariosConf.BackColor = color;
+            btnPlantilla.BackColor = color;
+            
+        }
         private void btnUsuariosConf_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
             UsuarioConfig otropanel = new UsuarioConfig() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             panel2.Controls.Add(otropanel);
+            restaurarColoresBtns();
+            btnUsuariosConf.BackColor = Color.FromArgb(24, 107, 94);
             otropanel.Show();
+
         }
 
         private void btnPlantilla_Click(object sender, EventArgs e)
@@ -30,6 +39,8 @@ namespace Hnos_Rojas
             panel2.Controls.Clear();
             PlantillaConfig otropanel = new PlantillaConfig() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             panel2.Controls.Add(otropanel);
+            restaurarColoresBtns();
+            btnPlantilla.BackColor = Color.FromArgb(24, 107, 94);
             otropanel.Show();
         }
     }

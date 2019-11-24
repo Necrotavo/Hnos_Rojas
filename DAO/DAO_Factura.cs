@@ -123,6 +123,44 @@ namespace DAO
             }
         }
 
+        public bool actualizarPlantillaFactura(DO_PlantillaFactura plantillaFactura)
+        {
+            SqlCommand update = new SqlCommand("UPDATE PLANTILLA_FACTURA " +
+                "SET PLANT_NOMBRE_EMPRESA = @nombreEmpresa," +
+                " PLANT_CEDULA = @cedula," +
+                " PLANT_DIRECCION = @direccion," +
+                " PLANT_TELEFONO = @telefono " +
+                "WHERE PLANT_CODIGO = @codigo", conexion);
+
+            update.Parameters.AddWithValue("@cedula", plantillaFactura.cedula);
+            update.Parameters.AddWithValue("@direccion", plantillaFactura.direccion);
+            update.Parameters.AddWithValue("@telefono", plantillaFactura.numeroTelefono);
+            update.Parameters.AddWithValue("@codigo", plantillaFactura.codigo);
+            update.Parameters.AddWithValue("@nombreEmpresa", plantillaFactura.nombreEmpresa);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                update.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
         public int ingresarPlantillaFactura(DO_PlantillaFactura plantillaFactura) {
             SqlCommand insert = new SqlCommand("insert into PLANTILLA_FACTURA " +
                 "(PLANT_CODIGO, PLANT_NOMBRE_EMPRESA, PLANT_CEDULA, PLANT_TURNO, "+
