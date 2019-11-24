@@ -147,9 +147,8 @@ namespace DAO
                 update.ExecuteNonQuery();
                 return true;
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                Console.WriteLine(e);
                 return false;
             }
             finally
