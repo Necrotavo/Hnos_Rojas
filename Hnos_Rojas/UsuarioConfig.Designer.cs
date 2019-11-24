@@ -40,6 +40,8 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBoxUsuarios = new System.Windows.Forms.ListBox();
+            this.cboTipos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControlUsuarios.SuspendLayout();
             this.tabCrearUsuario.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -61,6 +63,8 @@
             // tabCrearUsuario
             // 
             this.tabCrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.tabCrearUsuario.Controls.Add(this.label2);
+            this.tabCrearUsuario.Controls.Add(this.cboTipos);
             this.tabCrearUsuario.Controls.Add(this.btnUsuariosConf);
             this.tabCrearUsuario.Controls.Add(this.txtNombreUsuarioCrear);
             this.tabCrearUsuario.Controls.Add(this.lblPassword);
@@ -91,7 +95,7 @@
             // txtNombreUsuarioCrear
             // 
             this.txtNombreUsuarioCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuarioCrear.Location = new System.Drawing.Point(400, 123);
+            this.txtNombreUsuarioCrear.Location = new System.Drawing.Point(256, 125);
             this.txtNombreUsuarioCrear.Name = "txtNombreUsuarioCrear";
             this.txtNombreUsuarioCrear.Size = new System.Drawing.Size(239, 35);
             this.txtNombreUsuarioCrear.TabIndex = 20;
@@ -101,7 +105,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(394, 211);
+            this.lblPassword.Location = new System.Drawing.Point(250, 213);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(140, 32);
             this.lblPassword.TabIndex = 19;
@@ -110,7 +114,7 @@
             // txtContrasenaCrear
             // 
             this.txtContrasenaCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaCrear.Location = new System.Drawing.Point(400, 246);
+            this.txtContrasenaCrear.Location = new System.Drawing.Point(256, 248);
             this.txtContrasenaCrear.Name = "txtContrasenaCrear";
             this.txtContrasenaCrear.Size = new System.Drawing.Size(239, 35);
             this.txtContrasenaCrear.TabIndex = 18;
@@ -120,7 +124,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(394, 88);
+            this.label1.Location = new System.Drawing.Point(250, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 32);
             this.label1.TabIndex = 17;
@@ -183,6 +187,25 @@
             this.listBoxUsuarios.Size = new System.Drawing.Size(283, 132);
             this.listBoxUsuarios.TabIndex = 0;
             // 
+            // cboTipos
+            // 
+            this.cboTipos.FormattingEnabled = true;
+            this.cboTipos.Location = new System.Drawing.Point(564, 125);
+            this.cboTipos.Name = "cboTipos";
+            this.cboTipos.Size = new System.Drawing.Size(235, 40);
+            this.cboTipos.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(558, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 32);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Tipo de usuario:";
+            // 
             // UsuarioConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,5 +238,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboTipos;
     }
 }

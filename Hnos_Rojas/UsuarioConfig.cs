@@ -19,8 +19,16 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             filtrarUsuarios();
+            
         }
 
+        private void filtrarTipo()
+        {
+            BL_Usuario blUsuario = new BL_Usuario();
+            cboTipos.DataSource = blUsuario.CargarUsuarios();
+            cboTipos.ValueMember = "tipo";
+            cboTipos.DisplayMember = "tipo";
+        }
         private void filtrarUsuarios()
         {
             BL_Usuario blUsuario = new BL_Usuario();
@@ -48,9 +56,34 @@ namespace Hnos_Rojas
             }
         }
 
+        private void limpiarForms()
+        {
+            txtContrasena.Text = "";
+            txtContrasenaCrear.Text = "";
+            txtNombreUsuarioCrear.Text = "";
+            filtrarUsuarios();
+            txtNombreUsuarioCrear.ReadOnly = false;
+        }
+
         private void btnUsuariosConf_Click(object sender, EventArgs e)
         {
+            BL_Usuario blUsuario = new BL_Usuario();
+            if (txtNombreUsuarioCrear.ReadOnly)
+            {
+                if (blUsuario.actualizarUsuario(txtNombreUsuarioCrear.Text, cboTipos.Text, txtContrasenaCrear.Text))
+                {
+                    MessageBox.Show("Se cambió la clave con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Se produjo un error");
+                }
+            }
+            else
+            {
 
+            }
+            limpiarForms();
         }
     }
 }

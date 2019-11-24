@@ -13,6 +13,66 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
+        public bool crearUsuario(string nombre, string tipo, string clave)
+        {
+            SqlCommand crearUsuario = new SqlCommand("INSERT INTO USUARIO (USR_NOMBRE, TP_TIPO, USR_CONTRASENA) " +
+                "VALUES (@nombre, @tipo, @clave)", conexion);
+            crearUsuario.Parameters.AddWithValue("@nombre", nombre);
+            crearUsuario.Parameters.AddWithValue("@tipo", tipo);
+            crearUsuario.Parameters.AddWithValue("@clave", clave);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                crearUsuario.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+
+        public bool actualizarUsuario(string usuario, string tipo, string clave)
+        {
+            SqlCommand actualizar = new SqlCommand("UPDATE USUARIO SET USR_CONTRASENA = @clave, TP_TIPO = @tipo WHERE USR_NOMBRE = @nombre",conexion);
+
+            actualizar.Parameters.AddWithValue("@nombre", usuario);
+            actualizar.Parameters.AddWithValue("@clave", clave);
+            actualizar.Parameters.AddWithValue("@tipo", tipo);
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                actualizar.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
         /// <summary>
         /// Carga los usuarios registrados en el sistema
         /// </summary>
