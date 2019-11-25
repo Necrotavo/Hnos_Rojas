@@ -185,7 +185,10 @@ namespace Hnos_Rojas
             if (blUsuario.iniciarSesion(cboUsuarios.SelectedValue.ToString(), txtContrasena.Text) != null)
             {
                 txtContrasena.Clear();
-                cerrarTicket();
+                foreach (Tickets item in listaTiquetes)
+                {
+                    item.factura.usuario = cboUsuarios.SelectedValue.ToString();
+                }
             }
             else
             {
