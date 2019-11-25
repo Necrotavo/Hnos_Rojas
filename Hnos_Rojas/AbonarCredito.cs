@@ -15,10 +15,13 @@ namespace Hnos_Rojas
     public partial class AbonarCredito : Form
     {
         DO_Cliente cliente;
-        public AbonarCredito(DO_Cliente _cliente)
+        DetallesEstadoCuenta detallesEstadoCuenta;
+        public AbonarCredito(DO_Cliente _cliente, DetallesEstadoCuenta _detallesEstadoCuenta)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             cliente = _cliente;
+            detallesEstadoCuenta = _detallesEstadoCuenta;
 
             lblMontoCredito.Text = cliente.credito.monto.ToString();
         }
@@ -32,6 +35,7 @@ namespace Hnos_Rojas
             else {
                 BL_Credito blCredito = new BL_Credito();
                 blCredito.abonar(Convert.ToInt32(txtAbono.Text), cliente.perIdentificador);
+                detallesEstadoCuenta.llenarGrid();
                 MessageBox.Show("Abono exitoso");
                 this.Dispose();
             }

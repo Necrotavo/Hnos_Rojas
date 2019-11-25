@@ -101,9 +101,8 @@ namespace Hnos_Rojas
 
         private void btnAbonarCredito_Click(object sender, EventArgs e)
         {
-            AbonarCredito abonarCredito = new AbonarCredito(cliente);
+            AbonarCredito abonarCredito = new AbonarCredito(cliente, this);
             abonarCredito.Show();
-            this.Hide();
         }
     }
 }

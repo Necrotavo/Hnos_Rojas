@@ -59,6 +59,12 @@
     <Compile Include="AbonarCredito.Designer.cs">
       <DependentUpon>AbonarCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbonarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbonarFactura.Designer.cs">
+      <DependentUpon>AbonarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
