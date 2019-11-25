@@ -48,7 +48,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(237, 41);
             this.lblTitulo.TabIndex = 4;
-            this.lblTitulo.Text = "Abono a Credito";
+            this.lblTitulo.Text = "Abono a Crédito";
             // 
             // lblMontoAbono
             // 
@@ -72,7 +72,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 41);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Total del Credito";
+            this.label1.Text = "Total del Crédito";
             // 
             // lblMontoCredito
             // 

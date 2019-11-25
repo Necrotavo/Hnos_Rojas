@@ -195,6 +195,9 @@
     <EmbeddedResource Include="AbonarCredito.resx">
       <DependentUpon>AbonarCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AbonarFactura.resx">
+      <DependentUpon>AbonarFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClienteNuevo.resx">
       <DependentUpon>ClienteNuevo.cs</DependentUpon>
     </EmbeddedResource>

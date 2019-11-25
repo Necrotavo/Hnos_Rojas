@@ -47,16 +47,16 @@ namespace Hnos_Rojas
             {
                 e.Handled = false;
             }
-            //else if (Char.IsControl(e.KeyChar))
-            //{
-            //    actualizarLblSaldo();
-            //    e.Handled = false;
-            //}
-            //else if (Char.IsSeparator(e.KeyChar))
-            //{
-            //    actualizarLblSaldo();
-            //    e.Handled = false;
-            //}
+            else if (Char.IsControl(e.KeyChar))
+            {
+                actualizarLblSaldo();
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                actualizarLblSaldo();
+                e.Handled = false;
+            }
             else
             {
                 e.Handled = true;

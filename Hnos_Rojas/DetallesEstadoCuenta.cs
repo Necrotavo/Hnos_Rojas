@@ -81,22 +81,29 @@ namespace Hnos_Rojas
 
         private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataTable dataTable = (DataTable)grdFacturas.DataSource;
-            //try
-            //{
-            //    if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Abonar"))
-            //    {
-            //        DataRow fila = dataTable.Rows[e.RowIndex];
-            //        dataTable.Rows.Remove(fila);
-            //        grdFacturas.DataSource = dataTable;
-            //        // filaSeleccionada = -1;
-            //    }
-            //}
-            //catch (Exception)
-            //{
+            DataTable dataTable = (DataTable)grdFacturas.DataSource;
+            try
+            {
+                if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Abonar"))
+                {
+                    DataRow fila = dataTable.Rows[e.RowIndex];
 
-            //}
-            //finally { }
+                    DO_Factura factura = new DO_Factura();
+                    factura.codigoFactura = Convert.ToInt32(fila["Codigo"]);
+                    factura.fecha = Convert.ToDateTime(fila["Fecha"]);
+                    factura.totalFactura = Convert.ToDouble(fila["Monto"]);
+                    factura.saldo = Convert.ToDouble(fila["Saldo"]);
+                    factura.credito = cliente.credito.identificador;
+
+                    AbonarFactura abonarFactura = new AbonarFactura(factura);
+                    abonarFactura.Show();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally { }
         }
 
         private void btnAbonarCredito_Click(object sender, EventArgs e)

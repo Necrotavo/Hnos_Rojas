@@ -281,22 +281,23 @@ namespace DAO
         public bool actualizarSaldoFactura(DO_Factura factura, double abono) {
             try
             {
-                if (conexion.State != ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-
                 factura.saldo = factura.saldo - abono;
                 SqlCommand actualizarSaldo = new SqlCommand("update FACTURA set FAC_SALDO = @saldo WHERE FAC_CODIGO = @codigo", conexion);
                 if (factura.saldo <= 0)
                 {
                     actualizarSaldo.Parameters.AddWithValue("@saldo", 0);
+                    modificarEstadoFactura(factura.codigoFactura, "PAGADA");
                 }
                 else
                 {
                     actualizarSaldo.Parameters.AddWithValue("@saldo", factura.saldo);
                 }
                 actualizarSaldo.Parameters.AddWithValue("@codigo", factura.codigoFactura);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
 
                 if (actualizarSaldo.ExecuteNonQuery() > 0) {
                     DAO_Credito daoCredito = new DAO_Credito();

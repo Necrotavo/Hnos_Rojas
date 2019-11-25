@@ -184,7 +184,6 @@ namespace DAO
                     {
                         abono = abono - listaFacturas[i].saldo;
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
-                        daoFactura.modificarEstadoFactura(listaFacturas[i].codigoFactura, "PAGADA");
                     }
                     else {
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
