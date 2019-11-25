@@ -28,6 +28,12 @@ namespace BL
             return daoUsuario.crearUsuario(nombre, clave);
         }
 
+        public bool eliminarUsuario(string nombre)
+        {
+            DAO_Usuario daoUsuario = new DAO_Usuario();
+            return daoUsuario.eliminarUsuario(nombre);
+        }
+
         public bool actualizarUsuario(string usuario, string contrasena)
         {
             DAO_Usuario daoUsuario = new DAO_Usuario();

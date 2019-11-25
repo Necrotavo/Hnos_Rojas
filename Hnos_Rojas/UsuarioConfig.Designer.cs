@@ -40,9 +40,12 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.listBoxUsuarios = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.tabControlUsuarios.SuspendLayout();
             this.tabCrearUsuario.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlUsuarios
@@ -129,9 +132,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.txtContrasena);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.listBoxUsuarios);
             this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
@@ -162,13 +165,13 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 40F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 368);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1043, 206);
+            this.button1.Size = new System.Drawing.Size(521, 174);
             this.button1.TabIndex = 22;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = false;
@@ -182,6 +185,31 @@
             this.listBoxUsuarios.Name = "listBoxUsuarios";
             this.listBoxUsuarios.Size = new System.Drawing.Size(283, 132);
             this.listBoxUsuarios.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 400);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1043, 174);
+            this.panel1.TabIndex = 25;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Historic", 40F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(522, 0);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(521, 174);
+            this.btnEliminar.TabIndex = 23;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // UsuarioConfig
             // 
@@ -197,6 +225,7 @@
             this.tabCrearUsuario.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,5 +244,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

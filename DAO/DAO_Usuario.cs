@@ -13,6 +13,32 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
+        public bool eliminarUsuario(string nombre)
+        {
+            SqlCommand eliminarUsuario = new SqlCommand("DELETE FROM USUARIO WHERE USR_NOMBRE = @nombre", conexion);
+            eliminarUsuario.Parameters.AddWithValue("@nombre", nombre);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                eliminarUsuario.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
         public bool crearUsuario(string nombre, string clave)
         {
             SqlCommand crearUsuario = new SqlCommand("INSERT INTO USUARIO (USR_NOMBRE, USR_CONTRASENA) " +

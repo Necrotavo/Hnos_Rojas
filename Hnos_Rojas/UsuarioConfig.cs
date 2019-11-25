@@ -86,5 +86,22 @@ namespace Hnos_Rojas
             }
             limpiarForms();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            BL_Usuario blUsuario = new BL_Usuario();
+            string name = listBoxUsuarios.SelectedValue.ToString();
+            if (blUsuario.iniciarSesion(name, txtContrasena.Text) != null)
+            {
+                blUsuario.eliminarUsuario(name);
+                MessageBox.Show("Se eliminó con exito a " + name);
+            }
+            else
+            {
+                MessageBox.Show("Se produjo un error");
+            }
+
+            limpiarForms();
+        }
     }
 }
