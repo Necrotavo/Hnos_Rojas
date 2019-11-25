@@ -104,6 +104,10 @@ namespace Hnos_Rojas
 
 
             }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas");
+            }
             
 
             limpiarForms();
