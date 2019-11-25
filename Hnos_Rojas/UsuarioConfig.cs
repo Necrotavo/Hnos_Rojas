@@ -93,13 +93,18 @@ namespace Hnos_Rojas
             string name = listBoxUsuarios.SelectedValue.ToString();
             if (blUsuario.iniciarSesion(name, txtContrasena.Text) != null)
             {
-                blUsuario.eliminarUsuario(name);
-                MessageBox.Show("Se eliminó con exito a " + name);
+                if (blUsuario.eliminarUsuario(name))
+                {
+                    MessageBox.Show("Se eliminó con exito a " + name);
+                }
+                else
+                {
+                    MessageBox.Show("Se produjo un error");
+                }
+
+
             }
-            else
-            {
-                MessageBox.Show("Se produjo un error");
-            }
+            
 
             limpiarForms();
         }
