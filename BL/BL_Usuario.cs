@@ -22,16 +22,16 @@ namespace BL
             return daoUsuario.CargarUsuarios();
         }
 
-        public bool insertarUsuario(string nombre, string tipo, string clave)
+        public bool insertarUsuario(string nombre, string clave)
         {
             DAO_Usuario daoUsuario = new DAO_Usuario();
-            return daoUsuario.crearUsuario(nombre, tipo, clave);
+            return daoUsuario.crearUsuario(nombre, clave);
         }
 
-        public bool actualizarUsuario(string usuario, string tipo, string contrasena)
+        public bool actualizarUsuario(string usuario, string contrasena)
         {
             DAO_Usuario daoUsuario = new DAO_Usuario();
-            return daoUsuario.actualizarUsuario(usuario, tipo, contrasena);
+            return daoUsuario.actualizarUsuario(usuario, contrasena);
         }
         public DO_Usuario iniciarSesion(String usuario, String contrasena) {
             DAO_Usuario daoUsuario = new DAO_Usuario();

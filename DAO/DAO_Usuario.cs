@@ -13,12 +13,11 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
-        public bool crearUsuario(string nombre, string tipo, string clave)
+        public bool crearUsuario(string nombre, string clave)
         {
-            SqlCommand crearUsuario = new SqlCommand("INSERT INTO USUARIO (USR_NOMBRE, TP_TIPO, USR_CONTRASENA) " +
-                "VALUES (@nombre, @tipo, @clave)", conexion);
+            SqlCommand crearUsuario = new SqlCommand("INSERT INTO USUARIO (USR_NOMBRE, USR_CONTRASENA) " +
+                "VALUES (@nombre, @clave)", conexion);
             crearUsuario.Parameters.AddWithValue("@nombre", nombre);
-            crearUsuario.Parameters.AddWithValue("@tipo", tipo);
             crearUsuario.Parameters.AddWithValue("@clave", clave);
 
             try
@@ -44,13 +43,12 @@ namespace DAO
         }
 
 
-        public bool actualizarUsuario(string usuario, string tipo, string clave)
+        public bool actualizarUsuario(string usuario, string clave)
         {
-            SqlCommand actualizar = new SqlCommand("UPDATE USUARIO SET USR_CONTRASENA = @clave, TP_TIPO = @tipo WHERE USR_NOMBRE = @nombre",conexion);
+            SqlCommand actualizar = new SqlCommand("UPDATE USUARIO SET USR_CONTRASENA = @clave WHERE USR_NOMBRE = @nombre",conexion);
 
             actualizar.Parameters.AddWithValue("@nombre", usuario);
             actualizar.Parameters.AddWithValue("@clave", clave);
-            actualizar.Parameters.AddWithValue("@tipo", tipo);
             try
             {
                 if (conexion.State != ConnectionState.Open)
@@ -95,7 +93,7 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                        listaUsuarios.Add(new DO_Usuario((String)lector["USR_NOMBRE"], (String)lector["TP_TIPO"], (String)lector["USR_CONTRASENA"]));
+                        listaUsuarios.Add(new DO_Usuario((String)lector["USR_NOMBRE"], (String)lector["USR_CONTRASENA"]));
                            
                     }
                 }
@@ -131,7 +129,7 @@ namespace DAO
                 {
                     while (lector.Read())
                     {
-                       nuevoUsuario = new DO_Usuario((String)lector["USR_NOMBRE"], (String)lector["TP_TIPO"], (String)lector["USR_CONTRASENA"]);
+                       nuevoUsuario = new DO_Usuario((String)lector["USR_NOMBRE"], (String)lector["USR_CONTRASENA"]);
 
                     }
                     return nuevoUsuario;
