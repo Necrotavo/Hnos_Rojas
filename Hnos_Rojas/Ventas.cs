@@ -185,6 +185,7 @@ namespace Hnos_Rojas
             if (blUsuario.iniciarSesion(cboUsuarios.SelectedValue.ToString(), txtContrasena.Text) != null)
             {
                 txtContrasena.Clear();
+                cerrarTicket();
             }
             else
             {
