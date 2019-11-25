@@ -324,7 +324,7 @@ namespace DAO
         public List<DO_Factura> obtenerFacturasCredito(int idCliente)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente ORDER BY FAC_FECHA", conexion);
+            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente and EST_ESTADO = 'PENDIENTE' ORDER BY FAC_FECHA", conexion);
             adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
             DataTable datatable = new DataTable();
             List<DO_Factura> listaFacturas = new List<DO_Factura>();

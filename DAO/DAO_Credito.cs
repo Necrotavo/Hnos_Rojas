@@ -180,7 +180,7 @@ namespace DAO
                 listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
                 for (int i = 0; i < listaFacturas.Count; i++) {
                     double result = listaFacturas[i].saldo - abono;
-                    if (result > 0)
+                    if (result <= 0)
                     {
                         abono = abono - listaFacturas[i].saldo;
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], listaFacturas[i].saldo); // Cuando sobra del abono para que quede un saldo de 0
@@ -251,20 +251,11 @@ namespace DAO
         public bool actualizarMontoCredito(int idCredito) {
             try
             {
-                List<DO_Factura> listaFacturas = new List<DO_Factura>();
-                DAO_Factura daoFactura = new DAO_Factura();
-                listaFacturas = daoFactura.obtenerFacturasCredito(idCredito);
-
-                double monto = 0;
-
-                foreach (DO_Factura factura in listaFacturas)
-                {
-                    monto += factura.saldo;
-                }
-
-                SqlCommand comandoMonto = new SqlCommand("Update CREDITO set @monto where CRE_IDENTIFICADOR = @idCredito", conexion);
+                SqlCommand comandoMonto = new SqlCommand("Update CREDITO set CRED_MONTO = " +
+                    "(select sum(FAC_SALDO) from FACTURA where CRE_IDENTIFICADOR = @credFactura)"
+                    + "where CRE_IDENTIFICADOR = @idCredito", conexion);
+                comandoMonto.Parameters.AddWithValue("@credFactura", idCredito);
                 comandoMonto.Parameters.AddWithValue("@idCredito", idCredito);
-                comandoMonto.Parameters.AddWithValue("@monto", monto);
 
                 if (conexion.State != ConnectionState.Open)
                 {
