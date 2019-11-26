@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 88);
+            this.panel1.Size = new System.Drawing.Size(1301, 88);
             this.panel1.TabIndex = 0;
             // 
             // btnReportes
@@ -192,7 +192,7 @@
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCenter.Location = new System.Drawing.Point(0, 88);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1300, 661);
+            this.pnlCenter.Size = new System.Drawing.Size(1301, 661);
             this.pnlCenter.TabIndex = 1;
             // 
             // Principal
@@ -200,7 +200,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 749);
+            this.ClientSize = new System.Drawing.Size(1301, 749);
             this.ControlBox = false;
             this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.panel1);
