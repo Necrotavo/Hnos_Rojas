@@ -70,13 +70,13 @@ namespace Hnos_Rojas
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             DateTime desdeFecha = new DateTime(calDesde.SelectionStart.Year, calDesde.SelectionStart.Month, 
-                calDesde.SelectionStart.Day, 0, 0, 0);
+                calDesde.SelectionStart.Day);
 
             DateTime hastaFecha = new DateTime(calHasta.SelectionStart.Year, calHasta.SelectionStart.Month,
-                calHasta.SelectionStart.Day, 23, 59, 59);
+                calHasta.SelectionStart.Day);
 
             BL_Credito blCredito = new BL_Credito();
-            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador, desdeFecha, hastaFecha);
+            this.cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador, desdeFecha, hastaFecha);
 
             llenarGrid();
             formatoGrid();
