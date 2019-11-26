@@ -21,6 +21,8 @@ namespace Hnos_Rojas
             
             InitializeComponent();
             btnAgregarTicket.Visible = b;
+            lblPrecioNuevo.Visible = b;
+            txtPrecioNuevo.Visible = b;
             llenarGridProductos();
 
         }
