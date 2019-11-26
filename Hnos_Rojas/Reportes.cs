@@ -43,7 +43,7 @@ namespace Hnos_Rojas
             //no me acuerdo que era pago de clientes
 
             //La parte de proveedores
-            //todavía no se puede hacer xq falta lo de proveedores
+            
 
             //La parte de productos más vendidos
 
