@@ -119,12 +119,6 @@
     <Compile Include="FacturaCredito.Designer.cs">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
     </Compile>
-    <Compile Include="FacturaReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FacturaReporte.Designer.cs">
-      <DependentUpon>FacturaReporte.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListaAsociados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,12 +186,6 @@
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="reporte.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>reporte.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,9 +243,6 @@
     <EmbeddedResource Include="FacturaCredito.resx">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FacturaReporte.resx">
-      <DependentUpon>FacturaReporte.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListaAsociados.resx">
       <DependentUpon>ListaAsociados.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,10 +277,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reporte.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>reporte.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
