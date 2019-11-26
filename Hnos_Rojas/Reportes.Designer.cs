@@ -52,6 +52,22 @@
             this.lblMsgTotal = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.calReporte = new System.Windows.Forms.MonthCalendar();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbProd1 = new System.Windows.Forms.Label();
+            this.lbProd2 = new System.Windows.Forms.Label();
+            this.lbProd3 = new System.Windows.Forms.Label();
+            this.lbProd4 = new System.Windows.Forms.Label();
+            this.lbProd5 = new System.Windows.Forms.Label();
+            this.lbCantProd1 = new System.Windows.Forms.Label();
+            this.lbCantProd2 = new System.Windows.Forms.Label();
+            this.lbCantProd3 = new System.Windows.Forms.Label();
+            this.lbCantProd4 = new System.Windows.Forms.Label();
+            this.lbCantProd5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbTotalAgentes
@@ -276,12 +292,164 @@
             this.calReporte.Name = "calReporte";
             this.calReporte.TabIndex = 66;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(751, 158);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(281, 29);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "Productos Más Vendidos";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(753, 200);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 13);
+            this.label14.TabIndex = 91;
+            this.label14.Text = "#1";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(753, 226);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(20, 13);
+            this.label15.TabIndex = 92;
+            this.label15.Text = "#2";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(753, 250);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 13);
+            this.label16.TabIndex = 93;
+            this.label16.Text = "#3";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(753, 276);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 13);
+            this.label17.TabIndex = 94;
+            this.label17.Text = "#4";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(753, 301);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(20, 13);
+            this.label18.TabIndex = 95;
+            this.label18.Text = "#5";
+            // 
+            // lbProd1
+            // 
+            this.lbProd1.AutoSize = true;
+            this.lbProd1.Location = new System.Drawing.Point(779, 200);
+            this.lbProd1.Name = "lbProd1";
+            this.lbProd1.Size = new System.Drawing.Size(0, 13);
+            this.lbProd1.TabIndex = 96;
+            // 
+            // lbProd2
+            // 
+            this.lbProd2.AutoSize = true;
+            this.lbProd2.Location = new System.Drawing.Point(779, 226);
+            this.lbProd2.Name = "lbProd2";
+            this.lbProd2.Size = new System.Drawing.Size(0, 13);
+            this.lbProd2.TabIndex = 97;
+            // 
+            // lbProd3
+            // 
+            this.lbProd3.AutoSize = true;
+            this.lbProd3.Location = new System.Drawing.Point(779, 250);
+            this.lbProd3.Name = "lbProd3";
+            this.lbProd3.Size = new System.Drawing.Size(0, 13);
+            this.lbProd3.TabIndex = 98;
+            // 
+            // lbProd4
+            // 
+            this.lbProd4.AutoSize = true;
+            this.lbProd4.Location = new System.Drawing.Point(779, 276);
+            this.lbProd4.Name = "lbProd4";
+            this.lbProd4.Size = new System.Drawing.Size(0, 13);
+            this.lbProd4.TabIndex = 99;
+            // 
+            // lbProd5
+            // 
+            this.lbProd5.AutoSize = true;
+            this.lbProd5.Location = new System.Drawing.Point(779, 301);
+            this.lbProd5.Name = "lbProd5";
+            this.lbProd5.Size = new System.Drawing.Size(0, 13);
+            this.lbProd5.TabIndex = 100;
+            // 
+            // lbCantProd1
+            // 
+            this.lbCantProd1.AutoSize = true;
+            this.lbCantProd1.Location = new System.Drawing.Point(971, 200);
+            this.lbCantProd1.Name = "lbCantProd1";
+            this.lbCantProd1.Size = new System.Drawing.Size(0, 13);
+            this.lbCantProd1.TabIndex = 101;
+            // 
+            // lbCantProd2
+            // 
+            this.lbCantProd2.AutoSize = true;
+            this.lbCantProd2.Location = new System.Drawing.Point(971, 226);
+            this.lbCantProd2.Name = "lbCantProd2";
+            this.lbCantProd2.Size = new System.Drawing.Size(0, 13);
+            this.lbCantProd2.TabIndex = 102;
+            // 
+            // lbCantProd3
+            // 
+            this.lbCantProd3.AutoSize = true;
+            this.lbCantProd3.Location = new System.Drawing.Point(971, 250);
+            this.lbCantProd3.Name = "lbCantProd3";
+            this.lbCantProd3.Size = new System.Drawing.Size(0, 13);
+            this.lbCantProd3.TabIndex = 103;
+            // 
+            // lbCantProd4
+            // 
+            this.lbCantProd4.AutoSize = true;
+            this.lbCantProd4.Location = new System.Drawing.Point(971, 276);
+            this.lbCantProd4.Name = "lbCantProd4";
+            this.lbCantProd4.Size = new System.Drawing.Size(0, 13);
+            this.lbCantProd4.TabIndex = 104;
+            // 
+            // lbCantProd5
+            // 
+            this.lbCantProd5.AutoSize = true;
+            this.lbCantProd5.Location = new System.Drawing.Point(971, 301);
+            this.lbCantProd5.Name = "lbCantProd5";
+            this.lbCantProd5.Size = new System.Drawing.Size(0, 13);
+            this.lbCantProd5.TabIndex = 105;
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1239, 517);
+            this.Controls.Add(this.lbCantProd5);
+            this.Controls.Add(this.lbCantProd4);
+            this.Controls.Add(this.lbCantProd3);
+            this.Controls.Add(this.lbCantProd2);
+            this.Controls.Add(this.lbCantProd1);
+            this.Controls.Add(this.lbProd5);
+            this.Controls.Add(this.lbProd4);
+            this.Controls.Add(this.lbProd3);
+            this.Controls.Add(this.lbProd2);
+            this.Controls.Add(this.lbProd1);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.lbTotalAgentes);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -340,5 +508,21 @@
         private System.Windows.Forms.Label lbPagoIngresos;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbProd1;
+        private System.Windows.Forms.Label lbProd2;
+        private System.Windows.Forms.Label lbProd3;
+        private System.Windows.Forms.Label lbProd4;
+        private System.Windows.Forms.Label lbProd5;
+        private System.Windows.Forms.Label lbCantProd1;
+        private System.Windows.Forms.Label lbCantProd2;
+        private System.Windows.Forms.Label lbCantProd3;
+        private System.Windows.Forms.Label lbCantProd4;
+        private System.Windows.Forms.Label lbCantProd5;
     }
 }
