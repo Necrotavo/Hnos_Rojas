@@ -57,9 +57,8 @@
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1735, 108);
+            this.panel1.Size = new System.Drawing.Size(1300, 88);
             this.panel1.TabIndex = 0;
             // 
             // btnReportes
@@ -69,10 +68,9 @@
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(1292, 0);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportes.Location = new System.Drawing.Point(969, 0);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(229, 108);
+            this.btnReportes.Size = new System.Drawing.Size(172, 88);
             this.btnReportes.TabIndex = 12;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
@@ -85,10 +83,9 @@
             this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracion.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguracion.Location = new System.Drawing.Point(1071, 0);
-            this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfiguracion.Location = new System.Drawing.Point(803, 0);
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(231, 108);
+            this.btnConfiguracion.Size = new System.Drawing.Size(173, 88);
             this.btnConfiguracion.TabIndex = 11;
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
@@ -101,10 +98,9 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(849, 0);
-            this.btnInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInventario.Location = new System.Drawing.Point(637, 0);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(221, 108);
+            this.btnInventario.Size = new System.Drawing.Size(166, 88);
             this.btnInventario.TabIndex = 10;
             this.btnInventario.Text = "Proveedores";
             this.btnInventario.UseVisualStyleBackColor = false;
@@ -117,10 +113,9 @@
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Location = new System.Drawing.Point(628, 0);
-            this.btnProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProductos.Location = new System.Drawing.Point(471, 0);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(221, 108);
+            this.btnProductos.Size = new System.Drawing.Size(166, 88);
             this.btnProductos.TabIndex = 10;
             this.btnProductos.Text = "F3 Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
@@ -133,10 +128,9 @@
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Location = new System.Drawing.Point(407, 0);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClientes.Location = new System.Drawing.Point(305, 0);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(221, 108);
+            this.btnClientes.Size = new System.Drawing.Size(166, 88);
             this.btnClientes.TabIndex = 9;
             this.btnClientes.Text = "F2 Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -149,10 +143,9 @@
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnVentas.ForeColor = System.Drawing.Color.White;
-            this.btnVentas.Location = new System.Drawing.Point(185, 0);
-            this.btnVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVentas.Location = new System.Drawing.Point(139, 0);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(221, 108);
+            this.btnVentas.Size = new System.Drawing.Size(166, 88);
             this.btnVentas.TabIndex = 8;
             this.btnVentas.Text = "F1 Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
@@ -164,18 +157,16 @@
             this.panel2.Controls.Add(this.picLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(185, 108);
+            this.panel2.Size = new System.Drawing.Size(139, 88);
             this.panel2.TabIndex = 1;
             // 
             // picLogo
             // 
             this.picLogo.Image = global::Hnos_Rojas.Properties.Resources.logo2;
             this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(185, 108);
+            this.picLogo.Size = new System.Drawing.Size(139, 88);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
@@ -187,10 +178,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1509, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(1132, 0);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(225, 108);
+            this.btnSalir.Size = new System.Drawing.Size(169, 88);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -200,24 +190,22 @@
             // 
             this.pnlCenter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCenter.Location = new System.Drawing.Point(0, 108);
-            this.pnlCenter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlCenter.Location = new System.Drawing.Point(0, 88);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1735, 814);
+            this.pnlCenter.Size = new System.Drawing.Size(1300, 661);
             this.pnlCenter.TabIndex = 1;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1735, 922);
+            this.ClientSize = new System.Drawing.Size(1300, 749);
             this.ControlBox = false;
             this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Principal";
