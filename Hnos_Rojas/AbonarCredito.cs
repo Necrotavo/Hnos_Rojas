@@ -14,6 +14,7 @@ namespace Hnos_Rojas
 {
     public partial class AbonarCredito : Form
     {
+
         DO_Cliente cliente;
         DetallesEstadoCuenta detallesEstadoCuenta;
         public AbonarCredito(DO_Cliente _cliente, DetallesEstadoCuenta _detallesEstadoCuenta)

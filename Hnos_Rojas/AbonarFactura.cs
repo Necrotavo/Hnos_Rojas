@@ -14,12 +14,14 @@ namespace Hnos_Rojas
 {
     public partial class AbonarFactura : Form
     {
+        DetallesEstadoCuenta estCuenta;
         DO_Factura doFactura;
-        public AbonarFactura(DO_Factura _doFactura)
+        public AbonarFactura(DO_Factura _doFactura, DetallesEstadoCuenta _detallesEstadoCuenta)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             doFactura = _doFactura;
+            estCuenta = _detallesEstadoCuenta;
             llenarLbls();
         }
 
@@ -53,6 +55,7 @@ namespace Hnos_Rojas
             {
                 BL_Factura blFactura = new BL_Factura();
                 blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
+                estCuenta.llenarGrid();
                 MessageBox.Show("Abono exitoso");
                 this.Dispose();
             }

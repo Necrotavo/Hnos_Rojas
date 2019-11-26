@@ -14,12 +14,12 @@ namespace Hnos_Rojas
 {
     public partial class DetallesEstadoCuenta : Form
     {
+        private BL_Credito blCredito = new BL_Credito();
         private DO_Cliente cliente;
         public DetallesEstadoCuenta(DO_Cliente _cliente)
         {
             InitializeComponent();
             cliente = _cliente;
-            BL_Credito blCredito = new BL_Credito();
             cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
             llenarGrid();
             formatoGrid();
@@ -35,7 +35,7 @@ namespace Hnos_Rojas
             tablaFacturas.Columns.Add("Estado");
             tablaFacturas.Columns.Add("Monto");
             tablaFacturas.Columns.Add("Saldo");
-
+            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
             foreach (DO_Factura doFactura in cliente.credito.listaFactura) {
                 tablaFacturas.Rows.Add(doFactura.codigoFactura, doFactura.fecha, doFactura.usuario,
                     cliente.perNombre + " " + cliente.perPrimerApellido + " " + cliente.perSegundoApellido,
@@ -61,6 +61,7 @@ namespace Hnos_Rojas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            this.Parent.Show();
             this.Dispose();
         }
 
@@ -95,7 +96,7 @@ namespace Hnos_Rojas
                     factura.saldo = Convert.ToDouble(fila["Saldo"]);
                     factura.credito = cliente.credito.identificador;
 
-                    AbonarFactura abonarFactura = new AbonarFactura(factura);
+                    AbonarFactura abonarFactura = new AbonarFactura(factura, this);
                     abonarFactura.Show();
                 }
             }
