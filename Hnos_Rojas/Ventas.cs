@@ -196,5 +196,13 @@ namespace Hnos_Rojas
                 MessageBox.Show("Credenciales incorrectas");
             }
         }
+
+        private void btnArtComun_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos(true);
+            productos.FormBorderStyle = FormBorderStyle.FixedDialog;
+            productos.Show();
+
+        }
     }
 }
