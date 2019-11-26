@@ -23,6 +23,9 @@ namespace Hnos_Rojas
             factura.usuario = usuario;
             parent = padre;
             // gridProductos.AllowUserToAddRows = false; sólo me deja añadir una fila
+            //gridProductos.Rows.Remove(gridProductos.Rows[0]);
+            gridProductos.AllowUserToAddRows = false;// quita la fila en blanco
+           
         }
         public void pagar()
         {
@@ -61,6 +64,7 @@ namespace Hnos_Rojas
 
         public DO_Factura confeccionarFactura()
         {
+           
             factura.listaProducto = new List<DO_ProductoEnFactura>();
             DataTable tablaProductos = (DataTable)gridProductos.DataSource;
 
@@ -84,7 +88,8 @@ namespace Hnos_Rojas
 
         public void agregarProducto(DO.DO_Producto producto, int cantidad)
         {
-
+            gridProductos.AllowUserToAddRows = true;//permite que se añadan más filas
+            
             if (gridProductos.RowCount > 1)
             {
                 actualizarGridProducto(producto, cantidad);
@@ -101,12 +106,15 @@ namespace Hnos_Rojas
                 t.Rows.Add(producto.codigo, producto.descripcion, cantidad, producto.precioVenta, producto.precioVenta * cantidad, producto.cantidadDisponible);
                 gridProductos.DataSource = t;
             }
+            gridProductos.AllowUserToAddRows = false;// quita la fila en blanco
+            //gridProductos.Rows.RemoveAt(gridProductos.RowCount-1);
             sumarTotal();
         }
 
 
         private void actualizarGridProducto(DO.DO_Producto producto, int cantidad)
         {
+            gridProductos.AllowUserToAddRows = true;//permite que se añadan más filas
             DataTable dataTable = (DataTable)gridProductos.DataSource;
 
             Boolean check = false;
@@ -127,6 +135,7 @@ namespace Hnos_Rojas
             }
 
             gridProductos.DataSource = dataTable;
+            gridProductos.AllowUserToAddRows = false;//permite que se añadan más filas
         }
 
         private void button2_Click(object sender, EventArgs e)
