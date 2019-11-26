@@ -376,13 +376,10 @@ namespace DAO
         public List<DO_Factura> obtenerFacturasCredito(int idCliente, DateTime desde, DateTime hasta)
         {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from FACTURA "+
-                "where CRE_IDENTIFICADOR = @idCliente "+
-                "and FAC_FECHA >= @desde and FAC_FECHA < @hasta " +
-                "ORDER BY FAC_FECHA ", conexion);
+            adapter.SelectCommand = new SqlCommand("select * from FACTURA where CRE_IDENTIFICADOR = @idCliente and FAC_FECHA >= @desde and FAC_FECHA <= @hasta ORDER BY FAC_FECHA ", conexion);
             adapter.SelectCommand.Parameters.AddWithValue("@idCliente", idCliente);
-            adapter.SelectCommand.Parameters.AddWithValue("@desde", desde);
-            adapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta);
+            adapter.SelectCommand.Parameters.AddWithValue("@desde", desde.Year+"-"+ desde.Month+"-"+desde.Day);
+            adapter.SelectCommand.Parameters.AddWithValue("@hasta", hasta.Year + "-" + hasta.Month + "-" + hasta.Day);
             DataTable datatable = new DataTable();
             List<DO_Factura> listaFacturas = new List<DO_Factura>();
 
