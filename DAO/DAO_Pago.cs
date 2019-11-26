@@ -25,14 +25,14 @@ namespace DAO
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
-                }
+                }             
                 total = Convert.ToInt32(comando.ExecuteScalar());
 
                 return total;
-
             }
             catch (SqlException)
             {
+                return 0;
 
             }
             finally
@@ -42,7 +42,6 @@ namespace DAO
                     conexion.Close();
                 }
             }
-            return total;
         }
     }
 }

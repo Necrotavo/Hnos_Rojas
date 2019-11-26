@@ -12,8 +12,13 @@ namespace BL
     {
         public int obtenerPagoProvDiaEspecifico(String diaInicio, String diaFinal)
         {
-            DAO_Pago daoPago = new DAO_Pago();
-            return daoPago.obtenerPagoProvDiaEspecifico(diaInicio, diaFinal);
+            try{
+                DAO_Pago daoPago = new DAO_Pago();
+                return daoPago.obtenerPagoProvDiaEspecifico(diaInicio, diaFinal);
+            }
+            catch {
+                return 0;
+            }
         }
     }
 }

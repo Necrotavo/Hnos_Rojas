@@ -475,13 +475,20 @@ namespace DAO
                 {
                     conexion.Open();
                 }
-                total = Convert.ToInt32(comando.ExecuteScalar());
+                Object error = comando.ExecuteScalar();
+                if (error == DBNull.Value) {
+                    return 0;
+                }else
+                {
+                    total = Convert.ToInt32(comando.ExecuteScalar());
 
-                return total;
+                    return total;
+                }
 
             }
             catch (SqlException)
             {
+                return 0;
 
             }
             finally
