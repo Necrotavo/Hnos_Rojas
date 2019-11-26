@@ -16,6 +16,14 @@ namespace Hnos_Rojas
 {
     public partial class Productos : Form
     {
+        public Productos(bool b)
+        {
+            
+            InitializeComponent();
+            btnAgregarTicket.Visible = b;
+            llenarGridProductos();
+
+        }
         public Productos()
         {
             InitializeComponent();
@@ -115,6 +123,11 @@ namespace Hnos_Rojas
                 llenarGridProductos();
             }
             
+        }
+
+        private void btnAgregarTicket_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
