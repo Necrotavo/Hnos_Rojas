@@ -217,5 +217,11 @@ namespace Hnos_Rojas
         {
             articuloComun();
         }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            NuevoProducto ventanaProducto = new NuevoProducto();
+            ventanaProducto.Show();
+        }
     }
 }
