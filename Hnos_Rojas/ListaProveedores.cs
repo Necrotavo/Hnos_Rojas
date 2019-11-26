@@ -21,9 +21,9 @@ namespace Hnos_Rojas
 
         private void llenarListBox()
         {
-            //BL_Proveedor blProveedor = new BL_Proveedor();
+            BL_Proveedor blProveedor = new BL_Proveedor();
 
-            ////List<DO_Proveedor> listaClientes = blProveedor.;
+            List<DO_Proveedor> listaClientes = blProveedor.obtenerListaProveedores();
 
             //DataTable tablaClientes = new DataTable();
             //tablaClientes.Columns.Add("id");
