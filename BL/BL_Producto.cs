@@ -47,8 +47,12 @@ namespace BL
         /// <returns>El precio de venta del producto (double)</returns>
         public double ObtenerPrecioVenta(double precioCosto, int porcentajeEsperado)
         {
-            decimal precioVenta = (decimal)precioCosto +  (decimal)precioCosto * ((decimal)porcentajeEsperado / 100);
+            decimal precioVenta = 0;
+            if (precioCosto != 0 || porcentajeEsperado != 0)
+            {
+                precioVenta = (decimal)precioCosto + (decimal)precioCosto * ((decimal)porcentajeEsperado / 100);
 
+            }
             return Convert.ToDouble(precioVenta);
         }
         /// <summary>
@@ -72,8 +76,10 @@ namespace BL
         {
             int porcentaje = 0;
 
-            porcentaje = Convert.ToInt32(Math.Round(((decimal)precioVenta - (decimal)precioCosto) * 100 / (decimal)precioCosto));
-
+            if (precioCosto != 0 || precioVenta !=0)
+            {
+                porcentaje = Convert.ToInt32(Math.Round(((decimal)precioVenta - (decimal)precioCosto) * 100 / (decimal)precioCosto));
+            }
             return porcentaje;
         }
         /// <summary>

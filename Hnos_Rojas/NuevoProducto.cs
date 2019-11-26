@@ -25,7 +25,7 @@ namespace Hnos_Rojas
 
         public double CalcularPrecioVenta(int porcentaje)
         {
-            return blProducto.ObtenerPrecioVenta(Convert.ToDouble( tbPrecioCosto.Text.Trim()), porcentaje);
+            return blProducto.ObtenerPrecioVenta(Convert.ToDouble(tbPrecioCosto.Text.Trim()), porcentaje);
         }
 
         private void btGuardar_Click(object sender, EventArgs e)
@@ -50,7 +50,9 @@ namespace Hnos_Rojas
                 if (blProducto.ModificarProducto(doProducto))
                 {
                     MessageBox.Show("Modificado correctamente");
+                    llenarGridBucarProductos();
                     vaciarCampos();
+                    tbCodigo.Enabled = true;
                 }
                 else
                 {
@@ -64,6 +66,7 @@ namespace Hnos_Rojas
                 {
                     
                     MessageBox.Show("Agregado correctamente");
+                    llenarGridBucarProductos();
                     vaciarCampos();
                 }
                 else
@@ -84,7 +87,8 @@ namespace Hnos_Rojas
 
         private void tpModificar_Click(object sender, EventArgs e)
         {
-            
+            modificando = false;
+            vaciarCampos();
         }
 
         public void AlternarColores (DataGridView dgv)
@@ -182,5 +186,14 @@ namespace Hnos_Rojas
             dgvProductos.DataSource = dataTable;
         }
 
+        private void tabControlProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlProducto.SelectedTab == tpModificar)
+            {
+                vaciarCampos();
+                tbCodigo.Enabled = true;
+                modificando = false;
+            }
+        }
     }
 }
