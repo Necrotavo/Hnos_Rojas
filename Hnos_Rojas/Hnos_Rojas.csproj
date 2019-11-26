@@ -240,6 +240,9 @@
     <EmbeddedResource Include="FacturaReporte.resx">
       <DependentUpon>FacturaReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListaProveedores.resx">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BL;
+using DO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,32 @@ namespace Hnos_Rojas
         public ListaProveedores()
         {
             InitializeComponent();
+        }
+
+        private void llenarListBox()
+        {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+
+            List<DO_Proveedor> listaClientes = blProveedor.obtenerListaProveedores();
+
+            //DataTable tablaClientes = new DataTable();
+            //tablaClientes.Columns.Add("id");
+            //tablaClientes.Columns.Add("nombre");
+            //if (listaClientes != null)
+            //{
+            //    foreach (DO_Cliente doCliente in listaClientes)
+            //    {
+            //        tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " "
+            //            + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
+            //    }
+            //}
+
+
+            //listBClientes.DataSource = tablaClientes;
+            //listBClientes.DisplayMember = "nombre";
+            //listBClientes.ValueMember = "id";
+
+            //listBClientes.SelectedItem = 0;
         }
     }
 }
