@@ -133,5 +133,15 @@ namespace Hnos_Rojas
             restaurarColoresBtns();
             btnConfiguracion.BackColor = Color.FromArgb(24, 107, 94);
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            pnlCenter.Controls.Clear();
+            Reportes otropanel = new Reportes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+            restaurarColoresBtns();
+            btnReportes.BackColor = Color.FromArgb(24, 107, 94);
+        }
     }
 }
