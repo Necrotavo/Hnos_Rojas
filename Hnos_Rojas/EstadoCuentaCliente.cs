@@ -58,7 +58,7 @@ namespace Hnos_Rojas
             
             Parent.Controls.Add(detallesEstadoCuenta);
             detallesEstadoCuenta.Show();
-            this.Hide();
+            this.Dispose();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

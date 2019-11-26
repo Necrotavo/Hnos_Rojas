@@ -61,7 +61,9 @@ namespace Hnos_Rojas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Parent.Show();
+            EstadoCuentaCliente otropanel = new EstadoCuentaCliente() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.Parent.Controls.Add(otropanel);
+            otropanel.Show();
             this.Dispose();
         }
 
