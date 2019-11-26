@@ -15,6 +15,16 @@ namespace Hnos_Rojas
         public Proveedor()
         {
             InitializeComponent();
+            invocarListaProveedores();
+        }
+        
+
+        public void invocarListaProveedores()
+        {
+            this.panelProveedores.Controls.Clear();
+            ListaProveedores listaProveedores = new ListaProveedores() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Add(listaProveedores);
+            listaProveedores.Show();
         }
     }
 }

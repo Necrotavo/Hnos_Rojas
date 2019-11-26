@@ -16,11 +16,14 @@ namespace Hnos_Rojas
 {
     public partial class Productos : Form
     {
-        public Productos(bool b)
+        Ventas ventas;
+        public Productos(bool b, Ventas _ventas)
         {
-            
+            ventas = _ventas;
             InitializeComponent();
             btnAgregarTicket.Visible = b;
+            lblPrecioNuevo.Visible = b;
+            txtPrecioNuevo.Visible = b;
             llenarGridProductos();
 
         }
@@ -125,9 +128,22 @@ namespace Hnos_Rojas
             
         }
 
+        private string getCodigoProducto()
+        {
+            int selectedRowIndex = grdProductos.SelectedCells[0].RowIndex;
+            string codigo = grdProductos.Rows[selectedRowIndex].Cells[0].Value.ToString();
+            return codigo;
+        }
         private void btnAgregarTicket_Click(object sender, EventArgs e)
         {
-
+            BL_Producto blProducto = new BL_Producto();
+            DO_Producto producto = blProducto.BuscarProducto(getCodigoProducto()); ;
+            if (txtPrecioNuevo.Text!="")
+            {
+                producto.precioVenta = Convert.ToDouble(txtPrecioNuevo.Text);
+            }
+            ventas.agregarProductoATabla(producto);
+            this.Dispose();
         }
     }
 }

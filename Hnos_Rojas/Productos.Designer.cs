@@ -43,6 +43,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregarTicket = new System.Windows.Forms.Button();
+            this.txtPrecioNuevo = new System.Windows.Forms.TextBox();
+            this.lblPrecioNuevo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +92,7 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Location = new System.Drawing.Point(-9, 171);
+            this.grdProductos.Location = new System.Drawing.Point(-9, 191);
             this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
             this.grdProductos.MaximumSize = new System.Drawing.Size(1500, 500);
             this.grdProductos.Name = "grdProductos";
@@ -189,7 +191,7 @@
             this.btnAgregarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAgregarTicket.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTicket.Location = new System.Drawing.Point(125, 99);
+            this.btnAgregarTicket.Location = new System.Drawing.Point(415, 123);
             this.btnAgregarTicket.Name = "btnAgregarTicket";
             this.btnAgregarTicket.Size = new System.Drawing.Size(268, 43);
             this.btnAgregarTicket.TabIndex = 17;
@@ -198,12 +200,35 @@
             this.btnAgregarTicket.Visible = false;
             this.btnAgregarTicket.Click += new System.EventHandler(this.btnAgregarTicket_Click);
             // 
+            // txtPrecioNuevo
+            // 
+            this.txtPrecioNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioNuevo.Location = new System.Drawing.Point(125, 131);
+            this.txtPrecioNuevo.Name = "txtPrecioNuevo";
+            this.txtPrecioNuevo.Size = new System.Drawing.Size(268, 35);
+            this.txtPrecioNuevo.TabIndex = 18;
+            this.txtPrecioNuevo.Visible = false;
+            // 
+            // lblPrecioNuevo
+            // 
+            this.lblPrecioNuevo.AutoSize = true;
+            this.lblPrecioNuevo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.lblPrecioNuevo.ForeColor = System.Drawing.Color.White;
+            this.lblPrecioNuevo.Location = new System.Drawing.Point(125, 96);
+            this.lblPrecioNuevo.Name = "lblPrecioNuevo";
+            this.lblPrecioNuevo.Size = new System.Drawing.Size(159, 32);
+            this.lblPrecioNuevo.TabIndex = 19;
+            this.lblPrecioNuevo.Text = "Precio nuevo:";
+            this.lblPrecioNuevo.Visible = false;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1040, 629);
+            this.Controls.Add(this.lblPrecioNuevo);
+            this.Controls.Add(this.txtPrecioNuevo);
             this.Controls.Add(this.btnAgregarTicket);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodigo);
@@ -238,5 +263,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
         private System.Windows.Forms.Button btnAgregarTicket;
+        private System.Windows.Forms.TextBox txtPrecioNuevo;
+        private System.Windows.Forms.Label lblPrecioNuevo;
     }
 }

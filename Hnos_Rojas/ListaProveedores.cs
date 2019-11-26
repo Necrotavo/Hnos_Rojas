@@ -17,32 +17,41 @@ namespace Hnos_Rojas
         public ListaProveedores()
         {
             InitializeComponent();
+            llenarListBox();
+            this.ActiveControl = txtNombreProveedor;
         }
 
         private void llenarListBox()
         {
             BL_Proveedor blProveedor = new BL_Proveedor();
 
-            List<DO_Proveedor> listaClientes = blProveedor.obtenerListaProveedores();
+            List<DO_Proveedor> listaProveedores = blProveedor.obtenerListaProveedores(this.txtNombreProveedor.Text.Trim());
 
-            //DataTable tablaClientes = new DataTable();
-            //tablaClientes.Columns.Add("id");
-            //tablaClientes.Columns.Add("nombre");
-            //if (listaClientes != null)
-            //{
-            //    foreach (DO_Cliente doCliente in listaClientes)
-            //    {
-            //        tablaClientes.Rows.Add(doCliente.perIdentificador, doCliente.perNombre + " "
-            //            + doCliente.perPrimerApellido + " " + doCliente.perSegundoApellido);
-            //    }
-            //}
+            DataTable tablaClientes = new DataTable();
+            tablaClientes.Columns.Add("nombre");
+            if (listaProveedores != null)
+            {
+                foreach (DO_Proveedor doProveedor in listaProveedores)
+                {
+                    tablaClientes.Rows.Add(doProveedor.nombre);
+                }
+            }
 
+            this.listBoxProveedores.DataSource = tablaClientes;
+            this.listBoxProveedores.DisplayMember = "nombre";
+            this.listBoxProveedores.ValueMember = "nombre";
 
-            //listBClientes.DataSource = tablaClientes;
-            //listBClientes.DisplayMember = "nombre";
-            //listBClientes.ValueMember = "id";
+            this.listBoxProveedores.SelectedItem = 0;
+        }
 
-            //listBClientes.SelectedItem = 0;
+        private void listBoxProveedores_Click(object sender, EventArgs e)
+        {
+            //Enviar a la ventana para mostrar los asociados
+        }
+
+        private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
+        {
+            llenarListBox();
         }
     }
 }
