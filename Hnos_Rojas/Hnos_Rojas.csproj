@@ -113,6 +113,12 @@
     <Compile Include="FacturaReporte.Designer.cs">
       <DependentUpon>FacturaReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaProveedores.Designer.cs">
+      <DependentUpon>ListaProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
