@@ -53,6 +53,7 @@
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(423, 41);
             this.txtNombreProveedor.TabIndex = 4;
+            this.txtNombreProveedor.TextChanged += new System.EventHandler(this.txtNombreProveedor_TextChanged);
             // 
             // listBoxProveedores
             // 
@@ -64,6 +65,7 @@
             this.listBoxProveedores.Name = "listBoxProveedores";
             this.listBoxProveedores.Size = new System.Drawing.Size(423, 148);
             this.listBoxProveedores.TabIndex = 3;
+            this.listBoxProveedores.Click += new System.EventHandler(this.listBoxProveedores_Click);
             // 
             // ListaProveedores
             // 
