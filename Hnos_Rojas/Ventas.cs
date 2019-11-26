@@ -155,6 +155,11 @@ namespace Hnos_Rojas
                         listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).pagar();
                         break;
                     }
+                case Keys.Insert:
+                    {
+                        ventanaProductoNuevo();
+                        break;
+                    }
             }
 
         }
@@ -217,11 +222,14 @@ namespace Hnos_Rojas
         {
             articuloComun();
         }
-
-        private void btnProducto_Click(object sender, EventArgs e)
+        private void ventanaProductoNuevo()
         {
             NuevoProducto ventanaProducto = new NuevoProducto();
             ventanaProducto.Show();
+        }
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            ventanaProductoNuevo();
         }
     }
 }
