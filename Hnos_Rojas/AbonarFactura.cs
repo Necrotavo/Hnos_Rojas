@@ -33,7 +33,7 @@ namespace Hnos_Rojas
         public void actualizarLblSaldo()
         {
             double saldo = doFactura.saldo - Convert.ToDouble(txtAbono.Text);
-            if (saldo > 0)
+            if (saldo >= 0)
             {
                 lblSaldoAbono.Text = "Saldo";
                 lblSaldo.Text = saldo.ToString();

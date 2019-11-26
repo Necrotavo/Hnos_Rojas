@@ -66,7 +66,7 @@ namespace Hnos_Rojas
 
         public void actualizarLblSaldo() {
             double saldo = cliente.credito.monto - Convert.ToDouble(txtAbono.Text);
-            if (saldo > 0)
+            if (saldo >= 0)
             {
                 lblSaldoAbono.Text = "Saldo";
                 lblSaldo.Text = saldo.ToString();
