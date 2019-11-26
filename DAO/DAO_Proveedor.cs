@@ -195,5 +195,46 @@ namespace DAO
                 }
             }
         }
+
+        public List<DO_Proveedor> obtenerListaProveedores(String filtro) {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = new SqlCommand("select * from PROVEEDOR where PROV_NOMBRE like @filtro", conexion);
+            adapter.SelectCommand.Parameters.AddWithValue("@filtro", "%" + filtro + "%");            
+
+            DataTable datatable = new DataTable();
+            List<DO_Proveedor> listaProveedores = new List<DO_Proveedor>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                adapter.Fill(datatable);
+
+                foreach (DataRow row in datatable.Rows)
+                {
+                    DO_Proveedor nuevoProveedor = new DO_Proveedor();
+
+                    nuevoProveedor.nombre = (String)(row["PROV_NOMBRE"]);
+                    nuevoProveedor.fechaVisita = (String)row["PROV_FECHA_VISITA"];
+
+                    listaProveedores.Add(nuevoProveedor);
+                }
+
+                return listaProveedores;
+            }
+            catch (SqlException) {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
