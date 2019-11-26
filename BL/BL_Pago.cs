@@ -10,10 +10,10 @@ namespace BL
 {
     public class BL_Pago
     {
-        public int obtenerPagoProvDiaEspecifico(String dia)
+        public int obtenerPagoProvDiaEspecifico(String diaInicio, String diaFinal)
         {
             DAO_Pago daoPago = new DAO_Pago();
-            return daoPago.obtenerPagoProvDiaEspecifico(dia);
+            return daoPago.obtenerPagoProvDiaEspecifico(diaInicio, diaFinal);
         }
     }
 }
