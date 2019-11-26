@@ -68,6 +68,7 @@
             this.lbCantProd3 = new System.Windows.Forms.Label();
             this.lbCantProd4 = new System.Windows.Forms.Label();
             this.lbCantProd5 = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTotalAgentes
@@ -428,12 +429,28 @@
             this.lbCantProd5.Size = new System.Drawing.Size(0, 13);
             this.lbCantProd5.TabIndex = 105;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(27, 312);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(229, 48);
+            this.btnImprimir.TabIndex = 106;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1239, 517);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lbCantProd5);
             this.Controls.Add(this.lbCantProd4);
             this.Controls.Add(this.lbCantProd3);
@@ -524,5 +541,6 @@
         private System.Windows.Forms.Label lbCantProd3;
         private System.Windows.Forms.Label lbCantProd4;
         private System.Windows.Forms.Label lbCantProd5;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

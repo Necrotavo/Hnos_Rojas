@@ -429,11 +429,12 @@ namespace DAO
             return null;
         }
 
-        public int obtenerTotalVentasEfectivoDiaEspecifico(String dia) {
+        public int obtenerTotalVentasEfectivoDiaEspecifico(String diaInicio, String diaFinal) {
             int total = 0;
 
-            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA LIKE @dia AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
-            comando.Parameters.AddWithValue("@dia", "%" + dia + "%");
+            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA BETWEEN @diaInicio AND @diaFinal AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
+            comando.Parameters.AddWithValue("@diaInicio",  diaInicio);
+            comando.Parameters.AddWithValue("@diaFinal", diaFinal);
             comando.Parameters.AddWithValue("@estado", "PAGADA");
             comando.Parameters.AddWithValue("@tipo", "CONTADO");
 

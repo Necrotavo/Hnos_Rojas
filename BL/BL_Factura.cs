@@ -146,9 +146,9 @@ namespace BL
             return daoFactura.actualizarSaldoFactura(factura, abono);
         }
 
-        public int obtenerTotalVentasEfectivoDiaEspecifico(String dia) {
+        public int obtenerTotalVentasEfectivoDiaEspecifico(String diaInicio, String diaFinal) {
             DAO_Factura daoFactura = new DAO_Factura();
-            return daoFactura.obtenerTotalVentasEfectivoDiaEspecifico(dia);
+            return daoFactura.obtenerTotalVentasEfectivoDiaEspecifico(diaInicio, diaFinal);
         }
 
         public int obtenerTotalVentasCreditoDiaEspecifico(String dia) {
