@@ -428,5 +428,38 @@ namespace DAO
             }
             return null;
         }
+
+        public int obtenerTotalVentasEfectivoDiaEspecifico(String dia) {
+            int total = 0;
+
+            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA LIKE @dia AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
+            comando.Parameters.AddWithValue("@dia", "%" + dia + "%");
+            comando.Parameters.AddWithValue("@estado", "PAGADA");
+            comando.Parameters.AddWithValue("@tipo", "CONTADO");
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                total = Convert.ToInt32(comando.ExecuteScalar());
+                
+                return total;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return total;
+        }
     }
 }
