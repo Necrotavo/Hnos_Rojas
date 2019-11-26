@@ -87,7 +87,12 @@ namespace Hnos_Rojas
             nmCantidad.Value = 1;
             txtCodigo.Clear();
         }
+        public void agregarProductoATabla(DO_Producto producto)
+        {
 
+                listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(producto, Convert.ToInt32(nmCantidad.Text));
+
+        }
         private void agregarProductoATabla()
         {
             BL_Producto prod = new BL_Producto();
@@ -199,7 +204,7 @@ namespace Hnos_Rojas
 
         private void btnArtComun_Click(object sender, EventArgs e)
         {
-            Productos productos = new Productos(true);
+            Productos productos = new Productos(true, this);
             productos.FormBorderStyle = FormBorderStyle.FixedDialog;
             productos.Show();
 
