@@ -87,7 +87,12 @@ namespace Hnos_Rojas
             nmCantidad.Value = 1;
             txtCodigo.Clear();
         }
+        public void agregarProductoATabla(DO_Producto producto)
+        {
 
+                listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).agregarProducto(producto, Convert.ToInt32(nmCantidad.Text));
+
+        }
         private void agregarProductoATabla()
         {
             BL_Producto prod = new BL_Producto();
@@ -115,6 +120,11 @@ namespace Hnos_Rojas
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.P && e.Control)
+            {
+                articuloComun();
+            }
+
             switch (e.KeyCode)
             {
 
@@ -143,6 +153,11 @@ namespace Hnos_Rojas
                 case Keys.F12:
                     {
                         listaTiquetes.ElementAt<Tickets>(tabTicket.SelectedIndex).pagar();
+                        break;
+                    }
+                case Keys.Insert:
+                    {
+                        ventanaProductoNuevo();
                         break;
                     }
             }
@@ -197,12 +212,24 @@ namespace Hnos_Rojas
             }
         }
 
-        private void btnArtComun_Click(object sender, EventArgs e)
+        private void articuloComun()
         {
-            Productos productos = new Productos(true);
+            Productos productos = new Productos(true, this);
             productos.FormBorderStyle = FormBorderStyle.FixedDialog;
             productos.Show();
-
+        }
+        private void btnArtComun_Click(object sender, EventArgs e)
+        {
+            articuloComun();
+        }
+        private void ventanaProductoNuevo()
+        {
+            NuevoProducto ventanaProducto = new NuevoProducto();
+            ventanaProducto.Show();
+        }
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            ventanaProductoNuevo();
         }
     }
 }

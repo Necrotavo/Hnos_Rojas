@@ -104,6 +104,7 @@
             this.btnInventario.TabIndex = 10;
             this.btnInventario.Text = "Proveedores";
             this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnProductos
             // 
