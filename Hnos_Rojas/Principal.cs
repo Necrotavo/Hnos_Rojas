@@ -143,5 +143,20 @@ namespace Hnos_Rojas
             restaurarColoresBtns();
             btnReportes.BackColor = Color.FromArgb(24, 107, 94);
         }
+
+        private void proveedoresEjecucion()
+        {
+            pnlCenter.Controls.Clear();
+            Proveedor otropanel = new Proveedor() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            pnlCenter.Controls.Add(otropanel);
+            otropanel.Show();
+            restaurarColoresBtns();
+            btnInventario.BackColor = Color.FromArgb(24, 107, 94);
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            proveedoresEjecucion();
+        }
     }
 }
