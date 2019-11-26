@@ -116,17 +116,19 @@ namespace DAO
             }
         }
 
-        public List<DO_Cliente> obtenerListaClientes(bool clientesHabilitados) {
+        public List<DO_Cliente> obtenerListaClientesHabilitados(bool clientesHabilitados, String nombre) {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            String consultaClientes = "select * from CLIENTE ";
+            String consultaClientes = "select * from CLIENTE where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro";
             DataTable datatable = new DataTable();
             List<DO_Cliente> listaClientes = new List<DO_Cliente>();
 
             if (clientesHabilitados)
             {
-                consultaClientes += "Where EST_ESTADO = 'HABILITADO'";
+                consultaClientes += " and EST_ESTADO = 'HABILITADO'";
+                
             }
             adapter.SelectCommand = new SqlCommand(consultaClientes, conexion);
+            adapter.SelectCommand.Parameters.AddWithValue("@filtro", "%" + nombre + "%");
             try
             {
                 if (conexion.State != ConnectionState.Open)
@@ -147,8 +149,15 @@ namespace DAO
                     nuevoCliente.perPrimerApellido = (String)row["PER_PRIMER_APELLIDO"];
                     nuevoCliente.perSegundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
                     nuevoCliente.direccion = (String)row["CLI_DIRECCION"];
-
-                    listaClientes.Add(nuevoCliente);
+                    if (!clientesHabilitados)
+                    {
+                        listaClientes.Add(nuevoCliente);
+                    }
+                    else {
+                        if (nuevoCliente.estado == "HABILITADO") {
+                            listaClientes.Add(nuevoCliente);
+                        }
+                    }
                 }
 
                 return listaClientes;

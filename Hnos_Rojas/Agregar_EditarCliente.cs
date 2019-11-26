@@ -72,13 +72,13 @@ namespace Hnos_Rojas
 
         private void tabPageModificar_Click(object sender, EventArgs e)
         {
-
+            llenarGridClientes();   
         }
 
         private void llenarGridClientes()
         {
             BL_Cliente blCliente = new BL_Cliente();
-            dgvClientes.DataSource = blCliente.obtenerListaClientes(false);
+            dgvClientes.DataSource = blCliente.obtenerListaClientesHabilitados(false,"");
             dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             //style.Font = new Font("Microsoft Sans Serif", 14);
@@ -110,25 +110,43 @@ namespace Hnos_Rojas
 
         public void destacarClientesInactivos(DataGridView dgv)
         {
+            
             foreach (DataGridViewRow fila in dgv.Rows)
             {
-                if (fila.Cells[1].Value.ToString() == "DESHABILITADO")
+                
+                if (fila.Cells[1].Value.ToString().Equals("DESHABILITADO"))
                 {
-                    fila.DefaultCellStyle.BackColor = Color.Red;
+                    
+                    
+                    fila.DefaultCellStyle.BackColor = Color.Red;                    
+                    
                 }
             }
+            
         }
 
         private void Agregar_EditarCliente_Load(object sender, EventArgs e)
         {
             AlternarColores(dgvClientes);
-            
+            //destacarClientesInactivos(dgvClientes);
         }
 
         public void AlternarColores(DataGridView dgv)
         {
             dgv.RowsDefaultCellStyle.BackColor = Color.White;
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;           
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            
+            
+        }
+
+        private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgvClientes.Columns[e.ColumnIndex].Name == "Estado") {
+                if (e.Value.ToString() == "DESHABILITADO") {
+                   // e.CellStyle.BackColor = Color.Red;
+                    dgvClientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
         }
     }
 }

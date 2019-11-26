@@ -30,21 +30,21 @@
         {
             this.tabControlClientes = new System.Windows.Forms.TabControl();
             this.tabPageAgregarCliente = new System.Windows.Forms.TabPage();
-            this.tabPageModificar = new System.Windows.Forms.TabPage();
-            this.lblAgregarCliente = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblPrimerApellido = new System.Windows.Forms.Label();
-            this.lblSegundoApellido = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblLimite = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbPrimerApellido = new System.Windows.Forms.TextBox();
-            this.tbSegundoApellido = new System.Windows.Forms.TextBox();
-            this.tbDireccion = new System.Windows.Forms.TextBox();
-            this.tbTelefono = new System.Windows.Forms.TextBox();
             this.tbLimite = new System.Windows.Forms.TextBox();
+            this.tbTelefono = new System.Windows.Forms.TextBox();
+            this.tbDireccion = new System.Windows.Forms.TextBox();
+            this.tbSegundoApellido = new System.Windows.Forms.TextBox();
+            this.tbPrimerApellido = new System.Windows.Forms.TextBox();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblLimite = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblSegundoApellido = new System.Windows.Forms.Label();
+            this.lblPrimerApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblAgregarCliente = new System.Windows.Forms.Label();
+            this.tabPageModificar = new System.Windows.Forms.TabPage();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,80 +91,47 @@
             this.tabPageAgregarCliente.Text = "Agregar";
             this.tabPageAgregarCliente.UseVisualStyleBackColor = true;
             // 
-            // tabPageModificar
+            // tbLimite
             // 
-            this.tabPageModificar.Controls.Add(this.dgvClientes);
-            this.tabPageModificar.Location = new System.Drawing.Point(4, 22);
-            this.tabPageModificar.Name = "tabPageModificar";
-            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageModificar.Size = new System.Drawing.Size(786, 424);
-            this.tabPageModificar.TabIndex = 1;
-            this.tabPageModificar.Text = "Modificar";
-            this.tabPageModificar.UseVisualStyleBackColor = true;
-            this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
+            this.tbLimite.Location = new System.Drawing.Point(333, 277);
+            this.tbLimite.Name = "tbLimite";
+            this.tbLimite.Size = new System.Drawing.Size(100, 20);
+            this.tbLimite.TabIndex = 13;
             // 
-            // lblAgregarCliente
+            // tbTelefono
             // 
-            this.lblAgregarCliente.AutoSize = true;
-            this.lblAgregarCliente.Location = new System.Drawing.Point(330, 3);
-            this.lblAgregarCliente.Name = "lblAgregarCliente";
-            this.lblAgregarCliente.Size = new System.Drawing.Size(111, 13);
-            this.lblAgregarCliente.TabIndex = 0;
-            this.lblAgregarCliente.Text = "Agregar nuevo cliente";
+            this.tbTelefono.Location = new System.Drawing.Point(333, 227);
+            this.tbTelefono.Name = "tbTelefono";
+            this.tbTelefono.Size = new System.Drawing.Size(100, 20);
+            this.tbTelefono.TabIndex = 12;
             // 
-            // lblNombre
+            // tbDireccion
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(175, 64);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
+            this.tbDireccion.Location = new System.Drawing.Point(333, 188);
+            this.tbDireccion.Name = "tbDireccion";
+            this.tbDireccion.Size = new System.Drawing.Size(196, 20);
+            this.tbDireccion.TabIndex = 11;
             // 
-            // lblPrimerApellido
+            // tbSegundoApellido
             // 
-            this.lblPrimerApellido.AutoSize = true;
-            this.lblPrimerApellido.Location = new System.Drawing.Point(175, 105);
-            this.lblPrimerApellido.Name = "lblPrimerApellido";
-            this.lblPrimerApellido.Size = new System.Drawing.Size(75, 13);
-            this.lblPrimerApellido.TabIndex = 2;
-            this.lblPrimerApellido.Text = "Primer apellido";
+            this.tbSegundoApellido.Location = new System.Drawing.Point(333, 146);
+            this.tbSegundoApellido.Name = "tbSegundoApellido";
+            this.tbSegundoApellido.Size = new System.Drawing.Size(100, 20);
+            this.tbSegundoApellido.TabIndex = 10;
             // 
-            // lblSegundoApellido
+            // tbPrimerApellido
             // 
-            this.lblSegundoApellido.AutoSize = true;
-            this.lblSegundoApellido.Location = new System.Drawing.Point(175, 146);
-            this.lblSegundoApellido.Name = "lblSegundoApellido";
-            this.lblSegundoApellido.Size = new System.Drawing.Size(89, 13);
-            this.lblSegundoApellido.TabIndex = 3;
-            this.lblSegundoApellido.Text = "Segundo apellido";
+            this.tbPrimerApellido.Location = new System.Drawing.Point(333, 105);
+            this.tbPrimerApellido.Name = "tbPrimerApellido";
+            this.tbPrimerApellido.Size = new System.Drawing.Size(100, 20);
+            this.tbPrimerApellido.TabIndex = 9;
             // 
-            // lblDireccion
+            // tbNombre
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(175, 188);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 4;
-            this.lblDireccion.Text = "Dirección";
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(175, 227);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 5;
-            this.lblTelefono.Text = "Teléfono";
-            // 
-            // lblLimite
-            // 
-            this.lblLimite.AutoSize = true;
-            this.lblLimite.Location = new System.Drawing.Point(178, 277);
-            this.lblLimite.Name = "lblLimite";
-            this.lblLimite.Size = new System.Drawing.Size(86, 13);
-            this.lblLimite.TabIndex = 6;
-            this.lblLimite.Text = "Límite de crédito";
+            this.tbNombre.Location = new System.Drawing.Point(333, 64);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(100, 20);
+            this.tbNombre.TabIndex = 8;
             // 
             // btnGuardar
             // 
@@ -176,47 +143,80 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // tbNombre
+            // lblLimite
             // 
-            this.tbNombre.Location = new System.Drawing.Point(333, 64);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(100, 20);
-            this.tbNombre.TabIndex = 8;
+            this.lblLimite.AutoSize = true;
+            this.lblLimite.Location = new System.Drawing.Point(178, 277);
+            this.lblLimite.Name = "lblLimite";
+            this.lblLimite.Size = new System.Drawing.Size(86, 13);
+            this.lblLimite.TabIndex = 6;
+            this.lblLimite.Text = "Límite de crédito";
             // 
-            // tbPrimerApellido
+            // lblTelefono
             // 
-            this.tbPrimerApellido.Location = new System.Drawing.Point(333, 105);
-            this.tbPrimerApellido.Name = "tbPrimerApellido";
-            this.tbPrimerApellido.Size = new System.Drawing.Size(100, 20);
-            this.tbPrimerApellido.TabIndex = 9;
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(175, 227);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 5;
+            this.lblTelefono.Text = "Teléfono";
             // 
-            // tbSegundoApellido
+            // lblDireccion
             // 
-            this.tbSegundoApellido.Location = new System.Drawing.Point(333, 146);
-            this.tbSegundoApellido.Name = "tbSegundoApellido";
-            this.tbSegundoApellido.Size = new System.Drawing.Size(100, 20);
-            this.tbSegundoApellido.TabIndex = 10;
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(175, 188);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 4;
+            this.lblDireccion.Text = "Dirección";
             // 
-            // tbDireccion
+            // lblSegundoApellido
             // 
-            this.tbDireccion.Location = new System.Drawing.Point(333, 188);
-            this.tbDireccion.Name = "tbDireccion";
-            this.tbDireccion.Size = new System.Drawing.Size(196, 20);
-            this.tbDireccion.TabIndex = 11;
+            this.lblSegundoApellido.AutoSize = true;
+            this.lblSegundoApellido.Location = new System.Drawing.Point(175, 146);
+            this.lblSegundoApellido.Name = "lblSegundoApellido";
+            this.lblSegundoApellido.Size = new System.Drawing.Size(89, 13);
+            this.lblSegundoApellido.TabIndex = 3;
+            this.lblSegundoApellido.Text = "Segundo apellido";
             // 
-            // tbTelefono
+            // lblPrimerApellido
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(333, 227);
-            this.tbTelefono.Name = "tbTelefono";
-            this.tbTelefono.Size = new System.Drawing.Size(100, 20);
-            this.tbTelefono.TabIndex = 12;
+            this.lblPrimerApellido.AutoSize = true;
+            this.lblPrimerApellido.Location = new System.Drawing.Point(175, 105);
+            this.lblPrimerApellido.Name = "lblPrimerApellido";
+            this.lblPrimerApellido.Size = new System.Drawing.Size(75, 13);
+            this.lblPrimerApellido.TabIndex = 2;
+            this.lblPrimerApellido.Text = "Primer apellido";
             // 
-            // tbLimite
+            // lblNombre
             // 
-            this.tbLimite.Location = new System.Drawing.Point(333, 277);
-            this.tbLimite.Name = "tbLimite";
-            this.tbLimite.Size = new System.Drawing.Size(100, 20);
-            this.tbLimite.TabIndex = 13;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(175, 64);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblAgregarCliente
+            // 
+            this.lblAgregarCliente.AutoSize = true;
+            this.lblAgregarCliente.Location = new System.Drawing.Point(330, 3);
+            this.lblAgregarCliente.Name = "lblAgregarCliente";
+            this.lblAgregarCliente.Size = new System.Drawing.Size(111, 13);
+            this.lblAgregarCliente.TabIndex = 0;
+            this.lblAgregarCliente.Text = "Agregar nuevo cliente";
+            // 
+            // tabPageModificar
+            // 
+            this.tabPageModificar.Controls.Add(this.dgvClientes);
+            this.tabPageModificar.Location = new System.Drawing.Point(4, 22);
+            this.tabPageModificar.Name = "tabPageModificar";
+            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageModificar.Size = new System.Drawing.Size(786, 424);
+            this.tabPageModificar.TabIndex = 1;
+            this.tabPageModificar.Text = "Modificar";
+            this.tabPageModificar.UseVisualStyleBackColor = true;
+            this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
             // 
             // dgvClientes
             // 
@@ -232,6 +232,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(780, 418);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
             // 
             // NombreCliente
             // 
