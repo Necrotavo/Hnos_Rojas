@@ -20,10 +20,14 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             cliente = _cliente;
-            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
+            refrescarCreditoCompleto();
             llenarGrid();
             formatoGrid();
 
+        }
+
+        public void refrescarCreditoCompleto() {
+            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
         }
 
         public void llenarGrid() {
@@ -35,7 +39,6 @@ namespace Hnos_Rojas
             tablaFacturas.Columns.Add("Estado");
             tablaFacturas.Columns.Add("Monto");
             tablaFacturas.Columns.Add("Saldo");
-            cliente.credito = blCredito.ObtenerCredito(cliente.perIdentificador);
             foreach (DO_Factura doFactura in cliente.credito.listaFactura) {
                 tablaFacturas.Rows.Add(doFactura.codigoFactura, doFactura.fecha, doFactura.usuario,
                     cliente.perNombre + " " + cliente.perPrimerApellido + " " + cliente.perSegundoApellido,
