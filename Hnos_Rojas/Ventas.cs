@@ -120,6 +120,11 @@ namespace Hnos_Rojas
 
         private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.P && e.Control)
+            {
+                articuloComun();
+            }
+
             switch (e.KeyCode)
             {
 
@@ -202,12 +207,15 @@ namespace Hnos_Rojas
             }
         }
 
-        private void btnArtComun_Click(object sender, EventArgs e)
+        private void articuloComun()
         {
             Productos productos = new Productos(true, this);
             productos.FormBorderStyle = FormBorderStyle.FixedDialog;
             productos.Show();
-
+        }
+        private void btnArtComun_Click(object sender, EventArgs e)
+        {
+            articuloComun();
         }
     }
 }
