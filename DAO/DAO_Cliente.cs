@@ -116,12 +116,17 @@ namespace DAO
             }
         }
 
-        public List<DO_Cliente> obtenerListaClientes() {
+        public List<DO_Cliente> obtenerListaClientes(bool clientesHabilitados) {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from CLIENTE", conexion);
+            String consultaClientes = "select * from CLIENTE ";
             DataTable datatable = new DataTable();
             List<DO_Cliente> listaClientes = new List<DO_Cliente>();
 
+            if (clientesHabilitados)
+            {
+                consultaClientes += "Where EST_ESTADO = 'HABILITADO'";
+            }
+            adapter.SelectCommand = new SqlCommand(consultaClientes, conexion);
             try
             {
                 if (conexion.State != ConnectionState.Open)
