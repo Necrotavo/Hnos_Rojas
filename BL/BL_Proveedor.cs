@@ -33,9 +33,9 @@ namespace BL
             return daoProveedor.pagarProveedor(pago);
         }
 
-        public List<DO_Proveedor> obtenerListaProveedores() {
+        public List<DO_Proveedor> obtenerListaProveedores(String filtro) {
             DAO_Proveedor daoProveedor = new DAO_Proveedor();
-            return daoProveedor.obtenerListaProveedores();
+            return daoProveedor.obtenerListaProveedores(filtro);
         }
     }
 }

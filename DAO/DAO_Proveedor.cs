@@ -196,9 +196,11 @@ namespace DAO
             }
         }
 
-        public List<DO_Proveedor> obtenerListaProveedores() {
+        public List<DO_Proveedor> obtenerListaProveedores(String filtro) {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from PROVEEDOR", conexion);
+            adapter.SelectCommand = new SqlCommand("select * from PROVEEDOR where PREV_NOMBRE like @filtro", conexion);
+            adapter.SelectCommand.Parameters.AddWithValue("@filtro", "%" + filtro + "%");            
+
             DataTable datatable = new DataTable();
             List<DO_Proveedor> listaProveedores = new List<DO_Proveedor>();
 
