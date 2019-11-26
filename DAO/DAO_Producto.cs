@@ -405,5 +405,13 @@ namespace DAO
                 }
             }
         }
+
+        public List<DO_TopProductos> obtenerTopVentas() {
+            List<DO_TopProductos> productos = new List<DO_TopProductos>();
+
+
+
+            return productos;  
+        }
     }
 }

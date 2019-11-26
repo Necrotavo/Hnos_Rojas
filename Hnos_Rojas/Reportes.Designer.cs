@@ -454,9 +454,9 @@
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label19.Location = new System.Drawing.Point(750, 323);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(198, 29);
+            this.label19.Size = new System.Drawing.Size(154, 29);
             this.label19.TabIndex = 107;
-            this.label19.Text = "Pago de Agentes";
+            this.label19.Text = "Corte del Dia";
             // 
             // label20
             // 
