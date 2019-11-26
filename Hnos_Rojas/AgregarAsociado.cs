@@ -7,14 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
+using DO;
 
 namespace Hnos_Rojas
 {
     public partial class AgregarAsociado : Form
     {
-        public AgregarAsociado()
+        private String proveedor;
+        public AgregarAsociado(String _proveedor)
         {
             InitializeComponent();
+            proveedor = _proveedor;
+        }
+
+        private void btnAddAsociado_Click(object sender, EventArgs e)
+        {
+            BL_Asociado blAsociado = new BL_Asociado();
+            DO_Asociado asociado = new DO_Asociado();
+            asociado.perNombre = txtNombre.Text.Trim();
+            asociado.perPrimerApellido = txtP1erApellido.Text.Trim();
+            asociado.perSegundoApellido = txt2doApellido.Text.Trim();
+            asociado.perTelefono = txtTelefono.Text.Trim();
+
+            if (blAsociado.AgregarAsociado(asociado))
+            {
+                MessageBox.Show("Asociado agregado");
+                limpiarFormulario();
+            }
+            else {
+                MessageBox.Show("El asociado no se agregó");
+            }
+
+        }
+
+        private void limpiarFormulario() {
+            txtNombre.Clear();
+            txtP1erApellido.Clear();
+            txt2doApellido.Clear();
+            txtTelefono.Clear();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

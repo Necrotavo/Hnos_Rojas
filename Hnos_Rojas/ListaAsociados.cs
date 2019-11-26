@@ -49,6 +49,10 @@ namespace Hnos_Rojas
         private void btnAddAsociado_Click(object sender, EventArgs e)
         {
             //MostrarFormulario de agregar asociado
+            AgregarAsociado agregarAsociado = new AgregarAsociado(lblTitulo.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.Parent.Controls.Add(agregarAsociado);
+            this.Dispose();
+            agregarAsociado.Show();
         }
     }
 }
