@@ -22,9 +22,9 @@ namespace BL
             cliente = new DO_Cliente();
         }
 
-        public List<DO_Cliente> obtenerListaClientes() {
+        public List<DO_Cliente> obtenerListaClientes(bool clientesHabilitados) {
             DAO_Cliente dao_cliente = new DAO_Cliente();
-            return dao_cliente.obtenerListaClientes();
+            return dao_cliente.obtenerListaClientes(clientesHabilitados);
         }
 
         public DO_Cliente buscarCliente(String nombre) {
