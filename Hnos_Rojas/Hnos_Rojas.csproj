@@ -65,6 +65,12 @@
     <Compile Include="AbonarFactura.Designer.cs">
       <DependentUpon>AbonarFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarAsociado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarAsociado.Designer.cs">
+      <DependentUpon>AgregarAsociado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Agregar_EditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
