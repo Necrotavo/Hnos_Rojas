@@ -24,5 +24,23 @@ namespace BL
 
             return false;
         }
+
+        public List<DO_Asociado> obtenerListaAsociados(String proveedor)
+        {
+            DAO_Asociado daoAsociado = new DAO_Asociado();
+            return daoAsociado.ObtenerAsociados(proveedor);
+        }
+
+        public bool eliminarAsociado(int idAsociado)
+        {
+            DAO_Asociado daoAsociado = new DAO_Asociado();
+            return daoAsociado.EliminarAsociado(idAsociado);
+        }
+
+        public DO_Asociado buscarAsociado(int idAsociado)
+        {
+            DAO_Asociado daoAsociado = new DAO_Asociado();
+            return daoAsociado.BuscarAsociado(idAsociado+"");
+        }
     }
 }

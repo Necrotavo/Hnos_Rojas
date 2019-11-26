@@ -150,5 +150,10 @@ namespace BL
             DAO_Factura daoFactura = new DAO_Factura();
             return daoFactura.obtenerTotalVentasEfectivoDiaEspecifico(dia);
         }
+
+        public int obtenerTotalVentasCreditoDiaEspecifico(String dia) {
+            DAO_Factura daoFactura = new DAO_Factura();
+            return daoFactura.obtenerTotalVentasCreditoDiaEspecifico(dia);
+        }
     }
 }

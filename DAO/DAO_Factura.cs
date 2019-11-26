@@ -461,5 +461,71 @@ namespace DAO
             }
             return total;
         }
+
+        public int obtenerTotalVentasCreditoDiaEspecifico(String dia) {
+            int total = 0;
+
+            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA LIKE @dia AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
+            comando.Parameters.AddWithValue("@dia", "%" + dia + "%");
+            comando.Parameters.AddWithValue("@estado", "PENDIENTE");
+            comando.Parameters.AddWithValue("@tipo", "CREDITO");
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                total = Convert.ToInt32(comando.ExecuteScalar());
+
+                return total;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return total;
+        }
+
+        public int obtenerTotalPagoProveedoresDiaEspecifico(String dia) {
+            int total = 0;
+
+            SqlCommand comando = new SqlCommand("Select SUM (PAG_MONTO) from PAGO Where PAG_FECHA LIKE @dia", conexion);
+            comando.Parameters.AddWithValue("@dia", "%" + dia + "%");
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                total = Convert.ToInt32(comando.ExecuteScalar());
+
+                return total;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return total;
+        }
+
     }
 }

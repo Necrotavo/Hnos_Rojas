@@ -46,7 +46,10 @@ namespace Hnos_Rojas
 
         private void listBoxProveedores_Click(object sender, EventArgs e)
         {
-            //Enviar a la ventana para mostrar los asociados
+            ListaAsociados listaAsociados = new ListaAsociados(listBoxProveedores.SelectedValue.ToString()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.Parent.Controls.Add(listaAsociados);
+            listaAsociados.Show();
+            this.Dispose();
         }
 
         private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
