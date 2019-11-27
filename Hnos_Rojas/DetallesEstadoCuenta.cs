@@ -59,7 +59,8 @@ namespace Hnos_Rojas
             grdFacturas.Columns[4].Width = 70;    //Estado
             grdFacturas.Columns[5].Width = 50;     //Monto
             grdFacturas.Columns[6].Width = 50;     //Saldo
-            grdFacturas.Columns[7].Width = 20;     //Abonar
+            grdFacturas.Columns[7].Width = 20;  //Abonar
+            grdFacturas.Columns[7].Width = 20; //imprimir
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
