@@ -53,7 +53,7 @@ namespace Hnos_Rojas
             asignarLabelsTopVentas(topVentas.Count, topVentas);
 
             //Lo de Caja
-            lbTotalCaja.Text = "₡" + (totalVentasEfectivo + totalAbonosCredito - totalPagoProve);
+            lbTotalCaja.Text = "₡ " + (totalVentasEfectivo + totalAbonosCredito - totalPagoProve);
         }
 
         public void asignarLabelsTopVentas(int tamañoTop, List<DO_TopProductos> topVentas)
@@ -79,26 +79,31 @@ namespace Hnos_Rojas
             {
                 if (i == 0)
                 {
+                    lblTop1.Text = "#1";
                     lbProd1.Text = topVentas[0].nombreProducto;
                     lbCantProd1.Text = "" + topVentas[0].cantidad;
                 }
                 if (i == 1)
                 {
+                    lblTop2.Text = "#2";
                     lbProd2.Text = topVentas[1].nombreProducto;
                     lbCantProd2.Text = "" + topVentas[1].cantidad;
                 }
                 if (i == 2)
                 {
+                    lblTop3.Text = "#3";
                     lbProd3.Text = topVentas[2].nombreProducto;
                     lbCantProd3.Text = "" + topVentas[2].cantidad;
                 }
                 if (i == 3)
                 {
+                    lblTop4.Text = "#4";
                     lbProd4.Text = topVentas[3].nombreProducto;
                     lbCantProd4.Text = "" + topVentas[3].cantidad;
                 }
                 if (i == 4)
                 {
+                    lblTop5.Text = "#5";
                     lbProd5.Text = topVentas[4].nombreProducto;
                     lbCantProd5.Text = "" + topVentas[4].cantidad;
                 }
