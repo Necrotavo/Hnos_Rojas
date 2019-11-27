@@ -105,6 +105,11 @@ namespace Hnos_Rojas
                     AbonarFactura abonarFactura = new AbonarFactura(factura, this);
                     abonarFactura.Show();
                 }
+                else if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Imprimir"))
+                {
+
+                }
+                
             }
             catch (Exception)
             {
