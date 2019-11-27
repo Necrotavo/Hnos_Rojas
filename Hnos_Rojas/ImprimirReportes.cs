@@ -62,7 +62,9 @@ namespace Hnos_Rojas
             pagoClientes = _pagoClientes;
             pagoAgentes = _pagoAgentes;
             totalCaja = _totalCaja;
-
+            papelTamano = new PaperSize("Custom", ancho, largo);
+            printDocument1.DefaultPageSettings.PaperSize = papelTamano;
+            printPreviewControl1.Document = printDocument1;
             imprimir();
         }
 
@@ -74,7 +76,7 @@ namespace Hnos_Rojas
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            e.Graphics.DrawString("REPORTE", fuenteGrande, Brushes.Black, x + 100, y);
+            e.Graphics.DrawString("REPORTES", fuenteGrande, Brushes.Black, x + 100, y);
             e.Graphics.DrawString("VENTAS:", fuenteGrande, Brushes.Black, x, y + (fuenteGeneral.Height * 1));
             e.Graphics.DrawString("En efectivo: " + ventasEnEfectivo, fuenteGeneral, Brushes.Black, x, y + (fuenteGeneral.Height * 2));
             e.Graphics.DrawString("Credito: " + ventasCredito, fuenteGeneral, Brushes.Black, x, y + (fuenteGeneral.Height * 3));

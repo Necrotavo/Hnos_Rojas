@@ -56,14 +56,14 @@
             // calDesde
             // 
             this.calDesde.Location = new System.Drawing.Point(48, 54);
-            this.calDesde.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calDesde.Margin = new System.Windows.Forms.Padding(7);
             this.calDesde.Name = "calDesde";
             this.calDesde.TabIndex = 0;
             // 
             // calHasta
             // 
             this.calHasta.Location = new System.Drawing.Point(48, 273);
-            this.calHasta.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calHasta.Margin = new System.Windows.Forms.Padding(7);
             this.calHasta.Name = "calHasta";
             this.calHasta.TabIndex = 1;
             // 
@@ -113,7 +113,7 @@
             this.Saldo,
             this.Abonar});
             this.grdFacturas.Location = new System.Drawing.Point(309, 54);
-            this.grdFacturas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdFacturas.Margin = new System.Windows.Forms.Padding(2);
             this.grdFacturas.Name = "grdFacturas";
             this.grdFacturas.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -292,6 +292,7 @@
             this.btnImprimir.TabIndex = 21;
             this.btnImprimir.Text = "Imprimir Reporte";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // DetallesEstadoCuenta
             // 
@@ -311,7 +312,7 @@
             this.Controls.Add(this.calHasta);
             this.Controls.Add(this.calDesde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DetallesEstadoCuenta";
             this.Text = "DetallesEstadoCuenta";
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).EndInit();
