@@ -36,12 +36,12 @@
             this.txtContrasenaCrear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBoxUsuarios = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.listBoxUsuarios = new System.Windows.Forms.ListBox();
             this.tabControlUsuarios.SuspendLayout();
             this.tabCrearUsuario.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -54,7 +54,7 @@
             this.tabControlUsuarios.Controls.Add(this.tabPage2);
             this.tabControlUsuarios.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControlUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlUsuarios.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.tabControlUsuarios.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
             this.tabControlUsuarios.Location = new System.Drawing.Point(0, 0);
             this.tabControlUsuarios.Name = "tabControlUsuarios";
             this.tabControlUsuarios.SelectedIndex = 0;
@@ -69,10 +69,10 @@
             this.tabCrearUsuario.Controls.Add(this.lblPassword);
             this.tabCrearUsuario.Controls.Add(this.txtContrasenaCrear);
             this.tabCrearUsuario.Controls.Add(this.label1);
-            this.tabCrearUsuario.Location = new System.Drawing.Point(4, 41);
+            this.tabCrearUsuario.Location = new System.Drawing.Point(4, 54);
             this.tabCrearUsuario.Name = "tabCrearUsuario";
             this.tabCrearUsuario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCrearUsuario.Size = new System.Drawing.Size(1049, 577);
+            this.tabCrearUsuario.Size = new System.Drawing.Size(1049, 564);
             this.tabCrearUsuario.TabIndex = 0;
             this.tabCrearUsuario.Text = "Crear Usuario";
             // 
@@ -83,7 +83,7 @@
             this.btnUsuariosConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuariosConf.Font = new System.Drawing.Font("Segoe UI Historic", 40F);
             this.btnUsuariosConf.ForeColor = System.Drawing.Color.White;
-            this.btnUsuariosConf.Location = new System.Drawing.Point(3, 368);
+            this.btnUsuariosConf.Location = new System.Drawing.Point(3, 355);
             this.btnUsuariosConf.Name = "btnUsuariosConf";
             this.btnUsuariosConf.Size = new System.Drawing.Size(1043, 206);
             this.btnUsuariosConf.TabIndex = 21;
@@ -143,49 +143,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modificar Usuario";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(377, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 32);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Contraseña:";
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(383, 315);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(283, 35);
-            this.txtContrasena.TabIndex = 23;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 40F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(521, 174);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBoxUsuarios
-            // 
-            this.listBoxUsuarios.FormattingEnabled = true;
-            this.listBoxUsuarios.ItemHeight = 32;
-            this.listBoxUsuarios.Location = new System.Drawing.Point(383, 137);
-            this.listBoxUsuarios.Name = "listBoxUsuarios";
-            this.listBoxUsuarios.Size = new System.Drawing.Size(283, 132);
-            this.listBoxUsuarios.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnEliminar);
@@ -210,6 +167,49 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 40F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(521, 174);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(377, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 32);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Contraseña:";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Location = new System.Drawing.Point(383, 315);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(283, 35);
+            this.txtContrasena.TabIndex = 23;
+            // 
+            // listBoxUsuarios
+            // 
+            this.listBoxUsuarios.FormattingEnabled = true;
+            this.listBoxUsuarios.ItemHeight = 45;
+            this.listBoxUsuarios.Location = new System.Drawing.Point(383, 137);
+            this.listBoxUsuarios.Name = "listBoxUsuarios";
+            this.listBoxUsuarios.Size = new System.Drawing.Size(283, 94);
+            this.listBoxUsuarios.TabIndex = 0;
             // 
             // UsuarioConfig
             // 

@@ -21,6 +21,7 @@ namespace Hnos_Rojas
             this.ActiveControl = tbCodigo;
             InitializeComponent();
             llenarGridBucarProductos();
+            ActiveControl = tbCodigo;
             
         }
 
