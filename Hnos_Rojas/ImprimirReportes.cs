@@ -62,7 +62,9 @@ namespace Hnos_Rojas
             pagoClientes = _pagoClientes;
             pagoAgentes = _pagoAgentes;
             totalCaja = _totalCaja;
-
+            papelTamano = new PaperSize("Custom", ancho, largo);
+            printDocument1.DefaultPageSettings.PaperSize = papelTamano;
+            printPreviewControl1.Document = printDocument1;
             imprimir();
         }
 

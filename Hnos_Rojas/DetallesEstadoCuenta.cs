@@ -117,5 +117,12 @@ namespace Hnos_Rojas
             AbonarCredito abonarCredito = new AbonarCredito(cliente, this);
             abonarCredito.Show();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            ReporteCreditoCliente imprimirReporte = new ReporteCreditoCliente(cliente.credito.listaFactura);
+
+
+        }
     }
 }
