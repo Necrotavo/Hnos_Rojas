@@ -460,11 +460,12 @@ namespace DAO
             return total;
         }
 
-        public int obtenerTotalVentasCreditoDiaEspecifico(String dia) {
+        public int obtenerTotalVentasCreditoDiaEspecifico(String diaInicio, String diaFinal) {
             int total = 0;
 
-            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA LIKE @dia AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
-            comando.Parameters.AddWithValue("@dia", "%" + dia + "%");
+            SqlCommand comando = new SqlCommand("Select SUM (FAC_MONTO) from FACTURA Where FAC_FECHA BETWEEN @diaInicio AND @diaFinal AND EST_ESTADO = @estado AND TP_TIPO = @tipo", conexion);
+            comando.Parameters.AddWithValue("@diaInicio", diaInicio);
+            comando.Parameters.AddWithValue("@diaFinal", diaFinal);
             comando.Parameters.AddWithValue("@estado", "PENDIENTE");
             comando.Parameters.AddWithValue("@tipo", "CREDITO");
 
@@ -474,13 +475,20 @@ namespace DAO
                 {
                     conexion.Open();
                 }
-                total = Convert.ToInt32(comando.ExecuteScalar());
+                Object error = comando.ExecuteScalar();
+                if (error == DBNull.Value) {
+                    return 0;
+                }else
+                {
+                    total = Convert.ToInt32(comando.ExecuteScalar());
 
-                return total;
+                    return total;
+                }
 
             }
             catch (SqlException)
             {
+                return 0;
 
             }
             finally

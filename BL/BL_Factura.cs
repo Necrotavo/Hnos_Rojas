@@ -147,13 +147,26 @@ namespace BL
         }
 
         public int obtenerTotalVentasEfectivoDiaEspecifico(String diaInicio, String diaFinal) {
-            DAO_Factura daoFactura = new DAO_Factura();
-            return daoFactura.obtenerTotalVentasEfectivoDiaEspecifico(diaInicio, diaFinal);
+            try
+            {
+                DAO_Factura daoFactura = new DAO_Factura();
+                return daoFactura.obtenerTotalVentasEfectivoDiaEspecifico(diaInicio, diaFinal);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
-        public int obtenerTotalVentasCreditoDiaEspecifico(String dia) {
-            DAO_Factura daoFactura = new DAO_Factura();
-            return daoFactura.obtenerTotalVentasCreditoDiaEspecifico(dia);
+        public int obtenerTotalVentasCreditoDiaEspecifico(String diaInicio, String diaFinal) {
+            try
+            {
+                DAO_Factura daoFactura = new DAO_Factura();
+                return daoFactura.obtenerTotalVentasCreditoDiaEspecifico(diaInicio, diaFinal);
+            }catch
+            {
+                return 0;
+            }
         }
     }
 }
