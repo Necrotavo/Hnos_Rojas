@@ -160,8 +160,8 @@ namespace Hnos_Rojas
         {
             if (this.dgvClientes.Columns[e.ColumnIndex].Name == "EstadoCliente") {
                 if (e.Value.ToString() == "DESHABILITADO") {
-                   // e.CellStyle.BackColor = Color.Red;
-                    dgvClientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    e.CellStyle.BackColor = Color.Red;
+                    //dgvClientes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
                 }
             }
         }
