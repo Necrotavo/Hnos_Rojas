@@ -116,5 +116,10 @@ namespace BL
             return daoProducto.CargarProductos();
         }
 
+        public List<DO_TopProductos> obtenerTopVentas(String diaInicio, String diaFinal) {
+            DAO_Producto daoProducto = new DAO_Producto();
+            return daoProducto.obtenerTopVentas(diaInicio, diaFinal);
+        }
+
     }
 }
