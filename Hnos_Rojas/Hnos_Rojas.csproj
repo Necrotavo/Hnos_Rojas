@@ -119,6 +119,12 @@
     <Compile Include="FacturaCredito.Designer.cs">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirReportes.Designer.cs">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaAsociados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaCredito.resx">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirReportes.resx">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaAsociados.resx">
       <DependentUpon>ListaAsociados.cs</DependentUpon>
