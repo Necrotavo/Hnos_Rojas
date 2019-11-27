@@ -46,7 +46,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(657, 101);
+            this.lblTitulo.Location = new System.Drawing.Point(609, 101);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(282, 36);
@@ -58,7 +58,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNombre.Location = new System.Drawing.Point(585, 214);
+            this.lblNombre.Location = new System.Drawing.Point(557, 214);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(128, 36);
@@ -70,7 +70,7 @@
             this.lblPrimerApellido.AutoSize = true;
             this.lblPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrimerApellido.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPrimerApellido.Location = new System.Drawing.Point(585, 273);
+            this.lblPrimerApellido.Location = new System.Drawing.Point(557, 273);
             this.lblPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
             this.lblPrimerApellido.Size = new System.Drawing.Size(226, 36);
@@ -82,7 +82,7 @@
             this.lblSegundoApellido.AutoSize = true;
             this.lblSegundoApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSegundoApellido.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSegundoApellido.Location = new System.Drawing.Point(585, 331);
+            this.lblSegundoApellido.Location = new System.Drawing.Point(557, 331);
             this.lblSegundoApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
             this.lblSegundoApellido.Size = new System.Drawing.Size(261, 36);
@@ -94,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(585, 394);
+            this.label1.Location = new System.Drawing.Point(557, 394);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 36);
@@ -104,7 +104,7 @@
             // txt2doApellido
             // 
             this.txt2doApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt2doApellido.Location = new System.Drawing.Point(871, 331);
+            this.txt2doApellido.Location = new System.Drawing.Point(843, 331);
             this.txt2doApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt2doApellido.Name = "txt2doApellido";
             this.txt2doApellido.Size = new System.Drawing.Size(265, 41);
@@ -113,7 +113,7 @@
             // txtP1erApellido
             // 
             this.txtP1erApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtP1erApellido.Location = new System.Drawing.Point(871, 270);
+            this.txtP1erApellido.Location = new System.Drawing.Point(843, 270);
             this.txtP1erApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtP1erApellido.Name = "txtP1erApellido";
             this.txtP1erApellido.Size = new System.Drawing.Size(265, 41);
@@ -122,7 +122,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(871, 211);
+            this.txtNombre.Location = new System.Drawing.Point(843, 211);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(265, 41);
@@ -131,7 +131,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(871, 391);
+            this.txtTelefono.Location = new System.Drawing.Point(843, 391);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(265, 41);
@@ -139,12 +139,12 @@
             // 
             // btnAddAsociado
             // 
-            this.btnAddAsociado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnAddAsociado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.btnAddAsociado.FlatAppearance.BorderSize = 0;
             this.btnAddAsociado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAsociado.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAddAsociado.ForeColor = System.Drawing.Color.White;
-            this.btnAddAsociado.Location = new System.Drawing.Point(591, 506);
+            this.btnAddAsociado.Location = new System.Drawing.Point(563, 506);
             this.btnAddAsociado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAsociado.Name = "btnAddAsociado";
             this.btnAddAsociado.Size = new System.Drawing.Size(269, 59);
@@ -160,7 +160,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(871, 506);
+            this.btnSalir.Location = new System.Drawing.Point(843, 506);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(265, 58);
@@ -173,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1673, 684);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAddAsociado);

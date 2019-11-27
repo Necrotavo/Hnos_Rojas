@@ -31,6 +31,13 @@ namespace Hnos_Rojas
             txtTelefono.Text = asociado.perTelefono;
         }
 
+        public void vaciarTextbox() {
+            this.txtNombre.Text = "";
+            this.txt1erApellido.Text = "";
+            this.txt2doApellido.Text = "";
+            this.txtTelefono.Text = "";
+        }
+
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             //llamar al modificar de blAsociado
@@ -44,6 +51,8 @@ namespace Hnos_Rojas
                 if (blAsociado.editarAsociado(asociado))
                 {
                     MessageBox.Show("Cambios guardados");
+                    vaciarTextbox();
+                    this.Dispose();
                 }
                 else {
                     MessageBox.Show("No se pudo modificar el asociado");
@@ -60,6 +69,11 @@ namespace Hnos_Rojas
                 return false;
             }
             return true;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
