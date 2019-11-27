@@ -27,34 +27,38 @@ namespace Hnos_Rojas
             DateTime fechaReporteHasta = new DateTime(calReporteHasta.SelectionStart.Year, calReporteHasta.SelectionStart.Month,
                 calReporteHasta.SelectionStart.Day);
 
-            this.lblTitulo.Text += " "+ fechaReporteDesde.Day + "/"+ fechaReporteDesde.Month+"/"+ fechaReporteDesde.Year+
+            this.lblTitulo.Text = "Reporte del "+ fechaReporteDesde.Day + "/"+ fechaReporteDesde.Month+"/"+ fechaReporteDesde.Year+
                 " Hasta el "+ fechaReporteHasta.Day + "/" + fechaReporteHasta.Month + "/" + fechaReporteHasta.Year;
 
-            this.lblCorte.Text += " del " + fechaReporteDesde.Day + "/" + fechaReporteDesde.Month + "/" + fechaReporteDesde.Year;
+            this.lblCorte.Text = "Corte del " + fechaReporteDesde.Day + "/" + fechaReporteDesde.Month + "/" + fechaReporteDesde.Year;
             this.lblHasta.Text = "Hasta el " + fechaReporteHasta.Day + "/" + fechaReporteHasta.Month + "/" + fechaReporteHasta.Year;
 
-            String inicio = "" + fechaReporteDesde.Year + "-" + fechaReporteDesde.Month + "-" + fechaReporteDesde.Day;
-            String final = "" + fechaReporteHasta.Year + "-" + fechaReporteHasta.Month + "-" + fechaReporteHasta.Day;
+            String inicio = "" + fechaReporteDesde.Year + "-" + fechaReporteDesde.Month + "-" + fechaReporteDesde.Day + " 0:00:00";
+            String final = "" + fechaReporteHasta.Year + "-" + fechaReporteHasta.Month + "-" + fechaReporteHasta.Day + " 23:59:59";
 
             lbFechaReporte.Text = "" + fechaReporteDesde.Day + "/" + fechaReporteDesde.Month + "/" + fechaReporteDesde.Year;
 
             //La parte de Ventas
             BL_Factura blFactura = new BL_Factura();
             BL_Pago blPago = new BL_Pago();
+
             int totalVentasEfectivo = blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
             lbEnEfectivoVentas.Text = "₡" + totalVentasEfectivo;
+
             int totalVentasCredito = blFactura.obtenerTotalVentasCreditoDiaEspecifico(inicio, final);
             lbACreditoVentas.Text = "₡" + totalVentasCredito;
+
             int totalVentas = totalVentasEfectivo + totalVentasCredito;
             lbTotalVentas.Text = "₡" + totalVentas;
-            int totalPagoProve = blPago.obtenerPagoProvDiaEspecifico(inicio, final);
-            int totalAbonosCredito = blFactura.obtenerAbonosCredito(inicio, final);
 
             //La parte de Entradas
             lbEfectivoEntradas.Text = "₡" + blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
+
+            int totalAbonosCredito = blFactura.obtenerAbonosCredito(inicio, final);
             lbCreditoEntradas.Text = "₡" + totalAbonosCredito;
 
             //La parte de proveedores
+            int totalPagoProve = blPago.obtenerPagoProvDiaEspecifico(inicio, final);
             lbTotalAgentes.Text = "₡" + totalPagoProve;
 
             //La parte de productos más vendidos
