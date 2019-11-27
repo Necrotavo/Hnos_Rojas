@@ -21,7 +21,9 @@ namespace Hnos_Rojas
             InitializeComponent();
             padre = papa;
             llenarListBox();
+            nombreProveedor = listBoxProveedores.SelectedValue.ToString();
             this.ActiveControl = txtNombreProveedor;
+            
         }
 
         private void llenarListBox()
