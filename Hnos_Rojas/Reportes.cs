@@ -30,29 +30,30 @@ namespace Hnos_Rojas
 
             //La parte de Ventas
             BL_Factura blFactura = new BL_Factura();
+            BL_Pago blPago = new BL_Pago();
             int totalVentasEfectivo = blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
             lbEnEfectivoVentas.Text = "₡" + totalVentasEfectivo;
             int totalVentasCredito = blFactura.obtenerTotalVentasCreditoDiaEspecifico(inicio, final);
             lbACreditoVentas.Text = "₡" + totalVentasCredito;
             int totalVentas = totalVentasEfectivo + totalVentasCredito;
             lbTotalVentas.Text = "₡" + totalVentas;
+            int totalPagoProve = blPago.obtenerPagoProvDiaEspecifico(inicio, final);
+            int totalAbonosCredito = blFactura.obtenerAbonosCredito(inicio, final);
 
             //La parte de Entradas
             lbEfectivoEntradas.Text = "₡" + blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
-            //Falta parte de los abonos de creditos
-
-            //La parte de Ingresos de Contado
-            lbEfectivoIngresos.Text = "₡" + blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
-            //no me acuerdo que era pago de clientes
+            lbCreditoEntradas.Text = "₡" + totalAbonosCredito;
 
             //La parte de proveedores
-            BL_Pago blPago = new BL_Pago();
-            lbTotalAgentes.Text = "₡" + blPago.obtenerPagoProvDiaEspecifico(inicio, final);
+            lbTotalAgentes.Text = "₡" + totalPagoProve;
 
             //La parte de productos más vendidos
             BL_Producto blProductos = new BL_Producto();
             List<DO_TopProductos> topVentas = blProductos.obtenerTopVentas(inicio, final);
             asignarLabelsTopVentas(topVentas.Count, topVentas);
+
+            //Lo de Caja
+            lbTotalCaja.Text = "₡" + (totalVentasEfectivo + totalAbonosCredito - totalPagoProve);
         }
 
         public void asignarLabelsTopVentas(int tamañoTop, List<DO_TopProductos> topVentas)
