@@ -65,6 +65,7 @@ namespace BL
                 totalFactura += productoEnFactura.producto.precioVenta;
             }
             factura.totalFactura = totalFactura;
+            factura.saldo = totalFactura;
         }
 
         public bool asignarCreditoFactura(DO_Factura factura, int idCredito) {
