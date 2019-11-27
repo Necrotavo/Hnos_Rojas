@@ -144,7 +144,14 @@ namespace BL
 
         public bool abonarFactura(DO_Factura factura, double abono) {
             DAO_Factura daoFactura = new DAO_Factura();
-            return daoFactura.actualizarSaldoFactura(factura, abono);
+            DAO_Credito daoCredito = new DAO_Credito();
+
+            if (daoFactura.actualizarSaldoFactura(factura, abono) &&
+                daoCredito.registrarAbono(factura.credito, abono)) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public int obtenerTotalVentasEfectivoDiaEspecifico(String diaInicio, String diaFinal) {
