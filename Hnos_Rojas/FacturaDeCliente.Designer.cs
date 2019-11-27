@@ -40,6 +40,10 @@
             this.printPreviewControl1.Size = new System.Drawing.Size(401, 500);
             this.printPreviewControl1.TabIndex = 2;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // printDialog1
             // 
             this.printDialog1.Document = this.printDocument1;
