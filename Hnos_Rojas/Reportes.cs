@@ -21,12 +21,18 @@ namespace Hnos_Rojas
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            DateTime fechaReporte = new DateTime(calReporte.SelectionStart.Year, calReporte.SelectionStart.Month,
-                calReporte.SelectionStart.Day, 0, 0, 0);
-            lbFechaReporte.Text = fechaReporte.GetDateTimeFormats()[0];
-            String inicio = "" + fechaReporte.Year + "-" + fechaReporte.Month + "-" + fechaReporte.Day + " " + "0:0:0";
-            String final = "" + fechaReporte.Year + "-" + fechaReporte.Month + "-" + fechaReporte.Day + " " + "23:59:59";
-            lbFechaReporte.Text = "" + fechaReporte.Day + "/" + fechaReporte.Month + "/" + fechaReporte.Year;
+            DateTime fechaReporteDesde = new DateTime(calReporteDesde.SelectionStart.Year, calReporteDesde.SelectionStart.Month,
+                calReporteDesde.SelectionStart.Day);
+
+            DateTime fechaReporteHasta = new DateTime(calReporteHasta.SelectionStart.Year, calReporteHasta.SelectionStart.Month,
+                calReporteHasta.SelectionStart.Day);
+
+            //lbFechaReporte.Text = fechaReporteDesde.GetDateTimeFormats()[0];
+
+            String inicio = "" + fechaReporteDesde.Year + "-" + fechaReporteDesde.Month + "-" + fechaReporteDesde.Day;
+            String final = "" + fechaReporteHasta.Year + "-" + fechaReporteHasta.Month + "-" + fechaReporteHasta.Day;
+
+            lbFechaReporte.Text = "" + fechaReporteDesde.Day + "/" + fechaReporteDesde.Month + "/" + fechaReporteDesde.Year;
 
             //La parte de Ventas
             BL_Factura blFactura = new BL_Factura();
