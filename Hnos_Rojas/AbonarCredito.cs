@@ -36,6 +36,7 @@ namespace Hnos_Rojas
             else {
                 BL_Credito blCredito = new BL_Credito();
                 blCredito.abonar(Convert.ToInt32(txtAbono.Text), cliente.perIdentificador);
+                detallesEstadoCuenta.refrescarCreditoCompleto();
                 detallesEstadoCuenta.llenarGrid();
                 MessageBox.Show("Abono exitoso");
                 this.Dispose();
