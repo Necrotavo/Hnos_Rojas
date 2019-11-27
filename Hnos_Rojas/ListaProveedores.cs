@@ -14,10 +14,12 @@ namespace Hnos_Rojas
 {
     public partial class ListaProveedores : Form
     {
+        Proveedor padre;
         private String nombreProveedor;
-        public ListaProveedores()
+        public ListaProveedores(Proveedor papa)
         {
             InitializeComponent();
+            padre = papa;
             llenarListBox();
             this.ActiveControl = txtNombreProveedor;
         }
@@ -66,6 +68,11 @@ namespace Hnos_Rojas
 
         public String obtenerProveedorSeleccionado() {
             return nombreProveedor;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            padre.invocarListaProveedores();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Hnos_Rojas
         public void invocarListaProveedores()
         {
             this.panelProveedores.Controls.Clear();
-            ListaProveedores listaProveedores = new ListaProveedores() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ListaProveedores listaProveedores = new ListaProveedores(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             tempListaproveedores = listaProveedores;
             this.panelProveedores.Controls.Add(listaProveedores);
             listaProveedores.Show();
@@ -50,7 +50,7 @@ namespace Hnos_Rojas
         private void btnAsociados_Click(object sender, EventArgs e)
         {
             this.panelProveedores.Controls.Clear();
-            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(listaAsociados);
             listaAsociados.Show();
             

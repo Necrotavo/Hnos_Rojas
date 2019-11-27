@@ -74,7 +74,7 @@
             this.Controls.Add(this.txtNombreProveedor);
             this.Controls.Add(this.listBoxProveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListaProveedores";
             this.Text = "ListaProveedores";
             this.Load += new System.EventHandler(this.ListaProveedores_Load);

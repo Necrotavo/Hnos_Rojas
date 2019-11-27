@@ -14,10 +14,12 @@ namespace Hnos_Rojas
 {
     public partial class ListaAsociados : Form
     {
+        Proveedor abuelo;
         String proveedor;
-        public ListaAsociados(String _proveedor)
+        public ListaAsociados(String _proveedor, Proveedor _abuelo)
         {
             InitializeComponent();
+            abuelo = _abuelo;
             proveedor = _proveedor;
             lblTitulo.Text = lblTitulo.Text + _proveedor;
             proveedor = _proveedor;
@@ -49,10 +51,14 @@ namespace Hnos_Rojas
 
         private void btnAddAsociado_Click(object sender, EventArgs e)
         {
+            invocarAgregarAsociado();
+        }
+        public void invocarAgregarAsociado()
+        {
             //MostrarFormulario de agregar asociado
-            AgregarAsociado agregarAsociado = new AgregarAsociado(proveedor) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            AgregarAsociado agregarAsociado = new AgregarAsociado(proveedor, abuelo) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.Parent.Controls.Add(agregarAsociado);
-            this.Dispose();
+            this.Hide();
             agregarAsociado.Show();
         }
 
@@ -87,6 +93,11 @@ namespace Hnos_Rojas
 
                 }
             }     
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            abuelo.invocarListaProveedores();
         }
     }
 }
