@@ -15,9 +15,11 @@ namespace Hnos_Rojas
     public partial class AgregarAsociado : Form
     {
         private String proveedor;
-        public AgregarAsociado(String _proveedor)
+        Proveedor padre;
+        public AgregarAsociado(String _proveedor, Proveedor _padre)
         {
             InitializeComponent();
+            padre = _padre;
             lblTitulo.Text = lblTitulo.Text + _proveedor;
             proveedor = _proveedor;
         }
@@ -52,7 +54,7 @@ namespace Hnos_Rojas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            padre.invocarListaProveedores();
         }
     }
 }
