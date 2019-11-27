@@ -27,7 +27,11 @@ namespace Hnos_Rojas
             DateTime fechaReporteHasta = new DateTime(calReporteHasta.SelectionStart.Year, calReporteHasta.SelectionStart.Month,
                 calReporteHasta.SelectionStart.Day);
 
-            //lbFechaReporte.Text = fechaReporteDesde.GetDateTimeFormats()[0];
+            this.lblTitulo.Text += " "+ fechaReporteDesde.Day + "/"+ fechaReporteDesde.Month+"/"+ fechaReporteDesde.Year+
+                " Hasta el "+ fechaReporteHasta.Day + "/" + fechaReporteHasta.Month + "/" + fechaReporteHasta.Year;
+
+            this.lblCorte.Text += " del " + fechaReporteDesde.Day + "/" + fechaReporteDesde.Month + "/" + fechaReporteDesde.Year;
+            this.lblHasta.Text = "Hasta el " + fechaReporteHasta.Day + "/" + fechaReporteHasta.Month + "/" + fechaReporteHasta.Year;
 
             String inicio = "" + fechaReporteDesde.Year + "-" + fechaReporteDesde.Month + "-" + fechaReporteDesde.Day;
             String final = "" + fechaReporteHasta.Year + "-" + fechaReporteHasta.Month + "-" + fechaReporteHasta.Day;

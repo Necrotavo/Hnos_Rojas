@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbFechaReporte = new System.Windows.Forms.Label();
-            this.lblMsgTotal = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.calReporteDesde = new System.Windows.Forms.MonthCalendar();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,18 +64,19 @@
             this.lbCantProd4 = new System.Windows.Forms.Label();
             this.lbCantProd5 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblCorte = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lbTotalCaja = new System.Windows.Forms.Label();
             this.calReporteHasta = new System.Windows.Forms.MonthCalendar();
             this.pnlLbls = new System.Windows.Forms.Panel();
+            this.lblHasta = new System.Windows.Forms.Label();
             this.pnlLbls.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTotalAgentes
             // 
             this.lbTotalAgentes.AutoSize = true;
-            this.lbTotalAgentes.Location = new System.Drawing.Point(812, 65);
+            this.lbTotalAgentes.Location = new System.Drawing.Point(823, 196);
             this.lbTotalAgentes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalAgentes.Name = "lbTotalAgentes";
             this.lbTotalAgentes.Size = new System.Drawing.Size(0, 17);
@@ -84,7 +85,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(595, 65);
+            this.label12.Location = new System.Drawing.Point(606, 196);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 17);
@@ -96,7 +97,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(592, 16);
+            this.label11.Location = new System.Drawing.Point(603, 147);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(244, 36);
@@ -230,23 +231,23 @@
             this.lbFechaReporte.AutoSize = true;
             this.lbFechaReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFechaReporte.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbFechaReporte.Location = new System.Drawing.Point(236, 257);
+            this.lbFechaReporte.Location = new System.Drawing.Point(454, 44);
             this.lbFechaReporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFechaReporte.Name = "lbFechaReporte";
             this.lbFechaReporte.Size = new System.Drawing.Size(0, 36);
             this.lbFechaReporte.TabIndex = 69;
             // 
-            // lblMsgTotal
+            // lblTitulo
             // 
-            this.lblMsgTotal.AutoSize = true;
-            this.lblMsgTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMsgTotal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMsgTotal.Location = new System.Drawing.Point(14, 257);
-            this.lblMsgTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMsgTotal.Name = "lblMsgTotal";
-            this.lblMsgTotal.Size = new System.Drawing.Size(185, 36);
-            this.lblMsgTotal.TabIndex = 68;
-            this.lblMsgTotal.Text = "Reporte del: ";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitulo.Location = new System.Drawing.Point(145, 44);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(169, 36);
+            this.lblTitulo.TabIndex = 68;
+            this.lblTitulo.Text = "Reporte del";
             // 
             // btnFiltrar
             // 
@@ -434,23 +435,23 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // label19
+            // lblCorte
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(14, 16);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(187, 36);
-            this.label19.TabIndex = 107;
-            this.label19.Text = "Corte del Dia";
+            this.lblCorte.AutoSize = true;
+            this.lblCorte.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorte.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCorte.Location = new System.Drawing.Point(14, 147);
+            this.lblCorte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCorte.Name = "lblCorte";
+            this.lblCorte.Size = new System.Drawing.Size(87, 36);
+            this.lblCorte.TabIndex = 107;
+            this.lblCorte.Text = "Corte";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(16, 71);
+            this.label20.Location = new System.Drawing.Point(16, 238);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(92, 17);
@@ -460,7 +461,7 @@
             // lbTotalCaja
             // 
             this.lbTotalCaja.AutoSize = true;
-            this.lbTotalCaja.Location = new System.Drawing.Point(233, 71);
+            this.lbTotalCaja.Location = new System.Drawing.Point(233, 238);
             this.lbTotalCaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalCaja.Name = "lbTotalCaja";
             this.lbTotalCaja.Size = new System.Drawing.Size(0, 17);
@@ -475,11 +476,12 @@
             // pnlLbls
             // 
             this.pnlLbls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.pnlLbls.Controls.Add(this.label19);
+            this.pnlLbls.Controls.Add(this.lblHasta);
+            this.pnlLbls.Controls.Add(this.lblCorte);
             this.pnlLbls.Controls.Add(this.label20);
             this.pnlLbls.Controls.Add(this.lbTotalCaja);
             this.pnlLbls.Controls.Add(this.lbCantProd5);
-            this.pnlLbls.Controls.Add(this.lblMsgTotal);
+            this.pnlLbls.Controls.Add(this.lblTitulo);
             this.pnlLbls.Controls.Add(this.lbCantProd4);
             this.pnlLbls.Controls.Add(this.lbFechaReporte);
             this.pnlLbls.Controls.Add(this.lbCantProd3);
@@ -510,6 +512,17 @@
             this.pnlLbls.Name = "pnlLbls";
             this.pnlLbls.Size = new System.Drawing.Size(978, 638);
             this.pnlLbls.TabIndex = 111;
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHasta.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblHasta.Location = new System.Drawing.Point(47, 183);
+            this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(0, 36);
+            this.lblHasta.TabIndex = 110;
             // 
             // Reportes
             // 
@@ -544,7 +557,7 @@
         private System.Windows.Forms.Label lbTotalAgentes;
         private System.Windows.Forms.MonthCalendar calReporteDesde;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Label lblMsgTotal;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lbFechaReporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -577,10 +590,11 @@
         private System.Windows.Forms.Label lbCantProd4;
         private System.Windows.Forms.Label lbCantProd5;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCorte;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lbTotalCaja;
         private System.Windows.Forms.MonthCalendar calReporteHasta;
         private System.Windows.Forms.Panel pnlLbls;
+        private System.Windows.Forms.Label lblHasta;
     }
 }
