@@ -15,17 +15,20 @@ namespace Hnos_Rojas
    
     public partial class Agregar_ModificarProveedor : Form
     {
+        Proveedor padre;
         private DO_Proveedor proveedor;
-        public Agregar_ModificarProveedor()
+        public Agregar_ModificarProveedor(Proveedor _padre)
         {
             InitializeComponent();
+            padre = _padre;
             lblTitulo.Text = "Nuevo Proveedor";
 
         }
 
-        public Agregar_ModificarProveedor(String nombreProveedor)
+        public Agregar_ModificarProveedor(String nombreProveedor, Proveedor _padre)
         {
             InitializeComponent();
+            padre = _padre;
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
             rellenarFormulario(nombreProveedor);
@@ -90,6 +93,9 @@ namespace Hnos_Rojas
             txtFechaVisita.Clear();
         }
 
-      
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            padre.invocarListaProveedores();
+        }
     }
 }
