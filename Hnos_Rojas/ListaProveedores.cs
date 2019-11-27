@@ -14,6 +14,7 @@ namespace Hnos_Rojas
 {
     public partial class ListaProveedores : Form
     {
+        private String nombreProveedor;
         public ListaProveedores()
         {
             InitializeComponent();
@@ -46,10 +47,11 @@ namespace Hnos_Rojas
 
         private void listBoxProveedores_Click(object sender, EventArgs e)
         {
-            ListaAsociados listaAsociados = new ListaAsociados(listBoxProveedores.SelectedValue.ToString()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.Parent.Controls.Add(listaAsociados);
-            listaAsociados.Show();
-            this.Dispose();
+            //ListaAsociados listaAsociados = new ListaAsociados(listBoxProveedores.SelectedValue.ToString()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //this.Parent.Controls.Add(listaAsociados);
+            //listaAsociados.Show();
+            //this.Dispose();
+            nombreProveedor = listBoxProveedores.SelectedValue.ToString();
         }
 
         private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace Hnos_Rojas
         }
 
         public String obtenerProveedorSeleccionado() {
-            return listBoxProveedores.SelectedValue.ToString();
+            return nombreProveedor;
         }
     }
 }

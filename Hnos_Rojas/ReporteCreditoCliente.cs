@@ -45,10 +45,10 @@ namespace Hnos_Rojas
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawString("ESTADO DE CUENTA", fuenteGrande, Brushes.Black, x + 100, y);
+            e.Graphics.DrawString("ESTADO DE CUENTA", fuenteGrande, Brushes.Black, x + 20, y);
             e.Graphics.DrawString(facts[0].clienteExterno, fuenteGrande, Brushes.Black, x + 100, y);
             
-            e.Graphics.DrawString("CODIGO              FECHA                COSTO FACTURA                VALOR PENDIENTE",
+            e.Graphics.DrawString("COD          FECHA                     COSTO         PENDIENTE",
                 fuentePeque, Brushes.Black, x, y + (fuenteGeneral.Height * 2));
             e.Graphics.DrawLine(Pens.Black, x, y + (fuenteGeneral.Height * 3), ancho, y + (fuenteGeneral.Height * 3));
             int cont = 4;
@@ -57,7 +57,7 @@ namespace Hnos_Rojas
                 cont++;
                 e.Graphics.DrawString(item.codigoFactura.ToString(), fuenteGeneral, Brushes.Black, x, y + (fuenteGeneral.Height * cont));
                 e.Graphics.DrawString(item.fecha.ToString().Substring(0,11), fuenteGeneral, Brushes.Black, x + 25, y + (fuenteGeneral.Height * cont));
-                e.Graphics.DrawString(item.totalFactura.ToString(), fuenteGeneral, Brushes.Black, x + 145, y + (fuenteGeneral.Height * cont));
+                e.Graphics.DrawString(item.totalFactura.ToString(), fuenteGeneral, Brushes.Black, x + 170, y + (fuenteGeneral.Height * cont));
                 e.Graphics.DrawString(item.saldo.ToString(), fuenteGeneral, Brushes.Black, x + 240, y + (fuenteGeneral.Height * cont));
             }
             e.Graphics.DrawString("TOTAL PENDIENTE", fuenteGeneral, Brushes.Black, x, y + (fuenteGeneral.Height * (facts.Count + 6)));
