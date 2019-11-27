@@ -14,7 +14,7 @@ namespace DAO
         private SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
 
         public DO_Cliente buscarCliente(String nombre) {
-            SqlCommand consulta = new SqlCommand("select * from CLIENTE where PER_NOMBRE = @nombre", conexion);
+            SqlCommand consulta = new SqlCommand("select * from CLIENTE where PER_NOMBRE = @nombre ", conexion);
             consulta.Parameters.AddWithValue("@nombre", nombre);
             DO_Cliente cliente = new DO_Cliente();
             try
@@ -41,6 +41,52 @@ namespace DAO
                 return null;
             }
             finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+        public List<DO_Cliente> buscarClientes(String datos)
+        {
+            SqlCommand consulta = new SqlCommand("select * from CLIENTE where PER_NOMBRE LIKE @nombre OR PER_PRIMER_APELLIDO LIKE @nombre", conexion);
+            consulta.Parameters.AddWithValue("@nombre","%"+ datos+"%");
+            List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+           
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        
+
+                        //cliente.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        //cliente.estado = (String)lector["EST_ESTADO"];
+                        //cliente.perTelefono = (String)(lector["PER_TELEFONO"]);
+                        //cliente.perNombre = (String)lector["PER_NOMBRE"];
+                        //cliente.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        //cliente.perSegundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        //cliente.direccion = (String)lector["CLI_DIRECCION"];
+
+                        listaClientes.Add(new DO_Cliente(Convert.ToInt32(lector["PER_IDENTIFICADOR"]), (String)lector["PER_NOMBRE"],
+                            (String)lector["PER_PRIMER_APELLIDO"], (String)lector["PER_SEGUNDO_APELLIDO"], (String)lector["CLI_DIRECCION"], (String)(lector["PER_TELEFONO"]), (String)lector["EST_ESTADO"]));
+                    }
+                    return listaClientes;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
                 if (conexion.State != ConnectionState.Closed)
                 {
                     conexion.Close();

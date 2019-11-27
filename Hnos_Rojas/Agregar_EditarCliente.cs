@@ -20,7 +20,7 @@ namespace Hnos_Rojas
         public Agregar_EditarCliente()
         {
             InitializeComponent();
-            llenarGridClientes();
+            llenarGridClientes("");
             esconderElementos(true);
         }
 
@@ -86,48 +86,51 @@ namespace Hnos_Rojas
             esconderElementos(true);
         }
 
-        private void llenarGridClientes()
+        private void llenarGridClientes(String datos)
         {
             BL_Cliente blCliente = new BL_Cliente();
-            dgvClientes.DataSource = blCliente.obtenerListaClientesHabilitados(false,"");
-            
-            dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
-            DataGridViewCellStyle style = new DataGridViewCellStyle();
-            style.Font = new Font("Microsoft Sans Serif", 14);
-            style.BackColor = Color.LightGray;
+
+            if (datos.Equals(String.Empty))
+            {
+                dgvClientes.DataSource = blCliente.obtenerListaClientesHabilitados(false, "");
+
+                dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
+                style.Font = new Font("Microsoft Sans Serif", 14);
+                style.BackColor = Color.LightGray;
+
+              
+
+                //grdClientes [1] = direccion
+                //grdClientes [2] = estado
+                //grdClientes [3] = credito
+                //grdClientes [4] = identificador
+                //grdClientes [5] = telefono
+                //grdClientes [6] = nombre
+                //grdClientes [7] = primerApellido
+                //grdClientes [8] = segundoApellido
+                dgvClientes.AutoSize = true;
+            }
+            else
+            {
+                dgvClientes.DataSource = blCliente.buscarClientes(datos); ;
+
+                dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
+                style.Font = new Font("Microsoft Sans Serif", 14);
+                style.BackColor = Color.LightGray;
 
 
-            //grdClientes [1] = direccion
-            //grdClientes [2] = estado
-            //grdClientes [3] = credito
-            //grdClientes [4] = identificador
-            //grdClientes [5] = telefono
-            //grdClientes [6] = nombre
-            //grdClientes [7] = primerApellido
-            //grdClientes [8] = segundoApellido
-
-            //grdProductos.Columns[0].HeaderCell.Style = style;
-            //dgvClientes.Columns[0].Visible = true;    //Estado
-
-            //grdProductos.Columns[1].HeaderCell.Style = style;
-            //dgvClientes.Columns[1].Visible = true;    //nombre
-
-            //grdProductos.Columns[2].HeaderCell.Style = style;
-            //dgvClientes.Columns[2].Visible = false;    //credito
-
-            // grdProductos.Columns[3].HeaderCell.Style = style;
-            //dgvClientes.Columns[3].Visible = false;    //identificador
-
-            ////grdProductos.Columns[4].HeaderCell.Style = style;
-            //dgvClientes.Columns[4].Visible = false;    //descripcion
-
-
-            //dgvClientes.Columns[5].Visible = false;    //catDisponible
-
-            dgvClientes.AutoSize = true;
-
-            
-
+                //grdClientes [1] = direccion
+                //grdClientes [2] = estado
+                //grdClientes [3] = credito
+                //grdClientes [4] = identificador
+                //grdClientes [5] = telefono
+                //grdClientes [6] = nombre
+                //grdClientes [7] = primerApellido
+                //grdClientes [8] = segundoApellido
+                dgvClientes.AutoSize = true;
+            }         
         }
         private void Agregar_EditarCliente_Load(object sender, EventArgs e)
         {
@@ -155,18 +158,22 @@ namespace Hnos_Rojas
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            BL_Credito blCredito = new BL_Credito();
+            if (dgvClientes.Columns[e.ColumnIndex].Name.Equals("Editar"))
+            {
+                BL_Credito blCredito = new BL_Credito();
 
-            tbNombre.Text = dgvClientes.Rows[e.RowIndex].Cells["NombreCliente"].Value.ToString();
-            tbPrimerApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["ApellidoCliente"].Value.ToString();
-            tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
-            tbDireccion.Text = dgvClientes.Rows[e.RowIndex].Cells["DireccionCliente"].Value.ToString();
-            tbTelefono.Text = dgvClientes.Rows[e.RowIndex].Cells["TelefonoCliente"].Value.ToString();
-            tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
-            tbEstado.Text = dgvClientes.Rows[e.RowIndex].Cells["EstadoCliente"].Value.ToString();
-            tbLimite.Text = blCredito.ObtenerDatosCredito(Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value)).limiteCredito.ToString();
-            codigoCredito = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value);
-            modificarClientes();
+                tbNombre.Text = dgvClientes.Rows[e.RowIndex].Cells["NombreCliente"].Value.ToString();
+                tbPrimerApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["ApellidoCliente"].Value.ToString();
+                tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
+                tbDireccion.Text = dgvClientes.Rows[e.RowIndex].Cells["DireccionCliente"].Value.ToString();
+                tbTelefono.Text = dgvClientes.Rows[e.RowIndex].Cells["TelefonoCliente"].Value.ToString();
+                tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
+                tbEstado.Text = dgvClientes.Rows[e.RowIndex].Cells["EstadoCliente"].Value.ToString();
+                tbLimite.Text = blCredito.ObtenerDatosCredito(Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value)).limiteCredito.ToString();
+                codigoCredito = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value);
+                modificarClientes();
+            }
+            
         }
 
         private void modificarClientes()
@@ -210,7 +217,7 @@ namespace Hnos_Rojas
 
                 if (cambiosRealizados)
                 {
-                    llenarGridClientes();
+                    llenarGridClientes("");
                     cambiosRealizados = false;
                 }
             }
@@ -306,6 +313,11 @@ namespace Hnos_Rojas
                     break;
 
             }
+        }
+
+        private void btBuscarCliente_Click(object sender, EventArgs e)
+        {                   
+            llenarGridClientes(tbNombreOApellido.Text.Trim());
         }
     }
 }

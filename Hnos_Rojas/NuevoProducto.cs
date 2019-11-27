@@ -134,14 +134,16 @@ namespace Hnos_Rojas
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            tbCodigo.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tbPrecioCosto.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
-            tbPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
-            tbDescripcion.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();      
-            tbCantidadDisponible.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
-            nUDGanancia.Value = blProducto.CalcularPorcentajeGanancia(Convert.ToDouble(tbPrecioCosto.Text.Trim()), Convert.ToDouble(tbPrecioVenta.Text.Trim()));
-            modificarDatosProducto();
+            if (dgvProductos.Columns[e.ColumnIndex].Name.Equals("Modificar"))
+            {
+                tbCodigo.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbPrecioCosto.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbDescripcion.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
+                tbCantidadDisponible.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
+                nUDGanancia.Value = blProducto.CalcularPorcentajeGanancia(Convert.ToDouble(tbPrecioCosto.Text.Trim()), Convert.ToDouble(tbPrecioVenta.Text.Trim()));
+                modificarDatosProducto();
+            }        
         }
 
         public void modificarDatosProducto()

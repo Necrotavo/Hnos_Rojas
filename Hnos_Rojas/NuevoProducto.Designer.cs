@@ -51,16 +51,16 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tpModificar = new System.Windows.Forms.TabPage();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btBuscar = new System.Windows.Forms.Button();
-            this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
-            this.lbCodigo = new System.Windows.Forms.Label();
+            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
+            this.lbCodigo = new System.Windows.Forms.Label();
             this.tabControlProducto.SuspendLayout();
             this.tpFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).BeginInit();
@@ -289,6 +289,7 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.NullValue = null;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -297,47 +298,30 @@
             this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Modificar,
             this.codigo,
             this.Descripcion,
             this.PrecioCosto,
             this.PrecioVenta,
             this.CantidadDisponible,
-            this.CantidadMinima,
-            this.Modificar});
+            this.CantidadMinima});
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvProductos.Location = new System.Drawing.Point(0, 198);
             this.dgvProductos.MinimumSize = new System.Drawing.Size(973, 325);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1221, 325);
             this.dgvProductos.TabIndex = 3;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
-            // btBuscar
+            // Modificar
             // 
-            this.btBuscar.Location = new System.Drawing.Point(427, 109);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(103, 36);
-            this.btBuscar.TabIndex = 2;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = true;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
-            // 
-            // tbBuscarCodigo
-            // 
-            this.tbBuscarCodigo.Location = new System.Drawing.Point(407, 74);
-            this.tbBuscarCodigo.Name = "tbBuscarCodigo";
-            this.tbBuscarCodigo.Size = new System.Drawing.Size(139, 29);
-            this.tbBuscarCodigo.TabIndex = 1;
-            // 
-            // lbCodigo
-            // 
-            this.lbCodigo.AutoSize = true;
-            this.lbCodigo.Location = new System.Drawing.Point(283, 37);
-            this.lbCodigo.Name = "lbCodigo";
-            this.lbCodigo.Size = new System.Drawing.Size(354, 24);
-            this.lbCodigo.TabIndex = 0;
-            this.lbCodigo.Text = "Ingrese el código o nombre del producto";
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.Image = global::Hnos_Rojas.Properties.Resources.output_onlinepngtools;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // codigo
             // 
@@ -381,12 +365,31 @@
             this.CantidadMinima.Name = "CantidadMinima";
             this.CantidadMinima.ReadOnly = true;
             // 
-            // Modificar
+            // btBuscar
             // 
-            this.Modificar.HeaderText = "Modificar";
-            this.Modificar.Image = global::Hnos_Rojas.Properties.Resources.output_onlinepngtools;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btBuscar.Location = new System.Drawing.Point(427, 109);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(103, 36);
+            this.btBuscar.TabIndex = 2;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
+            // 
+            // tbBuscarCodigo
+            // 
+            this.tbBuscarCodigo.Location = new System.Drawing.Point(407, 74);
+            this.tbBuscarCodigo.Name = "tbBuscarCodigo";
+            this.tbBuscarCodigo.Size = new System.Drawing.Size(139, 29);
+            this.tbBuscarCodigo.TabIndex = 1;
+            // 
+            // lbCodigo
+            // 
+            this.lbCodigo.AutoSize = true;
+            this.lbCodigo.Location = new System.Drawing.Point(283, 37);
+            this.lbCodigo.Name = "lbCodigo";
+            this.lbCodigo.Size = new System.Drawing.Size(354, 24);
+            this.lbCodigo.TabIndex = 0;
+            this.lbCodigo.Text = "Ingrese el código o nombre del producto";
             // 
             // NuevoProducto
             // 
@@ -436,12 +439,12 @@
         private System.Windows.Forms.TextBox tbBuscarCodigo;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label lblAgregarProducto;
+        private System.Windows.Forms.DataGridViewImageColumn Modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCosto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadMinima;
-        private System.Windows.Forms.DataGridViewImageColumn Modificar;
     }
 }

@@ -31,7 +31,11 @@ namespace BL
             DAO_Cliente dao_cliente = new DAO_Cliente();
             return dao_cliente.buscarCliente(nombre);
         }
-
+        public List<DO_Cliente> buscarClientes(String datos)
+        {
+            DAO_Cliente dao_cliente = new DAO_Cliente();
+            return dao_cliente.buscarClientes(datos);
+        }
         public DO_Cliente buscarCliente(int idCliente)
         {
             DAO_Cliente dao_cliente = new DAO_Cliente();

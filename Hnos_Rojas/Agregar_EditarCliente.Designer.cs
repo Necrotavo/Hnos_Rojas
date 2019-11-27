@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlClientes = new System.Windows.Forms.TabControl();
             this.tabPageAgregarCliente = new System.Windows.Forms.TabPage();
             this.btCambiarEstado = new System.Windows.Forms.Button();
@@ -48,6 +49,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAgregarCliente = new System.Windows.Forms.Label();
             this.tabPageModificar = new System.Windows.Forms.TabPage();
+            this.btBuscarCliente = new System.Windows.Forms.Button();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
+            this.tbNombreOApellido = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,10 +62,12 @@
             this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreditoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdentificadorCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlClientes.SuspendLayout();
             this.tabPageAgregarCliente.SuspendLayout();
             this.tabPageModificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlClientes
@@ -257,7 +263,10 @@
             // 
             // tabPageModificar
             // 
-            this.tabPageModificar.Controls.Add(this.dgvClientes);
+            this.tabPageModificar.Controls.Add(this.panel1);
+            this.tabPageModificar.Controls.Add(this.btBuscarCliente);
+            this.tabPageModificar.Controls.Add(this.lblNombreApellido);
+            this.tabPageModificar.Controls.Add(this.tbNombreOApellido);
             this.tabPageModificar.Location = new System.Drawing.Point(4, 22);
             this.tabPageModificar.Name = "tabPageModificar";
             this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
@@ -266,6 +275,33 @@
             this.tabPageModificar.Text = "Modificar";
             this.tabPageModificar.UseVisualStyleBackColor = true;
             this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
+            // 
+            // btBuscarCliente
+            // 
+            this.btBuscarCliente.Location = new System.Drawing.Point(355, 64);
+            this.btBuscarCliente.Name = "btBuscarCliente";
+            this.btBuscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarCliente.TabIndex = 3;
+            this.btBuscarCliente.Text = "Buscar";
+            this.btBuscarCliente.UseVisualStyleBackColor = true;
+            this.btBuscarCliente.Click += new System.EventHandler(this.btBuscarCliente_Click);
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreApellido.Location = new System.Drawing.Point(230, 11);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(342, 24);
+            this.lblNombreApellido.TabIndex = 2;
+            this.lblNombreApellido.Text = "Ingrese el nombre o apellido del cliente";
+            // 
+            // tbNombreOApellido
+            // 
+            this.tbNombreOApellido.Location = new System.Drawing.Point(275, 38);
+            this.tbNombreOApellido.Name = "tbNombreOApellido";
+            this.tbNombreOApellido.Size = new System.Drawing.Size(242, 20);
+            this.tbNombreOApellido.TabIndex = 1;
             // 
             // dgvClientes
             // 
@@ -284,10 +320,13 @@
             this.CreditoCliente,
             this.IdentificadorCliente});
             this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvClientes.Location = new System.Drawing.Point(3, 3);
+            this.dgvClientes.Location = new System.Drawing.Point(0, 0);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(780, 418);
+            this.dgvClientes.Size = new System.Drawing.Size(780, 319);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
@@ -297,48 +336,56 @@
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::Hnos_Rojas.Properties.Resources.output_onlinepngtools;
             this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
             // 
             // NombreCliente
             // 
             this.NombreCliente.DataPropertyName = "perNombre";
             this.NombreCliente.HeaderText = "Nombre";
             this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
             // 
             // ApellidoCliente
             // 
             this.ApellidoCliente.DataPropertyName = "perPrimerApellido";
             this.ApellidoCliente.HeaderText = "Primer Apellido";
             this.ApellidoCliente.Name = "ApellidoCliente";
+            this.ApellidoCliente.ReadOnly = true;
             // 
             // SegundoApellidoCliente
             // 
             this.SegundoApellidoCliente.DataPropertyName = "perSegundoApellido";
             this.SegundoApellidoCliente.HeaderText = "Segundo Apellido";
             this.SegundoApellidoCliente.Name = "SegundoApellidoCliente";
+            this.SegundoApellidoCliente.ReadOnly = true;
             // 
             // TelefonoCliente
             // 
             this.TelefonoCliente.DataPropertyName = "perTelefono";
             this.TelefonoCliente.HeaderText = "Telefono";
             this.TelefonoCliente.Name = "TelefonoCliente";
+            this.TelefonoCliente.ReadOnly = true;
             // 
             // DireccionCliente
             // 
             this.DireccionCliente.DataPropertyName = "direccion";
             this.DireccionCliente.HeaderText = "Direccion";
             this.DireccionCliente.Name = "DireccionCliente";
+            this.DireccionCliente.ReadOnly = true;
             // 
             // EstadoCliente
             // 
             this.EstadoCliente.DataPropertyName = "estado";
             this.EstadoCliente.HeaderText = "Estado";
             this.EstadoCliente.Name = "EstadoCliente";
+            this.EstadoCliente.ReadOnly = true;
             // 
             // CreditoCliente
             // 
             this.CreditoCliente.DataPropertyName = "credito";
             this.CreditoCliente.HeaderText = "Credito";
             this.CreditoCliente.Name = "CreditoCliente";
+            this.CreditoCliente.ReadOnly = true;
             this.CreditoCliente.Visible = false;
             // 
             // IdentificadorCliente
@@ -346,7 +393,16 @@
             this.IdentificadorCliente.DataPropertyName = "perIdentificador";
             this.IdentificadorCliente.HeaderText = "Identificador";
             this.IdentificadorCliente.Name = "IdentificadorCliente";
+            this.IdentificadorCliente.ReadOnly = true;
             this.IdentificadorCliente.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvClientes);
+            this.panel1.Location = new System.Drawing.Point(0, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(780, 319);
+            this.panel1.TabIndex = 4;
             // 
             // Agregar_EditarCliente
             // 
@@ -362,7 +418,9 @@
             this.tabPageAgregarCliente.ResumeLayout(false);
             this.tabPageAgregarCliente.PerformLayout();
             this.tabPageModificar.ResumeLayout(false);
+            this.tabPageModificar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,5 +457,9 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btCambiarEstado;
         private System.Windows.Forms.TextBox tbEstado;
+        private System.Windows.Forms.TextBox tbNombreOApellido;
+        private System.Windows.Forms.Label lblNombreApellido;
+        private System.Windows.Forms.Button btBuscarCliente;
+        private System.Windows.Forms.Panel panel1;
     }
 }
