@@ -18,6 +18,7 @@ namespace Hnos_Rojas
         public AgregarAsociado(String _proveedor)
         {
             InitializeComponent();
+            lblTitulo.Text = lblTitulo.Text + _proveedor;
             proveedor = _proveedor;
         }
 
@@ -29,6 +30,7 @@ namespace Hnos_Rojas
             asociado.perPrimerApellido = txtP1erApellido.Text.Trim();
             asociado.perSegundoApellido = txt2doApellido.Text.Trim();
             asociado.perTelefono = txtTelefono.Text.Trim();
+            asociado.proveedor = proveedor;
 
             if (blAsociado.AgregarAsociado(asociado))
             {

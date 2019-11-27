@@ -101,6 +101,12 @@
     <Compile Include="DetallesEstadoCuenta.Designer.cs">
       <DependentUpon>DetallesEstadoCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarAsociado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarAsociado.Designer.cs">
+      <DependentUpon>EditarAsociado.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstadoCuentaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetallesEstadoCuenta.resx">
       <DependentUpon>DetallesEstadoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarAsociado.resx">
+      <DependentUpon>EditarAsociado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EstadoCuentaCliente.resx">
       <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>

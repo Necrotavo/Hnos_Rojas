@@ -42,5 +42,11 @@ namespace BL
             DAO_Asociado daoAsociado = new DAO_Asociado();
             return daoAsociado.BuscarAsociado(idAsociado+"");
         }
+
+        public bool editarAsociado(DO_Asociado asociado)
+        {
+            DAO_Asociado daoAsociado = new DAO_Asociado();
+            return daoAsociado.editarAsociado(asociado);
+        }
     }
 }
