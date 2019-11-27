@@ -76,7 +76,7 @@
             // lbTotalAgentes
             // 
             this.lbTotalAgentes.AutoSize = true;
-            this.lbTotalAgentes.Location = new System.Drawing.Point(823, 196);
+            this.lbTotalAgentes.Location = new System.Drawing.Point(813, 196);
             this.lbTotalAgentes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTotalAgentes.Name = "lbTotalAgentes";
             this.lbTotalAgentes.Size = new System.Drawing.Size(0, 17);
@@ -85,7 +85,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(606, 196);
+            this.label12.Location = new System.Drawing.Point(596, 196);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 17);
@@ -97,7 +97,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(603, 147);
+            this.label11.Location = new System.Drawing.Point(593, 147);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(244, 36);
@@ -287,7 +287,7 @@
             // lblTop1
             // 
             this.lblTop1.AutoSize = true;
-            this.lblTop1.Location = new System.Drawing.Point(1264, 353);
+            this.lblTop1.Location = new System.Drawing.Point(596, 370);
             this.lblTop1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTop1.Name = "lblTop1";
             this.lblTop1.Size = new System.Drawing.Size(0, 17);
@@ -296,7 +296,7 @@
             // lblTop2
             // 
             this.lblTop2.AutoSize = true;
-            this.lblTop2.Location = new System.Drawing.Point(1264, 385);
+            this.lblTop2.Location = new System.Drawing.Point(596, 402);
             this.lblTop2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTop2.Name = "lblTop2";
             this.lblTop2.Size = new System.Drawing.Size(0, 17);
@@ -305,7 +305,7 @@
             // lblTop3
             // 
             this.lblTop3.AutoSize = true;
-            this.lblTop3.Location = new System.Drawing.Point(1264, 415);
+            this.lblTop3.Location = new System.Drawing.Point(596, 432);
             this.lblTop3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTop3.Name = "lblTop3";
             this.lblTop3.Size = new System.Drawing.Size(0, 17);
@@ -314,7 +314,7 @@
             // lblTop4
             // 
             this.lblTop4.AutoSize = true;
-            this.lblTop4.Location = new System.Drawing.Point(1264, 447);
+            this.lblTop4.Location = new System.Drawing.Point(596, 464);
             this.lblTop4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTop4.Name = "lblTop4";
             this.lblTop4.Size = new System.Drawing.Size(0, 17);
@@ -323,7 +323,7 @@
             // lblTop5
             // 
             this.lblTop5.AutoSize = true;
-            this.lblTop5.Location = new System.Drawing.Point(1264, 478);
+            this.lblTop5.Location = new System.Drawing.Point(596, 495);
             this.lblTop5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTop5.Name = "lblTop5";
             this.lblTop5.Size = new System.Drawing.Size(0, 17);
@@ -332,7 +332,7 @@
             // lbProd1
             // 
             this.lbProd1.AutoSize = true;
-            this.lbProd1.Location = new System.Drawing.Point(595, 370);
+            this.lbProd1.Location = new System.Drawing.Point(654, 370);
             this.lbProd1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProd1.Name = "lbProd1";
             this.lbProd1.Size = new System.Drawing.Size(0, 17);
@@ -341,7 +341,7 @@
             // lbProd2
             // 
             this.lbProd2.AutoSize = true;
-            this.lbProd2.Location = new System.Drawing.Point(596, 405);
+            this.lbProd2.Location = new System.Drawing.Point(655, 405);
             this.lbProd2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProd2.Name = "lbProd2";
             this.lbProd2.Size = new System.Drawing.Size(0, 17);
@@ -350,7 +350,7 @@
             // lbProd3
             // 
             this.lbProd3.AutoSize = true;
-            this.lbProd3.Location = new System.Drawing.Point(596, 435);
+            this.lbProd3.Location = new System.Drawing.Point(655, 435);
             this.lbProd3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProd3.Name = "lbProd3";
             this.lbProd3.Size = new System.Drawing.Size(0, 17);
@@ -359,7 +359,7 @@
             // lbProd4
             // 
             this.lbProd4.AutoSize = true;
-            this.lbProd4.Location = new System.Drawing.Point(596, 467);
+            this.lbProd4.Location = new System.Drawing.Point(655, 467);
             this.lbProd4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProd4.Name = "lbProd4";
             this.lbProd4.Size = new System.Drawing.Size(0, 17);
@@ -368,7 +368,7 @@
             // lbProd5
             // 
             this.lbProd5.AutoSize = true;
-            this.lbProd5.Location = new System.Drawing.Point(596, 498);
+            this.lbProd5.Location = new System.Drawing.Point(655, 498);
             this.lbProd5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProd5.Name = "lbProd5";
             this.lbProd5.Size = new System.Drawing.Size(0, 17);
@@ -479,9 +479,14 @@
             this.pnlLbls.Controls.Add(this.lblHasta);
             this.pnlLbls.Controls.Add(this.lblCorte);
             this.pnlLbls.Controls.Add(this.label20);
+            this.pnlLbls.Controls.Add(this.lblTop5);
             this.pnlLbls.Controls.Add(this.lbTotalCaja);
+            this.pnlLbls.Controls.Add(this.lblTop4);
             this.pnlLbls.Controls.Add(this.lbCantProd5);
+            this.pnlLbls.Controls.Add(this.lblTop3);
+            this.pnlLbls.Controls.Add(this.lblTop2);
             this.pnlLbls.Controls.Add(this.lblTitulo);
+            this.pnlLbls.Controls.Add(this.lblTop1);
             this.pnlLbls.Controls.Add(this.lbCantProd4);
             this.pnlLbls.Controls.Add(this.lbFechaReporte);
             this.pnlLbls.Controls.Add(this.lbCantProd3);
@@ -508,7 +513,7 @@
             this.pnlLbls.Controls.Add(this.label13);
             this.pnlLbls.Controls.Add(this.label12);
             this.pnlLbls.Controls.Add(this.lbTotalAgentes);
-            this.pnlLbls.Location = new System.Drawing.Point(658, 77);
+            this.pnlLbls.Location = new System.Drawing.Point(625, 77);
             this.pnlLbls.Name = "pnlLbls";
             this.pnlLbls.Size = new System.Drawing.Size(978, 638);
             this.pnlLbls.TabIndex = 111;
@@ -533,11 +538,6 @@
             this.Controls.Add(this.pnlLbls);
             this.Controls.Add(this.calReporteHasta);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.lblTop5);
-            this.Controls.Add(this.lblTop4);
-            this.Controls.Add(this.lblTop3);
-            this.Controls.Add(this.lblTop2);
-            this.Controls.Add(this.lblTop1);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.calReporteDesde);
             this.ForeColor = System.Drawing.Color.White;
@@ -548,7 +548,6 @@
             this.pnlLbls.ResumeLayout(false);
             this.pnlLbls.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
