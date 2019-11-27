@@ -55,8 +55,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btBuscarCliente = new System.Windows.Forms.Button();
-            this.tbNombreOApellido = new System.Windows.Forms.TextBox();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +64,8 @@
             this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreditoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdentificadorCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btBuscarCliente = new System.Windows.Forms.Button();
+            this.tbNombreOApellido = new System.Windows.Forms.TextBox();
             this.tabControlClientes.SuspendLayout();
             this.tabPageAgregarCliente.SuspendLayout();
             this.tabPageModificar.SuspendLayout();
@@ -83,7 +83,7 @@
             this.tabControlClientes.Location = new System.Drawing.Point(0, 0);
             this.tabControlClientes.Name = "tabControlClientes";
             this.tabControlClientes.SelectedIndex = 0;
-            this.tabControlClientes.Size = new System.Drawing.Size(816, 480);
+            this.tabControlClientes.Size = new System.Drawing.Size(826, 536);
             this.tabControlClientes.TabIndex = 0;
             this.tabControlClientes.SelectedIndexChanged += new System.EventHandler(this.tabControlClientes_SelectedIndexChanged);
             // 
@@ -277,7 +277,7 @@
             this.tabPageModificar.Location = new System.Drawing.Point(4, 54);
             this.tabPageModificar.Name = "tabPageModificar";
             this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageModificar.Size = new System.Drawing.Size(808, 422);
+            this.tabPageModificar.Size = new System.Drawing.Size(818, 478);
             this.tabPageModificar.TabIndex = 1;
             this.tabPageModificar.Text = "Modificar";
             this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
@@ -298,7 +298,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 319);
+            this.panel1.Size = new System.Drawing.Size(812, 319);
             this.panel1.TabIndex = 4;
             // 
             // dgvClientes
@@ -327,34 +327,11 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(802, 319);
+            this.dgvClientes.Size = new System.Drawing.Size(812, 319);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dgvClientes_AutoSizeColumnModeChanged);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
-            // 
-            // btBuscarCliente
-            // 
-            this.btBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btBuscarCliente.FlatAppearance.BorderSize = 0;
-            this.btBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBuscarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btBuscarCliente.Location = new System.Drawing.Point(200, 378);
-            this.btBuscarCliente.Name = "btBuscarCliente";
-            this.btBuscarCliente.Size = new System.Drawing.Size(114, 52);
-            this.btBuscarCliente.TabIndex = 3;
-            this.btBuscarCliente.Text = "Buscar";
-            this.btBuscarCliente.UseVisualStyleBackColor = false;
-            this.btBuscarCliente.Click += new System.EventHandler(this.btBuscarCliente_Click);
-            // 
-            // tbNombreOApellido
-            // 
-            this.tbNombreOApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.tbNombreOApellido.Location = new System.Drawing.Point(123, 337);
-            this.tbNombreOApellido.Name = "tbNombreOApellido";
-            this.tbNombreOApellido.Size = new System.Drawing.Size(191, 35);
-            this.tbNombreOApellido.TabIndex = 1;
             // 
             // Editar
             // 
@@ -429,12 +406,35 @@
             this.IdentificadorCliente.ReadOnly = true;
             this.IdentificadorCliente.Visible = false;
             // 
+            // btBuscarCliente
+            // 
+            this.btBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btBuscarCliente.FlatAppearance.BorderSize = 0;
+            this.btBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBuscarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btBuscarCliente.ForeColor = System.Drawing.Color.White;
+            this.btBuscarCliente.Location = new System.Drawing.Point(200, 378);
+            this.btBuscarCliente.Name = "btBuscarCliente";
+            this.btBuscarCliente.Size = new System.Drawing.Size(114, 52);
+            this.btBuscarCliente.TabIndex = 3;
+            this.btBuscarCliente.Text = "Buscar";
+            this.btBuscarCliente.UseVisualStyleBackColor = false;
+            this.btBuscarCliente.Click += new System.EventHandler(this.btBuscarCliente_Click);
+            // 
+            // tbNombreOApellido
+            // 
+            this.tbNombreOApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.tbNombreOApellido.Location = new System.Drawing.Point(123, 337);
+            this.tbNombreOApellido.Name = "tbNombreOApellido";
+            this.tbNombreOApellido.Size = new System.Drawing.Size(191, 35);
+            this.tbNombreOApellido.TabIndex = 1;
+            // 
             // Agregar_EditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(816, 480);
+            this.ClientSize = new System.Drawing.Size(826, 536);
             this.Controls.Add(this.tabControlClientes);
             this.Name = "Agregar_EditarCliente";
             this.Text = "Agregar_EditarCliente";
