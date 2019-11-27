@@ -12,6 +12,7 @@ namespace Hnos_Rojas
 {
     public partial class Proveedor : Form
     {
+        private ListaProveedores tempListaproveedores;
         public Proveedor()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace Hnos_Rojas
         {
             this.panelProveedores.Controls.Clear();
             ListaProveedores listaProveedores = new ListaProveedores() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            tempListaproveedores = listaProveedores;
             this.panelProveedores.Controls.Add(listaProveedores);
             listaProveedores.Show();
         }
@@ -38,9 +40,14 @@ namespace Hnos_Rojas
         private void btnModificarProv_Click(object sender, EventArgs e)
         {
             this.panelProveedores.Controls.Clear();
-            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor("nombreProveedor") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
+        }
+
+        private void btnAsociados_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

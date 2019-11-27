@@ -55,6 +55,7 @@
             this.btnAsociados.TabIndex = 21;
             this.btnAsociados.Text = "Ver Asociados";
             this.btnAsociados.UseVisualStyleBackColor = false;
+            this.btnAsociados.Click += new System.EventHandler(this.btnAsociados_Click);
             // 
             // btnAgregarProv
             // 
@@ -113,7 +114,7 @@
             this.Controls.Add(this.panelProveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(32, 102);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Proveedor";
             this.Text = "Proveedor";
             this.ResumeLayout(false);
