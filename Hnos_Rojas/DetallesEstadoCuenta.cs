@@ -108,6 +108,10 @@ namespace Hnos_Rojas
                 else if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Imprimir"))
                 {
 
+
+                    FacturaDeCliente reimpresion = new FacturaDeCliente(blCredito.obtenerFactura(
+                        grdFacturas.Rows[e.RowIndex].Cells[0].Value.ToString(),
+                        cliente.credito)); ;
                 }
                 
             }
