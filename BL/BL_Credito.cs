@@ -50,6 +50,17 @@ namespace BL
             DAO_Credito daoFactura = new DAO_Credito();
             return daoFactura.obtenerMonto(idCredito);
         }
+        public DO_Factura obtenerFactura(string codigoFactura, DO_Credito credito)
+        {
+            foreach (DO_Factura item in credito.listaFactura)
+            {
+                if (item.codigoFactura.ToString().Equals(codigoFactura))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
 
         public double calcularMonto(int idCredito)
         {

@@ -22,7 +22,7 @@ namespace Hnos_Rojas
         string direccion;
         string ced;
         string telefono;
-        string fecha = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+        string fecha;
         string notas = "NOTAS DE VENTA";
         string cajero;
         List<DO_ProductoEnFactura> productos;
