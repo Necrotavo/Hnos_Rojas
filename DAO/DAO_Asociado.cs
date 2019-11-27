@@ -20,7 +20,7 @@ namespace DAO
         /// <returns>(True) si se agregó correctamente el asociado.(False)si no se agregó</returns>
         public bool AgregarAsociado(DO_Asociado asociado)
         {
-            SqlCommand consulta = new SqlCommand("insert into Asociado (PER_IDENTIFICADOR],"+
+            SqlCommand consulta = new SqlCommand("insert into Asociado (PER_IDENTIFICADOR,"+
            "PER_TELEFONO,PER_NOMBRE,PER_PRIMER_APELLIDO,PER_SEGUNDO_APELLIDO,PROV_NOMBRE)" +
            "values (@identificador,@telefono,@nombre, @primerApellido,@segundoApellido,@nombreProveedor)",conexion);
             consulta.Parameters.AddWithValue("@identificador", asociado.perIdentificador);
@@ -180,5 +180,38 @@ namespace DAO
             return null;
         }
 
+        public bool editarAsociado(DO_Asociado asociado) {
+            SqlCommand comandoEditar = new SqlCommand("update ASOCIADO set PER_NOMBRE = @nombre, PER_PRIMER_APELLIDO = @1erApellido, PER_SEGUNDO_APELLIDO = @2doApellido, PER_TELEFONO = @telefono where PER_IDENTIFICADOR = @identificador", conexion);
+            comandoEditar.Parameters.AddWithValue("@identificador", asociado.perIdentificador);
+            comandoEditar.Parameters.AddWithValue("@nombre",asociado.perNombre);
+            comandoEditar.Parameters.AddWithValue("@1erApellido",asociado.perPrimerApellido);
+            comandoEditar.Parameters.AddWithValue("@2doApellido",asociado.perSegundoApellido);
+            comandoEditar.Parameters.AddWithValue("@telefono",asociado.perTelefono);
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comandoEditar.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException e)
+            {
+                return false;
+            }
+            finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
