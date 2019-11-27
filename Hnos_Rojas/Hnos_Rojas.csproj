@@ -77,6 +77,12 @@
     <Compile Include="Agregar_EditarCliente.Designer.cs">
       <DependentUpon>Agregar_EditarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agregar_ModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_ModificarProveedor.Designer.cs">
+      <DependentUpon>Agregar_ModificarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClienteNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="DetallesEstadoCuenta.Designer.cs">
       <DependentUpon>DetallesEstadoCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarAsociado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarAsociado.Designer.cs">
+      <DependentUpon>EditarAsociado.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstadoCuentaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </Compile>
     <Compile Include="FacturaCredito.Designer.cs">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirReportes.Designer.cs">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaAsociados.cs">
       <SubType>Form</SubType>
@@ -186,6 +204,12 @@
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCreditoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCreditoCliente.Designer.cs">
+      <DependentUpon>ReporteCreditoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +246,9 @@
     <EmbeddedResource Include="Agregar_EditarCliente.resx">
       <DependentUpon>Agregar_EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_ModificarProveedor.resx">
+      <DependentUpon>Agregar_ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClienteNuevo.resx">
       <DependentUpon>ClienteNuevo.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +261,9 @@
     <EmbeddedResource Include="DetallesEstadoCuenta.resx">
       <DependentUpon>DetallesEstadoCuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarAsociado.resx">
+      <DependentUpon>EditarAsociado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EstadoCuentaCliente.resx">
       <DependentUpon>EstadoCuentaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaCredito.resx">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirReportes.resx">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaAsociados.resx">
       <DependentUpon>ListaAsociados.cs</DependentUpon>
@@ -277,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCreditoCliente.resx">
+      <DependentUpon>ReporteCreditoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>

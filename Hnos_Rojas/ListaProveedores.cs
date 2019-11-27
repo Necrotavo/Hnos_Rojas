@@ -56,5 +56,14 @@ namespace Hnos_Rojas
         {
             llenarListBox();
         }
+
+        private void ListaProveedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public String obtenerProveedorSeleccionado() {
+            return listBoxProveedores.SelectedValue.ToString();
+        }
     }
 }

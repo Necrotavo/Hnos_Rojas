@@ -55,6 +55,7 @@ namespace Hnos_Rojas
             {
                 BL_Factura blFactura = new BL_Factura();
                 blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
+                estCuenta.refrescarCreditoCompleto();
                 estCuenta.llenarGrid();
                 MessageBox.Show("Abono exitoso");
                 this.Dispose();

@@ -54,6 +54,7 @@ namespace Hnos_Rojas
             credito = _credito;
             creditoPendiente = _creditoPendiente;
             productos = _productos;
+            
             foreach (DO_ProductoEnFactura item in productos)
             {
                 cantidadTotalProductos += item.cantidadComprada;
