@@ -120,7 +120,7 @@ namespace Hnos_Rojas
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            ReporteCreditoCliente imprimirReporte = new ReporteCreditoCliente(cliente.credito.listaFactura);
+            ReporteCreditoCliente imprimirReporte = new ReporteCreditoCliente(cliente.credito.listaFactura, lblMontoCred.Text);
 
 
         }
