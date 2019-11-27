@@ -169,5 +169,18 @@ namespace BL
                 return 0;
             }
         }
+
+        public int obtenerAbonosCredito(String diaInicio, String diaFinal)
+        {
+            try
+            {
+                DAO_Factura daoFactura = new DAO_Factura();
+                return daoFactura.obtenerAbonosCredito(diaInicio, diaFinal);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

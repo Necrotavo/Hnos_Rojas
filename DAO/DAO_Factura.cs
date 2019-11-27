@@ -533,5 +533,38 @@ namespace DAO
             return total;
         }
 
+        public int obtenerAbonosCredito(String diaInicio, String diaFinal)
+        {
+            int total = 0;
+
+            SqlCommand comando = new SqlCommand("Select SUM(ABO_MONTO) AS MONTO_TOT_ABONO FROM ABONO WHERE ABO_FECHA BETWEEN @diaInicio AND @diaFinal;", conexion);
+            comando.Parameters.AddWithValue("@diaInicio", diaInicio);
+            comando.Parameters.AddWithValue("@diaFinal", diaFinal);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                total = Convert.ToInt32(comando.ExecuteScalar());
+
+                return total;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return total;
+        }
     }
 }
