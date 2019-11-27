@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DO;
+using BL;
 
 namespace Hnos_Rojas
 {
     public partial class Proveedor : Form
     {
+        private ListaProveedores tempListaproveedores;
         public Proveedor()
         {
             InitializeComponent();
@@ -23,8 +26,47 @@ namespace Hnos_Rojas
         {
             this.panelProveedores.Controls.Clear();
             ListaProveedores listaProveedores = new ListaProveedores() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            tempListaproveedores = listaProveedores;
             this.panelProveedores.Controls.Add(listaProveedores);
             listaProveedores.Show();
+        }
+
+        private void btnAgregarProv_Click(object sender, EventArgs e)
+        {
+            this.panelProveedores.Controls.Clear();
+            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
+            agregar_ModificarProveedor.Show();
+        }
+
+        private void btnModificarProv_Click(object sender, EventArgs e)
+        {
+            this.panelProveedores.Controls.Clear();
+            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
+            agregar_ModificarProveedor.Show();
+        }
+
+        private void btnAsociados_Click(object sender, EventArgs e)
+        {
+            this.panelProveedores.Controls.Clear();
+            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Add(listaAsociados);
+            listaAsociados.Show();
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
+            {
+                MessageBox.Show("Proveedor eliminado");
+            }
+            else {
+                MessageBox.Show("Proveedor no eliminado");
+            }
+            invocarListaProveedores();
         }
     }
 }

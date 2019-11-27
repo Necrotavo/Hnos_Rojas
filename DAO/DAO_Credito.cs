@@ -187,6 +187,7 @@ namespace DAO
                     }
                     else {
                         daoFactura.actualizarSaldoFactura(listaFacturas[i], abono);
+                        registrarAbono(idCredito, abono);
                         i = listaFacturas.Count;
                         saldo = 0;
                     }
@@ -265,6 +266,40 @@ namespace DAO
                     return true;
                 }
                 else {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public bool registrarAbono(int idCredito, double abono) {
+            SqlCommand comando = new SqlCommand("insert into ABONO (CRE_IDENTIFICADOR, ABO_MONTO, ABO_FECHA) Values (@idCredito, @montoAbono, @fecha)", conexion);
+            comando.Parameters.AddWithValue("@idCredito", idCredito);
+            comando.Parameters.AddWithValue("@montoAbono", abono);
+            comando.Parameters.AddWithValue("@fecha", DateTime.Now);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
                     return false;
                 }
             }

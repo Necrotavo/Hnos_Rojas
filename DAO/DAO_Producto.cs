@@ -406,10 +406,41 @@ namespace DAO
             }
         }
 
-        public List<DO_TopProductos> obtenerTopVentas() {
+        public List<DO_TopProductos> obtenerTopVentas(String diaInicio, String diaFinal) {
             List<DO_TopProductos> productos = new List<DO_TopProductos>();
 
+            SqlCommand comando = new SqlCommand("SELECT P.PRO_DESCRIPCION, SUM(T.CANTIDAD_COMPRADA) AS CANTIDAD_COMPRADA FROM PRODUCTO AS P, FAC_TIENE_PRO AS T where P.PRO_CODIGO = T.PRO_CODIGO AND(T.FAC_FECHA BETWEEN @diaInicio AND @diaFinal) GROUP BY T.PRO_CODIGO, P.PRO_DESCRIPCION ORDER BY CANTIDAD_COMPRADA DESC", conexion);
+            comando.Parameters.AddWithValue("@diaInicio", diaInicio);
+            comando.Parameters.AddWithValue("@diaFinal", diaFinal);
 
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = comando.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        productos.Add(new DO_TopProductos((String)lector["PRO_DESCRIPCION"], Convert.ToInt32(lector["CANTIDAD_COMPRADA"])));    
+                    }
+                }
+                return productos;
+
+            }
+            catch (SqlException)
+            {
+
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
 
             return productos;  
         }
