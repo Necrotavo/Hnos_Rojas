@@ -173,6 +173,12 @@
     <Compile Include="PagoCredito.Designer.cs">
       <DependentUpon>PagoCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoProveedor.Designer.cs">
+      <DependentUpon>PagoProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlantillaConfig.cs">
       <SubType>Form</SubType>
     </Compile>
