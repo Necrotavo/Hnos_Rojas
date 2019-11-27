@@ -125,6 +125,12 @@
     <Compile Include="FacturaCredito.Designer.cs">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirReportes.Designer.cs">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaAsociados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCreditoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCreditoCliente.Designer.cs">
+      <DependentUpon>ReporteCreditoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +264,9 @@
     <EmbeddedResource Include="FacturaCredito.resx">
       <DependentUpon>FacturaCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirReportes.resx">
+      <DependentUpon>ImprimirReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaAsociados.resx">
       <DependentUpon>ListaAsociados.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCreditoCliente.resx">
+      <DependentUpon>ReporteCreditoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>

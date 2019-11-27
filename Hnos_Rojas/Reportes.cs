@@ -26,13 +26,13 @@ namespace Hnos_Rojas
             lbFechaReporte.Text = fechaReporte.GetDateTimeFormats()[0];
             String inicio = "" + fechaReporte.Year + "-" + fechaReporte.Month + "-" + fechaReporte.Day + " " + "0:0:0";
             String final = "" + fechaReporte.Year + "-" + fechaReporte.Month + "-" + fechaReporte.Day + " " + "23:59:59";
-            lbFechaReporte.Text = inicio;
+            lbFechaReporte.Text = "" + fechaReporte.Day + "/" + fechaReporte.Month + "/" + fechaReporte.Year;
 
             //La parte de Ventas
             BL_Factura blFactura = new BL_Factura();
             int totalVentasEfectivo = blFactura.obtenerTotalVentasEfectivoDiaEspecifico(inicio, final);
             lbEnEfectivoVentas.Text = "₡" + totalVentasEfectivo;
-            int totalVentasCredito = blFactura.obtenerTotalVentasCreditoDiaEspecifico("" + fechaReporte.Day);
+            int totalVentasCredito = blFactura.obtenerTotalVentasCreditoDiaEspecifico(inicio, final);
             lbACreditoVentas.Text = "₡" + totalVentasCredito;
             int totalVentas = totalVentasEfectivo + totalVentasCredito;
             lbTotalVentas.Text = "₡" + totalVentas;
@@ -47,9 +47,10 @@ namespace Hnos_Rojas
 
             //La parte de proveedores
             BL_Pago blPago = new BL_Pago();
-            lbTotalAgentes.Text = "₡" + blPago.obtenerPagoProvDiaEspecifico("" + fechaReporte.Day);
+            lbTotalAgentes.Text = "₡" + blPago.obtenerPagoProvDiaEspecifico(inicio, final);
 
             //La parte de productos más vendidos
+
 
         }
 
