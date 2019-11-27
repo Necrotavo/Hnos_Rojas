@@ -83,6 +83,7 @@ namespace Hnos_Rojas
             }
             factura.fecha = DateTime.Now;
             factura.totalFactura = Convert.ToInt32(lblTotal.Text.Substring(1));
+            factura.saldo = factura.totalFactura;
             return factura;
         }
 
