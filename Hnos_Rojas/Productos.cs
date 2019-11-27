@@ -81,6 +81,7 @@ namespace Hnos_Rojas
         private void btnNuevoProd_Click(object sender, EventArgs e)
         {
             NuevoProducto ventanaNuevoProducto = new NuevoProducto();
+            ventanaNuevoProducto.StartPosition = FormStartPosition.CenterScreen;
             ventanaNuevoProducto.Show();
         }
 

@@ -20,7 +20,7 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
             llenarGridBucarProductos();
-
+            
         }
 
         public double CalcularPrecioVenta(int porcentaje)

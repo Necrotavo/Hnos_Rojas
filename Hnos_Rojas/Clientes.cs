@@ -37,7 +37,9 @@ namespace Hnos_Rojas
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             Agregar_EditarCliente agregar_Editar = new Agregar_EditarCliente();
+            agregar_Editar.StartPosition = FormStartPosition.CenterScreen;
             agregar_Editar.Show();
+            
         }
 
         private void btnEstadoCuenta_Click(object sender, EventArgs e)
