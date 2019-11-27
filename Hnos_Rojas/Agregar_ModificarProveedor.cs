@@ -18,23 +18,23 @@ namespace Hnos_Rojas
         private DO_Proveedor proveedor;
         public Agregar_ModificarProveedor()
         {
-            lblTitulo.Text = "Nuevo Proveedor";
             InitializeComponent();
-            
+            lblTitulo.Text = "Nuevo Proveedor";
+
         }
 
         public Agregar_ModificarProveedor(String nombreProveedor)
         {
+            InitializeComponent();
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
-            InitializeComponent();
-            
         }
 
         private void rellenarFormulario(String nombreProveedor) {
             BL_Proveedor blProveedor = new BL_Proveedor();
             proveedor = blProveedor.obtenerProveedor(nombreProveedor);
-
+            txtNombreProveedor.Text = proveedor.nombre;
+            txtFechaVisita.Text = proveedor.fechaVisita;
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
