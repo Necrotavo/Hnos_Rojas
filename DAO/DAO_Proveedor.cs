@@ -13,7 +13,7 @@ namespace DAO
     {
         SqlConnection conexion = new SqlConnection(DAO.Properties.Settings.Default.connectionString);
         public bool ingresarProveedor (DO_Proveedor proveedor){
-            SqlCommand comando = new SqlCommand("Insert into PROVEEDOR (PROV_NOMBRE, PROV_FECHA_VISITA) Values (@nombreProveedor, @fechaVisita)", conexion);
+            SqlCommand comando = new SqlCommand("Insert into PROVEEDOR (PROV_NOMBRE, PROV_FECHA_VISITA, ESTADO) Values (@nombreProveedor, @fechaVisita, 1)", conexion);
             comando.Parameters.AddWithValue("@nombreProveedor", proveedor.nombre);
             comando.Parameters.AddWithValue("@fechaVisita", proveedor.fechaVisita);
 
@@ -116,21 +116,21 @@ namespace DAO
             return null;
         }
 
-        public bool EliminarProveedor(DO_Proveedor proveedor)
+        public bool EliminarProveedor(String proveedor)
         {
-            DAO_Asociado daoAsociado = new DAO_Asociado();
+            //DAO_Asociado daoAsociado = new DAO_Asociado();
 
-            foreach(DO_Asociado asociado in proveedor.listaAsociados)
-            {
-                if (daoAsociado.EliminarAsociado(asociado.perIdentificador)!= true)
-                {
-                    return false;
-                }
+            //foreach(DO_Asociado asociado in proveedor.listaAsociados)
+            //{
+            //    if (daoAsociado.EliminarAsociado(asociado.perIdentificador)!= true)
+            //    {
+            //        return false;
+            //    }
                 
-            }
+            //}
 
-            SqlCommand consulta = new SqlCommand("delete from Proveedor Where PROV_NOMBRE = @nombre", conexion);
-            consulta.Parameters.AddWithValue("@nombre", proveedor.nombre);
+            SqlCommand consulta = new SqlCommand("update PROVEEDOR set ESTADO = 0 where PROV_NOMBRE = @nombre", conexion);
+            consulta.Parameters.AddWithValue("@nombre", proveedor);
 
             try
             {
@@ -198,7 +198,7 @@ namespace DAO
 
         public List<DO_Proveedor> obtenerListaProveedores(String filtro) {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.SelectCommand = new SqlCommand("select * from PROVEEDOR where PROV_NOMBRE like @filtro", conexion);
+            adapter.SelectCommand = new SqlCommand("select * from PROVEEDOR where PROV_NOMBRE like @filtro and ESTADO = 1", conexion);
             adapter.SelectCommand.Parameters.AddWithValue("@filtro", "%" + filtro + "%");            
 
             DataTable datatable = new DataTable();

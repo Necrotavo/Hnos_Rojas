@@ -28,6 +28,7 @@ namespace Hnos_Rojas
             InitializeComponent();
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
+            rellenarFormulario(nombreProveedor);
         }
 
         private void rellenarFormulario(String nombreProveedor) {
@@ -39,7 +40,56 @@ namespace Hnos_Rojas
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            txtNombreProveedor.Enabled = true;
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            if (proveedor != null)
+            {
+                // modificar
+                if (validarFormulario())
+                {
+                    proveedor.fechaVisita = txtFechaVisita.Text.Trim();
+                    if (blProveedor.modificarProveedor(proveedor))
+                    {
+                        MessageBox.Show("Proveedor modificado");
+                    }
+                    else {
+                        MessageBox.Show("error al modificar datos del proveedor");
+                    }
+                    txtNombreProveedor.Enabled = true;
+
+                }
+            }
+            else {
+                // agregar
+               
+                if (validarFormulario()) {
+                    DO_Proveedor proveedor = new DO_Proveedor();
+                    proveedor.nombre = txtNombreProveedor.Text.Trim();
+                    proveedor.fechaVisita = txtFechaVisita.Text.Trim();
+                    if (blProveedor.ingresarProveedor(proveedor))
+                    {
+                        MessageBox.Show("Proveedor ingresado");
+                        limpiarFormulario();
+                    }
+                    else {
+                        MessageBox.Show("error al ingresar el proveedor");
+                    }
+                }
+
+            }
         }
+
+        private bool validarFormulario() {
+            if (txtNombreProveedor.Text.Trim().Equals("") || txtFechaVisita.Text.Trim().Equals("")) {
+                return false;
+            }
+            return true;
+        }
+
+        private void limpiarFormulario() {
+            txtNombreProveedor.Clear();
+            txtFechaVisita.Clear();
+        }
+
+      
     }
 }

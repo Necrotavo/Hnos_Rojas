@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DO;
+using BL;
 
 namespace Hnos_Rojas
 {
@@ -47,7 +49,24 @@ namespace Hnos_Rojas
 
         private void btnAsociados_Click(object sender, EventArgs e)
         {
+            this.panelProveedores.Controls.Clear();
+            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Add(listaAsociados);
+            listaAsociados.Show();
+            
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
+            {
+                MessageBox.Show("Proveedor eliminado");
+            }
+            else {
+                MessageBox.Show("Proveedor no eliminado");
+            }
+            invocarListaProveedores();
         }
     }
 }

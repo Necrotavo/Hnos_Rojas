@@ -31,7 +31,7 @@
             this.panelProveedores = new System.Windows.Forms.Panel();
             this.btnAsociados = new System.Windows.Forms.Button();
             this.btnAgregarProv = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificarProv = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,19 +72,20 @@
             this.btnAgregarProv.UseVisualStyleBackColor = false;
             this.btnAgregarProv.Click += new System.EventHandler(this.btnAgregarProv_Click);
             // 
-            // button1
+            // btnEliminar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1024, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 42);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Eliminar Proveedor";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(1024, 20);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(254, 42);
+            this.btnEliminar.TabIndex = 23;
+            this.btnEliminar.Text = "Eliminar Proveedor";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificarProv
             // 
@@ -108,7 +109,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1040, 640);
             this.Controls.Add(this.btnModificarProv);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregarProv);
             this.Controls.Add(this.btnAsociados);
             this.Controls.Add(this.panelProveedores);
@@ -126,7 +127,7 @@
         private System.Windows.Forms.Panel panelProveedores;
         private System.Windows.Forms.Button btnAsociados;
         private System.Windows.Forms.Button btnAgregarProv;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificarProv;
     }
 }

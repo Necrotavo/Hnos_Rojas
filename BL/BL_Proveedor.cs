@@ -37,5 +37,10 @@ namespace BL
             DAO_Proveedor daoProveedor = new DAO_Proveedor();
             return daoProveedor.obtenerListaProveedores(filtro);
         }
+
+        public bool eliminarProveedor(String nombre) {
+            DAO_Proveedor daoProveedor = new DAO_Proveedor();
+            return daoProveedor.EliminarProveedor(nombre);
+        }
     }
 }
