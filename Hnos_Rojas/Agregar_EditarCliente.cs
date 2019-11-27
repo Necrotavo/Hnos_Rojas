@@ -14,7 +14,9 @@ namespace Hnos_Rojas
 {
     public partial class Agregar_EditarCliente : Form
     {
-        private bool modificando = false;
+        private bool modificando;
+        private bool cambiosRealizados ;
+        private int codigoCredito;
         public Agregar_EditarCliente()
         {
             InitializeComponent();
@@ -24,23 +26,16 @@ namespace Hnos_Rojas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DO_Cliente do_Cliente = new DO_Cliente();
 
-            do_Cliente.perNombre = tbNombre.Text.Trim();
-            do_Cliente.perPrimerApellido = tbPrimerApellido.Text.Trim();
-            do_Cliente.perSegundoApellido = tbSegundoApellido.Text.Trim();
-            do_Cliente.direccion = tbDireccion.Text.Trim();
-            do_Cliente.perTelefono = tbTelefono.Text.Trim();
-            int identificadorPersona = AgregarPersona(do_Cliente);
-            do_Cliente.estado = "HABILITADO";
-            do_Cliente.perIdentificador = identificadorPersona;
-
-            if (AgregarCliente(do_Cliente))
+            if (validarCampos())
+            {          
+                agregarOmodificar();
+            } else
             {
-                AgregarCredito(identificadorPersona,Convert.ToInt32(tbLimite.Text.Trim()));
-                MessageBox.Show("Cliente agregado correctamente");
-                vaciarCampos();
+                MessageBox.Show("Datos faltantes");
             }
+               
+                       
         }
 
         public int AgregarPersona(DO_Persona nuevaPersona)
@@ -55,6 +50,18 @@ namespace Hnos_Rojas
             BL_Cliente blCliente = new BL_Cliente();
 
             return blCliente.registrarClienteCrediticio(nuevoCliente);
+        }
+        public bool ModificarCliente(DO_Cliente nuevoCliente)
+        {
+            BL_Cliente blCliente = new BL_Cliente();
+
+            return blCliente.modificarCliente(nuevoCliente);
+        }
+        public bool ModificarCredito(DO_Cliente nuevoCliente)
+        {
+            BL_Credito blCredito = new BL_Credito();
+
+            return blCredito.modificarLimite(nuevoCliente.perIdentificador,nuevoCliente.credito.limiteCredito);
         }
         public bool AgregarCredito(int identificadorCliente, int limiteCredito)
         {
@@ -74,9 +81,7 @@ namespace Hnos_Rojas
         }
 
         private void tabPageModificar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Aquí");
-          
+        {       
             vaciarCampos();
             esconderElementos(true);
         }
@@ -150,6 +155,8 @@ namespace Hnos_Rojas
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            BL_Credito blCredito = new BL_Credito();
+
             tbNombre.Text = dgvClientes.Rows[e.RowIndex].Cells["NombreCliente"].Value.ToString();
             tbPrimerApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["ApellidoCliente"].Value.ToString();
             tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
@@ -157,6 +164,8 @@ namespace Hnos_Rojas
             tbTelefono.Text = dgvClientes.Rows[e.RowIndex].Cells["TelefonoCliente"].Value.ToString();
             tbSegundoApellido.Text = dgvClientes.Rows[e.RowIndex].Cells["SegundoApellidoCliente"].Value.ToString();
             tbEstado.Text = dgvClientes.Rows[e.RowIndex].Cells["EstadoCliente"].Value.ToString();
+            tbLimite.Text = blCredito.ObtenerDatosCredito(Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value)).limiteCredito.ToString();
+            codigoCredito = Convert.ToInt32(dgvClientes.Rows[e.RowIndex].Cells["IdentificadorCliente"].Value);
             modificarClientes();
         }
 
@@ -196,8 +205,14 @@ namespace Hnos_Rojas
             if (tabControlClientes.SelectedTab == tabPageModificar)
             {
                 modificando = false;
-                vaciarCampos();
+                vaciarCampos();            
                 esconderElementos(true);
+
+                if (cambiosRealizados)
+                {
+                    llenarGridClientes();
+                    cambiosRealizados = false;
+                }
             }
         }
 
@@ -217,6 +232,78 @@ namespace Hnos_Rojas
             {
                 tbEstado.Text = "DESHABILITADO";
                 tbEstado.BackColor = Color.Red;
+
+            }
+         
+        }
+
+        public bool validarCampos()
+        {
+            if (tbNombre.Text.Trim()=="" || tbTelefono.Text.Trim() == "" || tbPrimerApellido.Text.Trim() == "" || tbDireccion.Text.Trim() == "")
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void agregarOmodificar()
+        {
+
+            DO_Cliente cliente = new DO_Cliente();
+
+            cliente.perNombre = tbNombre.Text.Trim();
+            cliente.perPrimerApellido = tbPrimerApellido.Text.Trim();
+            cliente.perSegundoApellido = tbSegundoApellido.Text.Trim();
+            cliente.direccion = tbDireccion.Text.Trim();
+            cliente.perTelefono = tbTelefono.Text.Trim();
+
+
+            if (tbEstado.Text.Trim() == "")
+            {
+                cliente.estado = "HABILITADO";
+            }
+            else
+            {
+                cliente.estado = tbEstado.Text.Trim();
+            }         
+            switch (modificando)
+            {
+                case false:
+                    
+                    cliente.perIdentificador = AgregarPersona(cliente);
+
+                    if (AgregarCliente(cliente))
+                    {
+                        AgregarCredito(cliente.perIdentificador, Convert.ToInt32(tbLimite.Text.Trim()));
+                        MessageBox.Show("Cliente agregado correctamente");
+                        vaciarCampos();
+                        cambiosRealizados = true;
+                    }
+                    else
+                    {                      
+                        MessageBox.Show("Datos incorrectos");
+                    }
+                    break;
+
+                case true:
+                    cliente.perIdentificador = codigoCredito;
+                    cliente.credito = new DO_Credito();
+                    cliente.credito.identificador = codigoCredito;
+                    cliente.credito.limiteCredito = Convert.ToInt32(tbLimite.Text.Trim());
+                    if (ModificarCliente(cliente)&& ModificarCredito(cliente))
+                    {
+                        MessageBox.Show("Cliente modificado correctamente");
+                        vaciarCampos();
+                        esconderElementos(true);
+                        cambiosRealizados = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar los datos");
+                    }
+
+                    break;
 
             }
         }

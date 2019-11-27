@@ -120,6 +120,7 @@ namespace DAO
             SqlDataAdapter adapter = new SqlDataAdapter();
             String consultaClientes = "select * from CLIENTE where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro";
             DataTable datatable = new DataTable();
+            DAO_Credito daoCredito = new DAO_Credito();
             List<DO_Cliente> listaClientes = new List<DO_Cliente>();
 
             if (clientesHabilitados)
@@ -149,6 +150,7 @@ namespace DAO
                     nuevoCliente.perPrimerApellido = (String)row["PER_PRIMER_APELLIDO"];
                     nuevoCliente.perSegundoApellido = (String)row["PER_SEGUNDO_APELLIDO"];
                     nuevoCliente.direccion = (String)row["CLI_DIRECCION"];
+                    nuevoCliente.credito = daoCredito.ObtenerDatosCredito(nuevoCliente.perIdentificador);
                     if (!clientesHabilitados)
                     {
                         listaClientes.Add(nuevoCliente);
@@ -250,11 +252,11 @@ namespace DAO
 
         public bool modificarCliente(DO_Cliente cliente) {
             SqlCommand consulta = new SqlCommand("update CLIENTE set " +
-                "EST_ESTADO = @estado, " +
+                "EST_ESTADO = @estado," +
                 "PER_TELEFONO = @telefono," +  
                 "PER_NOMBRE = @nombre," +
-                "PER_PRIMER_APELLIDO = @primerApellido, " +
-                "PER_SEGUNDO_APELLIDO = @segundoApellido " +
+                "PER_PRIMER_APELLIDO = @primerApellido," +
+                "PER_SEGUNDO_APELLIDO = @segundoApellido," +
                 "CLI_DIRECCION = @direccion " +
                 "where PER_IDENTIFICADOR = @idCliente", conexion);
 

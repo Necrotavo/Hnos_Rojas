@@ -66,5 +66,11 @@ namespace BL
 
             return monto;
         }
+
+        public bool modificarLimite(int codigo, double nuevoLimite)
+        {
+            DAO_Credito daoCredito = new DAO_Credito();
+            return daoCredito.actualizarLimiteCredito(codigo,nuevoLimite);
+        }
     }
 }

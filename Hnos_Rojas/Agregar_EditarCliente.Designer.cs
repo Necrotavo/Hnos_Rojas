@@ -107,7 +107,7 @@
             // 
             // btCambiarEstado
             // 
-            this.btCambiarEstado.Location = new System.Drawing.Point(494, 326);
+            this.btCambiarEstado.Location = new System.Drawing.Point(538, 326);
             this.btCambiarEstado.Name = "btCambiarEstado";
             this.btCambiarEstado.Size = new System.Drawing.Size(102, 29);
             this.btCambiarEstado.TabIndex = 16;
@@ -120,12 +120,13 @@
             this.tbEstado.Enabled = false;
             this.tbEstado.Location = new System.Drawing.Point(388, 325);
             this.tbEstado.Name = "tbEstado";
-            this.tbEstado.Size = new System.Drawing.Size(100, 29);
+            this.tbEstado.Size = new System.Drawing.Size(128, 29);
             this.tbEstado.TabIndex = 15;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
+            this.lblEstado.ForeColor = System.Drawing.SystemColors.Control;
             this.lblEstado.Location = new System.Drawing.Point(178, 328);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(68, 24);
@@ -187,6 +188,7 @@
             // lblLimite
             // 
             this.lblLimite.AutoSize = true;
+            this.lblLimite.ForeColor = System.Drawing.SystemColors.Control;
             this.lblLimite.Location = new System.Drawing.Point(175, 277);
             this.lblLimite.Name = "lblLimite";
             this.lblLimite.Size = new System.Drawing.Size(148, 24);
@@ -196,6 +198,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
+            this.lblTelefono.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTelefono.Location = new System.Drawing.Point(175, 227);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(85, 24);
@@ -205,6 +208,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.ForeColor = System.Drawing.SystemColors.Control;
             this.lblDireccion.Location = new System.Drawing.Point(175, 188);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(90, 24);
@@ -214,6 +218,7 @@
             // lblSegundoApellido
             // 
             this.lblSegundoApellido.AutoSize = true;
+            this.lblSegundoApellido.ForeColor = System.Drawing.SystemColors.Control;
             this.lblSegundoApellido.Location = new System.Drawing.Point(175, 146);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
             this.lblSegundoApellido.Size = new System.Drawing.Size(159, 24);
@@ -223,6 +228,7 @@
             // lblPrimerApellido
             // 
             this.lblPrimerApellido.AutoSize = true;
+            this.lblPrimerApellido.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPrimerApellido.Location = new System.Drawing.Point(175, 105);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
             this.lblPrimerApellido.Size = new System.Drawing.Size(136, 24);
@@ -232,6 +238,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNombre.Location = new System.Drawing.Point(175, 64);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(79, 24);
@@ -241,6 +248,7 @@
             // lblAgregarCliente
             // 
             this.lblAgregarCliente.AutoSize = true;
+            this.lblAgregarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblAgregarCliente.Location = new System.Drawing.Point(292, 3);
             this.lblAgregarCliente.Name = "lblAgregarCliente";
             this.lblAgregarCliente.Size = new System.Drawing.Size(196, 24);

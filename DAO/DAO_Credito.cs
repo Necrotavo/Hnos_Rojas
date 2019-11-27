@@ -282,6 +282,41 @@ namespace DAO
             }
         }
 
+        public bool actualizarLimiteCredito(int codigoCredito, double limite)
+        {
+            try
+            {
+                SqlCommand comandoMonto = new SqlCommand("Update CREDITO set CRED_LIMITE_CREDITO = @limite" +
+                    " where CRE_IDENTIFICADOR = @identificador",conexion);
+                comandoMonto.Parameters.AddWithValue("@limite", limite);
+                comandoMonto.Parameters.AddWithValue("@identificador", codigoCredito);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (comandoMonto.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
         public bool registrarAbono(int idCredito, double abono) {
             SqlCommand comando = new SqlCommand("insert into ABONO (CRE_IDENTIFICADOR, ABO_MONTO, ABO_FECHA) Values (@idCredito, @montoAbono, @fecha)", conexion);
             comando.Parameters.AddWithValue("@idCredito", idCredito);
