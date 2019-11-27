@@ -118,22 +118,26 @@ namespace DAO
 
         public bool EliminarProveedor(String proveedor)
         {
-            //DAO_Asociado daoAsociado = new DAO_Asociado();
-
-            //foreach(DO_Asociado asociado in proveedor.listaAsociados)
-            //{
-            //    if (daoAsociado.EliminarAsociado(asociado.perIdentificador)!= true)
-            //    {
-            //        return false;
-            //    }
-                
-            //}
-
-            SqlCommand consulta = new SqlCommand("update PROVEEDOR set ESTADO = 0 where PROV_NOMBRE = @nombre", conexion);
-            consulta.Parameters.AddWithValue("@nombre", proveedor);
-
             try
             {
+                DO_Proveedor doProveedor = new DO_Proveedor();
+
+                DAO_Asociado daoAsociado = new DAO_Asociado();
+                doProveedor.listaAsociados = daoAsociado.ObtenerAsociados(proveedor);
+
+                foreach (DO_Asociado asociado in doProveedor.listaAsociados)
+                {
+                    if (daoAsociado.EliminarAsociado(asociado.perIdentificador) != true)
+                    {
+                        return false;
+                    }
+
+                }
+
+                SqlCommand consulta = new SqlCommand("update PROVEEDOR set ESTADO = 0 where PROV_NOMBRE = @nombre", conexion);
+                consulta.Parameters.AddWithValue("@nombre", proveedor);
+
+            
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();

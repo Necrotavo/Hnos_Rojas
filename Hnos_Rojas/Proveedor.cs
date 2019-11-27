@@ -58,15 +58,29 @@ namespace Hnos_Rojas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            BL_Proveedor blProveedor = new BL_Proveedor();
-            if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
+            DialogResult result = MessageBox.Show("¿Desea eliminar al proveedor " + tempListaproveedores.obtenerProveedorSeleccionado() + "?", "Warning",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Proveedor eliminado");
+                BL_Proveedor blProveedor = new BL_Proveedor();
+                if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
+                {
+                    MessageBox.Show("Proveedor eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor no eliminado");
+                }
+                invocarListaProveedores();
             }
-            else {
-                MessageBox.Show("Proveedor no eliminado");
+            else if (result == DialogResult.No)
+            {
+                //Que no haga nada
             }
-            invocarListaProveedores();
+            else
+            {
+                MessageBox.Show("No ha seleccionado un proveedor");
+            }
         }
     }
 }
