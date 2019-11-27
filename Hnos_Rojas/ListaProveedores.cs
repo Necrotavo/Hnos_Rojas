@@ -26,7 +26,7 @@ namespace Hnos_Rojas
         {
             BL_Proveedor blProveedor = new BL_Proveedor();
 
-            List<DO_Proveedor> listaProveedores = blProveedor.obtenerListaProveedores(this.txtNombreProveedor.Text.Trim());
+            List<DO_Proveedor> listaProveedores = blProveedor.obtenerListaProveedores(this.txtNombreProveedor.Text.Trim(), false);
 
             DataTable tablaClientes = new DataTable();
             tablaClientes.Columns.Add("nombre");
