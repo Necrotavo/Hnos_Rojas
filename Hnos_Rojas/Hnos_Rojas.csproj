@@ -83,12 +83,6 @@
     <Compile Include="Agregar_ModificarProveedor.Designer.cs">
       <DependentUpon>Agregar_ModificarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClienteNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClienteNuevo.Designer.cs">
-      <DependentUpon>ClienteNuevo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,9 +248,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agregar_ModificarProveedor.resx">
       <DependentUpon>Agregar_ModificarProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClienteNuevo.resx">
-      <DependentUpon>ClienteNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
