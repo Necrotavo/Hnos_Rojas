@@ -18,6 +18,7 @@ namespace Hnos_Rojas
         bool modificando;
         public NuevoProducto()
         {
+            this.ActiveControl = tbCodigo;
             InitializeComponent();
             llenarGridBucarProductos();
             
@@ -38,10 +39,9 @@ namespace Hnos_Rojas
             doProducto.cantMinBodega = 1;
             doProducto.precioVenta = Convert.ToDouble(tbPrecioVenta.Text.Trim());
 
-            if (cbProductoEnInventario.Checked)
-            {
-                doProducto.cantidadDisponible = Convert.ToInt32(tbCantidadDisponible.Text.Trim());
-            }
+            
+            doProducto.cantidadDisponible = Convert.ToInt32(tbCantidadDisponible.Text.Trim());
+            
 
             if (modificando)
             {
@@ -68,6 +68,7 @@ namespace Hnos_Rojas
                     MessageBox.Show("Agregado correctamente");
                     llenarGridBucarProductos();
                     vaciarCampos();
+                    this.ActiveControl = tbCodigo;
                 }
                 else
                 {
@@ -195,6 +196,10 @@ namespace Hnos_Rojas
                 vaciarCampos();
                 tbCodigo.Enabled = true;
                 modificando = false;
+            }
+            else
+            {
+                this.ActiveControl = tbCodigo;
             }
         }
     }

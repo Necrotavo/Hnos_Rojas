@@ -22,6 +22,8 @@ namespace Hnos_Rojas
             InitializeComponent();
             llenarGridClientes("");
             esconderElementos(true);
+            this.ActiveControl = tbNombre;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -99,8 +101,7 @@ namespace Hnos_Rojas
                 style.Font = new Font("Microsoft Sans Serif", 14);
                 style.BackColor = Color.LightGray;
 
-              
-
+                
                 //grdClientes [1] = direccion
                 //grdClientes [2] = estado
                 //grdClientes [3] = credito
@@ -113,23 +114,30 @@ namespace Hnos_Rojas
             }
             else
             {
-                dgvClientes.DataSource = blCliente.buscarClientes(datos); ;
+                List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+                listaClientes = blCliente.buscarClientes(datos);
 
-                dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
-                DataGridViewCellStyle style = new DataGridViewCellStyle();
-                style.Font = new Font("Microsoft Sans Serif", 14);
-                style.BackColor = Color.LightGray;
+                if (!(listaClientes == null))
+                {
+                    dgvClientes.DataSource = blCliente.buscarClientes(datos);
+
+                    dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+                    DataGridViewCellStyle style = new DataGridViewCellStyle();
+                    style.Font = new Font("Microsoft Sans Serif", 14);
+                    style.BackColor = Color.LightGray;
 
 
-                //grdClientes [1] = direccion
-                //grdClientes [2] = estado
-                //grdClientes [3] = credito
-                //grdClientes [4] = identificador
-                //grdClientes [5] = telefono
-                //grdClientes [6] = nombre
-                //grdClientes [7] = primerApellido
-                //grdClientes [8] = segundoApellido
-                dgvClientes.AutoSize = true;
+                    //grdClientes [1] = direccion
+                    //grdClientes [2] = estado
+                    //grdClientes [3] = credito
+                    //grdClientes [4] = identificador
+                    //grdClientes [5] = telefono
+                    //grdClientes [6] = nombre
+                    //grdClientes [7] = primerApellido
+                    //grdClientes [8] = segundoApellido
+                    dgvClientes.AutoSize = true;
+                }
+                
             }         
         }
         private void Agregar_EditarCliente_Load(object sender, EventArgs e)
@@ -142,8 +150,10 @@ namespace Hnos_Rojas
         {
             dgv.RowsDefaultCellStyle.BackColor = Color.White;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            
-            
+           
+
+
+
         }
 
         private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -211,15 +221,21 @@ namespace Hnos_Rojas
         {
             if (tabControlClientes.SelectedTab == tabPageModificar)
             {
+                this.ActiveControl = tbNombreOApellido;
                 modificando = false;
                 vaciarCampos();            
                 esconderElementos(true);
+                dgvClientes.ClearSelection();
 
                 if (cambiosRealizados)
                 {
                     llenarGridClientes("");
                     cambiosRealizados = false;
                 }
+            }
+            else
+            {
+                this.ActiveControl = tbNombre;
             }
         }
 
@@ -318,6 +334,12 @@ namespace Hnos_Rojas
         private void btBuscarCliente_Click(object sender, EventArgs e)
         {                   
             llenarGridClientes(tbNombreOApellido.Text.Trim());
+            dgvClientes.ClearSelection();
+        }
+
+        private void dgvClientes_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
+        {
+            this.dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }
 }

@@ -49,9 +49,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAgregarCliente = new System.Windows.Forms.Label();
             this.tabPageModificar = new System.Windows.Forms.TabPage();
-            this.btBuscarCliente = new System.Windows.Forms.Button();
-            this.lblNombreApellido = new System.Windows.Forms.Label();
-            this.tbNombreOApellido = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +60,14 @@
             this.EstadoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreditoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdentificadorCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btBuscarCliente = new System.Windows.Forms.Button();
+            this.lblNombreApellido = new System.Windows.Forms.Label();
+            this.tbNombreOApellido = new System.Windows.Forms.TextBox();
             this.tabControlClientes.SuspendLayout();
             this.tabPageAgregarCliente.SuspendLayout();
             this.tabPageModificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlClientes
@@ -127,7 +127,7 @@
             this.tbEstado.Location = new System.Drawing.Point(388, 325);
             this.tbEstado.Name = "tbEstado";
             this.tbEstado.Size = new System.Drawing.Size(128, 29);
-            this.tbEstado.TabIndex = 15;
+            this.tbEstado.TabIndex = 6;
             // 
             // lblEstado
             // 
@@ -144,42 +144,42 @@
             this.tbLimite.Location = new System.Drawing.Point(388, 277);
             this.tbLimite.Name = "tbLimite";
             this.tbLimite.Size = new System.Drawing.Size(100, 29);
-            this.tbLimite.TabIndex = 13;
+            this.tbLimite.TabIndex = 5;
             // 
             // tbTelefono
             // 
             this.tbTelefono.Location = new System.Drawing.Point(388, 227);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 29);
-            this.tbTelefono.TabIndex = 12;
+            this.tbTelefono.TabIndex = 4;
             // 
             // tbDireccion
             // 
             this.tbDireccion.Location = new System.Drawing.Point(388, 188);
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(196, 29);
-            this.tbDireccion.TabIndex = 11;
+            this.tbDireccion.TabIndex = 3;
             // 
             // tbSegundoApellido
             // 
             this.tbSegundoApellido.Location = new System.Drawing.Point(388, 143);
             this.tbSegundoApellido.Name = "tbSegundoApellido";
             this.tbSegundoApellido.Size = new System.Drawing.Size(100, 29);
-            this.tbSegundoApellido.TabIndex = 10;
+            this.tbSegundoApellido.TabIndex = 2;
             // 
             // tbPrimerApellido
             // 
             this.tbPrimerApellido.Location = new System.Drawing.Point(388, 100);
             this.tbPrimerApellido.Name = "tbPrimerApellido";
             this.tbPrimerApellido.Size = new System.Drawing.Size(100, 29);
-            this.tbPrimerApellido.TabIndex = 9;
+            this.tbPrimerApellido.TabIndex = 1;
             // 
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(388, 59);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 29);
-            this.tbNombre.TabIndex = 8;
+            this.tbNombre.TabIndex = 0;
             // 
             // btnGuardar
             // 
@@ -276,32 +276,13 @@
             this.tabPageModificar.UseVisualStyleBackColor = true;
             this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
             // 
-            // btBuscarCliente
+            // panel1
             // 
-            this.btBuscarCliente.Location = new System.Drawing.Point(355, 64);
-            this.btBuscarCliente.Name = "btBuscarCliente";
-            this.btBuscarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btBuscarCliente.TabIndex = 3;
-            this.btBuscarCliente.Text = "Buscar";
-            this.btBuscarCliente.UseVisualStyleBackColor = true;
-            this.btBuscarCliente.Click += new System.EventHandler(this.btBuscarCliente_Click);
-            // 
-            // lblNombreApellido
-            // 
-            this.lblNombreApellido.AutoSize = true;
-            this.lblNombreApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreApellido.Location = new System.Drawing.Point(230, 11);
-            this.lblNombreApellido.Name = "lblNombreApellido";
-            this.lblNombreApellido.Size = new System.Drawing.Size(342, 24);
-            this.lblNombreApellido.TabIndex = 2;
-            this.lblNombreApellido.Text = "Ingrese el nombre o apellido del cliente";
-            // 
-            // tbNombreOApellido
-            // 
-            this.tbNombreOApellido.Location = new System.Drawing.Point(275, 38);
-            this.tbNombreOApellido.Name = "tbNombreOApellido";
-            this.tbNombreOApellido.Size = new System.Drawing.Size(242, 20);
-            this.tbNombreOApellido.TabIndex = 1;
+            this.panel1.Controls.Add(this.dgvClientes);
+            this.panel1.Location = new System.Drawing.Point(0, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(780, 319);
+            this.panel1.TabIndex = 4;
             // 
             // dgvClientes
             // 
@@ -323,11 +304,15 @@
             this.dgvClientes.Location = new System.Drawing.Point(0, 0);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(780, 319);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dgvClientes_AutoSizeColumnModeChanged);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
             // 
@@ -396,13 +381,32 @@
             this.IdentificadorCliente.ReadOnly = true;
             this.IdentificadorCliente.Visible = false;
             // 
-            // panel1
+            // btBuscarCliente
             // 
-            this.panel1.Controls.Add(this.dgvClientes);
-            this.panel1.Location = new System.Drawing.Point(0, 109);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 319);
-            this.panel1.TabIndex = 4;
+            this.btBuscarCliente.Location = new System.Drawing.Point(355, 64);
+            this.btBuscarCliente.Name = "btBuscarCliente";
+            this.btBuscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btBuscarCliente.TabIndex = 3;
+            this.btBuscarCliente.Text = "Buscar";
+            this.btBuscarCliente.UseVisualStyleBackColor = true;
+            this.btBuscarCliente.Click += new System.EventHandler(this.btBuscarCliente_Click);
+            // 
+            // lblNombreApellido
+            // 
+            this.lblNombreApellido.AutoSize = true;
+            this.lblNombreApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreApellido.Location = new System.Drawing.Point(230, 11);
+            this.lblNombreApellido.Name = "lblNombreApellido";
+            this.lblNombreApellido.Size = new System.Drawing.Size(342, 24);
+            this.lblNombreApellido.TabIndex = 2;
+            this.lblNombreApellido.Text = "Ingrese el nombre o apellido del cliente";
+            // 
+            // tbNombreOApellido
+            // 
+            this.tbNombreOApellido.Location = new System.Drawing.Point(275, 38);
+            this.tbNombreOApellido.Name = "tbNombreOApellido";
+            this.tbNombreOApellido.Size = new System.Drawing.Size(242, 20);
+            this.tbNombreOApellido.TabIndex = 1;
             // 
             // Agregar_EditarCliente
             // 
@@ -419,8 +423,8 @@
             this.tabPageAgregarCliente.PerformLayout();
             this.tabPageModificar.ResumeLayout(false);
             this.tabPageModificar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
