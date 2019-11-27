@@ -50,5 +50,38 @@ namespace DAO
                 }
             }
         }
+
+        public bool eliminarPersona(int idPersona) {
+            SqlCommand consulta = new SqlCommand("delete from PERSONA Where PER_IDENTIFICADOR = @identificador", conexion);
+            consulta.Parameters.AddWithValue("@identificador", idPersona);
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                if (consulta.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }

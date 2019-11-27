@@ -75,9 +75,12 @@ namespace DAO
 
                 if (consulta.ExecuteNonQuery() > 0)
                 {
-                    return true;
+                    DAO_Persona daoPersona = new DAO_Persona();
+                    return (true && daoPersona.eliminarPersona(identificador));
                 }
-
+                else {
+                    return false;
+                }
             }
             catch (SqlException)
             {
@@ -90,7 +93,6 @@ namespace DAO
                     conexion.Close();
                 }
             }
-            return false;
         }
         /// <summary>
         /// Obtiene una lista de los asociados de un deterinado proveedor
