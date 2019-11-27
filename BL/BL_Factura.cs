@@ -144,7 +144,14 @@ namespace BL
 
         public bool abonarFactura(DO_Factura factura, double abono) {
             DAO_Factura daoFactura = new DAO_Factura();
-            return daoFactura.actualizarSaldoFactura(factura, abono);
+            DAO_Credito daoCredito = new DAO_Credito();
+
+            if (daoFactura.actualizarSaldoFactura(factura, abono) &&
+                daoCredito.registrarAbono(factura.credito, abono)) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public int obtenerTotalVentasEfectivoDiaEspecifico(String diaInicio, String diaFinal) {
@@ -165,6 +172,19 @@ namespace BL
                 DAO_Factura daoFactura = new DAO_Factura();
                 return daoFactura.obtenerTotalVentasCreditoDiaEspecifico(diaInicio, diaFinal);
             }catch
+            {
+                return 0;
+            }
+        }
+
+        public int obtenerAbonosCredito(String diaInicio, String diaFinal)
+        {
+            try
+            {
+                DAO_Factura daoFactura = new DAO_Factura();
+                return daoFactura.obtenerAbonosCredito(diaInicio, diaFinal);
+            }
+            catch
             {
                 return 0;
             }
