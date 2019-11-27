@@ -300,6 +300,9 @@
     <EmbeddedResource Include="PagoCredito.resx">
       <DependentUpon>PagoCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagoProveedor.resx">
+      <DependentUpon>PagoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlantillaConfig.resx">
       <DependentUpon>PlantillaConfig.cs</DependentUpon>
     </EmbeddedResource>
