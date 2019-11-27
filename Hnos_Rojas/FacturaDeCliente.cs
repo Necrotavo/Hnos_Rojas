@@ -10,9 +10,10 @@ using System.Windows.Forms;
 using System.Drawing.Printing;
 using BL;
 using DO;
+
 namespace Hnos_Rojas
 {
-    public partial class FacturaCredito : Form
+    public partial class FacturaDeCliente : Form
     {
         Font fuenteGeneral = new Font("Arial", 12);
         Font fuenteGrande = new Font("Arial", 16);
@@ -27,10 +28,10 @@ namespace Hnos_Rojas
         string cajero;
         List<DO_ProductoEnFactura> productos;
         string total;
-        string credito;
         string cliente;
-        string creditoPendiente;
+        string saldo;
         int cantidadTotalProductos = 0;
+        
         int ancho = 300;
         int largo = 600;
 
@@ -40,21 +41,17 @@ namespace Hnos_Rojas
         //punto de inicio
         int x = 0;
         int y = 0;
-        public FacturaCredito(string _cajero,
-            string _total,
-            string _credito,
-            List<DO_ProductoEnFactura> _productos,
-            string _notas,
-            string _cliente,
-            string _creditoPendiente)
+
+
+        public FacturaDeCliente(DO_Factura fact)
         {
             InitializeComponent();
-            cajero = _cajero;
-            total = _total;
-            credito = _credito;
-            creditoPendiente = _creditoPendiente;
-            productos = _productos;
-            
+
+            cajero = fact.usuario;
+            total = fact.totalFactura.ToString();
+            saldo = fact.saldo.ToString();
+            productos = fact.listaProducto;
+            fecha = fact.fecha.ToString();
             foreach (DO_ProductoEnFactura item in productos)
             {
                 cantidadTotalProductos += item.cantidadComprada;
@@ -65,13 +62,17 @@ namespace Hnos_Rojas
                 }
 
             }
-            notas = _notas;
-            cliente = _cliente;
+            notas = fact.notas;
+            cliente = fact.clienteExterno;
             largo = largo + (productos.Count * fuenteGeneral.Height);
             papelTamano = new PaperSize("Custom", ancho, largo);
             printDocument1.DefaultPageSettings.PaperSize = papelTamano;
             printPreviewControl1.Document = printDocument1;
+
+
+
             inicializarStrings();
+
             imprimir();
         }
         public void imprimir()
@@ -79,7 +80,16 @@ namespace Hnos_Rojas
             printDocument1.Print();
 
         }
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void inicializarStrings()
+        {
+            BL_Factura blFactura = new BL_Factura();
+            DO_PlantillaFactura plantilla = blFactura.obtenerPlantillaFactura();
+            nombreLocal = plantilla.nombreEmpresa;
+            direccion = plantilla.direccion;
+            ced = plantilla.cedula;
+            telefono = plantilla.numeroTelefono;
+        }
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             e.Graphics.DrawString(nombreLocal, fuenteGeneral, Brushes.Black, x + 40, y);
             e.Graphics.DrawString(direccion, fuenteGeneral, Brushes.Black, x + 50, y + fuenteGeneral.Height);
@@ -107,32 +117,17 @@ namespace Hnos_Rojas
             }
             e.Graphics.DrawString("Cant. Articulos: " + cantidadTotalProductos.ToString(), fuenteGeneral, Brushes.Black, x + 5, y + (fuenteGeneral.Height * (12 + productos.Count)));
 
-            e.Graphics.DrawString("TOTAL: " + total, fuenteGrande, Brushes.Black, x+70, fuenteGeneral.Height * (14 + productos.Count));
-            e.Graphics.DrawString("CREDITO ANTERIOR: " + credito, fuenteGrande, Brushes.Black, x, fuenteGeneral.Height * (16 + productos.Count));
-            e.Graphics.DrawString("CREDITO PENDIENTE: " +  creditoPendiente, fuenteGrande, Brushes.Black, x+30, fuenteGeneral.Height * (18 + productos.Count));
-            
-            
- 
-            
+            e.Graphics.DrawString("TOTAL: " + total, fuenteGrande, Brushes.Black, x + 70, fuenteGeneral.Height * (14 + productos.Count));
+            e.Graphics.DrawString("SALDO PENDIENTE: " + saldo, fuenteGrande, Brushes.Black, x, fuenteGeneral.Height * (16 + productos.Count));
+           
+
+
 
 
             //pie
-            e.Graphics.DrawLine(Pens.Black, x, largo - 1000, ancho/3*2, largo - 100);
-            e.Graphics.DrawString("Firma", fuenteGeneral, Brushes.Black, x, largo - 95);
-            e.Graphics.DrawString("Gracias por su compra!!!", fuenteGeneral, Brushes.Black, x + 50, largo - 30);
+            e.Graphics.DrawString("Tenga un buen día!", fuenteGeneral, Brushes.Black, x + 50, largo - 30);
             e.Graphics.DrawString("I.V.A", fuenteGeneral, Brushes.Black, x + 115, largo - 15);
 
-        }
-
-
-        private void inicializarStrings()
-        {
-            BL_Factura blFactura = new BL_Factura();
-            DO_PlantillaFactura plantilla = blFactura.obtenerPlantillaFactura();
-            nombreLocal = plantilla.nombreEmpresa;
-            direccion = plantilla.direccion;
-            ced = plantilla.cedula;
-            telefono = plantilla.numeroTelefono;
         }
     }
 }
