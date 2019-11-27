@@ -14,6 +14,7 @@ namespace Hnos_Rojas
 {
     public partial class Reportes : Form
     {
+        bool filtrado = false;
         public Reportes()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace Hnos_Rojas
 
             //Lo de Caja
             lbTotalCaja.Text = "₡ " + (totalVentasEfectivo + totalAbonosCredito - totalPagoProve);
+            filtrado = true;
         }
 
         public void asignarLabelsTopVentas(int tamañoTop, List<DO_TopProductos> topVentas)
@@ -126,7 +128,20 @@ namespace Hnos_Rojas
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            if (filtrado)
+            {
+                ImprimirReportes impresion = new ImprimirReportes(
+                lbEnEfectivoVentas.Text,
+                lbACreditoVentas.Text,
+                lbTotalVentas.Text,
+                lbFechaReporte.Text,
+                lblHasta.Text,
+                lbEfectivoEntradas.Text,
+                lbCreditoEntradas.Text,
+                lbTotalAgentes.Text,
+                lbTotalCaja.Text);
+            }
+            
         }
     }
 }

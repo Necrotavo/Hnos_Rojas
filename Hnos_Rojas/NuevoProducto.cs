@@ -18,6 +18,7 @@ namespace Hnos_Rojas
         bool modificando;
         public NuevoProducto()
         {
+            this.ActiveControl = tbCodigo;
             InitializeComponent();
             llenarGridBucarProductos();
             
@@ -38,10 +39,9 @@ namespace Hnos_Rojas
             doProducto.cantMinBodega = 1;
             doProducto.precioVenta = Convert.ToDouble(tbPrecioVenta.Text.Trim());
 
-            if (cbProductoEnInventario.Checked)
-            {
-                doProducto.cantidadDisponible = Convert.ToInt32(tbCantidadDisponible.Text.Trim());
-            }
+            
+            doProducto.cantidadDisponible = Convert.ToInt32(tbCantidadDisponible.Text.Trim());
+            
 
             if (modificando)
             {
@@ -68,6 +68,7 @@ namespace Hnos_Rojas
                     MessageBox.Show("Agregado correctamente");
                     llenarGridBucarProductos();
                     vaciarCampos();
+                    this.ActiveControl = tbCodigo;
                 }
                 else
                 {
@@ -134,14 +135,16 @@ namespace Hnos_Rojas
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            tbCodigo.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tbPrecioCosto.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
-            tbPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
-            tbDescripcion.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();      
-            tbCantidadDisponible.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
-            nUDGanancia.Value = blProducto.CalcularPorcentajeGanancia(Convert.ToDouble(tbPrecioCosto.Text.Trim()), Convert.ToDouble(tbPrecioVenta.Text.Trim()));
-            modificarDatosProducto();
+            if (dgvProductos.Columns[e.ColumnIndex].Name.Equals("Modificar"))
+            {
+                tbCodigo.Text = dgvProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbPrecioCosto.Text = dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbPrecioVenta.Text = dgvProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbDescripcion.Text = dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
+                tbCantidadDisponible.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
+                nUDGanancia.Value = blProducto.CalcularPorcentajeGanancia(Convert.ToDouble(tbPrecioCosto.Text.Trim()), Convert.ToDouble(tbPrecioVenta.Text.Trim()));
+                modificarDatosProducto();
+            }        
         }
 
         public void modificarDatosProducto()
@@ -193,6 +196,10 @@ namespace Hnos_Rojas
                 vaciarCampos();
                 tbCodigo.Enabled = true;
                 modificando = false;
+            }
+            else
+            {
+                this.ActiveControl = tbCodigo;
             }
         }
     }
