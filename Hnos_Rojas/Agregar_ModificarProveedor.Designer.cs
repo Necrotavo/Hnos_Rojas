@@ -37,8 +37,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.cboDias = new System.Windows.Forms.ComboBox();
             this.dtVisita = new System.Windows.Forms.DateTimePicker();
-            this.chAM = new System.Windows.Forms.CheckBox();
-            this.chPM = new System.Windows.Forms.CheckBox();
+            this.rbAM = new System.Windows.Forms.RadioButton();
+            this.rbPM = new System.Windows.Forms.RadioButton();
+            this.btnDiaVisita = new System.Windows.Forms.Button();
+            this.lbDiasDeVisita = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtNombreProveedor
@@ -138,34 +140,59 @@
             // dtVisita
             // 
             this.dtVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtVisita.Location = new System.Drawing.Point(947, 250);
+            this.dtVisita.Location = new System.Drawing.Point(941, 252);
             this.dtVisita.Name = "dtVisita";
             this.dtVisita.Size = new System.Drawing.Size(115, 29);
             this.dtVisita.TabIndex = 39;
             // 
-            // chAM
+            // rbAM
             // 
-            this.chAM.AutoSize = true;
-            this.chAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chAM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chAM.Location = new System.Drawing.Point(1079, 247);
-            this.chAM.Name = "chAM";
-            this.chAM.Size = new System.Drawing.Size(58, 28);
-            this.chAM.TabIndex = 40;
-            this.chAM.Text = "AM";
-            this.chAM.UseVisualStyleBackColor = true;
+            this.rbAM.AutoSize = true;
+            this.rbAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbAM.Location = new System.Drawing.Point(1072, 251);
+            this.rbAM.Name = "rbAM";
+            this.rbAM.Size = new System.Drawing.Size(57, 28);
+            this.rbAM.TabIndex = 40;
+            this.rbAM.TabStop = true;
+            this.rbAM.Text = "AM";
+            this.rbAM.UseVisualStyleBackColor = true;
             // 
-            // chPM
+            // rbPM
             // 
-            this.chPM.AutoSize = true;
-            this.chPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chPM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chPM.Location = new System.Drawing.Point(1080, 281);
-            this.chPM.Name = "chPM";
-            this.chPM.Size = new System.Drawing.Size(57, 28);
-            this.chPM.TabIndex = 41;
-            this.chPM.Text = "PM";
-            this.chPM.UseVisualStyleBackColor = true;
+            this.rbPM.AutoSize = true;
+            this.rbPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbPM.Location = new System.Drawing.Point(1072, 285);
+            this.rbPM.Name = "rbPM";
+            this.rbPM.Size = new System.Drawing.Size(56, 28);
+            this.rbPM.TabIndex = 41;
+            this.rbPM.TabStop = true;
+            this.rbPM.Text = "PM";
+            this.rbPM.UseVisualStyleBackColor = true;
+            // 
+            // btnDiaVisita
+            // 
+            this.btnDiaVisita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.btnDiaVisita.FlatAppearance.BorderSize = 0;
+            this.btnDiaVisita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiaVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiaVisita.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDiaVisita.Location = new System.Drawing.Point(1063, 319);
+            this.btnDiaVisita.Name = "btnDiaVisita";
+            this.btnDiaVisita.Size = new System.Drawing.Size(106, 39);
+            this.btnDiaVisita.TabIndex = 42;
+            this.btnDiaVisita.Text = "Agregar";
+            this.btnDiaVisita.UseVisualStyleBackColor = false;
+            this.btnDiaVisita.Click += new System.EventHandler(this.btnDiaVisita_Click);
+            // 
+            // lbDiasDeVisita
+            // 
+            this.lbDiasDeVisita.FormattingEnabled = true;
+            this.lbDiasDeVisita.Location = new System.Drawing.Point(1072, 146);
+            this.lbDiasDeVisita.Name = "lbDiasDeVisita";
+            this.lbDiasDeVisita.Size = new System.Drawing.Size(120, 95);
+            this.lbDiasDeVisita.TabIndex = 43;
             // 
             // Agregar_ModificarProveedor
             // 
@@ -173,8 +200,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1255, 523);
-            this.Controls.Add(this.chPM);
-            this.Controls.Add(this.chAM);
+            this.Controls.Add(this.lbDiasDeVisita);
+            this.Controls.Add(this.btnDiaVisita);
+            this.Controls.Add(this.rbPM);
+            this.Controls.Add(this.rbAM);
             this.Controls.Add(this.dtVisita);
             this.Controls.Add(this.cboDias);
             this.Controls.Add(this.btnSalir);
@@ -206,7 +235,9 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cboDias;
         private System.Windows.Forms.DateTimePicker dtVisita;
-        private System.Windows.Forms.CheckBox chAM;
-        private System.Windows.Forms.CheckBox chPM;
+        private System.Windows.Forms.RadioButton rbPM;
+        private System.Windows.Forms.RadioButton rbAM;
+        private System.Windows.Forms.Button btnDiaVisita;
+        private System.Windows.Forms.ListBox lbDiasDeVisita;
     }
 }

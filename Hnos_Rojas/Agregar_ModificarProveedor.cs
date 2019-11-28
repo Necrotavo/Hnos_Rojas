@@ -17,12 +17,14 @@ namespace Hnos_Rojas
     {
         Proveedor padre;
         private DO_Proveedor proveedor;
+        private List<String> listaVisita;
         public Agregar_ModificarProveedor(Proveedor _padre)
         {
             InitializeComponent();
             padre = _padre;
             lblTitulo.Text = "Nuevo Proveedor";
-
+            listaVisita = new List<string>();
+            
         }
 
         public Agregar_ModificarProveedor(String nombreProveedor, Proveedor _padre)
@@ -124,6 +126,20 @@ namespace Hnos_Rojas
             cboDias.DisplayMember = "DIA";
             cboDias.ValueMember = "SIGLA";
 
+        }
+
+        private void btnDiaVisita_Click(object sender, EventArgs e)
+        {
+            String dia = "";
+            if (rbAM.Checked)
+            {
+                dia = cboDias.SelectedValue.ToString() + "-" + dtVisita.Text + rbAM.Text;
+            }
+            else {
+                dia = cboDias.SelectedValue.ToString() + "-" + dtVisita.Text + rbPM.Text;
+            }
+            listaVisita.Add(dia);
+            lbDiasDeVisita.DataSource = listaVisita;   
         }
     }
 }
