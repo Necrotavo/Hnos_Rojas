@@ -131,6 +131,7 @@
             // 
             // txtAyuda1
             // 
+            this.txtAyuda1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAyuda1.Location = new System.Drawing.Point(12, 124);
             this.txtAyuda1.Multiline = true;
             this.txtAyuda1.Name = "txtAyuda1";
@@ -140,6 +141,7 @@
             // 
             // txtAyuda2
             // 
+            this.txtAyuda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAyuda2.Location = new System.Drawing.Point(12, 304);
             this.txtAyuda2.Multiline = true;
             this.txtAyuda2.Name = "txtAyuda2";
@@ -149,6 +151,7 @@
             // 
             // txtAyuda3
             // 
+            this.txtAyuda3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAyuda3.Location = new System.Drawing.Point(12, 483);
             this.txtAyuda3.Multiline = true;
             this.txtAyuda3.Name = "txtAyuda3";
