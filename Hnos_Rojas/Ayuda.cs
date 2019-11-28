@@ -15,7 +15,9 @@ namespace Hnos_Rojas
         public Ayuda()
         {
             InitializeComponent();
-
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL:";
+            txtAyuda2.Text = "ACCESOS RÁPIDOS: ";
+            txtAyuda3.Text = "VENTANAS EMERGENTES: ";
         }
 
         private void btnAyudaVentas_Click(object sender, EventArgs e)
@@ -38,16 +40,25 @@ namespace Hnos_Rojas
 
         private void btnAyudaClientes_Click(object sender, EventArgs e)
         {
-            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n escritura";
-            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\n escritura";
-            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n escritura";
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n En este módulo se muestra la lista con todos los clientes registrados activos." +
+              "Presenta dos botones. \"Estado de Cuenta\" y \"Nuevo/Modificar\"";
+            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\nEste módulo no tiene accesos rápidos";
+            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n  ****Estado de Cuenta: Muestra el estado de cuenta del cliente seleccionado con sus respectivas facturas." +
+                "Aquí se puede abonar a cada factura su saldo correspondiente o imprimir determinadas facturas" +
+                "\r\n  ****Nuevo/Modificar: Presenta dos pestañas \"Agregar\" y \"Modificar\"" +
+                "\r\n    *****Agregar: Muestra los campos para agregar un nuevo cliente."+
+                "\r\n    *****Modificar: Muestra todos los clientes. Al presionar el botón \"Editar\" el sistema se redirecciona a una ventana para modificar los respectivos datos. ";
         }
 
         private void btnAyudaProductos_Click(object sender, EventArgs e)
         {
-            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n escritura";
-            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\n escritura";
-            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n escritura";
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n En este módulo se puede visualizar la lista con todos los  productos "+
+                "registrados. Aquí se pueden buscar los productos por código. También presenta la opción de agregar nuevos productos o modificar existentes.";
+            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\nEste módulo no tiene accesos rápidos";
+            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n ***Nuevo/Modificar: Muestra una nueva ventana la cual permite modificar o agregar los productos \r\n"+
+                "\r\n  ****Formulario: Muestra los campos para agregar los datos de un nuevo producto.\r\n"+
+                "\r\n  ****Modificar producto: Muestra la lista de productos. Al presionar el botón Modificar el programa se redirecciona al Formulario para editar"+
+                "el producto. Es posible buscar el producto por código o descripción.";
         }
 
         private void btnAyudaProveedores_Click(object sender, EventArgs e)
