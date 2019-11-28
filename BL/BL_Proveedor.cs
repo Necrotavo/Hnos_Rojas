@@ -65,5 +65,23 @@ namespace BL
 
             return elementosDelHorario;
         }
+
+        public DO_ProveedorParaHorario obtenerProveedorHorario(String nombreProveedor)
+        {
+            DAO_Proveedor daoProveedor = new DAO_Proveedor();
+            DO_ProveedorParaHorario doProveedorParaHorario = new DO_ProveedorParaHorario();
+            DO_Proveedor doProveedor = obtenerProveedor(nombreProveedor);
+            String[] listaDiaYhoraJuntos = doProveedor.fechaVisita.Split(',');
+            doProveedorParaHorario.nombre = doProveedor.nombre;
+            foreach (String diaYhora in listaDiaYhoraJuntos)
+            {
+               
+                doProveedorParaHorario.listaDiaYhora.Add(diaYhora); //dia y hora
+                
+            }
+
+            return doProveedorParaHorario;
+        }
+
     }
 }

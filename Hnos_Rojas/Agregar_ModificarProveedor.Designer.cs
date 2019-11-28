@@ -40,7 +40,6 @@
             this.rbPM = new System.Windows.Forms.RadioButton();
             this.btnDiaVisita = new System.Windows.Forms.Button();
             this.lbDiasDeVisita = new System.Windows.Forms.ListBox();
-            this.btnEditarDia = new System.Windows.Forms.Button();
             this.btnEliminarDia = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -190,20 +189,6 @@
             this.lbDiasDeVisita.TabIndex = 43;
             this.lbDiasDeVisita.Click += new System.EventHandler(this.lbDiasDeVisita_Click);
             // 
-            // btnEditarDia
-            // 
-            this.btnEditarDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.btnEditarDia.FlatAppearance.BorderSize = 0;
-            this.btnEditarDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarDia.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btnEditarDia.ForeColor = System.Drawing.Color.White;
-            this.btnEditarDia.Location = new System.Drawing.Point(278, 324);
-            this.btnEditarDia.Name = "btnEditarDia";
-            this.btnEditarDia.Size = new System.Drawing.Size(139, 46);
-            this.btnEditarDia.TabIndex = 44;
-            this.btnEditarDia.Text = "Editar";
-            this.btnEditarDia.UseVisualStyleBackColor = false;
-            // 
             // btnEliminarDia
             // 
             this.btnEliminarDia.BackColor = System.Drawing.Color.Maroon;
@@ -217,6 +202,7 @@
             this.btnEliminarDia.TabIndex = 45;
             this.btnEliminarDia.Text = "Eliminar";
             this.btnEliminarDia.UseVisualStyleBackColor = false;
+            this.btnEliminarDia.Click += new System.EventHandler(this.btnEliminarDia_Click);
             // 
             // label1
             // 
@@ -238,7 +224,6 @@
             this.ClientSize = new System.Drawing.Size(1255, 523);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminarDia);
-            this.Controls.Add(this.btnEditarDia);
             this.Controls.Add(this.lbDiasDeVisita);
             this.Controls.Add(this.btnDiaVisita);
             this.Controls.Add(this.rbPM);
@@ -276,7 +261,6 @@
         private System.Windows.Forms.RadioButton rbAM;
         private System.Windows.Forms.Button btnDiaVisita;
         private System.Windows.Forms.ListBox lbDiasDeVisita;
-        private System.Windows.Forms.Button btnEditarDia;
         private System.Windows.Forms.Button btnEliminarDia;
         private System.Windows.Forms.Label label1;
     }
