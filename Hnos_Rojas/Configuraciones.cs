@@ -21,6 +21,7 @@ namespace Hnos_Rojas
             Color color = Color.FromArgb(52, 168, 150);
             btnUsuariosConf.BackColor = color;
             btnPlantilla.BackColor = color;
+            btnAyuda.BackColor = color;
             
         }
         private void btnUsuariosConf_Click(object sender, EventArgs e)
