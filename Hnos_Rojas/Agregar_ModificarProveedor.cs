@@ -49,8 +49,51 @@ namespace Hnos_Rojas
 
         private void rellenarControlesDiaVisita() {
             BL_Proveedor blProveedor = new BL_Proveedor();
-            List<DO_ProveedorParaHorario> proveedorH = new List<DO_ProveedorParaHorario>();
+            List<DO_ProveedorParaHorario> proveedorH = blProveedor.dividirHorario();
 
+            foreach (DO_ProveedorParaHorario prov in proveedorH) {
+                
+                for (int k = 0,h = 1; h < prov.listaDiaYhora.Count; k++,h++)
+                {
+                    lbDiasDeVisita.Items.Add(obtenerIndiceDia(prov.listaDiaYhora[k])+"-"+prov.listaDiaYhora[h]);
+                }
+            }
+        }
+
+        public int obtenerIndiceDia(String dia)
+        {
+            if (dia == "L")
+            {
+                return 1;
+            }
+            else if (dia == "K")
+            {
+                return 2;
+            }
+            else if (dia == "M")
+            {
+                return 3;
+            }
+            else if (dia == "J")
+            {
+                return 4;
+            }
+            else if (dia == "V")
+            {
+                return 5;
+            }
+            else if (dia == "S")
+            {
+                return 6;
+            }
+            else if (dia == "D")
+            {
+                return 7;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
