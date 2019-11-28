@@ -16,5 +16,9 @@ namespace Hnos_Rojas
         {
             InitializeComponent();
         }
+
+        public void llenarGrid() {
+
+        }
     }
 }

@@ -285,6 +285,9 @@
     <EmbeddedResource Include="FacturaDeCliente.resx">
       <DependentUpon>FacturaDeCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HorarioProveedores.resx">
+      <DependentUpon>HorarioProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImprimirReportes.resx">
       <DependentUpon>ImprimirReportes.cs</DependentUpon>
     </EmbeddedResource>
