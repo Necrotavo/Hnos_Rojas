@@ -47,6 +47,12 @@ namespace Hnos_Rojas
             //falta llenar el combo box de días, datePicker y radioButton 
         }
 
+        private void rellenarControlesDiaVisita() {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            List<DO_ProveedorParaHorario> proveedorH = new List<DO_ProveedorParaHorario>();
+
+        }
+
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             BL_Proveedor blProveedor = new BL_Proveedor();
