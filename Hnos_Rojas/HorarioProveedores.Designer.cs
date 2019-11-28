@@ -38,6 +38,7 @@
             this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdAsociados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,12 +136,29 @@
             this.Domingo.ReadOnly = true;
             this.Domingo.Width = 140;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(1361, 567);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(187, 59);
+            this.btnSalir.TabIndex = 24;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // HorarioProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1673, 684);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grdAsociados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HorarioProveedores";
@@ -160,5 +178,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

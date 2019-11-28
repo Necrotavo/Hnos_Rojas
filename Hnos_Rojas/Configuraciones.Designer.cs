@@ -32,6 +32,7 @@
             this.btnUsuariosConf = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(140)))), ((int)(((byte)(120)))));
+            this.panel1.Controls.Add(this.btnAyuda);
             this.panel1.Controls.Add(this.btnPlantilla);
             this.panel1.Controls.Add(this.btnUsuariosConf);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -84,6 +86,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1073, 661);
             this.panel2.TabIndex = 12;
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnAyuda.ForeColor = System.Drawing.Color.White;
+            this.btnAyuda.Location = new System.Drawing.Point(0, 252);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(228, 126);
+            this.btnAyuda.TabIndex = 11;
+            this.btnAyuda.Text = "Ayuda";
+            this.btnAyuda.UseVisualStyleBackColor = false;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // Configuraciones
             // 
@@ -106,5 +123,6 @@
         private System.Windows.Forms.Button btnUsuariosConf;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
