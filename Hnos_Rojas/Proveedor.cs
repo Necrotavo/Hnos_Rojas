@@ -52,16 +52,19 @@ namespace Hnos_Rojas
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
         }
-
-        private void btnAsociados_Click(object sender, EventArgs e)
+        public void invocarListaAsociados(string nombreProveedor)
         {
             btnEliminar.Enabled = false;
             btnModificarProv.Enabled = false;
             this.panelProveedores.Controls.Clear();
-            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ListaAsociados listaAsociados = new ListaAsociados(nombreProveedor, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(listaAsociados);
             listaAsociados.Show();
-            
+
+        }
+        private void btnAsociados_Click(object sender, EventArgs e)
+        {
+            invocarListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado());
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
