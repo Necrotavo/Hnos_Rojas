@@ -111,7 +111,7 @@
             this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 54);
             this.tabPageAgregarCliente.Name = "tabPageAgregarCliente";
             this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAgregarCliente.Size = new System.Drawing.Size(808, 422);
+            this.tabPageAgregarCliente.Size = new System.Drawing.Size(818, 478);
             this.tabPageAgregarCliente.TabIndex = 0;
             this.tabPageAgregarCliente.Text = "Agregar";
             this.tabPageAgregarCliente.Click += new System.EventHandler(this.tabPageAgregarCliente_Click);
@@ -155,6 +155,7 @@
             this.tbLimite.Name = "tbLimite";
             this.tbLimite.Size = new System.Drawing.Size(252, 29);
             this.tbLimite.TabIndex = 5;
+            this.tbLimite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLimite_KeyPress);
             // 
             // tbTelefono
             // 
@@ -162,6 +163,7 @@
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(252, 29);
             this.tbTelefono.TabIndex = 4;
+            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbDireccion
             // 
@@ -305,6 +307,7 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -329,6 +332,7 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(812, 319);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.AutoSizeRowsModeChanged += new System.Windows.Forms.DataGridViewAutoSizeModeEventHandler(this.dgvClientes_AutoSizeRowsModeChanged);
             this.dgvClientes.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dgvClientes_AutoSizeColumnModeChanged);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);

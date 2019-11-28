@@ -22,7 +22,7 @@ namespace Hnos_Rojas
             InitializeComponent();
             llenarGridBucarProductos();
             ActiveControl = tbCodigo;
-            
+
         }
 
         public double CalcularPrecioVenta(int porcentaje)
@@ -32,6 +32,19 @@ namespace Hnos_Rojas
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
+            if (verificarCampos())
+            {
+                AgregarProducto();
+            }
+            else
+            {
+                MessageBox.Show("Faltan datos de completar");
+            }
+
+        }
+
+        public void AgregarProducto()
+        {
             DO_Producto doProducto = new DO_Producto();
 
             doProducto.codigo = tbCodigo.Text.Trim();
@@ -40,13 +53,13 @@ namespace Hnos_Rojas
             doProducto.cantMinBodega = 1;
             doProducto.precioVenta = Convert.ToDouble(tbPrecioVenta.Text.Trim());
 
-            
+
             doProducto.cantidadDisponible = Convert.ToInt32(tbCantidadDisponible.Text.Trim());
-            
+
 
             if (modificando)
             {
-                
+
 
                 if (blProducto.ModificarProducto(doProducto))
                 {
@@ -65,7 +78,7 @@ namespace Hnos_Rojas
             {
                 if (blProducto.AgregarProductoAInventario(doProducto))
                 {
-                    
+
                     MessageBox.Show("Agregado correctamente");
                     llenarGridBucarProductos();
                     vaciarCampos();
@@ -76,14 +89,11 @@ namespace Hnos_Rojas
                     MessageBox.Show("No se pudo agregar");
                 }
             }
-
-            
-            
         }
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
-            
+
             tbPrecioVenta.Text = CalcularPrecioVenta(Convert.ToInt32(nUDGanancia.Value)).ToString();
         }
 
@@ -93,7 +103,7 @@ namespace Hnos_Rojas
             vaciarCampos();
         }
 
-        public void AlternarColores (DataGridView dgv)
+        public void AlternarColores(DataGridView dgv)
         {
             dgv.RowsDefaultCellStyle.BackColor = Color.White;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -109,7 +119,7 @@ namespace Hnos_Rojas
             //style.BackColor = Color.LightGray;
 
             //grdProductos.Columns[0].HeaderCell.Style = style;
-            dgvProductos.Columns[0].Width = 250;    //codigo
+            dgvProductos.Columns["Modificar"].Width = 90;    //codigo
 
             //grdProductos.Columns[1].HeaderCell.Style = style;
             dgvProductos.Columns[1].Width = 150;    //precioCosto
@@ -121,7 +131,7 @@ namespace Hnos_Rojas
             dgvProductos.Columns[3].Width = 150;    //cantMinBodega
 
             //grdProductos.Columns[4].HeaderCell.Style = style;
-            dgvProductos.Columns[4].Width = 410;    //descripcion
+            dgvProductos.Columns["CantidadDisponible"].Width = 100;    //descripcion
 
             //grdProductos.Columns[5].HeaderCell.Style = style;
             dgvProductos.Columns[5].Width = 150;    //catDisponible
@@ -145,7 +155,7 @@ namespace Hnos_Rojas
                 tbCantidadDisponible.Text = dgvProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
                 nUDGanancia.Value = blProducto.CalcularPorcentajeGanancia(Convert.ToDouble(tbPrecioCosto.Text.Trim()), Convert.ToDouble(tbPrecioVenta.Text.Trim()));
                 modificarDatosProducto();
-            }        
+            }
         }
 
         public void modificarDatosProducto()
@@ -197,10 +207,83 @@ namespace Hnos_Rojas
                 vaciarCampos();
                 tbCodigo.Enabled = true;
                 modificando = false;
+                this.ActiveControl = tbBuscarCodigo;
             }
             else
             {
                 this.ActiveControl = tbCodigo;
+            }
+        }
+
+        private void tbPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirEntradaNumeros(e);
+            //if (Char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //} else
+            //{
+            //    e.Handled = true;
+            //}
+        }
+
+        private void tbPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirEntradaNumeros(e);
+        }
+
+        private void tbCantidadDisponible_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirEntradaNumeros(e);
+        }
+
+        public void permitirEntradaNumeros(KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RecibirCodigo(e);
+        }
+
+        private bool verificarCampos()
+        {
+            if (tbCodigo.Text.Trim().Equals("") || tbDescripcion.Text.Trim().Equals("") || tbPrecioCosto.Text.Trim().Equals("")
+                || tbPrecioVenta.Text.Trim().Equals("") || tbCantidadDisponible.Text.Trim().Equals(""))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void tbBuscarCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = dgvProductos;
+                buscarProducto();
+                tbBuscarCodigo.Clear();
+            }
+        }
+
+        public void RecibirCodigo(KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = tbDescripcion;
             }
         }
     }

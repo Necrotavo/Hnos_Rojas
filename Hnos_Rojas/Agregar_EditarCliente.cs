@@ -101,7 +101,9 @@ namespace Hnos_Rojas
                 style.Font = new Font("Microsoft Sans Serif", 14);
                 style.BackColor = Color.LightGray;
 
-                
+                dgvClientes.Columns["Editar"].Width = 75;
+                dgvClientes.Columns["EstadoCliente"].Width = 130;
+
                 //grdClientes [1] = direccion
                 //grdClientes [2] = estado
                 //grdClientes [3] = credito
@@ -125,8 +127,9 @@ namespace Hnos_Rojas
                     DataGridViewCellStyle style = new DataGridViewCellStyle();
                     style.Font = new Font("Microsoft Sans Serif", 14);
                     style.BackColor = Color.LightGray;
-
-
+                    
+                    dgvClientes.Columns["Editar"].Width = 75;
+                    dgvClientes.Columns["EstadoCliente"].Width = 170;
                     //grdClientes [1] = direccion
                     //grdClientes [2] = estado
                     //grdClientes [3] = credito
@@ -340,6 +343,37 @@ namespace Hnos_Rojas
         private void dgvClientes_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
         {
             this.dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+        }
+
+        private void dgvClientes_AutoSizeRowsModeChanged(object sender, DataGridViewAutoSizeModeEventArgs e)
+        {
+            dgvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        private void tbTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirEntradaNumeros(e);
+        }
+
+        public void permitirEntradaNumeros(KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbLimite_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            permitirEntradaNumeros(e);
         }
     }
 }
