@@ -97,5 +97,33 @@ namespace Hnos_Rojas
         {
             padre.invocarListaProveedores();
         }
+
+        private void Agregar_ModificarProveedor_Load(object sender, EventArgs e)
+        {
+            formatoDtVisita();
+            llenarCboDias();
+        }
+
+        private void formatoDtVisita() {
+            dtVisita.Format = DateTimePickerFormat.Custom;
+            dtVisita.CustomFormat = "hh:mm";
+            dtVisita.ShowUpDown = true;
+            dtVisita.Text = "7:00";
+        }
+
+        private void llenarCboDias() {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("DIA");
+            dataTable.Columns.Add("SIGLA");
+            String[] dias = {"LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO","DOMINGO"};
+            String[] siglas = { "L", "K", "M", "J", "V", "S", "D" };
+            for (int i = 0; i < dias.Length ; i++) {
+                dataTable.Rows.Add(dias[i],siglas[i]);
+            }
+            cboDias.DataSource = dataTable;
+            cboDias.DisplayMember = "DIA";
+            cboDias.ValueMember = "SIGLA";
+
+        }
     }
 }
