@@ -52,6 +52,7 @@ namespace Hnos_Rojas
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
         }
+
         public void invocarListaAsociados(string nombreProveedor)
         {
             btnEliminar.Enabled = false;
@@ -62,6 +63,7 @@ namespace Hnos_Rojas
             listaAsociados.Show();
 
         }
+
         private void btnAsociados_Click(object sender, EventArgs e)
         {
             invocarListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado());
@@ -92,6 +94,14 @@ namespace Hnos_Rojas
             {
                 MessageBox.Show("No ha seleccionado un proveedor");
             }
+        }
+
+        private void btnHorario_Click(object sender, EventArgs e)
+        {
+            HorarioProveedores horarioProveedores = new HorarioProveedores(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.panelProveedores.Controls.Clear();
+            this.panelProveedores.Controls.Add(horarioProveedores);
+            horarioProveedores.Show();
         }
     }
 }

@@ -33,6 +33,7 @@
             this.btnAgregarProv = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificarProv = new System.Windows.Forms.Button();
+            this.btnHorario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelProveedores
@@ -51,7 +52,7 @@
             this.btnAsociados.ForeColor = System.Drawing.Color.White;
             this.btnAsociados.Location = new System.Drawing.Point(24, 20);
             this.btnAsociados.Name = "btnAsociados";
-            this.btnAsociados.Size = new System.Drawing.Size(254, 42);
+            this.btnAsociados.Size = new System.Drawing.Size(194, 42);
             this.btnAsociados.TabIndex = 21;
             this.btnAsociados.Text = "Ver Asociados";
             this.btnAsociados.UseVisualStyleBackColor = false;
@@ -64,9 +65,9 @@
             this.btnAgregarProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarProv.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnAgregarProv.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProv.Location = new System.Drawing.Point(354, 20);
+            this.btnAgregarProv.Location = new System.Drawing.Point(292, 20);
             this.btnAgregarProv.Name = "btnAgregarProv";
-            this.btnAgregarProv.Size = new System.Drawing.Size(254, 42);
+            this.btnAgregarProv.Size = new System.Drawing.Size(194, 42);
             this.btnAgregarProv.TabIndex = 22;
             this.btnAgregarProv.Text = "Insertar";
             this.btnAgregarProv.UseVisualStyleBackColor = false;
@@ -80,9 +81,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(1024, 20);
+            this.btnEliminar.Location = new System.Drawing.Point(1084, 20);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(254, 42);
+            this.btnEliminar.Size = new System.Drawing.Size(194, 42);
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar Proveedor";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -96,20 +97,36 @@
             this.btnModificarProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarProv.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnModificarProv.ForeColor = System.Drawing.Color.White;
-            this.btnModificarProv.Location = new System.Drawing.Point(699, 20);
+            this.btnModificarProv.Location = new System.Drawing.Point(844, 20);
             this.btnModificarProv.Name = "btnModificarProv";
-            this.btnModificarProv.Size = new System.Drawing.Size(254, 42);
+            this.btnModificarProv.Size = new System.Drawing.Size(194, 42);
             this.btnModificarProv.TabIndex = 24;
             this.btnModificarProv.Text = "Modificar";
             this.btnModificarProv.UseVisualStyleBackColor = false;
             this.btnModificarProv.Click += new System.EventHandler(this.btnModificarProv_Click);
+            // 
+            // btnHorario
+            // 
+            this.btnHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnHorario.FlatAppearance.BorderSize = 0;
+            this.btnHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorario.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnHorario.ForeColor = System.Drawing.Color.White;
+            this.btnHorario.Location = new System.Drawing.Point(566, 20);
+            this.btnHorario.Name = "btnHorario";
+            this.btnHorario.Size = new System.Drawing.Size(194, 42);
+            this.btnHorario.TabIndex = 25;
+            this.btnHorario.Text = "Horario";
+            this.btnHorario.UseVisualStyleBackColor = false;
+            this.btnHorario.Click += new System.EventHandler(this.btnHorario_Click);
             // 
             // Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1301, 661);
+            this.Controls.Add(this.btnHorario);
             this.Controls.Add(this.btnModificarProv);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregarProv);
@@ -117,7 +134,7 @@
             this.Controls.Add(this.panelProveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(32, 102);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Proveedor";
             this.Text = "Proveedor";
             this.ResumeLayout(false);
@@ -131,5 +148,6 @@
         private System.Windows.Forms.Button btnAgregarProv;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificarProv;
+        private System.Windows.Forms.Button btnHorario;
     }
 }

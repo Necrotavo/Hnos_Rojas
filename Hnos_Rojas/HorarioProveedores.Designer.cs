@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdAsociados = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,9 +80,26 @@
             this.grdAsociados.Size = new System.Drawing.Size(1436, 453);
             this.grdAsociados.TabIndex = 7;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(1361, 567);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(187, 59);
+            this.btnSalir.TabIndex = 24;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Hora
             // 
             this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Hora.DataPropertyName = "Hora";
             this.Hora.HeaderText = "Hora";
             this.Hora.Name = "Hora";
             this.Hora.ReadOnly = true;
@@ -90,6 +108,7 @@
             // Lunes
             // 
             this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Lunes.DataPropertyName = "Lunes";
             this.Lunes.HeaderText = "Lunes";
             this.Lunes.Name = "Lunes";
             this.Lunes.ReadOnly = true;
@@ -98,6 +117,7 @@
             // Martes
             // 
             this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Martes.DataPropertyName = "Martes";
             this.Martes.HeaderText = "Martes";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
@@ -106,6 +126,7 @@
             // Miercoles
             // 
             this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Miercoles.DataPropertyName = "Miercoles";
             this.Miercoles.HeaderText = "Miércoles";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
@@ -114,6 +135,7 @@
             // Jueves
             // 
             this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Jueves.DataPropertyName = "Jueves";
             this.Jueves.HeaderText = "Jueves";
             this.Jueves.Name = "Jueves";
             this.Jueves.ReadOnly = true;
@@ -122,6 +144,7 @@
             // Sabado
             // 
             this.Sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Sabado.DataPropertyName = "Sabado";
             this.Sabado.HeaderText = "Sábado";
             this.Sabado.Name = "Sabado";
             this.Sabado.ReadOnly = true;
@@ -130,6 +153,7 @@
             // Domingo
             // 
             this.Domingo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Domingo.DataPropertyName = "Domingo";
             this.Domingo.HeaderText = "Domingo";
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
@@ -141,6 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1673, 684);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grdAsociados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HorarioProveedores";
@@ -153,6 +178,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grdAsociados;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
