@@ -24,6 +24,7 @@ namespace Hnos_Rojas
             lblTitulo.Text = lblTitulo.Text + _proveedor;
             proveedor = _proveedor;
             llenarListBox();
+            grdAsociados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
         }
 
         private void llenarListBox()
