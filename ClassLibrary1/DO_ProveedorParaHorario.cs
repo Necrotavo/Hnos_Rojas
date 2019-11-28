@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace DO
 {
 
-
     public class DO_ProveedorParaHorario
     {
         public String nombre { set; get; }
