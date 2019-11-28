@@ -15,13 +15,25 @@ namespace Hnos_Rojas
         public Ayuda()
         {
             InitializeComponent();
+
         }
 
         private void btnAyudaVentas_Click(object sender, EventArgs e)
         {
-            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n Este módulo es el encargado de todo lo relacionado con las ventas que se realizan a todos los consumidores, lo primero que se nota en este modulo es un panel blanco el cual cuenta con tickets, cuando se ingresa un codigo de un producto y se preciona la tecla ENTER el producto el cual tenga ese código aparecera en el panel de tickets con su información, al finalizar todo lo relacionado con la venta de productos se cobra al cliente y se le entrega una factura la cual contiene información de los productos que compró y el total de la compra";
-            txtAyuda2.Text = "ACEESOS RÁPIDOS: \r\n\r\n Este módulo puede ser accedido presionando el botón de ventas o también presionando la tecla F1, dentro del módulo también existen accesos rápidos, el F12 es el encargado de cobrar al cliente el monto de los productos que va a adquirir";
-            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n Este módulo posee ventanas, cuando se va a cobrar existen 2 opciones, de CONTADO y CRÉDITO, cada opción genera una ventana diferente, en CONTADO en la ventana se puede poner el nombre del cliente, alguna nota si se desea y la cantidad con la cual pagó, en CRÉDITO se tiene que seleccionar el cliente al cual desea sumarle al crédito la cantidad de los productos que va a adquirir";
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n" +
+                "En este módulo se ingresan productos a las posibles facturas de los clientes. Se imprimen facturas y se pueden" +
+                " ejecutar los multiples accesos directos del sistema\r\nPara cambiar de usuario en este módulo es necesario ingresar primero la " +
+                "contraseña correspondiente y luego seleccionar el usuario";
+            txtAyuda2.Text = "ACEESOS RÁPIDOS: \r\n\r\nEste módulo se puede abrir presionando la tecla F1" +
+                "\r\n***CTRL + P abre la ventana de buscar producto" +
+                "\r\n***F12 realiza el pago e imprime la factura" +
+                "\r\n***INSERT Abre la ventana de insertar producto" +
+                "\r\n***F10 Abre la ventana de pago a proveedores";
+            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n" +
+                "***Insertar producto: Permite insertar un producto al inventario sin tener que acceder al modulo de productos" +
+                "\r\n***Articulo común: Permite buscar productos e ingresarlos al ticket con la posibilidad de ajustar su precio de venta" +
+                "\r\n***Pagos: Permite realizar pagos a los proveedores" +
+                "\r\n***Cobro: Según el tipo de cobro (Contado o crédito) muestra ventanas donde se ve el resumen de la compra y permine pagar e imprimir las facturas correspondientes";
         }
 
         private void btnAyudaClientes_Click(object sender, EventArgs e)
@@ -54,7 +66,7 @@ namespace Hnos_Rojas
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n" +
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n" +
                 "Este módulo muestra la información contable útil en los reportes de contado y crédito." +
                 "\r\n" +
                 "Aquí el usuario puede seleccionar dos fechas, depués hacer clic en el boton  \"FILTRAR\" y" +
@@ -62,9 +74,9 @@ namespace Hnos_Rojas
                 "segunda, en caso de necesitar un reporte diario se debe seleccionar la misma fecha en ambos calendarios." +
                 "\r\nEs posible imprimir estos reportes, en la impresora por defecto del sistema, mediante le boton \"IMPRIMIR\"" +
                 "";
-            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n" +
+            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\n" +
                 "Para acceder este modulo oprima la tecla F6";
-            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n" +
+            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n" +
                 "Este modulo no tiene ventanas emergentes";
         }
     }
