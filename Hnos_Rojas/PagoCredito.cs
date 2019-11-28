@@ -154,7 +154,8 @@ namespace Hnos_Rojas
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            //llamar a la ventana de Agregar cliente
+            Agregar_EditarCliente agregarEditarCliente = new Agregar_EditarCliente();
+            agregarEditarCliente.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

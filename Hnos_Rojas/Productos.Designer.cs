@@ -96,6 +96,7 @@
             this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
             this.grdProductos.MaximumSize = new System.Drawing.Size(1500, 500);
             this.grdProductos.Name = "grdProductos";
+            this.grdProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdProductos.Size = new System.Drawing.Size(1040, 384);
             this.grdProductos.TabIndex = 13;
             // 
@@ -239,6 +240,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

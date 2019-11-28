@@ -131,6 +131,12 @@
     <Compile Include="FacturaDeCliente.Designer.cs">
       <DependentUpon>FacturaDeCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="HorarioProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HorarioProveedores.Designer.cs">
+      <DependentUpon>HorarioProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImprimirReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaDeCliente.resx">
       <DependentUpon>FacturaDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorarioProveedores.resx">
+      <DependentUpon>HorarioProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImprimirReportes.resx">
       <DependentUpon>ImprimirReportes.cs</DependentUpon>

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlProducto = new System.Windows.Forms.TabControl();
             this.tpFormulario = new System.Windows.Forms.TabPage();
             this.btGuardar = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tpModificar = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +57,12 @@
             this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btBuscar = new System.Windows.Forms.Button();
             this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControlProducto.SuspendLayout();
             this.tpFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).BeginInit();
             this.tpModificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlProducto
@@ -157,6 +157,7 @@
             this.tbCantidadDisponible.Name = "tbCantidadDisponible";
             this.tbCantidadDisponible.Size = new System.Drawing.Size(54, 35);
             this.tbCantidadDisponible.TabIndex = 5;
+            this.tbCantidadDisponible.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidadDisponible_KeyPress);
             // 
             // tbPrecioVenta
             // 
@@ -165,6 +166,7 @@
             this.tbPrecioVenta.Name = "tbPrecioVenta";
             this.tbPrecioVenta.Size = new System.Drawing.Size(113, 35);
             this.tbPrecioVenta.TabIndex = 4;
+            this.tbPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrecioVenta_KeyPress);
             // 
             // tbPrecioCosto
             // 
@@ -173,6 +175,7 @@
             this.tbPrecioCosto.Name = "tbPrecioCosto";
             this.tbPrecioCosto.Size = new System.Drawing.Size(113, 35);
             this.tbPrecioCosto.TabIndex = 2;
+            this.tbPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrecioCosto_KeyPress);
             // 
             // tbDescripcion
             // 
@@ -187,8 +190,9 @@
             this.tbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCodigo.Location = new System.Drawing.Point(548, 63);
             this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(131, 35);
+            this.tbCodigo.Size = new System.Drawing.Size(256, 35);
             this.tbCodigo.TabIndex = 0;
+            this.tbCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCodigo_KeyPress);
             // 
             // lblCantidadDisponible
             // 
@@ -272,14 +276,25 @@
             this.tpModificar.Text = "Modificar Producto";
             this.tpModificar.Click += new System.EventHandler(this.tpModificar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 371);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -349,6 +364,7 @@
             this.CantidadMinima.HeaderText = "Cantidad mínima";
             this.CantidadMinima.Name = "CantidadMinima";
             this.CantidadMinima.ReadOnly = true;
+            this.CantidadMinima.Visible = false;
             // 
             // btBuscar
             // 
@@ -372,16 +388,7 @@
             this.tbBuscarCodigo.Name = "tbBuscarCodigo";
             this.tbBuscarCodigo.Size = new System.Drawing.Size(191, 35);
             this.tbBuscarCodigo.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 371);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.tbBuscarCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBuscarCodigo_KeyPress);
             // 
             // NuevoProducto
             // 
@@ -391,7 +398,7 @@
             this.ClientSize = new System.Drawing.Size(1229, 549);
             this.Controls.Add(this.tabControlProducto);
             this.Name = "NuevoProducto";
-            this.Text = "NuevoProducto";
+            this.Text = "Administrar Productos";
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
             this.tabControlProducto.ResumeLayout(false);
             this.tpFormulario.ResumeLayout(false);
@@ -399,8 +406,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).EndInit();
             this.tpModificar.ResumeLayout(false);
             this.tpModificar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,6 +434,7 @@
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.TextBox tbBuscarCodigo;
         private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewImageColumn Modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
@@ -434,6 +442,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadMinima;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

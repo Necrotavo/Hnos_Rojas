@@ -110,8 +110,8 @@
             this.tabPageAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 54);
             this.tabPageAgregarCliente.Name = "tabPageAgregarCliente";
-            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAgregarCliente.Size = new System.Drawing.Size(808, 422);
+            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAgregarCliente.Size = new System.Drawing.Size(818, 478);
             this.tabPageAgregarCliente.TabIndex = 0;
             this.tabPageAgregarCliente.Text = "Agregar";
             this.tabPageAgregarCliente.Click += new System.EventHandler(this.tabPageAgregarCliente_Click);
@@ -155,6 +155,7 @@
             this.tbLimite.Name = "tbLimite";
             this.tbLimite.Size = new System.Drawing.Size(252, 29);
             this.tbLimite.TabIndex = 5;
+            this.tbLimite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLimite_KeyPress);
             // 
             // tbTelefono
             // 
@@ -162,6 +163,7 @@
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(252, 29);
             this.tbTelefono.TabIndex = 4;
+            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbDireccion
             // 
@@ -276,7 +278,7 @@
             this.tabPageModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageModificar.Location = new System.Drawing.Point(4, 54);
             this.tabPageModificar.Name = "tabPageModificar";
-            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPageModificar.Size = new System.Drawing.Size(818, 478);
             this.tabPageModificar.TabIndex = 1;
             this.tabPageModificar.Text = "Modificar";
@@ -305,6 +307,7 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -329,12 +332,14 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(812, 319);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.AutoSizeRowsModeChanged += new System.Windows.Forms.DataGridViewAutoSizeModeEventHandler(this.dgvClientes_AutoSizeRowsModeChanged);
             this.dgvClientes.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.dgvClientes_AutoSizeColumnModeChanged);
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvClientes_CellFormatting);
             // 
             // Editar
             // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
@@ -343,6 +348,7 @@
             this.Editar.Image = global::Hnos_Rojas.Properties.Resources.output_onlinepngtools;
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
+            this.Editar.Width = 64;
             // 
             // NombreCliente
             // 
@@ -370,14 +376,14 @@
             // TelefonoCliente
             // 
             this.TelefonoCliente.DataPropertyName = "perTelefono";
-            this.TelefonoCliente.HeaderText = "Telefono";
+            this.TelefonoCliente.HeaderText = "Teléfono";
             this.TelefonoCliente.Name = "TelefonoCliente";
             this.TelefonoCliente.ReadOnly = true;
             // 
             // DireccionCliente
             // 
             this.DireccionCliente.DataPropertyName = "direccion";
-            this.DireccionCliente.HeaderText = "Direccion";
+            this.DireccionCliente.HeaderText = "Dirección";
             this.DireccionCliente.Name = "DireccionCliente";
             this.DireccionCliente.ReadOnly = true;
             // 
@@ -437,7 +443,7 @@
             this.ClientSize = new System.Drawing.Size(826, 536);
             this.Controls.Add(this.tabControlClientes);
             this.Name = "Agregar_EditarCliente";
-            this.Text = "Agregar_EditarCliente";
+            this.Text = "Administrar Clientes";
             this.Load += new System.EventHandler(this.Agregar_EditarCliente_Load);
             this.tabControlClientes.ResumeLayout(false);
             this.tabPageAgregarCliente.ResumeLayout(false);
