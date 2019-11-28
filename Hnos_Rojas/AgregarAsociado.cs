@@ -54,7 +54,7 @@ namespace Hnos_Rojas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            padre.invocarListaProveedores();
+            padre.invocarListaAsociados(proveedor);
         }
     }
 }

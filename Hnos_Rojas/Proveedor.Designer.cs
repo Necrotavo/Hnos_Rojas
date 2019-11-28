@@ -75,6 +75,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Maroon;
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
@@ -90,6 +91,7 @@
             // btnModificarProv
             // 
             this.btnModificarProv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnModificarProv.Enabled = false;
             this.btnModificarProv.FlatAppearance.BorderSize = 0;
             this.btnModificarProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarProv.Font = new System.Drawing.Font("Segoe UI Historic", 14F);

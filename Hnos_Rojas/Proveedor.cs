@@ -29,10 +29,14 @@ namespace Hnos_Rojas
             tempListaproveedores = listaProveedores;
             this.panelProveedores.Controls.Add(listaProveedores);
             listaProveedores.Show();
+            btnEliminar.Enabled = true;
+            btnModificarProv.Enabled = true;
         }
 
         private void btnAgregarProv_Click(object sender, EventArgs e)
         {
+            btnEliminar.Enabled = false;
+            btnModificarProv.Enabled = false;
             this.panelProveedores.Controls.Clear();
             Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
@@ -41,19 +45,26 @@ namespace Hnos_Rojas
 
         private void btnModificarProv_Click(object sender, EventArgs e)
         {
+            btnEliminar.Enabled = false;
+            btnModificarProv.Enabled = false;
             this.panelProveedores.Controls.Clear();
             Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
         }
-
-        private void btnAsociados_Click(object sender, EventArgs e)
+        public void invocarListaAsociados(string nombreProveedor)
         {
+            btnEliminar.Enabled = false;
+            btnModificarProv.Enabled = false;
             this.panelProveedores.Controls.Clear();
-            ListaAsociados listaAsociados = new ListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            ListaAsociados listaAsociados = new ListaAsociados(nombreProveedor, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(listaAsociados);
             listaAsociados.Show();
-            
+
+        }
+        private void btnAsociados_Click(object sender, EventArgs e)
+        {
+            invocarListaAsociados(tempListaproveedores.obtenerProveedorSeleccionado());
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
