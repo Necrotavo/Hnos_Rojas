@@ -63,9 +63,14 @@ namespace Hnos_Rojas
 
         private void btnAyudaProveedores_Click(object sender, EventArgs e)
         {
-            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n escritura";
-            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\n escritura";
-            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n escritura";
+            txtAyuda1.Text = "DESCRIPCIÓN GENERAL: \r\n\r\n En este módulo se pueden realizar distintas acciones relacionadas con los proveedores."+
+                "Se incluye el Agregar, visualizar el horario, modificar o eliminar. Además se pueden agregar los respectivos asociados.";
+            txtAyuda2.Text = "ACCESOS RÁPIDOS: \r\n\r\nEste módulo no tiene accesos rápidos";
+            txtAyuda3.Text = "VENTANAS EMERGENTES: \r\n\r\n ***Ver Asociados: se pueden realizar todas las operaciones relacionadas con Asociados. Se incluye Agregar, Editar o Eliminar"+
+                "\r\n\r\n ***Insertar: Se agregan los datos del proveedor, incluyendo sus días de visita."+
+                "\r\n\r\n ***Horario: Muestra el calendario semanal con la visita de los Proveedores."+
+                "\r\n\r\n ***Modificar: Presenta la opción de modificar los días de visita del Proveedor."+
+                "\r\n\r\n ***Eliminar Proveedor: permite eliminar un respectivo Proveedor.";
         }
 
         private void btnAyudaConfiguracion_Click(object sender, EventArgs e)
