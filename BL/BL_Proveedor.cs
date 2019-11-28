@@ -42,5 +42,28 @@ namespace BL
             DAO_Proveedor daoProveedor = new DAO_Proveedor();
             return daoProveedor.EliminarProveedor(nombre);
         }
+
+        public List<DO_ProveedorParaHorario> dividirHorario() {
+            List<DO_Proveedor> listaProveedores = obtenerListaProveedores( "", true);
+            List<DO_ProveedorParaHorario> elementosDelHorario = new List<DO_ProveedorParaHorario>();
+            
+
+            foreach (DO_Proveedor doProveedor in listaProveedores) {
+                DO_ProveedorParaHorario doProveedorParaHorario = new DO_ProveedorParaHorario();
+                doProveedorParaHorario.nombre = doProveedor.nombre;
+
+                String[] listaDiaYhoraJuntos = doProveedor.fechaVisita.Split(',');
+
+                foreach (String diaYhora in listaDiaYhoraJuntos) {
+                    String[] listaDiaYHoraSeparados = diaYhora.Split('-');
+
+                    doProveedorParaHorario.listaDiaYhora.Add(listaDiaYHoraSeparados[0]); //Se supone que sera una letra segun el dia
+                    doProveedorParaHorario.listaDiaYhora.Add(listaDiaYHoraSeparados[1]); //Se supone que va a ser la hora del dia
+                }
+                elementosDelHorario.Add(doProveedorParaHorario); //Los indices pares son dias,  los impares son horas, el ultimo es el proveedor
+            }
+
+            return elementosDelHorario;
+        }
     }
 }
