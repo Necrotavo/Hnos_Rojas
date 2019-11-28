@@ -42,11 +42,11 @@ namespace Hnos_Rojas
                     }
                     else { //Es impar, es una hora)
                         indicesHoraYdia[0] = obtenerIndiceHora(diaHora);
+
+                        String textoAntiguo = (String)(dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]]);
+                        dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]] = textoAntiguo + " " + doProvHorario.nombre;
                     }
                     i++;
-
-                    String textoAntiguo = (String)(dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]]);
-                    dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]] = textoAntiguo + " " + doProvHorario.nombre;
                 }
             }
 

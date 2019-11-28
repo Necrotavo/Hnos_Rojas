@@ -21,6 +21,7 @@ namespace Hnos_Rojas
             Color color = Color.FromArgb(52, 168, 150);
             btnUsuariosConf.BackColor = color;
             btnPlantilla.BackColor = color;
+            btnAyuda.BackColor = color;
             
         }
         private void btnUsuariosConf_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Hnos_Rojas
             Ayuda otropanel = new Ayuda() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             panel2.Controls.Add(otropanel);
             restaurarColoresBtns();
-            btnPlantilla.BackColor = Color.FromArgb(24, 107, 94);
+            btnAyuda.BackColor = Color.FromArgb(24, 107, 94);
             otropanel.Show();
         }
     }
