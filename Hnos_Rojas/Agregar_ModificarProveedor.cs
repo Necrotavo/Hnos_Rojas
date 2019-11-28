@@ -45,7 +45,58 @@ namespace Hnos_Rojas
             proveedor = blProveedor.obtenerProveedor(nombreProveedor);
             txtNombreProveedor.Text = proveedor.nombre;
             //falta llenar el combo box de días, datePicker y radioButton 
+            rellenarControlesDiaVisita();
         }
+
+        private void rellenarControlesDiaVisita() {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            List<DO_ProveedorParaHorario> proveedorH = blProveedor.dividirHorario();
+
+            foreach (DO_ProveedorParaHorario prov in proveedorH) {
+                
+                for (int k = 0,h = 1; h < prov.listaDiaYhora.Count; k++,h++)
+                {
+                    lbDiasDeVisita.Items.Add(obtenerIndiceDia(prov.listaDiaYhora[k])+"-"+prov.listaDiaYhora[h]);
+                }
+            }
+        }
+
+        public String obtenerIndiceDia(String dia)
+        {
+            if (dia == "L")
+            {
+                return "L";
+            }
+            else if (dia == "K")
+            {
+                return "K";
+            }
+            else if (dia == "M")
+            {
+                return "M";
+            }
+            else if (dia == "J")
+            {
+                return "J";
+            }
+            else if (dia == "V")
+            {
+                return "V";
+            }
+            else if (dia == "S")
+            {
+                return "S";
+            }
+            else if (dia == "D")
+            {
+                return "D";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
@@ -155,5 +206,9 @@ namespace Hnos_Rojas
             return dias;
         }
 
+        private void lbDiasDeVisita_Click(object sender, EventArgs e)
+        {
+            //rellenar el combo Box y el datePicker
+        }
     }
 }

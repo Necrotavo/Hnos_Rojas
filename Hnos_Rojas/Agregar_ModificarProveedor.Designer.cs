@@ -188,6 +188,7 @@
             this.lbDiasDeVisita.Name = "lbDiasDeVisita";
             this.lbDiasDeVisita.Size = new System.Drawing.Size(399, 207);
             this.lbDiasDeVisita.TabIndex = 43;
+            this.lbDiasDeVisita.Click += new System.EventHandler(this.lbDiasDeVisita_Click);
             // 
             // btnEditarDia
             // 
