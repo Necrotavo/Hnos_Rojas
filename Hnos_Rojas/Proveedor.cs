@@ -34,7 +34,7 @@ namespace Hnos_Rojas
         private void btnAgregarProv_Click(object sender, EventArgs e)
         {
             this.panelProveedores.Controls.Clear();
-            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
         }
@@ -42,7 +42,7 @@ namespace Hnos_Rojas
         private void btnModificarProv_Click(object sender, EventArgs e)
         {
             this.panelProveedores.Controls.Clear();
-            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
             agregar_ModificarProveedor.Show();
         }
