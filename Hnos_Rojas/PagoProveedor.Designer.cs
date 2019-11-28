@@ -28,47 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCredActual = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
-            this.listBClientes = new System.Windows.Forms.ListBox();
-            this.lbCreditoDisp = new System.Windows.Forms.Label();
-            this.lbCreditoAnterior = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtBuscarProveedor = new System.Windows.Forms.TextBox();
+            this.listBoxProveedor = new System.Windows.Forms.ListBox();
+            this.lblProveedor = new System.Windows.Forms.Label();
             this.btnPagar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNotas = new System.Windows.Forms.TextBox();
+            this.lblPago = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // lblCredActual
-            // 
-            this.lblCredActual.AutoSize = true;
-            this.lblCredActual.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
-            this.lblCredActual.ForeColor = System.Drawing.Color.White;
-            this.lblCredActual.Location = new System.Drawing.Point(285, 463);
-            this.lblCredActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCredActual.Name = "lblCredActual";
-            this.lblCredActual.Size = new System.Drawing.Size(122, 57);
-            this.lblCredActual.TabIndex = 53;
-            this.lblCredActual.Text = "c0.00";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(565, 329);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 41);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Total:";
             // 
             // btnSalir
             // 
@@ -77,29 +45,14 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(606, 463);
+            this.btnSalir.Location = new System.Drawing.Point(357, 579);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(5);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(199, 59);
-            this.btnSalir.TabIndex = 51;
+            this.btnSalir.Size = new System.Drawing.Size(271, 59);
+            this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCliente.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btnAgregarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(606, 112);
-            this.btnAgregarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(199, 59);
-            this.btnAgregarCliente.TabIndex = 50;
-            this.btnAgregarCliente.Text = "Agregar Cliente";
-            this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarCliente.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnBuscar
             // 
@@ -108,71 +61,48 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(606, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(357, 33);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(199, 59);
-            this.btnBuscar.TabIndex = 49;
+            this.btnBuscar.Size = new System.Drawing.Size(271, 59);
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtBuscarCliente
+            // txtBuscarProveedor
             // 
-            this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCliente.Location = new System.Drawing.Point(218, 35);
-            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(5);
-            this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(317, 41);
-            this.txtBuscarCliente.TabIndex = 48;
+            this.txtBuscarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarProveedor.Location = new System.Drawing.Point(45, 33);
+            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBuscarProveedor.Name = "txtBuscarProveedor";
+            this.txtBuscarProveedor.Size = new System.Drawing.Size(271, 41);
+            this.txtBuscarProveedor.TabIndex = 1;
             // 
-            // listBClientes
+            // listBoxProveedor
             // 
-            this.listBClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBClientes.FormattingEnabled = true;
-            this.listBClientes.ItemHeight = 29;
-            this.listBClientes.Location = new System.Drawing.Point(218, 114);
-            this.listBClientes.Margin = new System.Windows.Forms.Padding(5);
-            this.listBClientes.Name = "listBClientes";
-            this.listBClientes.Size = new System.Drawing.Size(317, 149);
-            this.listBClientes.TabIndex = 47;
+            this.listBoxProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxProveedor.FormattingEnabled = true;
+            this.listBoxProveedor.ItemHeight = 29;
+            this.listBoxProveedor.Location = new System.Drawing.Point(45, 173);
+            this.listBoxProveedor.Margin = new System.Windows.Forms.Padding(5);
+            this.listBoxProveedor.Name = "listBoxProveedor";
+            this.listBoxProveedor.Size = new System.Drawing.Size(583, 236);
+            this.listBoxProveedor.TabIndex = 3;
+            this.listBoxProveedor.DoubleClick += new System.EventHandler(this.listBoxProveedor_DoubleClick);
             // 
-            // lbCreditoDisp
+            // lblProveedor
             // 
-            this.lbCreditoDisp.AutoSize = true;
-            this.lbCreditoDisp.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
-            this.lbCreditoDisp.ForeColor = System.Drawing.Color.White;
-            this.lbCreditoDisp.Location = new System.Drawing.Point(407, 469);
-            this.lbCreditoDisp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCreditoDisp.Name = "lbCreditoDisp";
-            this.lbCreditoDisp.Size = new System.Drawing.Size(122, 57);
-            this.lbCreditoDisp.TabIndex = 46;
-            this.lbCreditoDisp.Text = "c0.00";
-            this.lbCreditoDisp.Visible = false;
-            // 
-            // lbCreditoAnterior
-            // 
-            this.lbCreditoAnterior.AutoSize = true;
-            this.lbCreditoAnterior.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
-            this.lbCreditoAnterior.ForeColor = System.Drawing.Color.White;
-            this.lbCreditoAnterior.Location = new System.Drawing.Point(285, 399);
-            this.lbCreditoAnterior.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCreditoAnterior.Name = "lbCreditoAnterior";
-            this.lbCreditoAnterior.Size = new System.Drawing.Size(122, 57);
-            this.lbCreditoAnterior.TabIndex = 45;
-            this.lbCreditoAnterior.Text = "c0.00";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(38, 107);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 41);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Cliente ";
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.lblProveedor.ForeColor = System.Drawing.Color.White;
+            this.lblProveedor.Location = new System.Drawing.Point(38, 115);
+            this.lblProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(191, 41);
+            this.lblProveedor.TabIndex = 44;
+            this.lblProveedor.Text = "Proveedores:";
             // 
             // btnPagar
             // 
@@ -181,93 +111,51 @@
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Location = new System.Drawing.Point(606, 394);
+            this.btnPagar.Location = new System.Drawing.Point(45, 579);
             this.btnPagar.Margin = new System.Windows.Forms.Padding(5);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(199, 59);
-            this.btnPagar.TabIndex = 43;
+            this.btnPagar.Size = new System.Drawing.Size(271, 59);
+            this.btnPagar.TabIndex = 5;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
-            // label4
+            // lblPago
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(38, 482);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 41);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Saldo actual:";
+            this.lblPago.AutoSize = true;
+            this.lblPago.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.lblPago.ForeColor = System.Drawing.Color.White;
+            this.lblPago.Location = new System.Drawing.Point(54, 468);
+            this.lblPago.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(262, 41);
+            this.lblPago.TabIndex = 40;
+            this.lblPago.Text = "Cantidad de Pago:";
             // 
-            // lblTotal
+            // textBox1
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(675, 317);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(122, 57);
-            this.lblTotal.TabIndex = 41;
-            this.lblTotal.Text = "c0.00";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(38, 411);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 41);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Saldo Anterior: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 346);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 41);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Notas";
-            // 
-            // txtNotas
-            // 
-            this.txtNotas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotas.Location = new System.Drawing.Point(218, 354);
-            this.txtNotas.Margin = new System.Windows.Forms.Padding(5);
-            this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(317, 41);
-            this.txtNotas.TabIndex = 38;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(357, 469);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(271, 41);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // PagoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(849, 558);
-            this.Controls.Add(this.lblCredActual);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(678, 673);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBuscarCliente);
-            this.Controls.Add(this.listBClientes);
-            this.Controls.Add(this.lbCreditoDisp);
-            this.Controls.Add(this.lbCreditoAnterior);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtBuscarProveedor);
+            this.Controls.Add(this.listBoxProveedor);
+            this.Controls.Add(this.lblProveedor);
             this.Controls.Add(this.btnPagar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNotas);
+            this.Controls.Add(this.lblPago);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PagoProveedor";
             this.Text = "PagoProveedor";
@@ -277,22 +165,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCredActual;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBuscarCliente;
-        private System.Windows.Forms.ListBox listBClientes;
-        private System.Windows.Forms.Label lbCreditoDisp;
-        private System.Windows.Forms.Label lbCreditoAnterior;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBuscarProveedor;
+        private System.Windows.Forms.ListBox listBoxProveedor;
+        private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Button btnPagar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNotas;
+        private System.Windows.Forms.Label lblPago;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
