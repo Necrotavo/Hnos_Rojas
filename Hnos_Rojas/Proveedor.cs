@@ -30,7 +30,7 @@ namespace Hnos_Rojas
             this.panelProveedores.Controls.Add(listaProveedores);
             listaProveedores.Show();
             btnEliminar.Enabled = true;
-            btnAgregarProv.Enabled = true;
+            btnModificarProv.Enabled = true;
         }
 
         private void btnAgregarProv_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace Hnos_Rojas
 
         private void btnHorario_Click(object sender, EventArgs e)
         {
-            HorarioProveedores horarioProveedores = new HorarioProveedores() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            HorarioProveedores horarioProveedores = new HorarioProveedores(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Clear();
             this.panelProveedores.Controls.Add(horarioProveedores);
             horarioProveedores.Show();

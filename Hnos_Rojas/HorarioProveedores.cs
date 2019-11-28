@@ -16,9 +16,10 @@ namespace Hnos_Rojas
     {
         Proveedor papa;
 
-        public HorarioProveedores()
+        public HorarioProveedores(Proveedor padre)
         {
             InitializeComponent();
+            papa = padre;
             llenarGrid();
             grdAsociados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
         }
@@ -171,6 +172,7 @@ namespace Hnos_Rojas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            papa.invocarListaProveedores();
             this.Dispose();
         }
     }
