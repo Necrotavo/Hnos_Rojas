@@ -45,6 +45,7 @@ namespace Hnos_Rojas
             proveedor = blProveedor.obtenerProveedor(nombreProveedor);
             txtNombreProveedor.Text = proveedor.nombre;
             //falta llenar el combo box de días, datePicker y radioButton 
+            rellenarControlesDiaVisita();
         }
 
         private void rellenarControlesDiaVisita() {
@@ -60,41 +61,42 @@ namespace Hnos_Rojas
             }
         }
 
-        public int obtenerIndiceDia(String dia)
+        public String obtenerIndiceDia(String dia)
         {
             if (dia == "L")
             {
-                return 1;
+                return "L";
             }
             else if (dia == "K")
             {
-                return 2;
+                return "K";
             }
             else if (dia == "M")
             {
-                return 3;
+                return "M";
             }
             else if (dia == "J")
             {
-                return 4;
+                return "J";
             }
             else if (dia == "V")
             {
-                return 5;
+                return "V";
             }
             else if (dia == "S")
             {
-                return 6;
+                return "S";
             }
             else if (dia == "D")
             {
-                return 7;
+                return "D";
             }
             else
             {
-                return -1;
+                return "";
             }
         }
+
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
@@ -204,5 +206,9 @@ namespace Hnos_Rojas
             return dias;
         }
 
+        private void lbDiasDeVisita_Click(object sender, EventArgs e)
+        {
+            //rellenar el combo Box y el datePicker
+        }
     }
 }
