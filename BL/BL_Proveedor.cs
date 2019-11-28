@@ -44,7 +44,7 @@ namespace BL
         }
 
         public List<DO_ProveedorParaHorario> dividirHorario() {
-            List<DO_Proveedor> listaProveedores = obtenerListaProveedores( "", true);
+            List<DO_Proveedor> listaProveedores = obtenerListaProveedores( "", false);
             List<DO_ProveedorParaHorario> elementosDelHorario = new List<DO_ProveedorParaHorario>();
             
 

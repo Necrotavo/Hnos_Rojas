@@ -34,7 +34,9 @@
             this.btnAyudaProveedores = new System.Windows.Forms.Button();
             this.btnAyudaConfiguracion = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.txtAyuda = new System.Windows.Forms.TextBox();
+            this.txtAyuda1 = new System.Windows.Forms.TextBox();
+            this.txtAyuda2 = new System.Windows.Forms.TextBox();
+            this.txtAyuda3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAyudaVentas
@@ -127,14 +129,32 @@
             this.btnReportes.UseVisualStyleBackColor = false;
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
-            // txtAyuda
+            // txtAyuda1
             // 
-            this.txtAyuda.Location = new System.Drawing.Point(12, 116);
-            this.txtAyuda.Multiline = true;
-            this.txtAyuda.Name = "txtAyuda";
-            this.txtAyuda.ReadOnly = true;
-            this.txtAyuda.Size = new System.Drawing.Size(1038, 514);
-            this.txtAyuda.TabIndex = 15;
+            this.txtAyuda1.Location = new System.Drawing.Point(12, 124);
+            this.txtAyuda1.Multiline = true;
+            this.txtAyuda1.Name = "txtAyuda1";
+            this.txtAyuda1.ReadOnly = true;
+            this.txtAyuda1.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda1.TabIndex = 15;
+            // 
+            // txtAyuda2
+            // 
+            this.txtAyuda2.Location = new System.Drawing.Point(12, 304);
+            this.txtAyuda2.Multiline = true;
+            this.txtAyuda2.Name = "txtAyuda2";
+            this.txtAyuda2.ReadOnly = true;
+            this.txtAyuda2.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda2.TabIndex = 16;
+            // 
+            // txtAyuda3
+            // 
+            this.txtAyuda3.Location = new System.Drawing.Point(12, 483);
+            this.txtAyuda3.Multiline = true;
+            this.txtAyuda3.Name = "txtAyuda3";
+            this.txtAyuda3.ReadOnly = true;
+            this.txtAyuda3.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda3.TabIndex = 17;
             // 
             // Ayuda
             // 
@@ -142,7 +162,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1301, 661);
-            this.Controls.Add(this.txtAyuda);
+            this.Controls.Add(this.txtAyuda3);
+            this.Controls.Add(this.txtAyuda2);
+            this.Controls.Add(this.txtAyuda1);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnAyudaConfiguracion);
             this.Controls.Add(this.btnAyudaProveedores);
@@ -165,6 +187,8 @@
         private System.Windows.Forms.Button btnAyudaProveedores;
         private System.Windows.Forms.Button btnAyudaConfiguracion;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.TextBox txtAyuda;
+        private System.Windows.Forms.TextBox txtAyuda1;
+        private System.Windows.Forms.TextBox txtAyuda2;
+        private System.Windows.Forms.TextBox txtAyuda3;
     }
 }

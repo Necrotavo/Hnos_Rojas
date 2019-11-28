@@ -44,10 +44,10 @@ namespace Hnos_Rojas
                         indicesHoraYdia[0] = obtenerIndiceHora(diaHora);
                     }
                     i++;
-                }
 
-                dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]] = (String)(dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]])
-                    +doProvHorario.nombre;
+                    String textoAntiguo = (String)(dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]]);
+                    dtHorario.Rows[indicesHoraYdia[0]][indicesHoraYdia[1]] = textoAntiguo + " " + doProvHorario.nombre;
+                }
             }
 
             grdAsociados.DataSource = dtHorario;
@@ -81,11 +81,11 @@ namespace Hnos_Rojas
         }
 
         public int obtenerIndiceHora(String hora) {
-            if (hora == "8:00AM")
+            if (hora == "08:00AM")
             {
                 return 0;
             }
-            else if (hora == "9:00AM")
+            else if (hora == "09:00AM")
             {
                 return 1;
             }
@@ -101,31 +101,31 @@ namespace Hnos_Rojas
             {
                 return 4;
             }
-            else if (hora == "1:00PM")
+            else if (hora == "01:00PM")
             {
                 return 5;
             }
-            else if (hora == "2:00PM")
+            else if (hora == "02:00PM")
             {
                 return 6;
             }
-            else if (hora == "3:00PM")
+            else if (hora == "03:00PM")
             {
                 return 7;
             }
-            else if (hora == "4:00PM")
+            else if (hora == "04:00PM")
             {
                 return 8;
             }
-            else if (hora == "5:00PM")
+            else if (hora == "05:00PM")
             {
                 return 9;
             }
-            else if (hora == "6:00PM")
+            else if (hora == "06:00PM")
             {
                 return 10;
             }
-            else if (hora == "7:00PM")
+            else if (hora == "07:00PM")
             {
                 return 11;
             }
