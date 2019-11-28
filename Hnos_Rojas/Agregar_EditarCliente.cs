@@ -94,7 +94,9 @@ namespace Hnos_Rojas
 
             if (datos.Equals(String.Empty))
             {
-                dgvClientes.DataSource = blCliente.obtenerListaClientesHabilitados(false, "");
+                List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+                listaClientes = blCliente.obtenerListaClientesHabilitados(false, "");
+                dgvClientes.DataSource = listaClientes;
 
                 dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
@@ -153,10 +155,6 @@ namespace Hnos_Rojas
         {
             dgv.RowsDefaultCellStyle.BackColor = Color.White;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-           
-
-
-
         }
 
         private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -224,6 +222,7 @@ namespace Hnos_Rojas
         {
             if (tabControlClientes.SelectedTab == tabPageModificar)
             {
+                
                 this.ActiveControl = tbNombreOApellido;
                 modificando = false;
                 vaciarCampos();            

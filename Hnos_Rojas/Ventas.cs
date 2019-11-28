@@ -234,6 +234,7 @@ namespace Hnos_Rojas
         private void ventanaProductoNuevo()
         {
             NuevoProducto ventanaProducto = new NuevoProducto();
+            ventanaProducto.StartPosition = FormStartPosition.CenterScreen;
             ventanaProducto.Show();
         }
 

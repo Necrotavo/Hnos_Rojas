@@ -146,5 +146,15 @@ namespace Hnos_Rojas
             ventas.agregarProductoATabla(producto);
             this.Dispose();
         }
+
+        private void Productos_Load(object sender, EventArgs e)
+        {
+            AlternarColores(grdProductos);
+        }
+        public void AlternarColores(DataGridView dgv)
+        {
+            dgv.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+        }
     }
 }

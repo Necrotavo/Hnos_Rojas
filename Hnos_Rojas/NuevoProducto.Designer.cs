@@ -48,8 +48,6 @@
             this.tpModificar = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btBuscar = new System.Windows.Forms.Button();
-            this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
             this.Modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +55,8 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.tbBuscarCodigo = new System.Windows.Forms.TextBox();
             this.tabControlProducto.SuspendLayout();
             this.tpFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDGanancia)).BeginInit();
@@ -315,30 +315,6 @@
             this.dgvProductos.TabIndex = 3;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
-            // btBuscar
-            // 
-            this.btBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btBuscar.FlatAppearance.BorderSize = 0;
-            this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
-            this.btBuscar.ForeColor = System.Drawing.Color.White;
-            this.btBuscar.Location = new System.Drawing.Point(205, 412);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(114, 52);
-            this.btBuscar.TabIndex = 2;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = false;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
-            // 
-            // tbBuscarCodigo
-            // 
-            this.tbBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuscarCodigo.Location = new System.Drawing.Point(128, 371);
-            this.tbBuscarCodigo.Name = "tbBuscarCodigo";
-            this.tbBuscarCodigo.Size = new System.Drawing.Size(191, 35);
-            this.tbBuscarCodigo.TabIndex = 1;
-            this.tbBuscarCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBuscarCodigo_KeyPress);
-            // 
             // Modificar
             // 
             this.Modificar.HeaderText = "Modificar";
@@ -390,6 +366,30 @@
             this.CantidadMinima.ReadOnly = true;
             this.CantidadMinima.Visible = false;
             // 
+            // btBuscar
+            // 
+            this.btBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btBuscar.FlatAppearance.BorderSize = 0;
+            this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btBuscar.ForeColor = System.Drawing.Color.White;
+            this.btBuscar.Location = new System.Drawing.Point(205, 412);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(114, 52);
+            this.btBuscar.TabIndex = 2;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
+            // 
+            // tbBuscarCodigo
+            // 
+            this.tbBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscarCodigo.Location = new System.Drawing.Point(128, 371);
+            this.tbBuscarCodigo.Name = "tbBuscarCodigo";
+            this.tbBuscarCodigo.Size = new System.Drawing.Size(191, 35);
+            this.tbBuscarCodigo.TabIndex = 1;
+            this.tbBuscarCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBuscarCodigo_KeyPress);
+            // 
             // NuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +398,7 @@
             this.ClientSize = new System.Drawing.Size(1229, 549);
             this.Controls.Add(this.tabControlProducto);
             this.Name = "NuevoProducto";
-            this.Text = "NuevoProducto";
+            this.Text = "Administrar Productos";
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
             this.tabControlProducto.ResumeLayout(false);
             this.tpFormulario.ResumeLayout(false);
