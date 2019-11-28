@@ -24,9 +24,7 @@ namespace Hnos_Rojas
             InitializeComponent();
             padre = _padre;
             lblTitulo.Text = "Nuevo Proveedor";
-            formatoDtVisita();
             llenarCboDias();
-            rbAM.Checked = true;
             editable = false;
 
         }
@@ -37,10 +35,8 @@ namespace Hnos_Rojas
             padre = _padre;
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
-            formatoDtVisita();
             llenarCboDias();
             rellenarFormulario(nombreProveedor);
-            rbAM.Checked = true;
             editable = true;
         }
 
@@ -159,12 +155,6 @@ namespace Hnos_Rojas
             
         }
 
-        private void formatoDtVisita() {
-            dtVisita.Format = DateTimePickerFormat.Custom;
-            dtVisita.CustomFormat = "hh:mm";
-            dtVisita.ShowUpDown = true;
-            dtVisita.Text = "7:00";
-        }
 
         private void llenarCboDias() {
             DataTable dataTable = new DataTable();
@@ -185,13 +175,7 @@ namespace Hnos_Rojas
         {
             
             String dia = "";
-            if (rbAM.Checked)
-            {
-                dia = cboDias.SelectedValue.ToString() + "-" + dtVisita.Text + rbAM.Text;
-            }
-            else {
-                dia = cboDias.SelectedValue.ToString() + "-" + dtVisita.Text + rbPM.Text;
-            }
+            dia = cboDias.SelectedValue.ToString() + "-" + cboHoras.Text;
             if (!lbDiasDeVisita.Items.Contains(dia))
             {
                 lbDiasDeVisita.Items.Add(dia);
