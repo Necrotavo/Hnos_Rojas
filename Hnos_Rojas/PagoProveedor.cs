@@ -46,7 +46,7 @@ namespace Hnos_Rojas
                     doPago.proveedor = listBoxProveedor.SelectedValue.ToString();
                     doPago.fecha = DateTime.Now;
 
-                    DialogResult result = MessageBox.Show("¿Desea realizar un pago de " + textBox1.Text + "₡ al proveedor " +
+                    DialogResult result = MessageBox.Show("¿Desea realizar un pago de ₡" + textBox1.Text + " al proveedor " +
                         listBoxProveedor.SelectedValue.ToString() + "?", "Warning",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
