@@ -95,7 +95,7 @@ namespace Hnos_Rojas
             if (datos.Equals(String.Empty))
             {
                 List<DO_Cliente> listaClientes = new List<DO_Cliente>();
-                listaClientes = blCliente.obtenerListaClientesHabilitados(false, "");
+                listaClientes = blCliente.buscarClientes("");
                 dgvClientes.DataSource = listaClientes;
 
                 dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);

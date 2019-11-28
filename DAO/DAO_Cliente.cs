@@ -164,18 +164,15 @@ namespace DAO
 
         public List<DO_Cliente> obtenerListaClientesHabilitados(bool clientesHabilitados, String nombre) {
             SqlDataAdapter adapter = new SqlDataAdapter();
-            String consultaClientes = "select * from CLIENTE where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro";
+            String consultaClientes = "select * from CLIENTE where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro and EST_ESTADO = 'HABILITADO'";
             DataTable datatable = new DataTable();
             DAO_Credito daoCredito = new DAO_Credito();
             List<DO_Cliente> listaClientes = new List<DO_Cliente>();
 
-            if (clientesHabilitados)
-            {
-                consultaClientes += " and EST_ESTADO = 'HABILITADO'";
-                
-            }
+ 
             adapter.SelectCommand = new SqlCommand(consultaClientes, conexion);
             adapter.SelectCommand.Parameters.AddWithValue("@filtro", "%" + nombre + "%");
+            
             try
             {
                 if (conexion.State != ConnectionState.Open)
@@ -255,9 +252,52 @@ namespace DAO
 
         public List<DO_Cliente> filtrarClientes(String filtro) {
             List<DO_Cliente> listaClientes = new List<DO_Cliente>();
-            SqlCommand consulta = new SqlCommand("select * from Cliente where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro", conexion);
+            SqlCommand consulta = new SqlCommand("select * from Cliente where (PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro) AND (EST_ESTADO = 'HABILITADO') ", conexion);
             consulta.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
             
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        DO_Cliente cliente = new DO_Cliente();
+                        cliente.perIdentificador = Convert.ToInt32(lector["PER_IDENTIFICADOR"]);
+                        cliente.estado = (String)lector["EST_ESTADO"];
+                        cliente.perTelefono = (String)(lector["PER_TELEFONO"]);
+                        cliente.perNombre = (String)lector["PER_NOMBRE"];
+                        cliente.perPrimerApellido = (String)lector["PER_PRIMER_APELLIDO"];
+                        cliente.perSegundoApellido = (String)lector["PER_SEGUNDO_APELLIDO"];
+                        cliente.direccion = (String)lector["CLI_DIRECCION"];
+                        listaClientes.Add(cliente);
+                    }
+                    return listaClientes;
+                }
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return null;
+        }
+        public List<DO_Cliente> buscarTodosLosClientes(String filtro)
+        {
+            List<DO_Cliente> listaClientes = new List<DO_Cliente>();
+            SqlCommand consulta = new SqlCommand("select * from Cliente where PER_NOMBRE LIKE @filtro or PER_PRIMER_APELLIDO LIKE @filtro", conexion);
+            consulta.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+
             try
             {
                 if (conexion.State != ConnectionState.Open)

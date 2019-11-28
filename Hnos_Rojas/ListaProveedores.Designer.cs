@@ -50,7 +50,7 @@
             this.txtNombreProveedor.Location = new System.Drawing.Point(475, 212);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(318, 35);
-            this.txtNombreProveedor.TabIndex = 4;
+            this.txtNombreProveedor.TabIndex = 0;
             this.txtNombreProveedor.TextChanged += new System.EventHandler(this.txtNombreProveedor_TextChanged);
             // 
             // listBoxProveedores
@@ -61,7 +61,7 @@
             this.listBoxProveedores.Location = new System.Drawing.Point(475, 275);
             this.listBoxProveedores.Name = "listBoxProveedores";
             this.listBoxProveedores.Size = new System.Drawing.Size(318, 120);
-            this.listBoxProveedores.TabIndex = 3;
+            this.listBoxProveedores.TabIndex = 1;
             this.listBoxProveedores.Click += new System.EventHandler(this.listBoxProveedores_Click);
             // 
             // ListaProveedores
