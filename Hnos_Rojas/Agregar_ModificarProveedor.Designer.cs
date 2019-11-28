@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
-            this.txtFechaVisita = new System.Windows.Forms.TextBox();
             this.lblFechaVisita = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -41,6 +40,8 @@
             this.rbPM = new System.Windows.Forms.RadioButton();
             this.btnDiaVisita = new System.Windows.Forms.Button();
             this.lbDiasDeVisita = new System.Windows.Forms.ListBox();
+            this.btnEditarDia = new System.Windows.Forms.Button();
+            this.btnEliminarDia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNombreProveedor
@@ -51,15 +52,6 @@
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(151, 35);
             this.txtNombreProveedor.TabIndex = 34;
-            // 
-            // txtFechaVisita
-            // 
-            this.txtFechaVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaVisita.Location = new System.Drawing.Point(636, 247);
-            this.txtFechaVisita.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFechaVisita.Name = "txtFechaVisita";
-            this.txtFechaVisita.Size = new System.Drawing.Size(151, 35);
-            this.txtFechaVisita.TabIndex = 33;
             // 
             // lblFechaVisita
             // 
@@ -132,15 +124,15 @@
             // 
             this.cboDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDias.FormattingEnabled = true;
-            this.cboDias.Location = new System.Drawing.Point(803, 249);
+            this.cboDias.Location = new System.Drawing.Point(636, 253);
             this.cboDias.Name = "cboDias";
-            this.cboDias.Size = new System.Drawing.Size(121, 32);
+            this.cboDias.Size = new System.Drawing.Size(150, 32);
             this.cboDias.TabIndex = 38;
             // 
             // dtVisita
             // 
             this.dtVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtVisita.Location = new System.Drawing.Point(941, 252);
+            this.dtVisita.Location = new System.Drawing.Point(792, 256);
             this.dtVisita.Name = "dtVisita";
             this.dtVisita.Size = new System.Drawing.Size(115, 29);
             this.dtVisita.TabIndex = 39;
@@ -150,7 +142,7 @@
             this.rbAM.AutoSize = true;
             this.rbAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbAM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbAM.Location = new System.Drawing.Point(1072, 251);
+            this.rbAM.Location = new System.Drawing.Point(927, 217);
             this.rbAM.Name = "rbAM";
             this.rbAM.Size = new System.Drawing.Size(57, 28);
             this.rbAM.TabIndex = 40;
@@ -163,7 +155,7 @@
             this.rbPM.AutoSize = true;
             this.rbPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPM.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbPM.Location = new System.Drawing.Point(1072, 285);
+            this.rbPM.Location = new System.Drawing.Point(928, 258);
             this.rbPM.Name = "rbPM";
             this.rbPM.Size = new System.Drawing.Size(56, 28);
             this.rbPM.TabIndex = 41;
@@ -178,7 +170,7 @@
             this.btnDiaVisita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiaVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiaVisita.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDiaVisita.Location = new System.Drawing.Point(1063, 319);
+            this.btnDiaVisita.Location = new System.Drawing.Point(1144, 106);
             this.btnDiaVisita.Name = "btnDiaVisita";
             this.btnDiaVisita.Size = new System.Drawing.Size(106, 39);
             this.btnDiaVisita.TabIndex = 42;
@@ -189,10 +181,28 @@
             // lbDiasDeVisita
             // 
             this.lbDiasDeVisita.FormattingEnabled = true;
-            this.lbDiasDeVisita.Location = new System.Drawing.Point(1072, 146);
+            this.lbDiasDeVisita.Location = new System.Drawing.Point(1018, 106);
             this.lbDiasDeVisita.Name = "lbDiasDeVisita";
             this.lbDiasDeVisita.Size = new System.Drawing.Size(120, 95);
             this.lbDiasDeVisita.TabIndex = 43;
+            // 
+            // btnEditarDia
+            // 
+            this.btnEditarDia.Location = new System.Drawing.Point(1168, 161);
+            this.btnEditarDia.Name = "btnEditarDia";
+            this.btnEditarDia.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarDia.TabIndex = 44;
+            this.btnEditarDia.Text = "Editar";
+            this.btnEditarDia.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarDia
+            // 
+            this.btnEliminarDia.Location = new System.Drawing.Point(1168, 190);
+            this.btnEliminarDia.Name = "btnEliminarDia";
+            this.btnEliminarDia.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarDia.TabIndex = 45;
+            this.btnEliminarDia.Text = "Eliminar";
+            this.btnEliminarDia.UseVisualStyleBackColor = true;
             // 
             // Agregar_ModificarProveedor
             // 
@@ -200,6 +210,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1255, 523);
+            this.Controls.Add(this.btnEliminarDia);
+            this.Controls.Add(this.btnEditarDia);
             this.Controls.Add(this.lbDiasDeVisita);
             this.Controls.Add(this.btnDiaVisita);
             this.Controls.Add(this.rbPM);
@@ -210,7 +222,6 @@
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtNombreProveedor);
-            this.Controls.Add(this.txtFechaVisita);
             this.Controls.Add(this.lblFechaVisita);
             this.Controls.Add(this.lblNombre);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,7 +238,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNombreProveedor;
-        private System.Windows.Forms.TextBox txtFechaVisita;
         private System.Windows.Forms.Label lblFechaVisita;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblTitulo;
@@ -239,5 +249,7 @@
         private System.Windows.Forms.RadioButton rbAM;
         private System.Windows.Forms.Button btnDiaVisita;
         private System.Windows.Forms.ListBox lbDiasDeVisita;
+        private System.Windows.Forms.Button btnEditarDia;
+        private System.Windows.Forms.Button btnEliminarDia;
     }
 }

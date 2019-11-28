@@ -17,14 +17,17 @@ namespace Hnos_Rojas
     {
         Proveedor padre;
         private DO_Proveedor proveedor;
-        private List<String> listaVisita;
+        private bool editable;
+   
         public Agregar_ModificarProveedor(Proveedor _padre)
         {
             InitializeComponent();
             padre = _padre;
             lblTitulo.Text = "Nuevo Proveedor";
-            listaVisita = new List<string>();
-            
+            formatoDtVisita();
+            llenarCboDias();
+            editable = false;
+
         }
 
         public Agregar_ModificarProveedor(String nombreProveedor, Proveedor _padre)
@@ -34,13 +37,14 @@ namespace Hnos_Rojas
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
             rellenarFormulario(nombreProveedor);
+            editable = true;
         }
 
         private void rellenarFormulario(String nombreProveedor) {
             BL_Proveedor blProveedor = new BL_Proveedor();
             proveedor = blProveedor.obtenerProveedor(nombreProveedor);
             txtNombreProveedor.Text = proveedor.nombre;
-            txtFechaVisita.Text = proveedor.fechaVisita;
+            //falta llenar el combo box de días, datePicker y radioButton 
         }
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
@@ -51,7 +55,7 @@ namespace Hnos_Rojas
                 // modificar
                 if (validarFormulario())
                 {
-                    proveedor.fechaVisita = txtFechaVisita.Text.Trim();
+                    //falta validar que todo esté seleccionado
                     if (blProveedor.modificarProveedor(proveedor))
                     {
                         MessageBox.Show("Proveedor modificado");
@@ -69,7 +73,7 @@ namespace Hnos_Rojas
                 if (validarFormulario()) {
                     DO_Proveedor proveedor = new DO_Proveedor();
                     proveedor.nombre = txtNombreProveedor.Text.Trim();
-                    proveedor.fechaVisita = txtFechaVisita.Text.Trim();
+                    proveedor.fechaVisita = todosLosDias();
                     if (blProveedor.ingresarProveedor(proveedor))
                     {
                         MessageBox.Show("Proveedor ingresado");
@@ -84,7 +88,7 @@ namespace Hnos_Rojas
         }
 
         private bool validarFormulario() {
-            if (txtNombreProveedor.Text.Trim().Equals("") || txtFechaVisita.Text.Trim().Equals("")) {
+            if (txtNombreProveedor.Text.Trim().Equals("")) {
                 return false;
             }
             return true;
@@ -92,7 +96,6 @@ namespace Hnos_Rojas
 
         private void limpiarFormulario() {
             txtNombreProveedor.Clear();
-            txtFechaVisita.Clear();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -102,8 +105,7 @@ namespace Hnos_Rojas
 
         private void Agregar_ModificarProveedor_Load(object sender, EventArgs e)
         {
-            formatoDtVisita();
-            llenarCboDias();
+            
         }
 
         private void formatoDtVisita() {
@@ -130,6 +132,7 @@ namespace Hnos_Rojas
 
         private void btnDiaVisita_Click(object sender, EventArgs e)
         {
+            
             String dia = "";
             if (rbAM.Checked)
             {
@@ -138,8 +141,19 @@ namespace Hnos_Rojas
             else {
                 dia = cboDias.SelectedValue.ToString() + "-" + dtVisita.Text + rbPM.Text;
             }
-            listaVisita.Add(dia);
-            lbDiasDeVisita.DataSource = listaVisita;   
+            lbDiasDeVisita.Items.Add(dia);
+            //lbDiasDeVisita.DataSource = listaVisita;
+            
         }
+
+        private String todosLosDias() {
+            String dias = "";
+            for (int i = 0; i < lbDiasDeVisita.Items.Count; i ++) {
+                dias += lbDiasDeVisita.Items[i].ToString()+",";
+            }
+            dias = dias.TrimEnd(',');
+            return dias;
+        }
+
     }
 }
