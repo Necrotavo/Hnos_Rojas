@@ -267,6 +267,9 @@
     <EmbeddedResource Include="Agregar_ModificarProveedor.resx">
       <DependentUpon>Agregar_ModificarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
