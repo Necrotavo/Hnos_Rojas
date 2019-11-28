@@ -14,10 +14,13 @@ namespace Hnos_Rojas
 {
     public partial class HorarioProveedores : Form
     {
+        Proveedor papa;
+
         public HorarioProveedores()
         {
             InitializeComponent();
             llenarGrid();
+            grdAsociados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
         }
 
         public void llenarGrid() {
@@ -132,31 +135,31 @@ namespace Hnos_Rojas
 
         public int obtenerIndiceDia(String dia)
         {
-            if (dia == "9:00AM")
+            if (dia == "L")
             {
                 return 1;
             }
-            else if (dia == "10:00AM")
+            else if (dia == "K")
             {
                 return 2;
             }
-            else if (dia == "11:00AM")
+            else if (dia == "M")
             {
                 return 3;
             }
-            else if (dia == "12:00AM")
+            else if (dia == "J")
             {
                 return 4;
             }
-            else if (dia == "1:00PM")
+            else if (dia == "V")
             {
                 return 5;
             }
-            else if (dia == "2:00PM")
+            else if (dia == "S")
             {
                 return 6;
             }
-            else if (dia == "3:00PM")
+            else if (dia == "D")
             {
                 return 7;
             }
