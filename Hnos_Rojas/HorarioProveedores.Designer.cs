@@ -64,8 +64,8 @@
             this.Jueves,
             this.Sabado,
             this.Domingo});
-            this.grdAsociados.Location = new System.Drawing.Point(112, 59);
-            this.grdAsociados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdAsociados.Location = new System.Drawing.Point(84, 48);
+            this.grdAsociados.Margin = new System.Windows.Forms.Padding(2);
             this.grdAsociados.Name = "grdAsociados";
             this.grdAsociados.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -77,8 +77,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdAsociados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdAsociados.RowTemplate.Height = 24;
-            this.grdAsociados.Size = new System.Drawing.Size(1436, 453);
+            this.grdAsociados.Size = new System.Drawing.Size(1077, 368);
             this.grdAsociados.TabIndex = 7;
+            this.grdAsociados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdAsociados_CellFormatting);
             // 
             // btnSalir
             // 
@@ -87,10 +88,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1361, 567);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(1021, 461);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(187, 59);
+            this.btnSalir.Size = new System.Drawing.Size(140, 48);
             this.btnSalir.TabIndex = 24;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -100,19 +100,22 @@
             // 
             this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Hora.DataPropertyName = "Hora";
+            this.Hora.FillWeight = 120F;
             this.Hora.HeaderText = "Hora";
             this.Hora.Name = "Hora";
             this.Hora.ReadOnly = true;
-            this.Hora.Width = 94;
+            this.Hora.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Hora.Width = 57;
             // 
             // Lunes
             // 
-            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Lunes.DataPropertyName = "Lunes";
             this.Lunes.HeaderText = "Lunes";
             this.Lunes.Name = "Lunes";
             this.Lunes.ReadOnly = true;
-            this.Lunes.Width = 107;
+            this.Lunes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Lunes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Martes
             // 
@@ -121,7 +124,9 @@
             this.Martes.HeaderText = "Martes";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
-            this.Martes.Width = 115;
+            this.Martes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Martes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Martes.Width = 72;
             // 
             // Miercoles
             // 
@@ -130,7 +135,9 @@
             this.Miercoles.HeaderText = "Miércoles";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
-            this.Miercoles.Width = 148;
+            this.Miercoles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Miercoles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Miercoles.Width = 98;
             // 
             // Jueves
             // 
@@ -139,7 +146,9 @@
             this.Jueves.HeaderText = "Jueves";
             this.Jueves.Name = "Jueves";
             this.Jueves.ReadOnly = true;
-            this.Jueves.Width = 118;
+            this.Jueves.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Jueves.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Jueves.Width = 76;
             // 
             // Sabado
             // 
@@ -148,7 +157,8 @@
             this.Sabado.HeaderText = "Sábado";
             this.Sabado.Name = "Sabado";
             this.Sabado.ReadOnly = true;
-            this.Sabado.Width = 126;
+            this.Sabado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Sabado.Width = 81;
             // 
             // Domingo
             // 
@@ -157,17 +167,19 @@
             this.Domingo.HeaderText = "Domingo";
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
-            this.Domingo.Width = 140;
+            this.Domingo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Domingo.Width = 93;
             // 
             // HorarioProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1673, 684);
+            this.ClientSize = new System.Drawing.Size(1040, 556);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grdAsociados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HorarioProveedores";
             this.Text = "HorarioProveedores";
             ((System.ComponentModel.ISupportInitialize)(this.grdAsociados)).EndInit();

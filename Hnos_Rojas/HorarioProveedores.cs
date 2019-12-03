@@ -51,6 +51,7 @@ namespace Hnos_Rojas
             }
 
             grdAsociados.DataSource = dtHorario;
+            
         }
 
         public DataTable construirDataTable() {
@@ -174,6 +175,12 @@ namespace Hnos_Rojas
         {
             papa.invocarListaProveedores();
             this.Dispose();
+        }
+
+        private void grdAsociados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            grdAsociados.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = grdAsociados.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
         }
     }
 }
