@@ -37,6 +37,7 @@
             this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdAsociados)).BeginInit();
@@ -46,6 +47,7 @@
             // 
             this.grdAsociados.AllowUserToAddRows = false;
             this.grdAsociados.AllowUserToDeleteRows = false;
+            this.grdAsociados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdAsociados.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
@@ -62,6 +64,7 @@
             this.Martes,
             this.Miercoles,
             this.Jueves,
+            this.Viernes,
             this.Sabado,
             this.Domingo});
             this.grdAsociados.Location = new System.Drawing.Point(84, 48);
@@ -109,7 +112,7 @@
             // 
             // Lunes
             // 
-            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Lunes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Lunes.DataPropertyName = "Lunes";
             this.Lunes.HeaderText = "Lunes";
             this.Lunes.Name = "Lunes";
@@ -119,56 +122,61 @@
             // 
             // Martes
             // 
-            this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Martes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Martes.DataPropertyName = "Martes";
             this.Martes.HeaderText = "Martes";
             this.Martes.Name = "Martes";
             this.Martes.ReadOnly = true;
             this.Martes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Martes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Martes.Width = 72;
             // 
             // Miercoles
             // 
-            this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Miercoles.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Miercoles.DataPropertyName = "Miercoles";
             this.Miercoles.HeaderText = "Miércoles";
             this.Miercoles.Name = "Miercoles";
             this.Miercoles.ReadOnly = true;
             this.Miercoles.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Miercoles.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Miercoles.Width = 98;
             // 
             // Jueves
             // 
-            this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Jueves.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Jueves.DataPropertyName = "Jueves";
             this.Jueves.HeaderText = "Jueves";
             this.Jueves.Name = "Jueves";
             this.Jueves.ReadOnly = true;
             this.Jueves.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Jueves.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Jueves.Width = 76;
+            // 
+            // Viernes
+            // 
+            this.Viernes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Viernes.DataPropertyName = "Viernes";
+            this.Viernes.HeaderText = "Viernes";
+            this.Viernes.Name = "Viernes";
+            this.Viernes.ReadOnly = true;
+            this.Viernes.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Viernes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Sabado
             // 
-            this.Sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Sabado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Sabado.DataPropertyName = "Sabado";
             this.Sabado.HeaderText = "Sábado";
             this.Sabado.Name = "Sabado";
             this.Sabado.ReadOnly = true;
             this.Sabado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Sabado.Width = 81;
             // 
             // Domingo
             // 
-            this.Domingo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Domingo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Domingo.DataPropertyName = "Domingo";
             this.Domingo.HeaderText = "Domingo";
             this.Domingo.Name = "Domingo";
             this.Domingo.ReadOnly = true;
             this.Domingo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Domingo.Width = 93;
             // 
             // HorarioProveedores
             // 
@@ -196,6 +204,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Miercoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
     }
