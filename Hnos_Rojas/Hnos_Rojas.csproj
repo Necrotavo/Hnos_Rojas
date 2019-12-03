@@ -167,6 +167,12 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="MensajePersonalizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensajePersonalizado.Designer.cs">
+      <DependentUpon>MensajePersonalizado.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
