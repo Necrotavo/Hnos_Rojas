@@ -92,7 +92,15 @@ namespace Hnos_Rojas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            buscarProducto();
+            if (txtCodigo.Text != "")
+            {
+                buscarProducto();
+                txtCodigo.Focus();
+            }
+            else
+            {
+                llenarGridProductos();
+            }
         }
 
         public void buscarProducto() {
@@ -117,15 +125,15 @@ namespace Hnos_Rojas
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text!="")
-            {
-                buscarProducto();
-                txtCodigo.Focus();
-            }
-            else
-            {
-                llenarGridProductos();
-            }
+            //if (txtCodigo.Text!="")
+            //{
+            //    buscarProducto();
+            //    txtCodigo.Focus();
+            //}
+            //else
+            //{
+            //    llenarGridProductos();
+            //}
             
         }
 
@@ -155,6 +163,27 @@ namespace Hnos_Rojas
         {
             dgv.RowsDefaultCellStyle.BackColor = Color.White;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+        }
+
+        private void txtCodigo_KeyDown(object sender, KeyEventArgs e)
+
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    {
+                        if (txtCodigo.Text != "")
+                        {
+                            buscarProducto();
+                            txtCodigo.Focus();
+                        }
+                        else
+                        {
+                            llenarGridProductos();
+                        }
+                        break;
+                    }
+            }
         }
     }
 }
