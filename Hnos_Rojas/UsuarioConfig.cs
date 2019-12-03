@@ -38,10 +38,14 @@ namespace Hnos_Rojas
 
             if (blUsuario.iniciarSesion(listBoxUsuarios.SelectedValue.ToString(), txtContrasena.Text) != null)
             {
-                txtNombreUsuarioCrear.Text = listBoxUsuarios.SelectedValue.ToString();
-                txtContrasenaCrear.Text = txtContrasena.Text;
-                txtNombreUsuarioCrear.ReadOnly = true;
-                tabControlUsuarios.SelectedTab = tabCrearUsuario;
+                if (blUsuario.actualizarUsuario(listBoxUsuarios.SelectedValue.ToString(), txtNuevaContrasena.Text))
+                {
+                    MessageBox.Show("Se cambió la clave con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Se produjo un error");
+                }
             }
             else
             {
@@ -61,19 +65,7 @@ namespace Hnos_Rojas
         private void btnUsuariosConf_Click(object sender, EventArgs e)
         {
             BL_Usuario blUsuario = new BL_Usuario();
-            if (txtNombreUsuarioCrear.ReadOnly)
-            {
-                if (blUsuario.actualizarUsuario(txtNombreUsuarioCrear.Text, txtContrasenaCrear.Text))
-                {
-                    MessageBox.Show("Se cambió la clave con exito");
-                }
-                else
-                {
-                    MessageBox.Show("Se produjo un error");
-                }
-            }
-            else
-            {
+
                 if (blUsuario.insertarUsuario(txtNombreUsuarioCrear.Text, txtContrasenaCrear.Text))
                 {
                     MessageBox.Show("Se agregó nuevo usuario con exito");
@@ -82,8 +74,6 @@ namespace Hnos_Rojas
                 {
                     MessageBox.Show("Se produjo un error");
                 }
-                
-            }
             limpiarForms();
         }
 
