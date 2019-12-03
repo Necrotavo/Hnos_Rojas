@@ -55,7 +55,7 @@ namespace Hnos_Rojas
             //this.Parent.Controls.Add(listaAsociados);
             //listaAsociados.Show();
             //this.Dispose();
-            nombreProveedor = listBoxProveedores.SelectedValue.ToString();
+            //nombreProveedor = listBoxProveedores.SelectedValue.ToString();
         }
 
         private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
@@ -75,6 +75,15 @@ namespace Hnos_Rojas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             padre.invocarListaProveedores();
+        }
+
+        private void listBoxProveedores_DoubleClick(object sender, EventArgs e)
+        {
+            nombreProveedor = listBoxProveedores.SelectedValue.ToString();
+            ListaAsociados listaAsociados = new ListaAsociados(nombreProveedor, padre) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.Parent.Controls.Add(listaAsociados);
+            listaAsociados.Show();
+            this.Dispose();
         }
     }
 }
