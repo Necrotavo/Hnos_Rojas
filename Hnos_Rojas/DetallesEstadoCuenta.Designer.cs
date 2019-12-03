@@ -30,19 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.calDesde = new System.Windows.Forms.MonthCalendar();
             this.calHasta = new System.Windows.Forms.MonthCalendar();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.grdFacturas = new System.Windows.Forms.DataGridView();
-            this.lblMsgTotal = new System.Windows.Forms.Label();
-            this.lblMontoCred = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnAbonarCredito = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,20 +45,26 @@
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abonar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblMsgTotal = new System.Windows.Forms.Label();
+            this.lblMontoCred = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnAbonarCredito = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).BeginInit();
             this.SuspendLayout();
             // 
             // calDesde
             // 
-            this.calDesde.Location = new System.Drawing.Point(48, 54);
-            this.calDesde.Margin = new System.Windows.Forms.Padding(7);
+            this.calDesde.Location = new System.Drawing.Point(38, 66);
             this.calDesde.Name = "calDesde";
             this.calDesde.TabIndex = 0;
             // 
             // calHasta
             // 
-            this.calHasta.Location = new System.Drawing.Point(48, 273);
-            this.calHasta.Margin = new System.Windows.Forms.Padding(7);
+            this.calHasta.Location = new System.Drawing.Point(38, 336);
             this.calHasta.Name = "calHasta";
             this.calHasta.TabIndex = 1;
             // 
@@ -74,9 +73,10 @@
             this.lblDesde.AutoSize = true;
             this.lblDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesde.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDesde.Location = new System.Drawing.Point(106, 17);
+            this.lblDesde.Location = new System.Drawing.Point(115, 21);
+            this.lblDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(84, 29);
+            this.lblDesde.Size = new System.Drawing.Size(100, 36);
             this.lblDesde.TabIndex = 3;
             this.lblDesde.Text = "Desde";
             // 
@@ -85,9 +85,10 @@
             this.lblHasta.AutoSize = true;
             this.lblHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHasta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblHasta.Location = new System.Drawing.Point(112, 236);
+            this.lblHasta.Location = new System.Drawing.Point(123, 290);
+            this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(74, 29);
+            this.lblHasta.Size = new System.Drawing.Size(91, 36);
             this.lblHasta.TabIndex = 4;
             this.lblHasta.Text = "Hasta";
             // 
@@ -95,15 +96,17 @@
             // 
             this.grdFacturas.AllowUserToAddRows = false;
             this.grdFacturas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.grdFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdFacturas.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -115,31 +118,115 @@
             this.Saldo,
             this.Abonar,
             this.Imprimir});
-            this.grdFacturas.Location = new System.Drawing.Point(291, 54);
-            this.grdFacturas.Margin = new System.Windows.Forms.Padding(2);
+            this.grdFacturas.Location = new System.Drawing.Point(381, 66);
+            this.grdFacturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdFacturas.Name = "grdFacturas";
             this.grdFacturas.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdFacturas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdFacturas.RowTemplate.Height = 24;
-            this.grdFacturas.Size = new System.Drawing.Size(953, 388);
+            this.grdFacturas.Size = new System.Drawing.Size(1257, 478);
             this.grdFacturas.TabIndex = 5;
             this.grdFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 121;
+            // 
+            // Fecha
+            // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 109;
+            // 
+            // Usuario
+            // 
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 125;
+            // 
+            // ClienteNombre
+            // 
+            this.ClienteNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ClienteNombre.DataPropertyName = "ClienteNombre";
+            this.ClienteNombre.HeaderText = "Cliente";
+            this.ClienteNombre.Name = "ClienteNombre";
+            this.ClienteNombre.ReadOnly = true;
+            this.ClienteNombre.Width = 118;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 117;
+            // 
+            // Monto
+            // 
+            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Monto.DataPropertyName = "Monto";
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            this.Monto.Width = 109;
+            // 
+            // Saldo
+            // 
+            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Saldo.DataPropertyName = "Saldo";
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            this.Saldo.Width = 105;
+            // 
+            // Abonar
+            // 
+            this.Abonar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Abonar.DataPropertyName = "Abonar";
+            this.Abonar.HeaderText = "Abonar";
+            this.Abonar.Image = global::Hnos_Rojas.Properties.Resources.pagar3;
+            this.Abonar.Name = "Abonar";
+            this.Abonar.ReadOnly = true;
+            this.Abonar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Abonar.Width = 96;
+            // 
+            // Imprimir
+            // 
+            this.Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Imprimir.HeaderText = "Impr.";
+            this.Imprimir.Image = global::Hnos_Rojas.Properties.Resources.Impresora;
+            this.Imprimir.Name = "Imprimir";
+            this.Imprimir.ReadOnly = true;
+            this.Imprimir.Width = 73;
             // 
             // lblMsgTotal
             // 
             this.lblMsgTotal.AutoSize = true;
             this.lblMsgTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsgTotal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMsgTotal.Location = new System.Drawing.Point(311, 484);
+            this.lblMsgTotal.Location = new System.Drawing.Point(375, 596);
+            this.lblMsgTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsgTotal.Name = "lblMsgTotal";
-            this.lblMsgTotal.Size = new System.Drawing.Size(74, 29);
+            this.lblMsgTotal.Size = new System.Drawing.Size(89, 36);
             this.lblMsgTotal.TabIndex = 6;
             this.lblMsgTotal.Text = "Total:";
             // 
@@ -148,9 +235,10 @@
             this.lblMontoCred.AutoSize = true;
             this.lblMontoCred.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoCred.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMontoCred.Location = new System.Drawing.Point(393, 484);
+            this.lblMontoCred.Location = new System.Drawing.Point(484, 596);
+            this.lblMontoCred.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoCred.Name = "lblMontoCred";
-            this.lblMontoCred.Size = new System.Drawing.Size(0, 29);
+            this.lblMontoCred.Size = new System.Drawing.Size(0, 36);
             this.lblMontoCred.TabIndex = 7;
             // 
             // btnSalir
@@ -160,9 +248,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1084, 472);
+            this.btnSalir.Location = new System.Drawing.Point(1459, 581);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(134, 50);
+            this.btnSalir.Size = new System.Drawing.Size(179, 62);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Retroceder";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -175,9 +264,10 @@
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Location = new System.Drawing.Point(48, 474);
+            this.btnFiltrar.Location = new System.Drawing.Point(38, 583);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(229, 48);
+            this.btnFiltrar.Size = new System.Drawing.Size(305, 59);
             this.btnFiltrar.TabIndex = 19;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -190,9 +280,10 @@
             this.btnAbonarCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbonarCredito.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAbonarCredito.ForeColor = System.Drawing.Color.White;
-            this.btnAbonarCredito.Location = new System.Drawing.Point(498, 474);
+            this.btnAbonarCredito.Location = new System.Drawing.Point(654, 583);
+            this.btnAbonarCredito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAbonarCredito.Name = "btnAbonarCredito";
-            this.btnAbonarCredito.Size = new System.Drawing.Size(229, 48);
+            this.btnAbonarCredito.Size = new System.Drawing.Size(305, 59);
             this.btnAbonarCredito.TabIndex = 20;
             this.btnAbonarCredito.Text = "Abonar Credito";
             this.btnAbonarCredito.UseVisualStyleBackColor = false;
@@ -205,9 +296,10 @@
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.Location = new System.Drawing.Point(793, 474);
+            this.btnImprimir.Location = new System.Drawing.Point(1061, 584);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(229, 48);
+            this.btnImprimir.Size = new System.Drawing.Size(305, 59);
             this.btnImprimir.TabIndex = 21;
             this.btnImprimir.Text = "Imprimir Reporte";
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -223,7 +315,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 78;
             // 
             // dataGridViewImageColumn2
             // 
@@ -233,95 +324,12 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 96;
-            // 
-            // Fecha
-            // 
-            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Fecha.DataPropertyName = "Fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 89;
-            // 
-            // Usuario
-            // 
-            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Usuario.DataPropertyName = "Usuario";
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 99;
-            // 
-            // ClienteNombre
-            // 
-            this.ClienteNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ClienteNombre.DataPropertyName = "ClienteNombre";
-            this.ClienteNombre.HeaderText = "Cliente";
-            this.ClienteNombre.Name = "ClienteNombre";
-            this.ClienteNombre.ReadOnly = true;
-            this.ClienteNombre.Width = 93;
-            // 
-            // Estado
-            // 
-            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 93;
-            // 
-            // Monto
-            // 
-            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Monto.DataPropertyName = "Monto";
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.ReadOnly = true;
-            this.Monto.Width = 88;
-            // 
-            // Saldo
-            // 
-            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Saldo.DataPropertyName = "Saldo";
-            this.Saldo.HeaderText = "Saldo";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            this.Saldo.Width = 83;
-            // 
-            // Abonar
-            // 
-            this.Abonar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Abonar.DataPropertyName = "Abonar";
-            this.Abonar.HeaderText = "Abonar";
-            this.Abonar.Image = global::Hnos_Rojas.Properties.Resources.pagar3;
-            this.Abonar.Name = "Abonar";
-            this.Abonar.ReadOnly = true;
-            this.Abonar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Abonar.Width = 78;
-            // 
-            // Imprimir
-            // 
-            this.Imprimir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Imprimir.HeaderText = "Impr.";
-            this.Imprimir.Image = global::Hnos_Rojas.Properties.Resources.Impresora;
-            this.Imprimir.Name = "Imprimir";
-            this.Imprimir.ReadOnly = true;
-            this.Imprimir.Width = 58;
-            // 
             // DetallesEstadoCuenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1255, 556);
+            this.ClientSize = new System.Drawing.Size(1673, 684);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnAbonarCredito);
             this.Controls.Add(this.btnFiltrar);
@@ -334,7 +342,7 @@
             this.Controls.Add(this.calHasta);
             this.Controls.Add(this.calDesde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetallesEstadoCuenta";
             this.Text = "DetallesEstadoCuenta";
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).EndInit();
