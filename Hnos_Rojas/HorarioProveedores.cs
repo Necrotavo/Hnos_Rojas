@@ -21,7 +21,7 @@ namespace Hnos_Rojas
             InitializeComponent();
             papa = padre;
             llenarGrid();
-            grdAsociados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            grdAsociados.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
         }
 
         public void llenarGrid() {

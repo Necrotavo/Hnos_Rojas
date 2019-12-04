@@ -36,7 +36,7 @@ namespace Hnos_Rojas
         private void llenarGridProductos() {
             BL_Producto blProducto = new BL_Producto();
             grdProductos.DataSource = blProducto.ObtenerListaDeProductos();
-            grdProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+            grdProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             //style.Font = new Font("Microsoft Sans Serif", 14);
             //style.BackColor = Color.LightGray;
