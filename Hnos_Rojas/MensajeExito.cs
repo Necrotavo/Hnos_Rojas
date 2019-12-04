@@ -12,9 +12,15 @@ namespace Hnos_Rojas
 {
     public partial class MensajeExito : Form
     {
-        public MensajeExito()
+        public MensajeExito(String mensaje)
         {
             InitializeComponent();
+            lbMensajeExito.Text = mensaje;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
