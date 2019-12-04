@@ -12,7 +12,7 @@ namespace Hnos_Rojas
 {
     public partial class MensajeError : Form
     {
-        public MensajeError()
+        public MensajeError(String mensaje)
         {
             InitializeComponent();
         }
