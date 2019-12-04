@@ -167,11 +167,23 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="MensajePersonalizado.cs">
+    <Compile Include="MensajeConfirmacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MensajePersonalizado.Designer.cs">
-      <DependentUpon>MensajePersonalizado.cs</DependentUpon>
+    <Compile Include="MensajeConfirmacion.Designer.cs">
+      <DependentUpon>MensajeConfirmacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensajeError.Designer.cs">
+      <DependentUpon>MensajeError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeExito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensajeExito.Designer.cs">
+      <DependentUpon>MensajeExito.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoProducto.cs">
       <SubType>Form</SubType>

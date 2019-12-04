@@ -39,12 +39,14 @@ namespace Hnos_Rojas
                     {
                         confeccionarFactura();
                         PagoContado _pagoCont = new PagoContado(factura, parent);
+                        _pagoCont.StartPosition = FormStartPosition.CenterScreen;
                         _pagoCont.Show();
                     }
                     else
                     {
                         confeccionarFactura();
                         PagoCredito _pagoCredito = new PagoCredito(factura, parent);
+                        _pagoCredito.StartPosition = FormStartPosition.CenterScreen;
                         _pagoCredito.Show();
                     }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hnos_Rojas
 {
-    public partial class MensajePersonalizado : Form
+    public partial class MensajeConfirmacion : Form
     {
-        public MensajePersonalizado()
+        public MensajeConfirmacion()
         {
             InitializeComponent();
         }
