@@ -12,9 +12,15 @@ namespace Hnos_Rojas
 {
     public partial class MensajeConfirmacion : Form
     {
-        public MensajeConfirmacion()
+        public MensajeConfirmacion(String mensaje)
         {
             InitializeComponent();
+            lbMensajeConfirmacion.Text = mensaje;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
