@@ -327,6 +327,15 @@
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MensajeConfirmacion.resx">
+      <DependentUpon>MensajeConfirmacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MensajeError.resx">
+      <DependentUpon>MensajeError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MensajeExito.resx">
+      <DependentUpon>MensajeExito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoProducto.resx">
       <DependentUpon>NuevoProducto.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Hnos_Rojas
 {
-    public partial class MensajeExito : Form
+    public partial class MensajeError : Form
     {
-        public MensajeExito(String mensaje)
+        public MensajeError(String mensaje)
         {
             InitializeComponent();
-            lbMensajeExito.Text = mensaje;
+            lbMensajeError.Text = mensaje;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
