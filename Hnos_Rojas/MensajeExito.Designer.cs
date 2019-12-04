@@ -47,17 +47,17 @@
             // lbMensajeExito
             // 
             this.lbMensajeExito.AutoSize = true;
-            this.lbMensajeExito.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeExito.Location = new System.Drawing.Point(12, 95);
+            this.lbMensajeExito.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeExito.Location = new System.Drawing.Point(12, 128);
             this.lbMensajeExito.Name = "lbMensajeExito";
-            this.lbMensajeExito.Size = new System.Drawing.Size(142, 31);
+            this.lbMensajeExito.Size = new System.Drawing.Size(116, 32);
             this.lbMensajeExito.TabIndex = 2;
             this.lbMensajeExito.Text = "MENSAJE";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.check;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(235, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
