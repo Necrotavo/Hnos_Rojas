@@ -105,7 +105,9 @@ namespace Hnos_Rojas
             }
             else
             {
-                MessageBox.Show("No existe el producto!");
+                MensajeError mensajeError = new MensajeError("NO EXISTE EL PRODUCTO!");
+                mensajeError.Show();
+                //MessageBox.Show("No existe el producto!");
                 return;
             }
         }
@@ -215,7 +217,9 @@ namespace Hnos_Rojas
             else
             {
                 cboUsuarios.SelectedItem = cboUsuarios.Items[usuario];
-                MessageBox.Show("Credenciales incorrectas");
+                MensajeError mensajeError = new MensajeError("CREDENCIALES INCORRECTOS");
+                mensajeError.Show();
+                //MessageBox.Show("Credenciales incorrectas");
             }
         }
 

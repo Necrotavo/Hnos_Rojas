@@ -53,7 +53,9 @@ namespace Hnos_Rojas
             }
             else
             {
-                MessageBox.Show("Credenciales incorrectas");
+                MensajeError mensajeError = new MensajeError("CREDENCIALES INCORRECTOS");
+                mensajeError.Show();
+                //MessageBox.Show("Credenciales incorrectas");
             }
         }
 
