@@ -15,6 +15,12 @@ namespace Hnos_Rojas
         public MensajeError(String mensaje)
         {
             InitializeComponent();
+            lbMensajeError.Text = mensaje;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
