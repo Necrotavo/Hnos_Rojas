@@ -415,8 +415,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpcionesFacturaContado.txt" />
+    <None Include="Resources\errorX.png" />
+    <None Include="Resources\check.png" />
     <Content Include="Resources\Delete %281%29.png" />
     <Content Include="Resources\Delete.png" />
+    <None Include="Resources\warning2.png" />
     <None Include="Resources\Impresora.png" />
     <None Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\pagar.png" />
