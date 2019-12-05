@@ -115,6 +115,7 @@
             this.txtContrasenaCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenaCrear.Location = new System.Drawing.Point(442, 235);
             this.txtContrasenaCrear.Name = "txtContrasenaCrear";
+            this.txtContrasenaCrear.PasswordChar = '*';
             this.txtContrasenaCrear.Size = new System.Drawing.Size(239, 35);
             this.txtContrasenaCrear.TabIndex = 18;
             // 

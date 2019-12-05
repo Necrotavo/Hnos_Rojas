@@ -32,9 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabAgregar = new System.Windows.Forms.TabPage();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnProducto = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.btnCerrarTicket = new System.Windows.Forms.Button();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnArtComun = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmCantidad)).BeginInit();
@@ -67,7 +67,7 @@
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1269, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ticket 1";
@@ -77,7 +77,7 @@
             // 
             this.tabAgregar.Location = new System.Drawing.Point(4, 26);
             this.tabAgregar.Name = "tabAgregar";
-            this.tabAgregar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAgregar.Padding = new System.Windows.Forms.Padding(3);
             this.tabAgregar.Size = new System.Drawing.Size(1269, 418);
             this.tabAgregar.TabIndex = 1;
             this.tabAgregar.Text = "+";
@@ -92,22 +92,7 @@
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(235, 32);
             this.lblCodigo.TabIndex = 5;
-            this.lblCodigo.Text = "Codigo de producto:";
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btnProducto.FlatAppearance.BorderSize = 0;
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(21, 114);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(192, 42);
-            this.btnProducto.TabIndex = 1;
-            this.btnProducto.Text = "INS Productos";
-            this.btnProducto.UseVisualStyleBackColor = false;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            this.lblCodigo.Text = "Código de producto:";
             // 
             // txtCodigo
             // 
@@ -117,22 +102,6 @@
             this.txtCodigo.Size = new System.Drawing.Size(268, 35);
             this.txtCodigo.TabIndex = 6;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
-            // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(518, 22);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 35);
-            this.btnAgregarProducto.TabIndex = 7;
-            this.btnAgregarProducto.Text = "ENTER Agregar Producto";
-            this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProducto.UseVisualStyleBackColor = false;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
@@ -171,11 +140,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1157, 86);
+            this.label2.Location = new System.Drawing.Point(1143, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 32);
+            this.label2.Size = new System.Drawing.Size(135, 32);
             this.label2.TabIndex = 20;
-            this.label2.Text = "Password";
+            this.label2.Text = "Contraseña";
             // 
             // button1
             // 
@@ -265,11 +234,14 @@
             this.btnPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPago.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnPago.ForeColor = System.Drawing.Color.White;
-            this.btnPago.Location = new System.Drawing.Point(405, 114);
+            this.btnPago.Image = global::Hnos_Rojas.Properties.Resources.F100;
+            this.btnPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPago.Location = new System.Drawing.Point(476, 114);
             this.btnPago.Name = "btnPago";
-            this.btnPago.Size = new System.Drawing.Size(192, 42);
+            this.btnPago.Size = new System.Drawing.Size(121, 42);
             this.btnPago.TabIndex = 9;
-            this.btnPago.Text = "F10 Pagos";
+            this.btnPago.Text = "Pagos";
+            this.btnPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPago.UseVisualStyleBackColor = false;
             this.btnPago.Click += new System.EventHandler(this.btnPago_Click);
             // 
@@ -280,20 +252,59 @@
             this.btnArtComun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArtComun.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnArtComun.ForeColor = System.Drawing.Color.White;
-            this.btnArtComun.Location = new System.Drawing.Point(213, 114);
+            this.btnArtComun.Image = global::Hnos_Rojas.Properties.Resources.ctrlP;
+            this.btnArtComun.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArtComun.Location = new System.Drawing.Point(244, 114);
             this.btnArtComun.Name = "btnArtComun";
-            this.btnArtComun.Size = new System.Drawing.Size(192, 42);
+            this.btnArtComun.Size = new System.Drawing.Size(234, 42);
             this.btnArtComun.TabIndex = 8;
-            this.btnArtComun.Text = "CTRL+P Art. Común";
+            this.btnArtComun.Text = "Artículo Común";
+            this.btnArtComun.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnArtComun.UseVisualStyleBackColor = false;
             this.btnArtComun.Click += new System.EventHandler(this.btnArtComun_Click);
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarProducto.Image = global::Hnos_Rojas.Properties.Resources.Enter;
+            this.btnAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(518, 22);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 35);
+            this.btnAgregarProducto.TabIndex = 7;
+            this.btnAgregarProducto.Text = "Agregar Producto";
+            this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnProducto.FlatAppearance.BorderSize = 0;
+            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
+            this.btnProducto.Image = global::Hnos_Rojas.Properties.Resources.ins;
+            this.btnProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProducto.Location = new System.Drawing.Point(21, 114);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(223, 42);
+            this.btnProducto.TabIndex = 1;
+            this.btnProducto.Text = "Insertar Productos";
+            this.btnProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProducto.UseVisualStyleBackColor = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1301, 661);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

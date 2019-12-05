@@ -100,10 +100,10 @@ namespace Hnos_Rojas
                 listaClientes = blCliente.buscarClientes("");
                 dgvClientes.DataSource = listaClientes;
 
-                dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+                dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 20);
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
-                style.Font = new Font("Microsoft Sans Serif", 14);
-                style.BackColor = Color.LightGray;
+                //style.Font = new Font("Microsoft Sans Serif", 14);
+                //style.BackColor = Color.LightGray;
 
                 dgvClientes.Columns["Editar"].Width = 75;
                 dgvClientes.Columns["EstadoCliente"].Width = 130;
@@ -127,11 +127,11 @@ namespace Hnos_Rojas
                 {
                     dgvClientes.DataSource = blCliente.buscarClientes(datos);
 
-                    dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+                    dgvClientes.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 20);
                     DataGridViewCellStyle style = new DataGridViewCellStyle();
-                    style.Font = new Font("Microsoft Sans Serif", 14);
-                    style.BackColor = Color.LightGray;
-                    
+                    //style.Font = new Font("Microsoft Sans Serif", 14);
+                    //style.BackColor = Color.LightGray;
+
                     dgvClientes.Columns["Editar"].Width = 75;
                     dgvClientes.Columns["EstadoCliente"].Width = 170;
                     //grdClientes [1] = direccion

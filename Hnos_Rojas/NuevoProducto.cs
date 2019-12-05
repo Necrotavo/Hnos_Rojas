@@ -102,8 +102,14 @@ namespace Hnos_Rojas
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
+            if (!tbPrecioCosto.Text.Trim().Equals(""))
+            {
+                tbPrecioVenta.Text = CalcularPrecioVenta(Convert.ToInt32(nUDGanancia.Value)).ToString();
 
-            tbPrecioVenta.Text = CalcularPrecioVenta(Convert.ToInt32(nUDGanancia.Value)).ToString();
+            } else
+            {
+                tbPrecioVenta.Text = "0";
+            }
         }
 
         private void tpModificar_Click(object sender, EventArgs e)
@@ -122,7 +128,7 @@ namespace Hnos_Rojas
         {
             BL_Producto blProducto = new BL_Producto();
             dgvProductos.DataSource = blProducto.ObtenerListaDeProductos();
-            dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+            dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             //style.Font = new Font("Microsoft Sans Serif", 14);
             //style.BackColor = Color.LightGray;

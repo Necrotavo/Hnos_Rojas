@@ -110,7 +110,7 @@
             this.tabPageAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 54);
             this.tabPageAgregarCliente.Name = "tabPageAgregarCliente";
-            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageAgregarCliente.Size = new System.Drawing.Size(818, 478);
             this.tabPageAgregarCliente.TabIndex = 0;
             this.tabPageAgregarCliente.Text = "Agregar";
@@ -163,6 +163,7 @@
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(252, 29);
             this.tbTelefono.TabIndex = 4;
+            this.tbTelefono.Text = "No Aplica";
             this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbDireccion
@@ -171,6 +172,7 @@
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(252, 29);
             this.tbDireccion.TabIndex = 3;
+            this.tbDireccion.Text = "No Aplica";
             // 
             // tbSegundoApellido
             // 
@@ -178,6 +180,7 @@
             this.tbSegundoApellido.Name = "tbSegundoApellido";
             this.tbSegundoApellido.Size = new System.Drawing.Size(252, 29);
             this.tbSegundoApellido.TabIndex = 2;
+            this.tbSegundoApellido.Text = "No Aplica";
             // 
             // tbPrimerApellido
             // 
@@ -278,7 +281,7 @@
             this.tabPageModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageModificar.Location = new System.Drawing.Point(4, 54);
             this.tabPageModificar.Name = "tabPageModificar";
-            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageModificar.Size = new System.Drawing.Size(818, 478);
             this.tabPageModificar.TabIndex = 1;
             this.tabPageModificar.Text = "Modificar";
@@ -324,7 +327,7 @@
             this.dgvClientes.Location = new System.Drawing.Point(0, 0);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
