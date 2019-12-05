@@ -133,7 +133,7 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(224, 39);
-            this.txtContrasena.TabIndex = 21;
+            this.txtContrasena.TabIndex = 7;
             // 
             // label2
             // 
