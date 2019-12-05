@@ -56,12 +56,10 @@ namespace Hnos_Rojas
             }
             else if (Char.IsControl(e.KeyChar))
             {
-                actualizarLblSaldo();
                 e.Handled = false;
             }
             else if (Char.IsSeparator(e.KeyChar))
             {
-                actualizarLblSaldo();
                 e.Handled = false;
             }
             else
@@ -71,21 +69,29 @@ namespace Hnos_Rojas
         }
 
         public void actualizarLblSaldo() {
-            double saldo = cliente.credito.monto - Convert.ToDouble(txtAbono.Text);
-            if (saldo >= 0)
-            {
-                lblSaldoAbono.Text = "Saldo";
-                lblSaldo.Text = saldo.ToString();
-            }
-            else {
-                lblSaldoAbono.Text = "Vuelto";
-                lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - cliente.credito.monto).ToString();
+            if (txtAbono.Text != "") {
+                double saldo = cliente.credito.monto - Convert.ToDouble(txtAbono.Text);
+                if (saldo >= 0)
+                {
+                    lblSaldoAbono.Text = "Saldo";
+                    lblSaldo.Text = saldo.ToString();
+                }
+                else
+                {
+                    lblSaldoAbono.Text = "Vuelto";
+                    lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - cliente.credito.monto).ToString();
+                }
             }
         }
 
         private void txtAbono_TextChanged(object sender, EventArgs e)
         {
             actualizarLblSaldo();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
