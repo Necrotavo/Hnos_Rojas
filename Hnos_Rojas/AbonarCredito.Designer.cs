@@ -43,10 +43,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(150, 29);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(112, 24);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(237, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(190, 32);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Abono a Crédito";
             // 
@@ -55,10 +54,9 @@
             this.lblMontoAbono.AutoSize = true;
             this.lblMontoAbono.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblMontoAbono.ForeColor = System.Drawing.Color.White;
-            this.lblMontoAbono.Location = new System.Drawing.Point(34, 131);
-            this.lblMontoAbono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontoAbono.Location = new System.Drawing.Point(26, 106);
             this.lblMontoAbono.Name = "lblMontoAbono";
-            this.lblMontoAbono.Size = new System.Drawing.Size(258, 41);
+            this.lblMontoAbono.Size = new System.Drawing.Size(207, 32);
             this.lblMontoAbono.TabIndex = 5;
             this.lblMontoAbono.Text = "Monto del abono:";
             // 
@@ -67,10 +65,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 202);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(26, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 41);
+            this.label1.Size = new System.Drawing.Size(193, 32);
             this.label1.TabIndex = 7;
             this.label1.Text = "Total del Crédito";
             // 
@@ -79,10 +76,9 @@
             this.lblMontoCredito.AutoSize = true;
             this.lblMontoCredito.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblMontoCredito.ForeColor = System.Drawing.Color.White;
-            this.lblMontoCredito.Location = new System.Drawing.Point(308, 203);
-            this.lblMontoCredito.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontoCredito.Location = new System.Drawing.Point(231, 165);
             this.lblMontoCredito.Name = "lblMontoCredito";
-            this.lblMontoCredito.Size = new System.Drawing.Size(0, 41);
+            this.lblMontoCredito.Size = new System.Drawing.Size(0, 32);
             this.lblMontoCredito.TabIndex = 8;
             // 
             // lblSaldoAbono
@@ -90,10 +86,9 @@
             this.lblSaldoAbono.AutoSize = true;
             this.lblSaldoAbono.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblSaldoAbono.ForeColor = System.Drawing.Color.White;
-            this.lblSaldoAbono.Location = new System.Drawing.Point(34, 266);
-            this.lblSaldoAbono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaldoAbono.Location = new System.Drawing.Point(26, 216);
             this.lblSaldoAbono.Name = "lblSaldoAbono";
-            this.lblSaldoAbono.Size = new System.Drawing.Size(92, 41);
+            this.lblSaldoAbono.Size = new System.Drawing.Size(74, 32);
             this.lblSaldoAbono.TabIndex = 9;
             this.lblSaldoAbono.Text = "Saldo";
             // 
@@ -102,12 +97,11 @@
             this.btnPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnPagar.FlatAppearance.BorderSize = 0;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Location = new System.Drawing.Point(157, 351);
-            this.btnPagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPagar.Location = new System.Drawing.Point(118, 285);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(230, 59);
+            this.btnPagar.Size = new System.Drawing.Size(172, 48);
             this.btnPagar.TabIndex = 15;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = false;
@@ -118,29 +112,27 @@
             this.lblSaldo.AutoSize = true;
             this.lblSaldo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblSaldo.ForeColor = System.Drawing.Color.White;
-            this.lblSaldo.Location = new System.Drawing.Point(308, 267);
-            this.lblSaldo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaldo.Location = new System.Drawing.Point(231, 217);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(0, 41);
+            this.lblSaldo.Size = new System.Drawing.Size(0, 32);
             this.lblSaldo.TabIndex = 16;
             // 
             // txtAbono
             // 
             this.txtAbono.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbono.Location = new System.Drawing.Point(315, 131);
-            this.txtAbono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAbono.Location = new System.Drawing.Point(236, 106);
             this.txtAbono.Name = "txtAbono";
-            this.txtAbono.Size = new System.Drawing.Size(198, 41);
+            this.txtAbono.Size = new System.Drawing.Size(150, 35);
             this.txtAbono.TabIndex = 17;
             this.txtAbono.TextChanged += new System.EventHandler(this.txtAbono_TextChanged);
             this.txtAbono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbono_KeyPress);
             // 
             // AbonarCredito
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(548, 445);
+            this.ClientSize = new System.Drawing.Size(411, 362);
             this.Controls.Add(this.txtAbono);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.btnPagar);
@@ -150,6 +142,7 @@
             this.Controls.Add(this.lblMontoAbono);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AbonarCredito";
             this.Text = "AbonarCredito";
             this.ResumeLayout(false);
