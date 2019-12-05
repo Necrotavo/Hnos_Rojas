@@ -31,7 +31,7 @@
             this.btnSi = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNo = new System.Windows.Forms.Button();
-            this.lbMensajeExito = new System.Windows.Forms.Label();
+            this.lbMensajeConfirmacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,15 +67,15 @@
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
-            // lbMensajeExito
+            // lbMensajeConfirmacion
             // 
-            this.lbMensajeExito.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeExito.Location = new System.Drawing.Point(12, 105);
-            this.lbMensajeExito.Name = "lbMensajeExito";
-            this.lbMensajeExito.Size = new System.Drawing.Size(578, 107);
-            this.lbMensajeExito.TabIndex = 6;
-            this.lbMensajeExito.Text = "MENSAJE";
-            this.lbMensajeExito.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMensajeConfirmacion.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeConfirmacion.Location = new System.Drawing.Point(12, 105);
+            this.lbMensajeConfirmacion.Name = "lbMensajeConfirmacion";
+            this.lbMensajeConfirmacion.Size = new System.Drawing.Size(578, 107);
+            this.lbMensajeConfirmacion.TabIndex = 6;
+            this.lbMensajeConfirmacion.Text = "MENSAJE";
+            this.lbMensajeConfirmacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -105,7 +105,7 @@
             this.ClientSize = new System.Drawing.Size(602, 261);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbMensajeExito);
+            this.Controls.Add(this.lbMensajeConfirmacion);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSi);
@@ -123,7 +123,7 @@
         private System.Windows.Forms.Button btnSi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNo;
-        private System.Windows.Forms.Label lbMensajeExito;
+        private System.Windows.Forms.Label lbMensajeConfirmacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

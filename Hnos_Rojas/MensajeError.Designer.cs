@@ -30,7 +30,7 @@
         {
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbMensajeExito = new System.Windows.Forms.Label();
+            this.lbMensajeError = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,15 +56,15 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // lbMensajeExito
+            // lbMensajeError
             // 
-            this.lbMensajeExito.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeExito.Location = new System.Drawing.Point(12, 105);
-            this.lbMensajeExito.Name = "lbMensajeExito";
-            this.lbMensajeExito.Size = new System.Drawing.Size(578, 107);
-            this.lbMensajeExito.TabIndex = 3;
-            this.lbMensajeExito.Text = "MENSAJE";
-            this.lbMensajeExito.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMensajeError.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeError.Location = new System.Drawing.Point(12, 105);
+            this.lbMensajeError.Name = "lbMensajeError";
+            this.lbMensajeError.Size = new System.Drawing.Size(578, 107);
+            this.lbMensajeError.TabIndex = 3;
+            this.lbMensajeError.Text = "MENSAJE";
+            this.lbMensajeError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -94,7 +94,7 @@
             this.ClientSize = new System.Drawing.Size(602, 261);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbMensajeExito);
+            this.Controls.Add(this.lbMensajeError);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAceptar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -109,7 +109,7 @@
         #endregion
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbMensajeExito;
+        private System.Windows.Forms.Label lbMensajeError;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
