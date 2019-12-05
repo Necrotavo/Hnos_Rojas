@@ -102,8 +102,14 @@ namespace Hnos_Rojas
 
         private void btCalcular_Click(object sender, EventArgs e)
         {
+            if (!tbPrecioCosto.Text.Trim().Equals(""))
+            {
+                tbPrecioVenta.Text = CalcularPrecioVenta(Convert.ToInt32(nUDGanancia.Value)).ToString();
 
-            tbPrecioVenta.Text = CalcularPrecioVenta(Convert.ToInt32(nUDGanancia.Value)).ToString();
+            } else
+            {
+                tbPrecioVenta.Text = "0";
+            }
         }
 
         private void tpModificar_Click(object sender, EventArgs e)
