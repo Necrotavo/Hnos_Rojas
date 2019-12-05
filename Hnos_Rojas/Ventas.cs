@@ -285,6 +285,8 @@ namespace Hnos_Rojas
             if (Convert.ToChar(Keys.Enter) == e.KeyChar)
             {
                 e.Handled = true;
+            } else if (e.KeyChar == '\u0010') {
+                e.Handled = true;
             }
         }
 
