@@ -82,7 +82,9 @@ namespace Hnos_Rojas
             }
             else
             {
-                MessageBox.Show("El pago es insuficiente");
+                MensajeError mensajeError = new MensajeError("EL PAGO ES INSUFICIENTE");
+                mensajeError.Show();
+                //MessageBox.Show("El pago es insuficiente");
             }
         }
         private void btnPagar_Click(object sender, EventArgs e)
@@ -102,7 +104,9 @@ namespace Hnos_Rojas
 
             blFactura.guardarFactura(factura);
 
-            MessageBox.Show("Pago exitoso");
+            MensajeExito mensajeExito = new MensajeExito("PAGO EXITOSO");
+            mensajeExito.Show();
+            //MessageBox.Show("Pago exitoso");
 
         }
 

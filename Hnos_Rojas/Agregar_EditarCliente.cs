@@ -30,11 +30,13 @@ namespace Hnos_Rojas
         {
 
             if (validarCampos())
-            {          
-                agregarOmodificar();
+            {
+                agregarOmodificar(); 
             } else
             {
-                MessageBox.Show("Datos faltantes");
+                MensajeError mensajeError = new MensajeError("DATOS FALTANTES");
+                mensajeError.Show();
+                //MessageBox.Show("Datos faltantes");
             }
                
                        
@@ -301,13 +303,17 @@ namespace Hnos_Rojas
                     if (AgregarCliente(cliente))
                     {
                         AgregarCredito(cliente.perIdentificador, Convert.ToInt32(tbLimite.Text.Trim()));
-                        MessageBox.Show("Cliente agregado correctamente");
+                        MensajeExito mensajeExito = new MensajeExito("CLIENTE AGREGADO CORRECTAMENTE");
+                        mensajeExito.Show();
+                        //MessageBox.Show("Cliente agregado correctamente");
                         vaciarCampos();
                         cambiosRealizados = true;
                     }
                     else
-                    {                      
-                        MessageBox.Show("Datos incorrectos");
+                    {
+                        MensajeError mensajeError = new MensajeError("DATOS INCORRECTOS");
+                        mensajeError.Show();
+                        //MessageBox.Show("Datos incorrectos");
                     }
                     break;
 
@@ -318,14 +324,18 @@ namespace Hnos_Rojas
                     cliente.credito.limiteCredito = Convert.ToInt32(tbLimite.Text.Trim());
                     if (ModificarCliente(cliente)&& ModificarCredito(cliente))
                     {
-                        MessageBox.Show("Cliente modificado correctamente");
+                        MensajeExito mensajeExito = new MensajeExito("CLIENTE MODIFICADO CORRECTAMENTE");
+                        mensajeExito.Show();
+                        //MessageBox.Show("Cliente modificado correctamente");
                         vaciarCampos();
                         esconderElementos(true);
                         cambiosRealizados = true;
                     }
                     else
                     {
-                        MessageBox.Show("Error al modificar los datos");
+                        MensajeError mensajeError = new MensajeError("ERROR AL MODIFICAR DATOS");
+                        mensajeError.Show();
+                        //MessageBox.Show("Error al modificar los datos");
                     }
 
                     break;

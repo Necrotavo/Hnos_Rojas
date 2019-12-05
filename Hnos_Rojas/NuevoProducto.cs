@@ -38,7 +38,9 @@ namespace Hnos_Rojas
             }
             else
             {
-                MessageBox.Show("Faltan datos de completar");
+                MensajeError mensajeError = new MensajeError("FALTAN DATOS POR COMPLETAR");
+                mensajeError.Show();
+                //MessageBox.Show("Faltan datos de completar");
             }
 
         }
@@ -63,14 +65,18 @@ namespace Hnos_Rojas
 
                 if (blProducto.ModificarProducto(doProducto))
                 {
-                    MessageBox.Show("Modificado correctamente");
+                    MensajeExito mensajeExito = new MensajeExito("MODIFICADO CORRECTAMENTE");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Modificado correctamente");
                     llenarGridBucarProductos();
                     vaciarCampos();
                     tbCodigo.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo modificar");
+                    MensajeError mensajeError = new MensajeError("NO SE PUDO MODIFICAR");
+                    mensajeError.Show();
+                    //MessageBox.Show("No se pudo modificar");
                 }
 
             }
@@ -78,15 +84,18 @@ namespace Hnos_Rojas
             {
                 if (blProducto.AgregarProductoAInventario(doProducto))
                 {
-
-                    MessageBox.Show("Agregado correctamente");
+                    MensajeExito mensajeExito = new MensajeExito("AGREGADO CORRECTAMENTE");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Agregado correctamente");
                     llenarGridBucarProductos();
                     vaciarCampos();
                     this.ActiveControl = tbCodigo;
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo agregar");
+                    MensajeError mensajeError = new MensajeError("NO SE PUDO AGREGAR");
+                    mensajeError.Show();
+                    //MessageBox.Show("No se pudo agregar");
                 }
             }
         }

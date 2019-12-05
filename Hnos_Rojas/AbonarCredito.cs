@@ -31,14 +31,19 @@ namespace Hnos_Rojas
         {
             if (txtAbono.Text == "")
             {
-                MessageBox.Show("No ha ingresado un monto para abonar");
+                MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO UN MONTO");
+                mensajeError.Show();
+                //MessageBox.Show("No ha ingresado un monto para abonar");
             }
             else {
+                //aqui iria la parte del mensaje de confirmación
                 BL_Credito blCredito = new BL_Credito();
                 blCredito.abonar(Convert.ToInt32(txtAbono.Text), cliente.perIdentificador);
                 detallesEstadoCuenta.refrescarCreditoCompleto();
                 detallesEstadoCuenta.llenarGrid();
-                MessageBox.Show("Abono exitoso");
+                MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
+                mensajeExito.Show();
+                //MessageBox.Show("Abono exitoso");
                 this.Dispose();
             }
         }

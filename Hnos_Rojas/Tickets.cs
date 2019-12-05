@@ -55,7 +55,9 @@ namespace Hnos_Rojas
             }
             catch (Exception)
             {
-                MessageBox.Show("No hay factura a pagar!!!!");
+                MensajeError mensajeError = new MensajeError("NO HAY FACTURA A PAGAR");
+                mensajeError.Show();
+                //MessageBox.Show("No hay factura a pagar!!!!");
             }
 
         }

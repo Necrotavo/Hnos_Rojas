@@ -78,11 +78,15 @@ namespace Hnos_Rojas
                 BL_Proveedor blProveedor = new BL_Proveedor();
                 if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
                 {
-                    MessageBox.Show("Proveedor eliminado");
+                    MensajeExito mensajeExito = new MensajeExito("PROVEEDOR ELIMINADO");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Proveedor eliminado");
                 }
                 else
                 {
-                    MessageBox.Show("Proveedor no eliminado");
+                    MensajeError mensajeError = new MensajeError("PROVEEDOR NO ELIMINADO");
+                    mensajeError.Show();
+                    //MessageBox.Show("Proveedor no eliminado");
                 }
                 invocarListaProveedores();
             }
@@ -92,7 +96,9 @@ namespace Hnos_Rojas
             }
             else
             {
-                MessageBox.Show("No ha seleccionado un proveedor");
+                MensajeError mensajeError = new MensajeError("NO HA SELECCIONADO UN PROVEEDOR");
+                mensajeError.Show();
+                //MessageBox.Show("No ha seleccionado un proveedor");
             }
         }
 

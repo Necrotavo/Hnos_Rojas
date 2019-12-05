@@ -22,11 +22,13 @@ namespace Hnos_Rojas
         private void btnSi_Click(object sender, EventArgs e)
         {
             estado = true;
+            this.Dispose();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
             estado = false;
+            this.Dispose();
         }
     }
 }
