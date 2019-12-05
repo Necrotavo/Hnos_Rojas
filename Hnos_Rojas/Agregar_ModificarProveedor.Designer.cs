@@ -45,10 +45,10 @@
             // txtNombreProveedor
             // 
             this.txtNombreProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(797, 130);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(519, 216);
             this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(163, 35);
+            this.txtNombreProveedor.Size = new System.Drawing.Size(289, 41);
             this.txtNombreProveedor.TabIndex = 34;
             // 
             // lblFechaVisita
@@ -56,10 +56,10 @@
             this.lblFechaVisita.AutoSize = true;
             this.lblFechaVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaVisita.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblFechaVisita.Location = new System.Drawing.Point(684, 191);
+            this.lblFechaVisita.Location = new System.Drawing.Point(512, 282);
             this.lblFechaVisita.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFechaVisita.Name = "lblFechaVisita";
-            this.lblFechaVisita.Size = new System.Drawing.Size(180, 29);
+            this.lblFechaVisita.Size = new System.Drawing.Size(222, 36);
             this.lblFechaVisita.TabIndex = 32;
             this.lblFechaVisita.Text = "Fecha de visita:";
             // 
@@ -68,10 +68,10 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNombre.Location = new System.Drawing.Point(685, 136);
+            this.lblNombre.Location = new System.Drawing.Point(513, 177);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(107, 29);
+            this.lblNombre.Size = new System.Drawing.Size(128, 36);
             this.lblNombre.TabIndex = 31;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -80,10 +80,10 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(560, 48);
+            this.lblTitulo.Location = new System.Drawing.Point(712, 114);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(205, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(252, 36);
             this.lblTitulo.TabIndex = 35;
             this.lblTitulo.Text = "Agregar/Modificar";
             // 
@@ -94,10 +94,10 @@
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(565, 357);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(534, 492);
             this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(194, 42);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(259, 52);
             this.btnGuardarCambios.TabIndex = 36;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(565, 404);
+            this.btnSalir.Location = new System.Drawing.Point(879, 492);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(194, 42);
+            this.btnSalir.Size = new System.Drawing.Size(259, 52);
             this.btnSalir.TabIndex = 37;
             this.btnSalir.Text = "Regresar";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -122,9 +122,9 @@
             // 
             this.cboDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDias.FormattingEnabled = true;
-            this.cboDias.Location = new System.Drawing.Point(689, 223);
+            this.cboDias.Location = new System.Drawing.Point(519, 321);
             this.cboDias.Name = "cboDias";
-            this.cboDias.Size = new System.Drawing.Size(150, 32);
+            this.cboDias.Size = new System.Drawing.Size(150, 37);
             this.cboDias.TabIndex = 38;
             // 
             // btnDiaVisita
@@ -134,11 +134,11 @@
             this.btnDiaVisita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiaVisita.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiaVisita.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDiaVisita.Location = new System.Drawing.Point(689, 289);
+            this.btnDiaVisita.Location = new System.Drawing.Point(534, 375);
             this.btnDiaVisita.Name = "btnDiaVisita";
-            this.btnDiaVisita.Size = new System.Drawing.Size(194, 42);
+            this.btnDiaVisita.Size = new System.Drawing.Size(259, 52);
             this.btnDiaVisita.TabIndex = 42;
-            this.btnDiaVisita.Text = "Agregar";
+            this.btnDiaVisita.Text = "Agregar Visita";
             this.btnDiaVisita.UseVisualStyleBackColor = false;
             this.btnDiaVisita.Click += new System.EventHandler(this.btnDiaVisita_Click);
             // 
@@ -146,10 +146,10 @@
             // 
             this.lbDiasDeVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiasDeVisita.FormattingEnabled = true;
-            this.lbDiasDeVisita.ItemHeight = 29;
-            this.lbDiasDeVisita.Location = new System.Drawing.Point(343, 130);
+            this.lbDiasDeVisita.ItemHeight = 36;
+            this.lbDiasDeVisita.Location = new System.Drawing.Point(844, 216);
             this.lbDiasDeVisita.Name = "lbDiasDeVisita";
-            this.lbDiasDeVisita.Size = new System.Drawing.Size(327, 149);
+            this.lbDiasDeVisita.Size = new System.Drawing.Size(327, 148);
             this.lbDiasDeVisita.TabIndex = 43;
             this.lbDiasDeVisita.Click += new System.EventHandler(this.lbDiasDeVisita_Click);
             // 
@@ -160,11 +160,11 @@
             this.btnEliminarDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarDia.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarDia.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarDia.Location = new System.Drawing.Point(476, 289);
+            this.btnEliminarDia.Location = new System.Drawing.Point(879, 375);
             this.btnEliminarDia.Name = "btnEliminarDia";
-            this.btnEliminarDia.Size = new System.Drawing.Size(194, 42);
+            this.btnEliminarDia.Size = new System.Drawing.Size(259, 52);
             this.btnEliminarDia.TabIndex = 45;
-            this.btnEliminarDia.Text = "Eliminar";
+            this.btnEliminarDia.Text = "Eliminar Visita";
             this.btnEliminarDia.UseVisualStyleBackColor = false;
             this.btnEliminarDia.Click += new System.EventHandler(this.btnEliminarDia_Click);
             // 
@@ -173,10 +173,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(338, 98);
+            this.label1.Location = new System.Drawing.Point(838, 177);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 29);
+            this.label1.Size = new System.Drawing.Size(112, 36);
             this.label1.TabIndex = 46;
             this.label1.Text = "Visitas:";
             // 
@@ -197,17 +197,17 @@
             "05:00PM",
             "06:00PM",
             "07:00PM"});
-            this.cboHoras.Location = new System.Drawing.Point(845, 223);
+            this.cboHoras.Location = new System.Drawing.Point(693, 321);
             this.cboHoras.Name = "cboHoras";
-            this.cboHoras.Size = new System.Drawing.Size(115, 32);
+            this.cboHoras.Size = new System.Drawing.Size(115, 37);
             this.cboHoras.TabIndex = 47;
             // 
             // Agregar_ModificarProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1255, 523);
+            this.ClientSize = new System.Drawing.Size(1673, 684);
             this.Controls.Add(this.cboHoras);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminarDia);
