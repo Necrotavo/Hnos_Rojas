@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlProducto = new System.Windows.Forms.TabControl();
             this.tpFormulario = new System.Windows.Forms.TabPage();
             this.btGuardar = new System.Windows.Forms.Button();
@@ -72,10 +73,9 @@
             this.tabControlProducto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlProducto.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
             this.tabControlProducto.Location = new System.Drawing.Point(0, 0);
-            this.tabControlProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlProducto.Name = "tabControlProducto";
             this.tabControlProducto.SelectedIndex = 0;
-            this.tabControlProducto.Size = new System.Drawing.Size(1639, 676);
+            this.tabControlProducto.Size = new System.Drawing.Size(1028, 549);
             this.tabControlProducto.TabIndex = 0;
             this.tabControlProducto.SelectedIndexChanged += new System.EventHandler(this.tabControlProducto_SelectedIndexChanged);
             // 
@@ -97,10 +97,9 @@
             this.tpFormulario.Controls.Add(this.lblDescripcion);
             this.tpFormulario.Controls.Add(this.lblCodigo);
             this.tpFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpFormulario.Location = new System.Drawing.Point(4, 66);
-            this.tpFormulario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpFormulario.Location = new System.Drawing.Point(4, 54);
             this.tpFormulario.Name = "tpFormulario";
-            this.tpFormulario.Size = new System.Drawing.Size(1631, 606);
+            this.tpFormulario.Size = new System.Drawing.Size(1020, 491);
             this.tpFormulario.TabIndex = 0;
             this.tpFormulario.Text = "Datos del Producto";
             // 
@@ -111,10 +110,9 @@
             this.btGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGuardar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btGuardar.ForeColor = System.Drawing.Color.White;
-            this.btGuardar.Location = new System.Drawing.Point(531, 487);
-            this.btGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGuardar.Location = new System.Drawing.Point(398, 396);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(541, 66);
+            this.btGuardar.Size = new System.Drawing.Size(406, 54);
             this.btGuardar.TabIndex = 6;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
@@ -123,15 +121,14 @@
             // nUDGanancia
             // 
             this.nUDGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nUDGanancia.Location = new System.Drawing.Point(731, 265);
-            this.nUDGanancia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nUDGanancia.Location = new System.Drawing.Point(548, 215);
             this.nUDGanancia.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.nUDGanancia.Name = "nUDGanancia";
-            this.nUDGanancia.Size = new System.Drawing.Size(108, 41);
+            this.nUDGanancia.Size = new System.Drawing.Size(81, 35);
             this.nUDGanancia.TabIndex = 3;
             this.nUDGanancia.Value = new decimal(new int[] {
             15,
@@ -146,10 +143,9 @@
             this.btCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCalcular.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btCalcular.ForeColor = System.Drawing.Color.White;
-            this.btCalcular.Location = new System.Drawing.Point(847, 257);
-            this.btCalcular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCalcular.Location = new System.Drawing.Point(635, 209);
             this.btCalcular.Name = "btCalcular";
-            this.btCalcular.Size = new System.Drawing.Size(172, 53);
+            this.btCalcular.Size = new System.Drawing.Size(129, 43);
             this.btCalcular.TabIndex = 7;
             this.btCalcular.Text = "Calcular";
             this.btCalcular.UseVisualStyleBackColor = false;
@@ -158,49 +154,44 @@
             // tbCantidadDisponible
             // 
             this.tbCantidadDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCantidadDisponible.Location = new System.Drawing.Point(731, 398);
-            this.tbCantidadDisponible.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCantidadDisponible.Location = new System.Drawing.Point(548, 323);
             this.tbCantidadDisponible.Name = "tbCantidadDisponible";
-            this.tbCantidadDisponible.Size = new System.Drawing.Size(71, 41);
+            this.tbCantidadDisponible.Size = new System.Drawing.Size(54, 35);
             this.tbCantidadDisponible.TabIndex = 5;
             this.tbCantidadDisponible.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidadDisponible_KeyPress);
             // 
             // tbPrecioVenta
             // 
             this.tbPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecioVenta.Location = new System.Drawing.Point(731, 340);
-            this.tbPrecioVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPrecioVenta.Location = new System.Drawing.Point(548, 276);
             this.tbPrecioVenta.Name = "tbPrecioVenta";
-            this.tbPrecioVenta.Size = new System.Drawing.Size(149, 41);
+            this.tbPrecioVenta.Size = new System.Drawing.Size(113, 35);
             this.tbPrecioVenta.TabIndex = 4;
             this.tbPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrecioVenta_KeyPress);
             // 
             // tbPrecioCosto
             // 
             this.tbPrecioCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecioCosto.Location = new System.Drawing.Point(731, 198);
-            this.tbPrecioCosto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPrecioCosto.Location = new System.Drawing.Point(548, 161);
             this.tbPrecioCosto.Name = "tbPrecioCosto";
-            this.tbPrecioCosto.Size = new System.Drawing.Size(149, 41);
+            this.tbPrecioCosto.Size = new System.Drawing.Size(113, 35);
             this.tbPrecioCosto.TabIndex = 2;
             this.tbPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrecioCosto_KeyPress);
             // 
             // tbDescripcion
             // 
             this.tbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescripcion.Location = new System.Drawing.Point(731, 138);
-            this.tbDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDescripcion.Location = new System.Drawing.Point(548, 112);
             this.tbDescripcion.Name = "tbDescripcion";
-            this.tbDescripcion.Size = new System.Drawing.Size(340, 41);
+            this.tbDescripcion.Size = new System.Drawing.Size(256, 35);
             this.tbDescripcion.TabIndex = 1;
             // 
             // tbCodigo
             // 
             this.tbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCodigo.Location = new System.Drawing.Point(731, 78);
-            this.tbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCodigo.Location = new System.Drawing.Point(548, 63);
             this.tbCodigo.Name = "tbCodigo";
-            this.tbCodigo.Size = new System.Drawing.Size(340, 41);
+            this.tbCodigo.Size = new System.Drawing.Size(256, 35);
             this.tbCodigo.TabIndex = 0;
             this.tbCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCodigo_KeyPress);
             // 
@@ -209,10 +200,9 @@
             this.lblCantidadDisponible.AutoSize = true;
             this.lblCantidadDisponible.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblCantidadDisponible.ForeColor = System.Drawing.Color.White;
-            this.lblCantidadDisponible.Location = new System.Drawing.Point(523, 398);
-            this.lblCantidadDisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidadDisponible.Location = new System.Drawing.Point(392, 323);
             this.lblCantidadDisponible.Name = "lblCantidadDisponible";
-            this.lblCantidadDisponible.Size = new System.Drawing.Size(144, 41);
+            this.lblCantidadDisponible.Size = new System.Drawing.Size(115, 32);
             this.lblCantidadDisponible.TabIndex = 13;
             this.lblCantidadDisponible.Text = "Cantidad:";
             // 
@@ -221,10 +211,9 @@
             this.lblPrecioVenta.AutoSize = true;
             this.lblPrecioVenta.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPrecioVenta.ForeColor = System.Drawing.Color.White;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(523, 340);
-            this.lblPrecioVenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(392, 276);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(192, 41);
+            this.lblPrecioVenta.Size = new System.Drawing.Size(154, 32);
             this.lblPrecioVenta.TabIndex = 12;
             this.lblPrecioVenta.Text = "Precio Venta:";
             // 
@@ -233,10 +222,9 @@
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPorcentaje.ForeColor = System.Drawing.Color.White;
-            this.lblPorcentaje.Location = new System.Drawing.Point(523, 271);
-            this.lblPorcentaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPorcentaje.Location = new System.Drawing.Point(392, 220);
             this.lblPorcentaje.Name = "lblPorcentaje";
-            this.lblPorcentaje.Size = new System.Drawing.Size(176, 41);
+            this.lblPorcentaje.Size = new System.Drawing.Size(142, 32);
             this.lblPorcentaje.TabIndex = 11;
             this.lblPorcentaje.Text = "% ganancia:";
             // 
@@ -245,10 +233,9 @@
             this.lblPrecioCosto.AutoSize = true;
             this.lblPrecioCosto.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPrecioCosto.ForeColor = System.Drawing.Color.White;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(523, 198);
-            this.lblPrecioCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioCosto.Location = new System.Drawing.Point(392, 161);
             this.lblPrecioCosto.Name = "lblPrecioCosto";
-            this.lblPrecioCosto.Size = new System.Drawing.Size(193, 41);
+            this.lblPrecioCosto.Size = new System.Drawing.Size(153, 32);
             this.lblPrecioCosto.TabIndex = 10;
             this.lblPrecioCosto.Text = "Precio Costo:";
             // 
@@ -257,10 +244,9 @@
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblDescripcion.ForeColor = System.Drawing.Color.White;
-            this.lblDescripcion.Location = new System.Drawing.Point(523, 138);
-            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcion.Location = new System.Drawing.Point(392, 112);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(180, 41);
+            this.lblDescripcion.Size = new System.Drawing.Size(144, 32);
             this.lblDescripcion.TabIndex = 9;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -269,10 +255,9 @@
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
-            this.lblCodigo.Location = new System.Drawing.Point(523, 78);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(392, 63);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(123, 41);
+            this.lblCodigo.Size = new System.Drawing.Size(97, 32);
             this.lblCodigo.TabIndex = 8;
             this.lblCodigo.Text = "Código:";
             // 
@@ -285,10 +270,9 @@
             this.tpModificar.Controls.Add(this.tbBuscarCodigo);
             this.tpModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tpModificar.Location = new System.Drawing.Point(4, 66);
-            this.tpModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpModificar.Location = new System.Drawing.Point(4, 54);
             this.tpModificar.Name = "tpModificar";
-            this.tpModificar.Size = new System.Drawing.Size(1631, 606);
+            this.tpModificar.Size = new System.Drawing.Size(1020, 491);
             this.tpModificar.TabIndex = 1;
             this.tpModificar.Text = "Modificar Producto";
             this.tpModificar.Click += new System.EventHandler(this.tpModificar_Click);
@@ -296,10 +280,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 457);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 371);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(109, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -325,12 +308,13 @@
             this.CantidadMinima});
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvProductos.Location = new System.Drawing.Point(0, 0);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvProductos.MinimumSize = new System.Drawing.Size(1297, 400);
+            this.dgvProductos.MinimumSize = new System.Drawing.Size(973, 325);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1631, 433);
+            this.dgvProductos.Size = new System.Drawing.Size(1020, 352);
             this.dgvProductos.TabIndex = 3;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -392,10 +376,9 @@
             this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btBuscar.ForeColor = System.Drawing.Color.White;
-            this.btBuscar.Location = new System.Drawing.Point(273, 507);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btBuscar.Location = new System.Drawing.Point(205, 412);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(152, 64);
+            this.btBuscar.Size = new System.Drawing.Size(114, 52);
             this.btBuscar.TabIndex = 2;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = false;
@@ -404,21 +387,19 @@
             // tbBuscarCodigo
             // 
             this.tbBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuscarCodigo.Location = new System.Drawing.Point(171, 457);
-            this.tbBuscarCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbBuscarCodigo.Location = new System.Drawing.Point(128, 371);
             this.tbBuscarCodigo.Name = "tbBuscarCodigo";
-            this.tbBuscarCodigo.Size = new System.Drawing.Size(253, 41);
+            this.tbBuscarCodigo.Size = new System.Drawing.Size(191, 35);
             this.tbBuscarCodigo.TabIndex = 1;
             this.tbBuscarCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbBuscarCodigo_KeyPress);
             // 
             // NuevoProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1639, 676);
+            this.ClientSize = new System.Drawing.Size(1028, 549);
             this.Controls.Add(this.tabControlProducto);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NuevoProducto";
             this.Text = "Administrar Productos";
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
