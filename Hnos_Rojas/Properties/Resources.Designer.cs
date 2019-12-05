@@ -73,6 +73,16 @@ namespace Hnos_Rojas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ctrlP {
+            get {
+                object obj = ResourceManager.GetObject("ctrlP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete__1_ {
             get {
                 object obj = ResourceManager.GetObject("Delete (1)", resourceCulture);
@@ -96,6 +106,26 @@ namespace Hnos_Rojas.Properties {
         internal static System.Drawing.Bitmap F1 {
             get {
                 object obj = ResourceManager.GetObject("F1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F100 {
+            get {
+                object obj = ResourceManager.GetObject("F100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F12 {
+            get {
+                object obj = ResourceManager.GetObject("F12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace Hnos_Rojas.Properties {
         internal static System.Drawing.Bitmap Impresora {
             get {
                 object obj = ResourceManager.GetObject("Impresora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ins {
+            get {
+                object obj = ResourceManager.GetObject("ins", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
