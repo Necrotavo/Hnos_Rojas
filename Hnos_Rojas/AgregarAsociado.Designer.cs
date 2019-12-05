@@ -133,11 +133,11 @@
             this.btnAddAsociado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.btnAddAsociado.FlatAppearance.BorderSize = 0;
             this.btnAddAsociado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAsociado.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnAddAsociado.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAsociado.ForeColor = System.Drawing.Color.White;
-            this.btnAddAsociado.Location = new System.Drawing.Point(422, 411);
+            this.btnAddAsociado.Location = new System.Drawing.Point(423, 412);
             this.btnAddAsociado.Name = "btnAddAsociado";
-            this.btnAddAsociado.Size = new System.Drawing.Size(202, 48);
+            this.btnAddAsociado.Size = new System.Drawing.Size(194, 42);
             this.btnAddAsociado.TabIndex = 5;
             this.btnAddAsociado.Text = "Agregar Asociado";
             this.btnAddAsociado.UseVisualStyleBackColor = false;
@@ -148,11 +148,11 @@
             this.btnSalir.BackColor = System.Drawing.Color.DarkRed;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(632, 411);
+            this.btnSalir.Location = new System.Drawing.Point(638, 412);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(199, 47);
+            this.btnSalir.Size = new System.Drawing.Size(194, 42);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -176,7 +176,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AgregarAsociado";
             this.Text = "AgregarAsociado";
             this.ResumeLayout(false);
