@@ -42,7 +42,7 @@
             this.btnEstadoCuenta.ForeColor = System.Drawing.Color.White;
             this.btnEstadoCuenta.Location = new System.Drawing.Point(24, 23);
             this.btnEstadoCuenta.Name = "btnEstadoCuenta";
-            this.btnEstadoCuenta.Size = new System.Drawing.Size(254, 42);
+            this.btnEstadoCuenta.Size = new System.Drawing.Size(194, 42);
             this.btnEstadoCuenta.TabIndex = 16;
             this.btnEstadoCuenta.Text = "Mostrar Clientes";
             this.btnEstadoCuenta.UseVisualStyleBackColor = false;
@@ -55,9 +55,9 @@
             this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoCliente.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(1029, 23);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(1085, 23);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(250, 42);
+            this.btnNuevoCliente.Size = new System.Drawing.Size(194, 42);
             this.btnNuevoCliente.TabIndex = 17;
             this.btnNuevoCliente.Text = "Nuevo/Modificar";
             this.btnNuevoCliente.UseVisualStyleBackColor = false;
