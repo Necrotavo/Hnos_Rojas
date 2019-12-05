@@ -15,12 +15,18 @@ namespace Hnos_Rojas
     public partial class TodasFacturas : Form
     {
         private DO_Factura factura;
-        public TodasFacturas()
+        public TodasFacturas(DateTime inicio, DateTime fin)
         {
             InitializeComponent();
-            DateTime date = new DateTime(DateTime.Now.Year , DateTime.Now.Month,
-                DateTime.Now.Day);
-            llenarGrdFacturas(new DateTime(1999,10,4), date);
+          
+            DateTime desdeFecha = new DateTime(inicio.Year, inicio.Month,
+                inicio.Day);
+
+            DateTime hastaFecha = new DateTime(fin.Year, fin.Month,
+                fin.Day);
+            lblTitulo.Text = "Facturas del " + desdeFecha.ToShortDateString() + " hasta el " + hastaFecha.ToShortDateString();
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            llenarGrdFacturas(desdeFecha, hastaFecha);
             factura = new   DO_Factura();
         }
 
@@ -83,20 +89,6 @@ namespace Hnos_Rojas
             this.Dispose();
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            DateTime desdeFecha = new DateTime(calDesde.SelectionStart.Year, calDesde.SelectionStart.Month,
-                calDesde.SelectionStart.Day);
-
-            DateTime hastaFecha = new DateTime(calHasta.SelectionStart.Year, calHasta.SelectionStart.Month,
-                calHasta.SelectionStart.Day);
-            llenarGrdFacturas(desdeFecha,hastaFecha);
-        }
 
         private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)      
         {

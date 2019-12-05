@@ -143,5 +143,17 @@ namespace Hnos_Rojas
             }
             
         }
+
+        private void btnFacturas_Click(object sender, EventArgs e)
+        {
+            DateTime fechaReporteDesde = new DateTime(calReporteDesde.SelectionStart.Year, calReporteDesde.SelectionStart.Month,
+                calReporteDesde.SelectionStart.Day);
+
+            DateTime fechaReporteHasta = new DateTime(calReporteHasta.SelectionStart.Year, calReporteHasta.SelectionStart.Month,
+                calReporteHasta.SelectionStart.Day);
+            TodasFacturas facturas = new TodasFacturas(fechaReporteDesde,fechaReporteHasta);
+            facturas.StartPosition = FormStartPosition.CenterScreen;
+            facturas.Show();
+        }
     }
 }

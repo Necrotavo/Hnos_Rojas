@@ -72,6 +72,7 @@
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHastatxt = new System.Windows.Forms.Label();
+            this.btnFacturas = new System.Windows.Forms.Button();
             this.pnlLbls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,7 +252,7 @@
             this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnFiltrar.FlatAppearance.BorderSize = 0;
             this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnFiltrar.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
             this.btnFiltrar.Location = new System.Drawing.Point(113, 472);
             this.btnFiltrar.Name = "btnFiltrar";
@@ -418,7 +419,7 @@
             this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnImprimir.ForeColor = System.Drawing.Color.White;
             this.btnImprimir.Location = new System.Drawing.Point(113, 533);
             this.btnImprimir.Name = "btnImprimir";
@@ -462,13 +463,14 @@
             // calReporteHasta
             // 
             this.calReporteHasta.Location = new System.Drawing.Point(113, 292);
-            this.calReporteHasta.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calReporteHasta.Margin = new System.Windows.Forms.Padding(7);
             this.calReporteHasta.Name = "calReporteHasta";
             this.calReporteHasta.TabIndex = 110;
             // 
             // pnlLbls
             // 
             this.pnlLbls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.pnlLbls.Controls.Add(this.btnFacturas);
             this.pnlLbls.Controls.Add(this.lblHasta);
             this.pnlLbls.Controls.Add(this.lblCorte);
             this.pnlLbls.Controls.Add(this.label20);
@@ -507,7 +509,7 @@
             this.pnlLbls.Controls.Add(this.label12);
             this.pnlLbls.Controls.Add(this.lbTotalAgentes);
             this.pnlLbls.Location = new System.Drawing.Point(469, 63);
-            this.pnlLbls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLbls.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLbls.Name = "pnlLbls";
             this.pnlLbls.Size = new System.Drawing.Size(734, 518);
             this.pnlLbls.TabIndex = 111;
@@ -543,6 +545,21 @@
             this.lblHastatxt.Size = new System.Drawing.Size(74, 29);
             this.lblHastatxt.TabIndex = 113;
             this.lblHastatxt.Text = "Hasta";
+            // 
+            // btnFacturas
+            // 
+            this.btnFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
+            this.btnFacturas.FlatAppearance.BorderSize = 0;
+            this.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacturas.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturas.ForeColor = System.Drawing.Color.White;
+            this.btnFacturas.Location = new System.Drawing.Point(450, 456);
+            this.btnFacturas.Name = "btnFacturas";
+            this.btnFacturas.Size = new System.Drawing.Size(227, 48);
+            this.btnFacturas.TabIndex = 111;
+            this.btnFacturas.Text = "Facturas";
+            this.btnFacturas.UseVisualStyleBackColor = false;
+            this.btnFacturas.Click += new System.EventHandler(this.btnFacturas_Click);
             // 
             // Reportes
             // 
@@ -614,5 +631,6 @@
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Label lblDesde;
         private System.Windows.Forms.Label lblHastatxt;
+        private System.Windows.Forms.Button btnFacturas;
     }
 }

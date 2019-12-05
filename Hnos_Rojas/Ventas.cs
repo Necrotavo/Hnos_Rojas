@@ -191,9 +191,7 @@ namespace Hnos_Rojas
             //NuevoProducto ventanaProducto = new NuevoProducto();
             //ventanaProducto.StartPosition = FormStartPosition.CenterScreen;
             //ventanaProducto.Show();
-            TodasFacturas facturas = new TodasFacturas();
-            facturas.StartPosition = FormStartPosition.CenterScreen;
-            facturas.Show();
+           
             if (facturaContadoRealizada)
             {
                 facturaContadoTemp.imprimir();
