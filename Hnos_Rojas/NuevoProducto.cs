@@ -193,6 +193,7 @@ namespace Hnos_Rojas
         private void btBuscar_Click(object sender, EventArgs e)
         {
             buscarProducto();
+            tbBuscarCodigo.Focus();
         }
         public void buscarProducto()
         {
@@ -290,7 +291,8 @@ namespace Hnos_Rojas
             {
                 this.ActiveControl = dgvProductos;
                 buscarProducto();
-                tbBuscarCodigo.Clear();
+                tbBuscarCodigo.Focus();
+                //tbBuscarCodigo.Clear();
             }
         }
 

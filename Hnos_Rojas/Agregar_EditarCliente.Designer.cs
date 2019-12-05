@@ -110,7 +110,7 @@
             this.tabPageAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 41);
             this.tabPageAgregarCliente.Name = "tabPageAgregarCliente";
-            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageAgregarCliente.Size = new System.Drawing.Size(824, 454);
             this.tabPageAgregarCliente.TabIndex = 0;
             this.tabPageAgregarCliente.Text = "Agregar";
@@ -281,7 +281,7 @@
             this.tabPageModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageModificar.Location = new System.Drawing.Point(4, 41);
             this.tabPageModificar.Name = "tabPageModificar";
-            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageModificar.Size = new System.Drawing.Size(824, 454);
             this.tabPageModificar.TabIndex = 1;
             this.tabPageModificar.Text = "Modificar";
@@ -445,6 +445,7 @@
             this.tbNombreOApellido.Name = "tbNombreOApellido";
             this.tbNombreOApellido.Size = new System.Drawing.Size(191, 35);
             this.tbNombreOApellido.TabIndex = 1;
+            this.tbNombreOApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNombreOApellido_KeyDown);
             // 
             // Agregar_EditarCliente
             // 

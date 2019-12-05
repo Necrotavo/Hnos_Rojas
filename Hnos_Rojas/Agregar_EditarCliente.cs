@@ -346,7 +346,8 @@ namespace Hnos_Rojas
         private void btBuscarCliente_Click(object sender, EventArgs e)
         {                   
             llenarGridClientes(tbNombreOApellido.Text.Trim());
-            dgvClientes.ClearSelection();
+            tbNombreOApellido.Focus();
+            //dgvClientes.ClearSelection();
         }
 
         private void dgvClientes_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
@@ -383,6 +384,26 @@ namespace Hnos_Rojas
         private void tbLimite_KeyPress(object sender, KeyPressEventArgs e)
         {
             permitirEntradaNumeros(e);
+        }
+
+        private void tbNombreOApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    {
+                        if (tbNombreOApellido.Text != "")
+                        {
+                            llenarGridClientes(tbNombreOApellido.Text.Trim());
+                            tbNombreOApellido.Focus();
+                        }
+                        else
+                        {
+                            llenarGridClientes(tbNombreOApellido.Text.Trim()); 
+                        }
+                        break;
+                    }
+            }
         }
     }
 }
