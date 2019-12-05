@@ -201,5 +201,10 @@ namespace BL
                 return null;
             }
         }
+
+        public List<DO_ProductoEnFactura> obtenerProductosFactura(int facCodigo) {
+            DAO_Producto daoProducto = new DAO_Producto();
+            return daoProducto.obtenerProductosFactura(facCodigo);
+        }
     }
 }

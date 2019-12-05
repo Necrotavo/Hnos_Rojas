@@ -47,6 +47,7 @@
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +105,8 @@
             this.Estado,
             this.Monto,
             this.Notas,
-            this.TIPO});
+            this.TIPO,
+            this.Imprimir});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +129,7 @@
             this.grdFacturas.TabIndex = 8;
             this.grdFacturas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellClick);
             this.grdFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdFacturas_CellContentClick);
+            this.grdFacturas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdFacturas_CellFormatting);
             // 
             // btnDetalles
             // 
@@ -222,10 +225,15 @@
             // TIPO
             // 
             this.TIPO.DataPropertyName = "Tipo";
-            this.TIPO.HeaderText = "TIPO";
+            this.TIPO.HeaderText = "Tipo";
             this.TIPO.Name = "TIPO";
             this.TIPO.ReadOnly = true;
-            this.TIPO.Visible = false;
+            // 
+            // Imprimir
+            // 
+            this.Imprimir.HeaderText = "Imprimir";
+            this.Imprimir.Image = global::Hnos_Rojas.Properties.Resources.Impresora;
+            this.Imprimir.Name = "Imprimir";
             // 
             // TodasFacturas
             // 
@@ -268,5 +276,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
+        private System.Windows.Forms.DataGridViewImageColumn Imprimir;
     }
 }

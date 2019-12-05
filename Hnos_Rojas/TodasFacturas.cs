@@ -55,12 +55,13 @@ namespace Hnos_Rojas
                 }
             }
             grdFacturas.DataSource = tablaFacturas;
+            grdFacturas.AllowUserToAddRows = false;
            
         }
 
         public void formatoGrid()
         {
-            grdFacturas.Columns["Tipo"].Visible = false;
+            //grdFacturas.Columns["Tipo"].Visible = false;
             grdFacturas.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             grdFacturas.Columns[0].Width = 50;    //codigo
             grdFacturas.Columns[1].Width = 200;    //Fecha
@@ -93,28 +94,53 @@ namespace Hnos_Rojas
             llenarGrdFacturas(desdeFecha,hastaFecha);
         }
 
-        private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-            
+        private void grdFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)      
         {
-            if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("TIPO")) {
-                if (grdFacturas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("CREDITO"))
-                {
-                    grdFacturas.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
-                }
-                else {
-
-                    grdFacturas.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                }
-            }
+           
         }
 
         private void grdFacturas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            factura.codigoFactura = Convert.ToInt32(grdFacturas.Rows[e.RowIndex].Cells["Codigo"].Value.ToString());
-            factura.usuario = grdFacturas.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
-            factura.tipoPago = grdFacturas.Rows[e.RowIndex].Cells["TIPO"].Value.ToString();
+            if (grdFacturas.Columns[e.ColumnIndex].Name.Equals("Imprimir")) {
+                MessageBox.Show("sssss");
+                BL_Factura blFactura = new BL_Factura();
+                factura.codigoFactura = Convert.ToInt32(grdFacturas.Rows[e.RowIndex].Cells["Codigo"].Value.ToString());
+                factura.usuario = grdFacturas.Rows[e.RowIndex].Cells["Usuario"].Value.ToString();
+                factura.tipoPago = grdFacturas.Rows[e.RowIndex].Cells["TIPO"].Value.ToString();
+                factura.listaProducto = blFactura.obtenerProductosFactura(factura.codigoFactura);
 
+                if (factura.tipoPago.Equals("CREDITO"))
+                {
+                    String nombreCliente = grdFacturas.Rows[e.RowIndex].Cells["Cliente"].Value.ToString();
+                    FacturaCredito factCred = new FacturaCredito(
+                    factura.usuario,
+                    factura.totalFactura.ToString(),
+                    "",
+                    factura.listaProducto,
+                    factura.notas,
+                    nombreCliente,
+                    "");
+                }
+                else {
+
+                }
+               
+                
+            }
           
+        }
+
+        private void grdFacturas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+                if (grdFacturas.Rows[e.RowIndex].Cells["TIPO"].Value.ToString().Equals("CREDITO"))
+                {
+                    grdFacturas.Rows[e.RowIndex].Cells["TIPO"].Style.BackColor = Color.LightBlue;
+                }
+                else {
+                    grdFacturas.Rows[e.RowIndex].Cells["TIPO"].Style.BackColor = Color.LightSalmon;
+                }
+            
         }
     }
 }
