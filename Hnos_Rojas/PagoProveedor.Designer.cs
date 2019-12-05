@@ -43,12 +43,12 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Location = new System.Drawing.Point(268, 470);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(203, 48);
+            this.btnSalir.Size = new System.Drawing.Size(194, 42);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -59,12 +59,12 @@
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(268, 27);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(203, 48);
+            this.btnBuscar.Size = new System.Drawing.Size(194, 42);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -75,7 +75,7 @@
             // 
             this.txtBuscarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarProveedor.Location = new System.Drawing.Point(34, 27);
-            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarProveedor.Name = "txtBuscarProveedor";
             this.txtBuscarProveedor.Size = new System.Drawing.Size(204, 35);
             this.txtBuscarProveedor.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.listBoxProveedor.FormattingEnabled = true;
             this.listBoxProveedor.ItemHeight = 25;
             this.listBoxProveedor.Location = new System.Drawing.Point(34, 141);
-            this.listBoxProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxProveedor.Name = "listBoxProveedor";
             this.listBoxProveedor.Size = new System.Drawing.Size(438, 179);
             this.listBoxProveedor.TabIndex = 3;
@@ -109,12 +109,12 @@
             this.btnPagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnPagar.FlatAppearance.BorderSize = 0;
             this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnPagar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnPagar.ForeColor = System.Drawing.Color.White;
             this.btnPagar.Location = new System.Drawing.Point(34, 470);
-            this.btnPagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPagar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(203, 48);
+            this.btnPagar.Size = new System.Drawing.Size(194, 42);
             this.btnPagar.TabIndex = 5;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(268, 381);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(204, 35);
             this.textBox1.TabIndex = 2;
@@ -156,7 +156,7 @@
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.lblPago);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PagoProveedor";
             this.Text = "PagoProveedor";
             this.ResumeLayout(false);
