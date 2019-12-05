@@ -54,7 +54,7 @@
             this.btnNuevoProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnNuevoProd.FlatAppearance.BorderSize = 0;
             this.btnNuevoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoProd.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnNuevoProd.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoProd.ForeColor = System.Drawing.Color.White;
             this.btnNuevoProd.Location = new System.Drawing.Point(1020, 51);
             this.btnNuevoProd.Name = "btnNuevoProd";
@@ -94,7 +94,7 @@
             this.descripcion,
             this.CantidadDisponible});
             this.grdProductos.Location = new System.Drawing.Point(-9, 184);
-            this.grdProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdProductos.Margin = new System.Windows.Forms.Padding(2);
             this.grdProductos.MaximumSize = new System.Drawing.Size(1500, 500);
             this.grdProductos.Name = "grdProductos";
             this.grdProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -176,7 +176,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(663, 50);
             this.btnBuscar.Name = "btnBuscar";
@@ -191,7 +191,7 @@
             this.btnAgregarTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btnAgregarTicket.FlatAppearance.BorderSize = 0;
             this.btnAgregarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnAgregarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTicket.ForeColor = System.Drawing.Color.White;
             this.btnAgregarTicket.Location = new System.Drawing.Point(663, 128);
             this.btnAgregarTicket.Name = "btnAgregarTicket";

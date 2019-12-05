@@ -32,21 +32,23 @@ namespace Hnos_Rojas
 
         public void actualizarLblSaldo()
         {
-            double saldo = doFactura.saldo - Convert.ToDouble(txtAbono.Text);
-            if (saldo >= 0)
-            {
-                lblSaldoAbono.Text = "Saldo";
-                lblSaldo.Text = saldo.ToString();
-            }
-            else
-            {
-                lblSaldoAbono.Text = "Vuelto";
-                lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - doFactura.saldo).ToString();
+            if (txtAbono.Text != "") {
+                double saldo = doFactura.saldo - Convert.ToDouble(txtAbono.Text);
+                if (saldo >= 0)
+                {
+                    lblSaldoAbono.Text = "Saldo";
+                    lblSaldo.Text = saldo.ToString();
+                }
+                else
+                {
+                    lblSaldoAbono.Text = "Vuelto";
+                    lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - doFactura.saldo).ToString();
+                }
             }
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
+        private void pagar() {
+            
             if (txtAbono.Text == "")
             {
                 MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO MONTO");
@@ -54,16 +56,23 @@ namespace Hnos_Rojas
                 //MessageBox.Show("No ha ingresado un monto para abonar");
             }
             else
-            {
-                BL_Factura blFactura = new BL_Factura();
-                blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
-                estCuenta.refrescarCreditoCompleto();
-                estCuenta.llenarGrid();
-                MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
-                mensajeExito.Show();
-                //MessageBox.Show("Abono exitoso");
-                this.Dispose();
+            { 
+               
+                    BL_Factura blFactura = new BL_Factura();
+                    blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
+                    estCuenta.refrescarCreditoCompleto();
+                    estCuenta.llenarGrid();
+                    MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Abono exitoso");
+                    this.Dispose();
+                
             }
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            pagar();  
         }
 
         private void txtAbono_TextChanged(object sender, EventArgs e)
@@ -73,23 +82,42 @@ namespace Hnos_Rojas
 
         private void txtAbono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+          
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    actualizarLblSaldo();
+                    e.Handled = false;
+                }
+                else if (Char.IsSeparator(e.KeyChar))
+                {
+                    actualizarLblSaldo();
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void txtAbono_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                actualizarLblSaldo();
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                actualizarLblSaldo();
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
+                case Keys.Enter:
+                    {
+                        pagar();
+                        break;
+                    }
             }
         }
     }
