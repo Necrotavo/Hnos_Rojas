@@ -29,13 +29,18 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+            pagar();
+        }
+
+        public void pagar() {
             if (txtAbono.Text == "")
             {
                 MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO UN MONTO");
                 mensajeError.Show();
                 //MessageBox.Show("No ha ingresado un monto para abonar");
             }
-            else {
+            else
+            {
                 //aqui iria la parte del mensaje de confirmación
                 BL_Credito blCredito = new BL_Credito();
                 blCredito.abonar(Convert.ToInt32(txtAbono.Text), cliente.perIdentificador);
@@ -92,6 +97,18 @@ namespace Hnos_Rojas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtAbono_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    {
+                        pagar();
+                        break;
+                    }
+            }
         }
     }
 }

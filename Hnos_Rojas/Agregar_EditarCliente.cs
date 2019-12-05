@@ -105,8 +105,8 @@ namespace Hnos_Rojas
                 //style.Font = new Font("Microsoft Sans Serif", 14);
                 //style.BackColor = Color.LightGray;
 
-                dgvClientes.Columns["Editar"].Width = 75;
-                dgvClientes.Columns["EstadoCliente"].Width = 130;
+                //dgvClientes.Columns["Editar"].Width = 75;
+                //dgvClientes.Columns["EstadoCliente"].Width = 130;
 
                 //grdClientes [1] = direccion
                 //grdClientes [2] = estado
@@ -351,12 +351,12 @@ namespace Hnos_Rojas
 
         private void dgvClientes_AutoSizeColumnModeChanged(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
         {
-            this.dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            //this.dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void dgvClientes_AutoSizeRowsModeChanged(object sender, DataGridViewAutoSizeModeEventArgs e)
         {
-            dgvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dgvClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void tbTelefono_KeyPress(object sender, KeyPressEventArgs e)
