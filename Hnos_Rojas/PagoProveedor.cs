@@ -98,11 +98,11 @@ namespace Hnos_Rojas
             {
                 e.Handled = false;
             }
-            else if (Char.IsControl(e.KeyChar))
+            else if (Convert.ToChar(Keys.Enter) == e.KeyChar)
             {
-                e.Handled = false;
+                e.Handled = true;
             }
-            else if (Char.IsSeparator(e.KeyChar))
+            else if (Char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
             }
