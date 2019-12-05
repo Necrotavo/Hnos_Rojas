@@ -56,7 +56,7 @@ namespace Hnos_Rojas
             {
                 cont++;
                 e.Graphics.DrawString(item.codigoFactura.ToString(), fuenteGeneral, Brushes.Black, x, y + (fuenteGeneral.Height * cont));
-                e.Graphics.DrawString(item.fecha.ToString().Substring(0,11), fuenteGeneral, Brushes.Black, x + 35, y + (fuenteGeneral.Height * cont));
+                e.Graphics.DrawString(item.fecha.ToString("dd/MM/yyyy"), fuenteGeneral, Brushes.Black, x + 40, y + (fuenteGeneral.Height * cont));
                 e.Graphics.DrawString(item.totalFactura.ToString(), fuenteGeneral, Brushes.Black, x + 170, y + (fuenteGeneral.Height * cont));
                 e.Graphics.DrawString(item.saldo.ToString(), fuenteGeneral, Brushes.Black, x + 240, y + (fuenteGeneral.Height * cont));
             }
