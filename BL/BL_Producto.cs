@@ -116,6 +116,13 @@ namespace BL
             return daoProducto.CargarProductos();
         }
 
+        public List<DO_Producto> ObtenerListaProductosComunes()
+        {
+            DAO_Producto daoProducto = new DAO_Producto();
+
+            return daoProducto.cargarProductosComunes();
+        }
+
         public List<DO_TopProductos> obtenerTopVentas(String diaInicio, String diaFinal) {
             DAO_Producto daoProducto = new DAO_Producto();
             return daoProducto.obtenerTopVentas(diaInicio, diaFinal);

@@ -143,6 +143,7 @@
     <Compile Include="HorarioProveedores.Designer.cs">
       <DependentUpon>HorarioProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="IConfirmacion.cs" />
     <Compile Include="ImprimirReportes.cs">
       <SubType>Form</SubType>
     </Compile>

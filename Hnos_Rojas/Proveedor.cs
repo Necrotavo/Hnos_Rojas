@@ -12,7 +12,7 @@ using BL;
 
 namespace Hnos_Rojas
 {
-    public partial class Proveedor : Form
+    public partial class Proveedor : Form, IConfirmacion
     {
         private ListaProveedores tempListaproveedores;
         public Proveedor()
@@ -71,35 +71,8 @@ namespace Hnos_Rojas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea eliminar al proveedor " + tempListaproveedores.obtenerProveedorSeleccionado() + "?", "Warning",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                BL_Proveedor blProveedor = new BL_Proveedor();
-                if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
-                {
-                    MensajeExito mensajeExito = new MensajeExito("PROVEEDOR ELIMINADO");
-                    mensajeExito.Show();
-                    //MessageBox.Show("Proveedor eliminado");
-                }
-                else
-                {
-                    MensajeError mensajeError = new MensajeError("PROVEEDOR NO ELIMINADO");
-                    mensajeError.Show();
-                    //MessageBox.Show("Proveedor no eliminado");
-                }
-                invocarListaProveedores();
-            }
-            else if (result == DialogResult.No)
-            {
-                //Que no haga nada
-            }
-            else
-            {
-                MensajeError mensajeError = new MensajeError("NO HA SELECCIONADO UN PROVEEDOR");
-                mensajeError.Show();
-                //MessageBox.Show("No ha seleccionado un proveedor");
-            }
+            MensajeConfirmacion mensajeConfirmacion = new MensajeConfirmacion("Seguro que desea eliminar este proveedor?", this);
+            mensajeConfirmacion.Show();
         }
 
         private void btnHorario_Click(object sender, EventArgs e)
@@ -108,6 +81,32 @@ namespace Hnos_Rojas
             this.panelProveedores.Controls.Clear();
             this.panelProveedores.Controls.Add(horarioProveedores);
             horarioProveedores.Show();
+        }
+
+        public void positivo()
+        {
+            
+            BL_Proveedor blProveedor = new BL_Proveedor();
+            if (blProveedor.eliminarProveedor(tempListaproveedores.obtenerProveedorSeleccionado()))
+            {
+                MensajeExito mensajeExito = new MensajeExito("PROVEEDOR ELIMINADO");
+                invocarListaProveedores();
+                mensajeExito.Show();
+                //MessageBox.Show("Proveedor eliminado");
+            }
+            else
+            {
+                MensajeError mensajeError = new MensajeError("PROVEEDOR NO ELIMINADO");
+                invocarListaProveedores();
+                mensajeError.Show();
+                //MessageBox.Show("Proveedor no eliminado");
+            }
+            
+        }
+
+        public void negativo()
+        {
+          
         }
     }
 }

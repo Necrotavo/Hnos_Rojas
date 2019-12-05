@@ -44,34 +44,40 @@ namespace Hnos_Rojas
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            
-            this.factura.clienteExterno = "";
-            this.factura.notas = this.txtNotas.Text;
-            this.factura.estado = "PENDIENTE";
-            this.factura.tipoPago = "CREDITO";
-            BL_Factura blFactura = new BL_Factura();
-            blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
+            if (listBClientes.SelectedValue != null)
+            {
+                this.factura.clienteExterno = "";
+                this.factura.notas = this.txtNotas.Text;
+                this.factura.estado = "PENDIENTE";
+                this.factura.tipoPago = "CREDITO";
+                BL_Factura blFactura = new BL_Factura();
+                blFactura.guardarFacturaCredito(factura, Convert.ToInt32(listBClientes.SelectedValue.ToString()));
 
 
-            FacturaCredito factCred = new FacturaCredito(
-                factura.usuario,
-                factura.totalFactura.ToString(),
-                lbCreditoDisp.Text,
-                factura.listaProducto,
-                txtNotas.Text,
-                listBClientes.Text,
-                lbCreditoAnterior.Text);
+                FacturaCredito factCred = new FacturaCredito(
+                    factura.usuario,
+                    factura.totalFactura.ToString(),
+                    lbCreditoDisp.Text,
+                    factura.listaProducto,
+                    txtNotas.Text,
+                    listBClientes.Text,
+                    lbCreditoAnterior.Text);
 
-            
-            parent.facturaCreditoTemp = factCred;
-            parent.facturaContadoRealizada = false;
-            parent.facturaCreditoRealizada = true;
 
-            MensajeExito mensajeExito = new MensajeExito("PAGO EXITOSO");
-            mensajeExito.Show();
-            //MessageBox.Show("Pago exitoso");
-            parent.cerrarTicket();
-            this.Dispose();
+                parent.facturaCreditoTemp = factCred;
+                parent.facturaContadoRealizada = false;
+                parent.facturaCreditoRealizada = true;
+
+                MensajeExito mensajeExito = new MensajeExito("PAGO EXITOSO");
+                mensajeExito.Show();
+                //MessageBox.Show("Pago exitoso");
+                parent.cerrarTicket();
+                this.Dispose();
+            }
+            else {
+                MensajeError mensajeExito = new MensajeError("No ha seleccionado un cliente");
+                mensajeExito.Show();
+            }
         }
 
         private void filtrarClientes() {
