@@ -39,12 +39,16 @@
             // 
             // btnSi
             // 
+            this.btnSi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSi.FlatAppearance.BorderSize = 0;
+            this.btnSi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSi.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSi.Location = new System.Drawing.Point(155, 215);
             this.btnSi.Name = "btnSi";
             this.btnSi.Size = new System.Drawing.Size(122, 34);
             this.btnSi.TabIndex = 3;
             this.btnSi.Text = "Si";
-            this.btnSi.UseVisualStyleBackColor = true;
+            this.btnSi.UseVisualStyleBackColor = false;
             this.btnSi.Click += new System.EventHandler(this.btnSi_Click);
             // 
             // pictureBox1
@@ -59,12 +63,16 @@
             // 
             // btnNo
             // 
+            this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNo.FlatAppearance.BorderSize = 0;
+            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNo.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNo.Location = new System.Drawing.Point(320, 215);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(122, 34);
             this.btnNo.TabIndex = 5;
             this.btnNo.Text = "No";
-            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.UseVisualStyleBackColor = false;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // lbMensajeConfirmacion
