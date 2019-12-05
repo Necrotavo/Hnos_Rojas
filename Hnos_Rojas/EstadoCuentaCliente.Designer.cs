@@ -31,6 +31,8 @@
             this.listBClientes = new System.Windows.Forms.ListBox();
             this.txtEstadoCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBClientes
@@ -58,11 +60,21 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(406, 126);
+            this.label1.Location = new System.Drawing.Point(502, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 29);
+            this.label1.Size = new System.Drawing.Size(87, 29);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Ingrese el nombre o apellido del cliente";
+            this.label1.Text = "Buscar";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
+            this.pictureBox1.Location = new System.Drawing.Point(453, 132);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // EstadoCuentaCliente
             // 
@@ -70,6 +82,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.ClientSize = new System.Drawing.Size(1255, 556);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEstadoCliente);
             this.Controls.Add(this.listBClientes);
@@ -77,6 +90,7 @@
             this.Name = "EstadoCuentaCliente";
             this.Text = "EstadoCuentaCliente";
             this.Load += new System.EventHandler(this.EstadoCuentaCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +101,6 @@
         private System.Windows.Forms.ListBox listBClientes;
         private System.Windows.Forms.TextBox txtEstadoCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

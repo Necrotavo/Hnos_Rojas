@@ -92,7 +92,7 @@
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(235, 32);
             this.lblCodigo.TabIndex = 5;
-            this.lblCodigo.Text = "Codigo de producto:";
+            this.lblCodigo.Text = "Código de producto:";
             // 
             // txtCodigo
             // 
