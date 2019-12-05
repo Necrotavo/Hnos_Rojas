@@ -45,8 +45,7 @@ namespace Hnos_Rojas
             }
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
+        private void pagar() {
             if (txtAbono.Text == "")
             {
                 MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO MONTO");
@@ -66,6 +65,11 @@ namespace Hnos_Rojas
             }
         }
 
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            pagar();  
+        }
+
         private void txtAbono_TextChanged(object sender, EventArgs e)
         {
             actualizarLblSaldo();
@@ -73,23 +77,42 @@ namespace Hnos_Rojas
 
         private void txtAbono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+          
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    actualizarLblSaldo();
+                    e.Handled = false;
+                }
+                else if (Char.IsSeparator(e.KeyChar))
+                {
+                    actualizarLblSaldo();
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void AbonarFactura_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
             {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                actualizarLblSaldo();
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                actualizarLblSaldo();
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
+                case Keys.Enter:
+                    {
+                        pagar();
+                        break;
+                    }
             }
         }
     }
