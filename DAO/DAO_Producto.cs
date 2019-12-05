@@ -444,5 +444,40 @@ namespace DAO
 
             return productos;  
         }
+
+        public List<DO_Producto> cargarProductosComunes() {
+            SqlCommand consulta = new SqlCommand("select * from Producto where PRO_PRECIO_COSTO = 0 AND PRO_PRECIO_VENTA", conexion);
+
+
+            List<DO_Producto> listaProductos = new List<DO_Producto>();
+
+            try
+            {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                SqlDataReader lector = consulta.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    while (lector.Read())
+                    {
+                        listaProductos.Add(new DO_Producto((String)lector["PRO_CODIGO"], Convert.ToDouble(lector["PRO_PRECIO_COSTO"]), Convert.ToDouble(lector["PRO_PRECIO_VENTA"]), Convert.ToInt32(lector["PRO_CANTIDAD_MINIMA_STOCK"]), (String)lector["PRO_DESCRIPCION"], Convert.ToInt32(lector["PRO_CANTIDAD_DISPONIBLE"])));
+                    }
+                }
+                return listaProductos;
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
+            finally
+            {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }
 }
