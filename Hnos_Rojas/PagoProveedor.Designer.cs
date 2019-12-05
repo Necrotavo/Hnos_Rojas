@@ -79,6 +79,7 @@
             this.txtBuscarProveedor.Name = "txtBuscarProveedor";
             this.txtBuscarProveedor.Size = new System.Drawing.Size(271, 41);
             this.txtBuscarProveedor.TabIndex = 1;
+            this.txtBuscarProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarProveedor_KeyPress);
             // 
             // listBoxProveedor
             // 

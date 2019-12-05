@@ -121,5 +121,13 @@ namespace Hnos_Rojas
         {
             //llenar();
         }
+
+        private void txtBuscarProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToChar(Keys.Enter) == e.KeyChar)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
