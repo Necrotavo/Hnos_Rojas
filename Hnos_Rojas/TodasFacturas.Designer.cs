@@ -45,8 +45,10 @@
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imprimir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdFacturas)).BeginInit();
             this.SuspendLayout();
@@ -104,8 +106,10 @@
             this.Cliente,
             this.Estado,
             this.Monto,
+            this.Saldo,
             this.Notas,
             this.TIPO,
+            this.IdCliente,
             this.Imprimir});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -216,6 +220,12 @@
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             // 
+            // Saldo
+            // 
+            this.Saldo.DataPropertyName = "Saldo";
+            this.Saldo.HeaderText = "Saldo";
+            this.Saldo.Name = "Saldo";
+            // 
             // Notas
             // 
             this.Notas.DataPropertyName = "Notas";
@@ -228,6 +238,13 @@
             this.TIPO.HeaderText = "Tipo";
             this.TIPO.Name = "TIPO";
             this.TIPO.ReadOnly = true;
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.HeaderText = "IdCliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
             // 
             // Imprimir
             // 
@@ -274,8 +291,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewImageColumn Imprimir;
     }
 }
