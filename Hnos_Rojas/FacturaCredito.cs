@@ -117,7 +117,7 @@ namespace Hnos_Rojas
 
 
             //pie
-            e.Graphics.DrawLine(Pens.Black, x, largo - 1000, ancho/3*2, largo - 100);
+            e.Graphics.DrawLine(Pens.Black, x, largo - 100, ancho/3*2, largo - 100);
             e.Graphics.DrawString("Firma", fuenteGeneral, Brushes.Black, x, largo - 95);
             e.Graphics.DrawString("Gracias por su compra!!!", fuenteGeneral, Brushes.Black, x + 50, largo - 30);
             e.Graphics.DrawString("I.V.A", fuenteGeneral, Brushes.Black, x + 115, largo - 15);
