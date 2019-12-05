@@ -32,20 +32,23 @@ namespace Hnos_Rojas
 
         public void actualizarLblSaldo()
         {
-            double saldo = doFactura.saldo - Convert.ToDouble(txtAbono.Text);
-            if (saldo >= 0)
-            {
-                lblSaldoAbono.Text = "Saldo";
-                lblSaldo.Text = saldo.ToString();
-            }
-            else
-            {
-                lblSaldoAbono.Text = "Vuelto";
-                lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - doFactura.saldo).ToString();
+            if (txtAbono.Text != "") {
+                double saldo = doFactura.saldo - Convert.ToDouble(txtAbono.Text);
+                if (saldo >= 0)
+                {
+                    lblSaldoAbono.Text = "Saldo";
+                    lblSaldo.Text = saldo.ToString();
+                }
+                else
+                {
+                    lblSaldoAbono.Text = "Vuelto";
+                    lblSaldo.Text = (Convert.ToDouble(txtAbono.Text) - doFactura.saldo).ToString();
+                }
             }
         }
 
         private void pagar() {
+            
             if (txtAbono.Text == "")
             {
                 MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO MONTO");
@@ -53,15 +56,17 @@ namespace Hnos_Rojas
                 //MessageBox.Show("No ha ingresado un monto para abonar");
             }
             else
-            {
-                BL_Factura blFactura = new BL_Factura();
-                blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
-                estCuenta.refrescarCreditoCompleto();
-                estCuenta.llenarGrid();
-                MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
-                mensajeExito.Show();
-                //MessageBox.Show("Abono exitoso");
-                this.Dispose();
+            { 
+               
+                    BL_Factura blFactura = new BL_Factura();
+                    blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
+                    estCuenta.refrescarCreditoCompleto();
+                    estCuenta.llenarGrid();
+                    MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Abono exitoso");
+                    this.Dispose();
+                
             }
         }
 
@@ -104,7 +109,7 @@ namespace Hnos_Rojas
             this.Dispose();
         }
 
-        private void AbonarFactura_KeyDown(object sender, KeyEventArgs e)
+        private void txtAbono_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {

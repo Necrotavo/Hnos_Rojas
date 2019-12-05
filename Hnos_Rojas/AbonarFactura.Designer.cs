@@ -49,6 +49,7 @@
             this.txtAbono.Size = new System.Drawing.Size(150, 35);
             this.txtAbono.TabIndex = 25;
             this.txtAbono.TextChanged += new System.EventHandler(this.txtAbono_TextChanged);
+            this.txtAbono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAbono_KeyDown);
             this.txtAbono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbono_KeyPress);
             // 
             // lblSaldo
@@ -184,10 +185,9 @@
             this.Controls.Add(this.lblMontoAbono);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AbonarFactura";
             this.Text = "AbonarFactura";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AbonarFactura_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
