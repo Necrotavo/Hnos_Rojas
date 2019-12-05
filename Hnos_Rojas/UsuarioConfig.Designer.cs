@@ -56,10 +56,9 @@
             this.tabControlUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlUsuarios.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.tabControlUsuarios.Location = new System.Drawing.Point(0, 0);
-            this.tabControlUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlUsuarios.Name = "tabControlUsuarios";
             this.tabControlUsuarios.SelectedIndex = 0;
-            this.tabControlUsuarios.Size = new System.Drawing.Size(1514, 814);
+            this.tabControlUsuarios.Size = new System.Drawing.Size(1136, 661);
             this.tabControlUsuarios.TabIndex = 0;
             // 
             // tabCrearUsuario
@@ -70,11 +69,10 @@
             this.tabCrearUsuario.Controls.Add(this.lblPassword);
             this.tabCrearUsuario.Controls.Add(this.txtContrasenaCrear);
             this.tabCrearUsuario.Controls.Add(this.label1);
-            this.tabCrearUsuario.Location = new System.Drawing.Point(4, 50);
-            this.tabCrearUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCrearUsuario.Location = new System.Drawing.Point(4, 41);
             this.tabCrearUsuario.Name = "tabCrearUsuario";
-            this.tabCrearUsuario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabCrearUsuario.Size = new System.Drawing.Size(1506, 760);
+            this.tabCrearUsuario.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabCrearUsuario.Size = new System.Drawing.Size(1128, 616);
             this.tabCrearUsuario.TabIndex = 0;
             this.tabCrearUsuario.Text = "Crear Usuario";
             // 
@@ -85,10 +83,9 @@
             this.btnUsuariosConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuariosConf.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnUsuariosConf.ForeColor = System.Drawing.Color.White;
-            this.btnUsuariosConf.Location = new System.Drawing.Point(589, 372);
-            this.btnUsuariosConf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsuariosConf.Location = new System.Drawing.Point(442, 302);
             this.btnUsuariosConf.Name = "btnUsuariosConf";
-            this.btnUsuariosConf.Size = new System.Drawing.Size(319, 62);
+            this.btnUsuariosConf.Size = new System.Drawing.Size(239, 50);
             this.btnUsuariosConf.TabIndex = 21;
             this.btnUsuariosConf.Text = "Guardar";
             this.btnUsuariosConf.UseVisualStyleBackColor = false;
@@ -97,10 +94,9 @@
             // txtNombreUsuarioCrear
             // 
             this.txtNombreUsuarioCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuarioCrear.Location = new System.Drawing.Point(589, 181);
-            this.txtNombreUsuarioCrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreUsuarioCrear.Location = new System.Drawing.Point(442, 147);
             this.txtNombreUsuarioCrear.Name = "txtNombreUsuarioCrear";
-            this.txtNombreUsuarioCrear.Size = new System.Drawing.Size(317, 41);
+            this.txtNombreUsuarioCrear.Size = new System.Drawing.Size(239, 35);
             this.txtNombreUsuarioCrear.TabIndex = 20;
             // 
             // lblPassword
@@ -108,20 +104,18 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(581, 246);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Location = new System.Drawing.Point(436, 200);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(175, 41);
+            this.lblPassword.Size = new System.Drawing.Size(140, 32);
             this.lblPassword.TabIndex = 19;
             this.lblPassword.Text = "Contraseña:";
             // 
             // txtContrasenaCrear
             // 
             this.txtContrasenaCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaCrear.Location = new System.Drawing.Point(589, 289);
-            this.txtContrasenaCrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasenaCrear.Location = new System.Drawing.Point(442, 235);
             this.txtContrasenaCrear.Name = "txtContrasenaCrear";
-            this.txtContrasenaCrear.Size = new System.Drawing.Size(317, 41);
+            this.txtContrasenaCrear.Size = new System.Drawing.Size(239, 35);
             this.txtContrasenaCrear.TabIndex = 18;
             // 
             // label1
@@ -129,10 +123,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(581, 138);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(436, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 41);
+            this.label1.Size = new System.Drawing.Size(227, 32);
             this.label1.TabIndex = 17;
             this.label1.Text = "Nombre de usuario:";
             // 
@@ -146,11 +139,10 @@
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.txtContrasena);
             this.tabPage2.Controls.Add(this.listBoxUsuarios);
-            this.tabPage2.Location = new System.Drawing.Point(4, 50);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1506, 760);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1128, 616);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cambiar Contraseña";
             // 
@@ -159,20 +151,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(545, 362);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(409, 294);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(267, 41);
+            this.label2.Size = new System.Drawing.Size(216, 32);
             this.label2.TabIndex = 26;
             this.label2.Text = "Contraseña Nueva:";
             // 
             // txtNuevaContrasena
             // 
             this.txtNuevaContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaContrasena.Location = new System.Drawing.Point(553, 405);
-            this.txtNuevaContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNuevaContrasena.Location = new System.Drawing.Point(415, 329);
             this.txtNuevaContrasena.Name = "txtNuevaContrasena";
-            this.txtNuevaContrasena.Size = new System.Drawing.Size(376, 41);
+            this.txtNuevaContrasena.PasswordChar = '*';
+            this.txtNuevaContrasena.Size = new System.Drawing.Size(283, 35);
             this.txtNuevaContrasena.TabIndex = 25;
             // 
             // btnEliminar
@@ -182,10 +173,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(553, 535);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(415, 435);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(377, 62);
+            this.btnEliminar.Size = new System.Drawing.Size(283, 50);
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -198,10 +188,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(553, 466);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(415, 379);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(377, 62);
+            this.button1.Size = new System.Drawing.Size(283, 50);
             this.button1.TabIndex = 22;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = false;
@@ -212,41 +201,38 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(545, 274);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(409, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(286, 41);
+            this.label3.Size = new System.Drawing.Size(230, 32);
             this.label3.TabIndex = 24;
             this.label3.Text = "Contraseña Antigua:";
             // 
             // txtContrasena
             // 
             this.txtContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(553, 318);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasena.Location = new System.Drawing.Point(415, 258);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(376, 41);
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(283, 35);
             this.txtContrasena.TabIndex = 23;
             // 
             // listBoxUsuarios
             // 
             this.listBoxUsuarios.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.listBoxUsuarios.FormattingEnabled = true;
-            this.listBoxUsuarios.ItemHeight = 41;
-            this.listBoxUsuarios.Location = new System.Drawing.Point(553, 169);
-            this.listBoxUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxUsuarios.ItemHeight = 32;
+            this.listBoxUsuarios.Location = new System.Drawing.Point(415, 137);
             this.listBoxUsuarios.Name = "listBoxUsuarios";
-            this.listBoxUsuarios.Size = new System.Drawing.Size(376, 45);
+            this.listBoxUsuarios.Size = new System.Drawing.Size(283, 36);
             this.listBoxUsuarios.TabIndex = 0;
             // 
             // UsuarioConfig
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1514, 814);
+            this.ClientSize = new System.Drawing.Size(1136, 661);
             this.Controls.Add(this.tabControlUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UsuarioConfig";
             this.Text = "UsuarioConfig";
             this.tabControlUsuarios.ResumeLayout(false);

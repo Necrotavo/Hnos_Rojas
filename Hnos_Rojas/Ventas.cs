@@ -188,6 +188,12 @@ namespace Hnos_Rojas
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //NuevoProducto ventanaProducto = new NuevoProducto();
+            //ventanaProducto.StartPosition = FormStartPosition.CenterScreen;
+            //ventanaProducto.Show();
+            TodasFacturas facturas = new TodasFacturas();
+            facturas.StartPosition = FormStartPosition.CenterScreen;
+            facturas.Show();
             if (facturaContadoRealizada)
             {
                 facturaContadoTemp.imprimir();
@@ -267,6 +273,11 @@ namespace Hnos_Rojas
                         break;
                     }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
