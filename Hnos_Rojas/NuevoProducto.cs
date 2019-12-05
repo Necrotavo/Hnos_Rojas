@@ -122,7 +122,7 @@ namespace Hnos_Rojas
         {
             BL_Producto blProducto = new BL_Producto();
             dgvProductos.DataSource = blProducto.ObtenerListaDeProductos();
-            dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14);
+            dgvProductos.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10);
             DataGridViewCellStyle style = new DataGridViewCellStyle();
             //style.Font = new Font("Microsoft Sans Serif", 14);
             //style.BackColor = Color.LightGray;
