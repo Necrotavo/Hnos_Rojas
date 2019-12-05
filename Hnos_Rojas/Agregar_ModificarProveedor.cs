@@ -114,7 +114,7 @@ namespace Hnos_Rojas
                         mensajeError.Show();
                         //MessageBox.Show("error al modificar datos del proveedor");
                     }
-                    txtNombreProveedor.Enabled = true;
+
 
                 }
             }
