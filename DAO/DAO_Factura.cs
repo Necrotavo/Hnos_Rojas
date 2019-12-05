@@ -567,18 +567,19 @@ namespace DAO
             return total;
         }
      
-        public List<DO_Factura> obtenerTodasLasFacturas(String inicio, String fin)
+        public List<DO_Factura> obtenerTodasLasFacturas(DateTime desde, DateTime hasta)
         {
             List<DO_Factura> listaFacturas = new List<DO_Factura>();
             SqlCommand comando = new SqlCommand("Select * from FACTURA Where FAC_FECHA BETWEEN @diaInicio AND @diaFinal", conexion);
-            comando.Parameters.AddWithValue("@diaInicio", inicio);
-            comando.Parameters.AddWithValue("@diaFinal", fin);
-            SqlDataReader lector = comando.ExecuteReader();
+            comando.Parameters.AddWithValue("@diaInicio", desde.Year + "-" + desde.Month + "-" + desde.Day);
+            comando.Parameters.AddWithValue("@diaFinal", hasta.Year + "-" + hasta.Month + "-" + hasta.Day);
+            
             try {
                 if (conexion.State != ConnectionState.Open)
                 {
                     conexion.Open();
                 }
+                SqlDataReader lector = comando.ExecuteReader();
                 if (lector.HasRows) {
                     while (lector.Read()) {
                         DO_Factura nuevaFactura = new DO_Factura();
@@ -594,14 +595,19 @@ namespace DAO
                         if (nuevaFactura.tipoPago.Equals("CREDITO"))
                         {
                             // Factura de crédito
-                            nuevaFactura.credito = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
-                            nuevaFactura.saldo = Convert.ToDouble(lector["FAC_SALDO"]);
+                            if (!(lector["CRE_IDENTIFICADOR"] == DBNull.Value))
+                            {
+                                nuevaFactura.credito = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                                nuevaFactura.saldo = Convert.ToDouble(lector["FAC_SALDO"]);
+                            }
+               
                         }
                         else {
                             // Factura de contado
                             nuevaFactura.clienteExterno = (String)lector["FAC_CLIENTE_EXTERNO"];
                             nuevaFactura.notas = (String)lector["FAC_NOTAS"];
                         }
+                        listaFacturas.Add(nuevaFactura);
                     }
                 }
             } catch (SqlException e) {

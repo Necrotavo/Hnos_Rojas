@@ -190,7 +190,7 @@ namespace BL
             }
         }
 
-        public List<DO_Factura> obtenerTodasLasFacturas(String diaInicio, String diaFinal) {
+        public List<DO_Factura> obtenerTodasLasFacturas(DateTime diaInicio, DateTime diaFinal) {
             try
             {
                 DAO_Factura daoFactura = new DAO_Factura();
