@@ -566,5 +566,52 @@ namespace DAO
 
             return total;
         }
+     
+        public List<DO_Factura> obtenerTodasLasFacturas(String inicio, String fin)
+        {
+            List<DO_Factura> listaFacturas = new List<DO_Factura>();
+            SqlCommand comando = new SqlCommand("Select * from FACTURA Where FAC_FECHA BETWEEN @diaInicio AND @diaFinal", conexion);
+            comando.Parameters.AddWithValue("@diaInicio", inicio);
+            comando.Parameters.AddWithValue("@diaFinal", fin);
+            SqlDataReader lector = comando.ExecuteReader();
+            try {
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+                if (lector.HasRows) {
+                    while (lector.Read()) {
+                        DO_Factura nuevaFactura = new DO_Factura();
+                    
+                        nuevaFactura.codigoFactura = Convert.ToInt32(lector["FAC_CODIGO"]);    
+                        nuevaFactura.fecha = (DateTime)lector["FAC_FECHA"];
+                        nuevaFactura.codigoPlantilla = Convert.ToInt32(lector["PLANT_CODIGO"]);
+                        nuevaFactura.usuario = (String)lector["USR_NOMBRE"];                   
+                        nuevaFactura.estado = (String)lector["EST_ESTADO"];
+                        nuevaFactura.tipoPago = (String)lector["TP_TIPO"];
+                        nuevaFactura.totalFactura = Convert.ToDouble(lector["FAC_MONTO"]);
+                        
+                        if (nuevaFactura.tipoPago.Equals("CREDITO"))
+                        {
+                            // Factura de crédito
+                            nuevaFactura.credito = Convert.ToInt32(lector["CRE_IDENTIFICADOR"]);
+                            nuevaFactura.saldo = Convert.ToDouble(lector["FAC_SALDO"]);
+                        }
+                        else {
+                            // Factura de contado
+                            nuevaFactura.clienteExterno = (String)lector["FAC_CLIENTE_EXTERNO"];
+                            nuevaFactura.notas = (String)lector["FAC_NOTAS"];
+                        }
+                    }
+                }
+            } catch (SqlException e) {
+            } finally {
+                if (conexion.State != ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+            return listaFacturas;
+        }
     }
 }

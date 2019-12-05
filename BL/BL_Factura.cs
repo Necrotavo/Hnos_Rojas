@@ -189,5 +189,17 @@ namespace BL
                 return 0;
             }
         }
+
+        public List<DO_Factura> obtenerTodasLasFacturas(String diaInicio, String diaFinal) {
+            try
+            {
+                DAO_Factura daoFactura = new DAO_Factura();
+                return daoFactura.obtenerTodasLasFacturas(diaInicio, diaFinal);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

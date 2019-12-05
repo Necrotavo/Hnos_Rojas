@@ -380,6 +380,9 @@
     <EmbeddedResource Include="Tickets.resx">
       <DependentUpon>Tickets.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TodasFacturas.resx">
+      <DependentUpon>TodasFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuarioConfig.resx">
       <DependentUpon>UsuarioConfig.cs</DependentUpon>
     </EmbeddedResource>
