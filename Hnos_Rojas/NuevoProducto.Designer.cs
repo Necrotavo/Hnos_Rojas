@@ -71,7 +71,7 @@
             this.tabControlProducto.Controls.Add(this.tpFormulario);
             this.tabControlProducto.Controls.Add(this.tpModificar);
             this.tabControlProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlProducto.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
+            this.tabControlProducto.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlProducto.Location = new System.Drawing.Point(0, 0);
             this.tabControlProducto.Name = "tabControlProducto";
             this.tabControlProducto.SelectedIndex = 0;
@@ -97,9 +97,9 @@
             this.tpFormulario.Controls.Add(this.lblDescripcion);
             this.tpFormulario.Controls.Add(this.lblCodigo);
             this.tpFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpFormulario.Location = new System.Drawing.Point(4, 54);
+            this.tpFormulario.Location = new System.Drawing.Point(4, 41);
             this.tpFormulario.Name = "tpFormulario";
-            this.tpFormulario.Size = new System.Drawing.Size(1020, 491);
+            this.tpFormulario.Size = new System.Drawing.Size(1020, 504);
             this.tpFormulario.TabIndex = 0;
             this.tpFormulario.Text = "Datos del Producto";
             // 
@@ -108,7 +108,7 @@
             this.btGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btGuardar.FlatAppearance.BorderSize = 0;
             this.btGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGuardar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btGuardar.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.ForeColor = System.Drawing.Color.White;
             this.btGuardar.Location = new System.Drawing.Point(398, 396);
             this.btGuardar.Name = "btGuardar";
@@ -141,7 +141,7 @@
             this.btCalcular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btCalcular.FlatAppearance.BorderSize = 0;
             this.btCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCalcular.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btCalcular.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCalcular.ForeColor = System.Drawing.Color.White;
             this.btCalcular.Location = new System.Drawing.Point(635, 209);
             this.btCalcular.Name = "btCalcular";
@@ -270,9 +270,9 @@
             this.tpModificar.Controls.Add(this.tbBuscarCodigo);
             this.tpModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpModificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tpModificar.Location = new System.Drawing.Point(4, 54);
+            this.tpModificar.Location = new System.Drawing.Point(4, 41);
             this.tpModificar.Name = "tpModificar";
-            this.tpModificar.Size = new System.Drawing.Size(1020, 491);
+            this.tpModificar.Size = new System.Drawing.Size(1020, 504);
             this.tpModificar.TabIndex = 1;
             this.tpModificar.Text = "Modificar Producto";
             this.tpModificar.Click += new System.EventHandler(this.tpModificar_Click);
@@ -374,7 +374,7 @@
             this.btBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
             this.btBuscar.FlatAppearance.BorderSize = 0;
             this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscar.ForeColor = System.Drawing.Color.White;
             this.btBuscar.Location = new System.Drawing.Point(205, 412);
             this.btBuscar.Name = "btBuscar";
