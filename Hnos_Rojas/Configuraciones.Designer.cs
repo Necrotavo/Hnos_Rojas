@@ -43,9 +43,10 @@
             this.btnPlantilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlantilla.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnPlantilla.ForeColor = System.Drawing.Color.White;
-            this.btnPlantilla.Location = new System.Drawing.Point(0, 94);
+            this.btnPlantilla.Location = new System.Drawing.Point(0, 108);
+            this.btnPlantilla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPlantilla.Name = "btnPlantilla";
-            this.btnPlantilla.Size = new System.Drawing.Size(228, 94);
+            this.btnPlantilla.Size = new System.Drawing.Size(221, 108);
             this.btnPlantilla.TabIndex = 9;
             this.btnPlantilla.Text = "Plantilla Factura";
             this.btnPlantilla.UseVisualStyleBackColor = false;
@@ -59,8 +60,9 @@
             this.btnUsuariosConf.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnUsuariosConf.ForeColor = System.Drawing.Color.White;
             this.btnUsuariosConf.Location = new System.Drawing.Point(0, 0);
+            this.btnUsuariosConf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsuariosConf.Name = "btnUsuariosConf";
-            this.btnUsuariosConf.Size = new System.Drawing.Size(228, 94);
+            this.btnUsuariosConf.Size = new System.Drawing.Size(221, 108);
             this.btnUsuariosConf.TabIndex = 10;
             this.btnUsuariosConf.Text = "Usuarios";
             this.btnUsuariosConf.UseVisualStyleBackColor = false;
@@ -74,8 +76,9 @@
             this.panel1.Controls.Add(this.btnUsuariosConf);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 661);
+            this.panel1.Size = new System.Drawing.Size(221, 814);
             this.panel1.TabIndex = 11;
             // 
             // btnAyuda
@@ -85,9 +88,10 @@
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyuda.ForeColor = System.Drawing.Color.White;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 188);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 216);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(228, 94);
+            this.btnAyuda.Size = new System.Drawing.Size(221, 108);
             this.btnAyuda.TabIndex = 11;
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.UseVisualStyleBackColor = false;
@@ -97,19 +101,21 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(228, 0);
+            this.panel2.Location = new System.Drawing.Point(221, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1073, 661);
+            this.panel2.Size = new System.Drawing.Size(1514, 814);
             this.panel2.TabIndex = 12;
             // 
             // Configuraciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 661);
+            this.ClientSize = new System.Drawing.Size(1735, 814);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Configuraciones";
             this.Text = "Configuraciones";
             this.panel1.ResumeLayout(false);

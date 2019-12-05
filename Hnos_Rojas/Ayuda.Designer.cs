@@ -46,9 +46,10 @@
             this.btnAyudaVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaVentas.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyudaVentas.ForeColor = System.Drawing.Color.White;
-            this.btnAyudaVentas.Location = new System.Drawing.Point(12, 12);
+            this.btnAyudaVentas.Location = new System.Drawing.Point(66, 15);
+            this.btnAyudaVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyudaVentas.Name = "btnAyudaVentas";
-            this.btnAyudaVentas.Size = new System.Drawing.Size(166, 88);
+            this.btnAyudaVentas.Size = new System.Drawing.Size(221, 108);
             this.btnAyudaVentas.TabIndex = 9;
             this.btnAyudaVentas.Text = "Ventas";
             this.btnAyudaVentas.UseVisualStyleBackColor = false;
@@ -61,9 +62,10 @@
             this.btnAyudaClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaClientes.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyudaClientes.ForeColor = System.Drawing.Color.White;
-            this.btnAyudaClientes.Location = new System.Drawing.Point(184, 12);
+            this.btnAyudaClientes.Location = new System.Drawing.Point(295, 15);
+            this.btnAyudaClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyudaClientes.Name = "btnAyudaClientes";
-            this.btnAyudaClientes.Size = new System.Drawing.Size(166, 88);
+            this.btnAyudaClientes.Size = new System.Drawing.Size(221, 108);
             this.btnAyudaClientes.TabIndex = 10;
             this.btnAyudaClientes.Text = "Clientes";
             this.btnAyudaClientes.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             this.btnAyudaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaProductos.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyudaProductos.ForeColor = System.Drawing.Color.White;
-            this.btnAyudaProductos.Location = new System.Drawing.Point(356, 12);
+            this.btnAyudaProductos.Location = new System.Drawing.Point(525, 15);
+            this.btnAyudaProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyudaProductos.Name = "btnAyudaProductos";
-            this.btnAyudaProductos.Size = new System.Drawing.Size(166, 88);
+            this.btnAyudaProductos.Size = new System.Drawing.Size(221, 108);
             this.btnAyudaProductos.TabIndex = 11;
             this.btnAyudaProductos.Text = "Productos";
             this.btnAyudaProductos.UseVisualStyleBackColor = false;
@@ -91,9 +94,10 @@
             this.btnAyudaProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaProveedores.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyudaProveedores.ForeColor = System.Drawing.Color.White;
-            this.btnAyudaProveedores.Location = new System.Drawing.Point(528, 12);
+            this.btnAyudaProveedores.Location = new System.Drawing.Point(754, 15);
+            this.btnAyudaProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyudaProveedores.Name = "btnAyudaProveedores";
-            this.btnAyudaProveedores.Size = new System.Drawing.Size(166, 88);
+            this.btnAyudaProveedores.Size = new System.Drawing.Size(221, 108);
             this.btnAyudaProveedores.TabIndex = 12;
             this.btnAyudaProveedores.Text = "Proveedores";
             this.btnAyudaProveedores.UseVisualStyleBackColor = false;
@@ -106,9 +110,10 @@
             this.btnAyudaConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaConfiguracion.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAyudaConfiguracion.ForeColor = System.Drawing.Color.White;
-            this.btnAyudaConfiguracion.Location = new System.Drawing.Point(700, 12);
+            this.btnAyudaConfiguracion.Location = new System.Drawing.Point(983, 15);
+            this.btnAyudaConfiguracion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyudaConfiguracion.Name = "btnAyudaConfiguracion";
-            this.btnAyudaConfiguracion.Size = new System.Drawing.Size(178, 88);
+            this.btnAyudaConfiguracion.Size = new System.Drawing.Size(237, 108);
             this.btnAyudaConfiguracion.TabIndex = 13;
             this.btnAyudaConfiguracion.Text = "Configuración";
             this.btnAyudaConfiguracion.UseVisualStyleBackColor = false;
@@ -121,9 +126,10 @@
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(884, 12);
+            this.btnReportes.Location = new System.Drawing.Point(1229, 15);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(166, 88);
+            this.btnReportes.Size = new System.Drawing.Size(221, 108);
             this.btnReportes.TabIndex = 14;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = false;
@@ -132,42 +138,45 @@
             // txtAyuda1
             // 
             this.txtAyuda1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAyuda1.Location = new System.Drawing.Point(12, 124);
+            this.txtAyuda1.Location = new System.Drawing.Point(66, 153);
+            this.txtAyuda1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAyuda1.Multiline = true;
             this.txtAyuda1.Name = "txtAyuda1";
             this.txtAyuda1.ReadOnly = true;
             this.txtAyuda1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAyuda1.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda1.Size = new System.Drawing.Size(1383, 182);
             this.txtAyuda1.TabIndex = 15;
             // 
             // txtAyuda2
             // 
             this.txtAyuda2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAyuda2.Location = new System.Drawing.Point(12, 304);
+            this.txtAyuda2.Location = new System.Drawing.Point(66, 374);
+            this.txtAyuda2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAyuda2.Multiline = true;
             this.txtAyuda2.Name = "txtAyuda2";
             this.txtAyuda2.ReadOnly = true;
             this.txtAyuda2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAyuda2.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda2.Size = new System.Drawing.Size(1383, 182);
             this.txtAyuda2.TabIndex = 16;
             // 
             // txtAyuda3
             // 
             this.txtAyuda3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAyuda3.Location = new System.Drawing.Point(12, 483);
+            this.txtAyuda3.Location = new System.Drawing.Point(66, 594);
+            this.txtAyuda3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAyuda3.Multiline = true;
             this.txtAyuda3.Name = "txtAyuda3";
             this.txtAyuda3.ReadOnly = true;
             this.txtAyuda3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAyuda3.Size = new System.Drawing.Size(1038, 149);
+            this.txtAyuda3.Size = new System.Drawing.Size(1383, 182);
             this.txtAyuda3.TabIndex = 17;
             // 
             // Ayuda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1301, 661);
+            this.ClientSize = new System.Drawing.Size(1514, 814);
             this.Controls.Add(this.txtAyuda3);
             this.Controls.Add(this.txtAyuda2);
             this.Controls.Add(this.txtAyuda1);
@@ -178,6 +187,7 @@
             this.Controls.Add(this.btnAyudaClientes);
             this.Controls.Add(this.btnAyudaVentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Ayuda";
             this.Text = "Ayuda";
             this.ResumeLayout(false);
