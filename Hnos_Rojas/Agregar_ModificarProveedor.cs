@@ -151,6 +151,11 @@ namespace Hnos_Rojas
 
         private void limpiarFormulario() {
             txtNombreProveedor.Clear();
+            cboDias.SelectedIndex = 0;
+            cboHoras.SelectedIndex = 0;
+            for (int i = 0; i < lbDiasDeVisita.Items.Count; i++) {
+                lbDiasDeVisita.Items.RemoveAt(i);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -209,7 +214,10 @@ namespace Hnos_Rojas
 
         private void btnEliminarDia_Click(object sender, EventArgs e)
         {
-            lbDiasDeVisita.Items.RemoveAt(lbDiasDeVisita.SelectedIndex);
+            if (lbDiasDeVisita.SelectedItem != null)
+            {
+                lbDiasDeVisita.Items.RemoveAt(lbDiasDeVisita.SelectedIndex);
+            }
         }
     }
 }
