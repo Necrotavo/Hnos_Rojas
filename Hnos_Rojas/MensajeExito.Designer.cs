@@ -99,6 +99,7 @@
             this.Controls.Add(this.lbMensajeExito);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MensajeExito";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MensajeExito";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

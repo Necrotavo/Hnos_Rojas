@@ -111,6 +111,7 @@
             this.Controls.Add(this.btnSi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MensajeConfirmacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MensajeConfirmacion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
