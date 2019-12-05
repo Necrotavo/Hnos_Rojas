@@ -75,5 +75,13 @@ namespace Hnos_Rojas
         {
 
         }
+
+        private void txtEstadoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToChar(Keys.Enter) == e.KeyChar)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

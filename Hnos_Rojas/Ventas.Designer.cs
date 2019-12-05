@@ -57,7 +57,7 @@
             this.tabTicket.Controls.Add(this.tabAgregar);
             this.tabTicket.Font = new System.Drawing.Font("Segoe UI Historic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabTicket.Location = new System.Drawing.Point(16, 217);
-            this.tabTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTicket.Margin = new System.Windows.Forms.Padding(4);
             this.tabTicket.Name = "tabTicket";
             this.tabTicket.SelectedIndex = 0;
             this.tabTicket.Size = new System.Drawing.Size(1703, 551);
@@ -67,9 +67,9 @@
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1695, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ticket 1";
@@ -78,9 +78,9 @@
             // tabAgregar
             // 
             this.tabAgregar.Location = new System.Drawing.Point(4, 32);
-            this.tabAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.tabAgregar.Name = "tabAgregar";
-            this.tabAgregar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAgregar.Padding = new System.Windows.Forms.Padding(4);
             this.tabAgregar.Size = new System.Drawing.Size(1695, 515);
             this.tabAgregar.TabIndex = 1;
             this.tabAgregar.Text = "+";
@@ -106,7 +106,7 @@
             this.btnProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Location = new System.Drawing.Point(28, 140);
-            this.btnProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(256, 52);
             this.btnProducto.TabIndex = 1;
@@ -118,11 +118,12 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(333, 27);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(356, 41);
             this.txtCodigo.TabIndex = 6;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // btnAgregarProducto
             // 
@@ -132,7 +133,7 @@
             this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
             this.btnAgregarProducto.Location = new System.Drawing.Point(691, 27);
-            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(357, 43);
             this.btnAgregarProducto.TabIndex = 7;
@@ -159,7 +160,7 @@
             this.panel1.Controls.Add(this.btnProducto);
             this.panel1.Controls.Add(this.lblCodigo);
             this.panel1.Location = new System.Drawing.Point(16, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1701, 206);
             this.panel1.TabIndex = 8;
@@ -169,11 +170,12 @@
             // 
             this.txtContrasena.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(1395, 149);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(297, 47);
             this.txtContrasena.TabIndex = 21;
+            this.txtContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasena_KeyPress);
             // 
             // label2
             // 
@@ -195,7 +197,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1052, 140);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(256, 52);
             this.button1.TabIndex = 18;
@@ -207,7 +209,7 @@
             // 
             this.nmCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmCantidad.Location = new System.Drawing.Point(333, 80);
-            this.nmCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nmCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.nmCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -252,7 +254,7 @@
             this.cboUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUsuarios.FormattingEnabled = true;
             this.cboUsuarios.Location = new System.Drawing.Point(1395, 43);
-            this.cboUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.cboUsuarios.Name = "cboUsuarios";
             this.cboUsuarios.Size = new System.Drawing.Size(297, 44);
             this.cboUsuarios.TabIndex = 11;
@@ -266,7 +268,7 @@
             this.btnCerrarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnCerrarTicket.ForeColor = System.Drawing.Color.White;
             this.btnCerrarTicket.Location = new System.Drawing.Point(796, 140);
-            this.btnCerrarTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarTicket.Name = "btnCerrarTicket";
             this.btnCerrarTicket.Size = new System.Drawing.Size(256, 52);
             this.btnCerrarTicket.TabIndex = 10;
@@ -282,7 +284,7 @@
             this.btnPago.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnPago.ForeColor = System.Drawing.Color.White;
             this.btnPago.Location = new System.Drawing.Point(540, 140);
-            this.btnPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPago.Margin = new System.Windows.Forms.Padding(4);
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(256, 52);
             this.btnPago.TabIndex = 9;
@@ -298,7 +300,7 @@
             this.btnArtComun.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnArtComun.ForeColor = System.Drawing.Color.White;
             this.btnArtComun.Location = new System.Drawing.Point(284, 140);
-            this.btnArtComun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArtComun.Margin = new System.Windows.Forms.Padding(4);
             this.btnArtComun.Name = "btnArtComun";
             this.btnArtComun.Size = new System.Drawing.Size(256, 52);
             this.btnArtComun.TabIndex = 8;
@@ -315,7 +317,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabTicket);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ventas";
             this.Text = "test";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ventas_KeyDown);
