@@ -111,6 +111,21 @@ namespace Hnos_Rojas
                         productosEjecucion();
                         break;
                     }
+                case Keys.F4:
+                    {
+                        proveedoresEjecucion();
+                        break;
+                    }
+                case Keys.F5:
+                    {
+                        configEjecucion();
+                        break;
+                    }
+                case Keys.F6:
+                    {
+                        reportesEjecucion();
+                        break;
+                    }
             }
         }
 
@@ -118,7 +133,7 @@ namespace Hnos_Rojas
         {
             productosEjecucion();
         }
-
+        
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
             configEjecucion();
@@ -134,7 +149,7 @@ namespace Hnos_Rojas
             btnConfiguracion.BackColor = Color.FromArgb(24, 107, 94);
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
+        public void reportesEjecucion()
         {
             pnlCenter.Controls.Clear();
             Reportes otropanel = new Reportes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -142,6 +157,10 @@ namespace Hnos_Rojas
             otropanel.Show();
             restaurarColoresBtns();
             btnReportes.BackColor = Color.FromArgb(24, 107, 94);
+        }
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            reportesEjecucion();
         }
 
         private void proveedoresEjecucion()
