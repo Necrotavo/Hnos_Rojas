@@ -33,7 +33,6 @@
             this.tabAgregar = new System.Windows.Forms.TabPage();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.btnCerrarTicket = new System.Windows.Forms.Button();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnArtComun = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnProducto = new System.Windows.Forms.Button();
             this.tabTicket.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1269, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ticket 1";
@@ -77,7 +77,7 @@
             // 
             this.tabAgregar.Location = new System.Drawing.Point(4, 26);
             this.tabAgregar.Name = "tabAgregar";
-            this.tabAgregar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAgregar.Padding = new System.Windows.Forms.Padding(3);
             this.tabAgregar.Size = new System.Drawing.Size(1269, 418);
             this.tabAgregar.TabIndex = 1;
             this.tabAgregar.Text = "+";
@@ -92,7 +92,7 @@
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(235, 32);
             this.lblCodigo.TabIndex = 5;
-            this.lblCodigo.Text = "Codigo de producto:";
+            this.lblCodigo.Text = "Código de producto:";
             // 
             // txtCodigo
             // 
@@ -102,22 +102,6 @@
             this.txtCodigo.Size = new System.Drawing.Size(268, 35);
             this.txtCodigo.TabIndex = 6;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
-            // 
-            // btnAgregarProducto
-            // 
-            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
-            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(518, 22);
-            this.btnAgregarProducto.Name = "btnAgregarProducto";
-            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 35);
-            this.btnAgregarProducto.TabIndex = 7;
-            this.btnAgregarProducto.Text = "ENTER Agregar Producto";
-            this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarProducto.UseVisualStyleBackColor = false;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
@@ -278,6 +262,24 @@
             this.btnArtComun.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnArtComun.UseVisualStyleBackColor = false;
             this.btnArtComun.Click += new System.EventHandler(this.btnArtComun_Click);
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            this.btnAgregarProducto.FlatAppearance.BorderSize = 0;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
+            this.btnAgregarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarProducto.Image = global::Hnos_Rojas.Properties.Resources.Enter;
+            this.btnAgregarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(518, 22);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(268, 35);
+            this.btnAgregarProducto.TabIndex = 7;
+            this.btnAgregarProducto.Text = "Agregar Producto";
+            this.btnAgregarProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarProducto.UseVisualStyleBackColor = false;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnProducto
             // 

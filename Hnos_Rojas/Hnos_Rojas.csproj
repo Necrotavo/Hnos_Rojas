@@ -425,6 +425,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpcionesFacturaContado.txt" />
+    <None Include="Resources\Enter1.png" />
     <None Include="Resources\ins.png" />
     <None Include="Resources\F100.png" />
     <None Include="Resources\F12.png" />

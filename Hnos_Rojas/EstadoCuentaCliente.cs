@@ -51,14 +51,7 @@ namespace Hnos_Rojas
         private void listBClientes_Click(object sender, EventArgs e)
         {
             //llamar a la venta de detallesEstado\
-            BL_Cliente blCliente = new BL_Cliente();
-            cliente = blCliente.buscarCliente(Convert.ToInt32(this.listBClientes.SelectedValue));
             
-            DetallesEstadoCuenta detallesEstadoCuenta = new DetallesEstadoCuenta(cliente) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            
-            Parent.Controls.Add(detallesEstadoCuenta);
-            detallesEstadoCuenta.Show();
-            this.Dispose();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -74,6 +67,18 @@ namespace Hnos_Rojas
         private void EstadoCuentaCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBClientes_DoubleClick(object sender, EventArgs e)
+        {
+            BL_Cliente blCliente = new BL_Cliente();
+            cliente = blCliente.buscarCliente(Convert.ToInt32(this.listBClientes.SelectedValue));
+
+            DetallesEstadoCuenta detallesEstadoCuenta = new DetallesEstadoCuenta(cliente) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+
+            Parent.Controls.Add(detallesEstadoCuenta);
+            detallesEstadoCuenta.Show();
+            this.Dispose();
         }
     }
 }

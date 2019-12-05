@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNuevoProd = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.grdProductos = new System.Windows.Forms.DataGridView();
@@ -56,10 +56,9 @@
             this.btnNuevoProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoProd.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnNuevoProd.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoProd.Location = new System.Drawing.Point(1360, 63);
-            this.btnNuevoProd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevoProd.Location = new System.Drawing.Point(1020, 51);
             this.btnNuevoProd.Name = "btnNuevoProd";
-            this.btnNuevoProd.Size = new System.Drawing.Size(333, 52);
+            this.btnNuevoProd.Size = new System.Drawing.Size(250, 42);
             this.btnNuevoProd.TabIndex = 10;
             this.btnNuevoProd.Text = "Nuevo/Modificar";
             this.btnNuevoProd.UseVisualStyleBackColor = false;
@@ -68,25 +67,24 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(345, 70);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Location = new System.Drawing.Point(259, 57);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(356, 41);
-            this.txtCodigo.TabIndex = 12;
+            this.txtCodigo.Size = new System.Drawing.Size(268, 35);
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // grdProductos
             // 
             this.grdProductos.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -95,12 +93,12 @@
             this.CantMinBodega,
             this.descripcion,
             this.CantidadDisponible});
-            this.grdProductos.Location = new System.Drawing.Point(-12, 227);
-            this.grdProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdProductos.MaximumSize = new System.Drawing.Size(2000, 615);
+            this.grdProductos.Location = new System.Drawing.Point(-9, 184);
+            this.grdProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grdProductos.MaximumSize = new System.Drawing.Size(1500, 500);
             this.grdProductos.Name = "grdProductos";
             this.grdProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductos.Size = new System.Drawing.Size(1387, 481);
+            this.grdProductos.Size = new System.Drawing.Size(1040, 391);
             this.grdProductos.TabIndex = 13;
             // 
             // Codigo
@@ -148,10 +146,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(102, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -161,10 +158,9 @@
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
-            this.lblCodigo.Location = new System.Drawing.Point(338, 25);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(254, 20);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(111, 41);
+            this.lblCodigo.Size = new System.Drawing.Size(89, 32);
             this.lblCodigo.TabIndex = 15;
             this.lblCodigo.Text = "Buscar:";
             // 
@@ -182,10 +178,9 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(884, 62);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Location = new System.Drawing.Point(663, 50);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(333, 52);
+            this.btnBuscar.Size = new System.Drawing.Size(250, 42);
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -198,10 +193,9 @@
             this.btnAgregarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarTicket.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.btnAgregarTicket.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarTicket.Location = new System.Drawing.Point(884, 157);
-            this.btnAgregarTicket.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarTicket.Location = new System.Drawing.Point(663, 128);
             this.btnAgregarTicket.Name = "btnAgregarTicket";
-            this.btnAgregarTicket.Size = new System.Drawing.Size(333, 52);
+            this.btnAgregarTicket.Size = new System.Drawing.Size(250, 42);
             this.btnAgregarTicket.TabIndex = 17;
             this.btnAgregarTicket.Text = "Agregar al Ticket";
             this.btnAgregarTicket.UseVisualStyleBackColor = false;
@@ -211,11 +205,10 @@
             // txtPrecioNuevo
             // 
             this.txtPrecioNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioNuevo.Location = new System.Drawing.Point(345, 164);
-            this.txtPrecioNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioNuevo.Location = new System.Drawing.Point(259, 133);
             this.txtPrecioNuevo.Name = "txtPrecioNuevo";
-            this.txtPrecioNuevo.Size = new System.Drawing.Size(356, 41);
-            this.txtPrecioNuevo.TabIndex = 18;
+            this.txtPrecioNuevo.Size = new System.Drawing.Size(268, 35);
+            this.txtPrecioNuevo.TabIndex = 2;
             this.txtPrecioNuevo.Visible = false;
             // 
             // lblPrecioNuevo
@@ -223,20 +216,19 @@
             this.lblPrecioNuevo.AutoSize = true;
             this.lblPrecioNuevo.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.lblPrecioNuevo.ForeColor = System.Drawing.Color.White;
-            this.lblPrecioNuevo.Location = new System.Drawing.Point(337, 121);
-            this.lblPrecioNuevo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioNuevo.Location = new System.Drawing.Point(253, 98);
             this.lblPrecioNuevo.Name = "lblPrecioNuevo";
-            this.lblPrecioNuevo.Size = new System.Drawing.Size(197, 41);
+            this.lblPrecioNuevo.Size = new System.Drawing.Size(159, 32);
             this.lblPrecioNuevo.TabIndex = 19;
             this.lblPrecioNuevo.Text = "Precio nuevo:";
             this.lblPrecioNuevo.Visible = false;
             // 
             // Productos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(107)))), ((int)(((byte)(94)))));
-            this.ClientSize = new System.Drawing.Size(1735, 814);
+            this.ClientSize = new System.Drawing.Size(1301, 661);
             this.Controls.Add(this.lblPrecioNuevo);
             this.Controls.Add(this.txtPrecioNuevo);
             this.Controls.Add(this.btnAgregarTicket);
@@ -247,7 +239,6 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnNuevoProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Productos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);
