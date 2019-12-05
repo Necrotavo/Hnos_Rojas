@@ -67,7 +67,9 @@ namespace Hnos_Rojas
             parent.facturaContadoRealizada = false;
             parent.facturaCreditoRealizada = true;
 
-            MessageBox.Show("Pago exitoso");
+            MensajeExito mensajeExito = new MensajeExito("PAGO EXITOSO");
+            mensajeExito.Show();
+            //MessageBox.Show("Pago exitoso");
             parent.cerrarTicket();
             this.Dispose();
         }

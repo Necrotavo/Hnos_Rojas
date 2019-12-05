@@ -36,11 +36,15 @@ namespace Hnos_Rojas
 
             if (blAsociado.AgregarAsociado(asociado))
             {
-                MessageBox.Show("Asociado agregado");
+                MensajeExito mensajeExito = new MensajeExito("ASOCIADO AGREGADO");
+                mensajeExito.Show();
+                //MessageBox.Show("Asociado agregado");
                 limpiarFormulario();
             }
             else {
-                MessageBox.Show("El asociado no se agregó");
+                MensajeError mensajeError = new MensajeError("EL ASOCIADO NO SE AGREGÓ");
+                mensajeError.Show();
+                //MessageBox.Show("El asociado no se agregó");
             }
 
         }

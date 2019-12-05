@@ -57,12 +57,16 @@ namespace Hnos_Rojas
                         if (blProveedor.pagarProveedor(doPago))
                         {
                             textBox1.Text = "";
-                            MessageBox.Show("El pago a " + listBoxProveedor.SelectedValue.ToString() + " se ha registrado");
+                            MensajeExito mensajeExito = new MensajeExito("PAGO A " + listBoxProveedor.SelectedValue.ToString() + " REGISTRADO CORRECTAMENTE");
+                            mensajeExito.Show();
+                            //MessageBox.Show("El pago a " + listBoxProveedor.SelectedValue.ToString() + " se ha registrado");
                             this.ActiveControl = txtBuscarProveedor;
                         }
                         else
                         {
-                            MessageBox.Show("Ha ocurrido un error");
+                            MensajeError mensajeError = new MensajeError("HA OCURRIDO UN ERROR");
+                            mensajeError.Show();
+                            //MessageBox.Show("Ha ocurrido un error");
                         }
                     }
                     else
@@ -71,11 +75,15 @@ namespace Hnos_Rojas
                     }
                 }
                 else {
-                    MessageBox.Show("No ha elegido un proveedor");
+                    MensajeError mensajeError = new MensajeError("NO HA ELEGIDO UN PROVEEDOR");
+                    mensajeError.Show();
+                    //MessageBox.Show("No ha elegido un proveedor");
                 }
             }
             else {
-                MessageBox.Show("No ha ingresado un monto a pagar");
+                MensajeError mensajeError = new MensajeError("NO HA INGRESADO MONTO A PAGAR");
+                mensajeError.Show();
+                //MessageBox.Show("No ha ingresado un monto a pagar");
             }
         }
 
