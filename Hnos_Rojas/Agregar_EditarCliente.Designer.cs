@@ -79,7 +79,7 @@
             this.tabControlClientes.Controls.Add(this.tabPageAgregarCliente);
             this.tabControlClientes.Controls.Add(this.tabPageModificar);
             this.tabControlClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlClientes.Font = new System.Drawing.Font("Segoe UI Historic", 25F);
+            this.tabControlClientes.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
             this.tabControlClientes.Location = new System.Drawing.Point(0, 0);
             this.tabControlClientes.Name = "tabControlClientes";
             this.tabControlClientes.SelectedIndex = 0;
@@ -108,10 +108,10 @@
             this.tabPageAgregarCliente.Controls.Add(this.lblPrimerApellido);
             this.tabPageAgregarCliente.Controls.Add(this.lblNombre);
             this.tabPageAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 54);
+            this.tabPageAgregarCliente.Location = new System.Drawing.Point(4, 41);
             this.tabPageAgregarCliente.Name = "tabPageAgregarCliente";
             this.tabPageAgregarCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAgregarCliente.Size = new System.Drawing.Size(818, 478);
+            this.tabPageAgregarCliente.Size = new System.Drawing.Size(818, 491);
             this.tabPageAgregarCliente.TabIndex = 0;
             this.tabPageAgregarCliente.Text = "Agregar";
             this.tabPageAgregarCliente.Click += new System.EventHandler(this.tabPageAgregarCliente_Click);
@@ -123,9 +123,9 @@
             this.btCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCambiarEstado.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btCambiarEstado.ForeColor = System.Drawing.Color.White;
-            this.btCambiarEstado.Location = new System.Drawing.Point(586, 280);
+            this.btCambiarEstado.Location = new System.Drawing.Point(586, 275);
             this.btCambiarEstado.Name = "btCambiarEstado";
-            this.btCambiarEstado.Size = new System.Drawing.Size(102, 29);
+            this.btCambiarEstado.Size = new System.Drawing.Size(169, 36);
             this.btCambiarEstado.TabIndex = 16;
             this.btCambiarEstado.Text = "Cambiar Estado";
             this.btCambiarEstado.UseVisualStyleBackColor = false;
@@ -203,9 +203,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(167, 331);
+            this.btnGuardar.Location = new System.Drawing.Point(346, 355);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(521, 42);
+            this.btnGuardar.Size = new System.Drawing.Size(194, 42);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -279,10 +279,10 @@
             this.tabPageModificar.Controls.Add(this.btBuscarCliente);
             this.tabPageModificar.Controls.Add(this.tbNombreOApellido);
             this.tabPageModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageModificar.Location = new System.Drawing.Point(4, 54);
+            this.tabPageModificar.Location = new System.Drawing.Point(4, 41);
             this.tabPageModificar.Name = "tabPageModificar";
             this.tabPageModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageModificar.Size = new System.Drawing.Size(818, 478);
+            this.tabPageModificar.Size = new System.Drawing.Size(818, 491);
             this.tabPageModificar.TabIndex = 1;
             this.tabPageModificar.Text = "Modificar";
             this.tabPageModificar.Click += new System.EventHandler(this.tabPageModificar_Click);
