@@ -26,6 +26,7 @@ namespace Hnos_Rojas
             txtPrecioNuevo.Visible = b;
             llenarGridProductos();
 
+
         }
         public Productos()
         {
