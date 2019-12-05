@@ -9,12 +9,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Hnos_Rojas
 {
-    public partial class PagoProveedor : Form
+    public partial class PagoProveedor : Form, IConfirmacion
     {
         DO_Pago doPago = new DO_Pago();
+
+        public void positivo() 
+        {
+            BL_Proveedor blProveedor = new BL_Proveedor();
+
+            if (blProveedor.pagarProveedor(doPago))
+            {
+                textBox1.Text = "";
+                MensajeExito mensajeExito = new MensajeExito("PAGO A " + listBoxProveedor.SelectedValue.ToString() + " REGISTRADO CORRECTAMENTE");
+                mensajeExito.Show();
+                //MessageBox.Show("El pago a " + listBoxProveedor.SelectedValue.ToString() + " se ha registrado");
+                this.ActiveControl = txtBuscarProveedor;
+            }
+            else
+            {
+                MensajeError mensajeError = new MensajeError("HA OCURRIDO UN ERROR");
+                mensajeError.Show();
+                //MessageBox.Show("Ha ocurrido un error");
+            }
+        }
+        public void negativo() 
+        { 
+
+        }
 
         public PagoProveedor(String usuario)
         {
@@ -46,33 +71,8 @@ namespace Hnos_Rojas
                     doPago.proveedor = listBoxProveedor.SelectedValue.ToString();
                     doPago.fecha = DateTime.Now;
 
-                    DialogResult result = MessageBox.Show("¿Desea realizar un pago de ₡" + textBox1.Text + " al proveedor " +
-                        listBoxProveedor.SelectedValue.ToString() + "?", "Warning",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        BL_Proveedor blProveedor = new BL_Proveedor();
-
-                        if (blProveedor.pagarProveedor(doPago))
-                        {
-                            textBox1.Text = "";
-                            MensajeExito mensajeExito = new MensajeExito("PAGO A " + listBoxProveedor.SelectedValue.ToString() + " REGISTRADO CORRECTAMENTE");
-                            mensajeExito.Show();
-                            //MessageBox.Show("El pago a " + listBoxProveedor.SelectedValue.ToString() + " se ha registrado");
-                            this.ActiveControl = txtBuscarProveedor;
-                        }
-                        else
-                        {
-                            MensajeError mensajeError = new MensajeError("HA OCURRIDO UN ERROR");
-                            mensajeError.Show();
-                            //MessageBox.Show("Ha ocurrido un error");
-                        }
-                    }
-                    else
-                    {
-
-                    }
+                    MensajeConfirmacion mensajeConfirmacion = new MensajeConfirmacion("REALIZAR PAGO DE ₡" + textBox1.Text + " A " + listBoxProveedor.SelectedValue.ToString(), this);
+                    mensajeConfirmacion.Show();
                 }
                 else {
                     MensajeError mensajeError = new MensajeError("NO HA ELEGIDO UN PROVEEDOR");

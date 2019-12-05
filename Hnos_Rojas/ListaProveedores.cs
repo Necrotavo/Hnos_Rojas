@@ -55,7 +55,7 @@ namespace Hnos_Rojas
             //this.Parent.Controls.Add(listaAsociados);
             //listaAsociados.Show();
             //this.Dispose();
-            //nombreProveedor = listBoxProveedores.SelectedValue.ToString();
+            nombreProveedor = listBoxProveedores.SelectedValue.ToString();
         }
 
         private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
