@@ -45,6 +45,7 @@
             this.listBClientes.Size = new System.Drawing.Size(318, 149);
             this.listBClientes.TabIndex = 0;
             this.listBClientes.Click += new System.EventHandler(this.listBClientes_Click);
+            this.listBClientes.DoubleClick += new System.EventHandler(this.listBClientes_DoubleClick);
             // 
             // txtEstadoCliente
             // 
