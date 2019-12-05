@@ -70,8 +70,8 @@
             this.Viernes,
             this.Sabado,
             this.Domingo});
-            this.grdAsociados.Location = new System.Drawing.Point(112, 59);
-            this.grdAsociados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdAsociados.Location = new System.Drawing.Point(84, 48);
+            this.grdAsociados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grdAsociados.Name = "grdAsociados";
             this.grdAsociados.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -83,7 +83,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdAsociados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdAsociados.RowTemplate.Height = 24;
-            this.grdAsociados.Size = new System.Drawing.Size(1436, 453);
+            this.grdAsociados.Size = new System.Drawing.Size(1077, 368);
             this.grdAsociados.TabIndex = 7;
             this.grdAsociados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grdAsociados_CellFormatting);
             // 
@@ -96,7 +96,7 @@
             this.Hora.Name = "Hora";
             this.Hora.ReadOnly = true;
             this.Hora.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Hora.Width = 71;
+            this.Hora.Width = 57;
             // 
             // Lunes
             // 
@@ -171,12 +171,11 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 18F);
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Historic", 14F);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1361, 567);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(967, 460);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(187, 59);
+            this.btnSalir.Size = new System.Drawing.Size(194, 42);
             this.btnSalir.TabIndex = 24;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -184,14 +183,14 @@
             // 
             // HorarioProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(168)))), ((int)(((byte)(150)))));
-            this.ClientSize = new System.Drawing.Size(1387, 684);
+            this.ClientSize = new System.Drawing.Size(1240, 560);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grdAsociados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HorarioProveedores";
             this.Text = "HorarioProveedores";
             ((System.ComponentModel.ISupportInitialize)(this.grdAsociados)).EndInit();
