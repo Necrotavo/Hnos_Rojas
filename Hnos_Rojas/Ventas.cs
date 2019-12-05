@@ -279,5 +279,23 @@ namespace Hnos_Rojas
         {
 
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToChar(Keys.Enter) == e.KeyChar)
+            {
+                e.Handled = true;
+            } else if (e.KeyChar == '\u0010') {
+                e.Handled = true;
+            }
+        }
+
+        private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToChar(Keys.Enter) == e.KeyChar)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

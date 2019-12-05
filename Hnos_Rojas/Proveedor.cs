@@ -31,12 +31,14 @@ namespace Hnos_Rojas
             listaProveedores.Show();
             btnEliminar.Enabled = true;
             btnModificarProv.Enabled = true;
+            btnAsociados.Enabled = true;
         }
 
         private void btnAgregarProv_Click(object sender, EventArgs e)
         {
             btnEliminar.Enabled = false;
             btnModificarProv.Enabled = false;
+            btnAsociados.Enabled = false;
             this.panelProveedores.Controls.Clear();
             Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
@@ -47,6 +49,7 @@ namespace Hnos_Rojas
         {
             btnEliminar.Enabled = false;
             btnModificarProv.Enabled = false;
+            btnAsociados.Enabled = false;
             this.panelProveedores.Controls.Clear();
             Agregar_ModificarProveedor agregar_ModificarProveedor = new Agregar_ModificarProveedor(tempListaproveedores.obtenerProveedorSeleccionado(), this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(agregar_ModificarProveedor);
@@ -57,6 +60,7 @@ namespace Hnos_Rojas
         {
             btnEliminar.Enabled = false;
             btnModificarProv.Enabled = false;
+            btnAsociados.Enabled = false;
             this.panelProveedores.Controls.Clear();
             ListaAsociados listaAsociados = new ListaAsociados(nombreProveedor, this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Add(listaAsociados);
@@ -77,6 +81,9 @@ namespace Hnos_Rojas
 
         private void btnHorario_Click(object sender, EventArgs e)
         {
+            btnEliminar.Enabled = false;
+            btnModificarProv.Enabled = false;
+            btnAsociados.Enabled = false;
             HorarioProveedores horarioProveedores = new HorarioProveedores(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.panelProveedores.Controls.Clear();
             this.panelProveedores.Controls.Add(horarioProveedores);

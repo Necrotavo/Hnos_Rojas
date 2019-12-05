@@ -230,5 +230,29 @@ namespace Hnos_Rojas
                     }
             }
         }
+
+        private void rdoContado_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F12:
+                    {
+                        pagar();
+                        break;
+                    }
+            }
+        }
+
+        private void radioButton2_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F12:
+                    {
+                        pagar();
+                        break;
+                    }
+            }
+        }
     }
 }
