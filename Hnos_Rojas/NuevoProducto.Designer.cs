@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlProducto = new System.Windows.Forms.TabControl();
             this.tpFormulario = new System.Windows.Forms.TabPage();
             this.btGuardar = new System.Windows.Forms.Button();
@@ -280,7 +280,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.Search;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 371);
+            this.pictureBox1.Location = new System.Drawing.Point(356, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(109, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -290,11 +290,11 @@
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -306,13 +306,13 @@
             this.PrecioVenta,
             this.CantidadDisponible,
             this.CantidadMinima});
-            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvProductos.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvProductos.Location = new System.Drawing.Point(0, 152);
             this.dgvProductos.MinimumSize = new System.Drawing.Size(973, 325);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(1020, 352);
             this.dgvProductos.TabIndex = 3;
@@ -376,7 +376,7 @@
             this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBuscar.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscar.ForeColor = System.Drawing.Color.White;
-            this.btBuscar.Location = new System.Drawing.Point(205, 412);
+            this.btBuscar.Location = new System.Drawing.Point(553, 71);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(114, 52);
             this.btBuscar.TabIndex = 2;
@@ -387,7 +387,7 @@
             // tbBuscarCodigo
             // 
             this.tbBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuscarCodigo.Location = new System.Drawing.Point(128, 371);
+            this.tbBuscarCodigo.Location = new System.Drawing.Point(476, 30);
             this.tbBuscarCodigo.Name = "tbBuscarCodigo";
             this.tbBuscarCodigo.Size = new System.Drawing.Size(191, 35);
             this.tbBuscarCodigo.TabIndex = 1;
