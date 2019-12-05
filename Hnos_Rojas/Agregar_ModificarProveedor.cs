@@ -105,10 +105,14 @@ namespace Hnos_Rojas
                     //falta validar que todo esté seleccionado
                     if (blProveedor.modificarProveedor(proveedor))
                     {
-                        MessageBox.Show("Proveedor modificado");
+                        MensajeExito mensajeExito = new MensajeExito("PROVEEDOR MODIFICADO");
+                        mensajeExito.Show();
+                        //MessageBox.Show("Proveedor modificado");
                     }
                     else {
-                        MessageBox.Show("error al modificar datos del proveedor");
+                        MensajeError mensajeError = new MensajeError("ERROR AL MODIFICAR DATOS DEL PROVEEDOR");
+                        mensajeError.Show();
+                        //MessageBox.Show("error al modificar datos del proveedor");
                     }
                     txtNombreProveedor.Enabled = true;
 
@@ -123,11 +127,15 @@ namespace Hnos_Rojas
                     proveedor.fechaVisita = todosLosDias();
                     if (blProveedor.ingresarProveedor(proveedor))
                     {
-                        MessageBox.Show("Proveedor ingresado");
+                        MensajeExito mensajeExito = new MensajeExito("PROVEEDOR INGRESADO");
+                        mensajeExito.Show();
+                        //MessageBox.Show("Proveedor ingresado");
                         limpiarFormulario();
                     }
                     else {
-                        MessageBox.Show("error al ingresar el proveedor");
+                        MensajeError mensajeExito = new MensajeError("ERROR AL INGRESAR EL PROVEEDOR");
+                        mensajeExito.Show();
+                        //MessageBox.Show("error al ingresar el proveedor");
                     }
                 }
 

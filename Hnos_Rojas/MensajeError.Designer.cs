@@ -37,10 +37,10 @@
             // lbMensajeError
             // 
             this.lbMensajeError.AutoSize = true;
-            this.lbMensajeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeError.Location = new System.Drawing.Point(21, 95);
+            this.lbMensajeError.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeError.Location = new System.Drawing.Point(12, 126);
             this.lbMensajeError.Name = "lbMensajeError";
-            this.lbMensajeError.Size = new System.Drawing.Size(142, 31);
+            this.lbMensajeError.Size = new System.Drawing.Size(116, 32);
             this.lbMensajeError.TabIndex = 0;
             this.lbMensajeError.Text = "MENSAJE";
             // 
@@ -57,7 +57,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Hnos_Rojas.Properties.Resources.errorX;
-            this.pictureBox1.Location = new System.Drawing.Point(501, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(245, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

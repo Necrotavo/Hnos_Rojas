@@ -50,16 +50,22 @@ namespace Hnos_Rojas
                 asociado.perTelefono = txtTelefono.Text.Trim();
                 if (blAsociado.editarAsociado(asociado))
                 {
-                    MessageBox.Show("Cambios guardados");
+                    MensajeExito mensajeExito = new MensajeExito("CAMBIOS GUARDADOS");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Cambios guardados");
                     vaciarTextbox();
                     this.Dispose();
                 }
                 else {
-                    MessageBox.Show("No se pudo modificar el asociado");
+                    MensajeError mensajeError = new MensajeError("NO SE PUDO MODIFICAR EL ASOCIADO");
+                    mensajeError.Show();
+                    //MessageBox.Show("No se pudo modificar el asociado");
                 }
             }
             else {
-                MessageBox.Show("Por favor rellene todos espacios!");
+                MensajeError mensajeError = new MensajeError("PORFAVOR RELLENE TODOS LOS ESPACIOS");
+                mensajeError.Show();
+                //MessageBox.Show("Por favor rellene todos espacios!");
             }
         }
 

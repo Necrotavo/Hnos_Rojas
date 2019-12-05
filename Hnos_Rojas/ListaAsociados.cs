@@ -89,7 +89,9 @@ namespace Hnos_Rojas
                     }
                     else
                     {
-                        MessageBox.Show("el asociado no se eliminó");
+                        MensajeError mensajeError = new MensajeError("EL ASOCIADO NO SE ELIMINÓ");
+                        mensajeError.Show();
+                        //MessageBox.Show("el asociado no se eliminó");
                     }
 
                 }

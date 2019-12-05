@@ -40,16 +40,22 @@ namespace Hnos_Rojas
             {
                 if (blUsuario.actualizarUsuario(listBoxUsuarios.SelectedValue.ToString(), txtNuevaContrasena.Text))
                 {
-                    MessageBox.Show("Se cambió la clave con exito");
+                    MensajeExito mensajeExito = new MensajeExito("SE CAMBIÓ LA CLAVE CON ÉXITO");
+                    mensajeExito.Show();
+                    //MessageBox.Show("Se cambió la clave con exito");
                 }
                 else
                 {
-                    MessageBox.Show("Se produjo un error");
+                    MensajeError mensajeError = new MensajeError("SE PRODUJO UN ERROR");
+                    mensajeError.Show();
+                    //MessageBox.Show("Se produjo un error");
                 }
             }
             else
             {
-                MessageBox.Show("Credenciales incorrectas");
+                MensajeError mensajeError = new MensajeError("CREDENCIALES INCORRECTOS");
+                mensajeError.Show();
+                //MessageBox.Show("Credenciales incorrectas");
             }
         }
 
@@ -68,11 +74,15 @@ namespace Hnos_Rojas
 
                 if (blUsuario.insertarUsuario(txtNombreUsuarioCrear.Text, txtContrasenaCrear.Text))
                 {
-                    MessageBox.Show("Se agregó nuevo usuario con exito");
+                MensajeExito mensajeExito = new MensajeExito("SE AGREGÓ USUARIO CON ÉXITO");
+                mensajeExito.Show();
+                    //MessageBox.Show("Se agregó nuevo usuario con exito");
                 }
                 else
                 {
-                    MessageBox.Show("Se produjo un error");
+                MensajeError mensajeError = new MensajeError("SE PRODUJO UN ERROR");
+                mensajeError.Show();
+                    //MessageBox.Show("Se produjo un error");
                 }
             limpiarForms();
         }
@@ -85,18 +95,24 @@ namespace Hnos_Rojas
             {
                 if (blUsuario.eliminarUsuario(name))
                 {
-                    MessageBox.Show("Se eliminó con exito a " + name);
+                    MensajeExito mensajeExito = new MensajeExito("SE ELIMINÓ USUARIO CON ÉXITO A " + name);
+                    mensajeExito.Show();
+                    //MessageBox.Show("Se eliminó con exito a " + name);
                 }
                 else
                 {
-                    MessageBox.Show("Se produjo un error");
+                    MensajeError mensajeError = new MensajeError("SE PRODUJO UN ERROR");
+                    mensajeError.Show();
+                    //MessageBox.Show("Se produjo un error");
                 }
 
 
             }
             else
             {
-                MessageBox.Show("Credenciales incorrectas");
+                MensajeError mensajeError = new MensajeError("CREDECIALES INCORRECTOS");
+                mensajeError.Show();
+                //MessageBox.Show("Credenciales incorrectas");
             }
             
 

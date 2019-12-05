@@ -49,7 +49,9 @@ namespace Hnos_Rojas
         {
             if (txtAbono.Text == "")
             {
-                MessageBox.Show("No ha ingresado un monto para abonar");
+                MensajeError mensajeError = new MensajeError("NO SE HA INGRESADO MONTO");
+                mensajeError.Show();
+                //MessageBox.Show("No ha ingresado un monto para abonar");
             }
             else
             {
@@ -57,7 +59,9 @@ namespace Hnos_Rojas
                 blFactura.abonarFactura(doFactura, Convert.ToDouble(txtAbono.Text));
                 estCuenta.refrescarCreditoCompleto();
                 estCuenta.llenarGrid();
-                MessageBox.Show("Abono exitoso");
+                MensajeExito mensajeExito = new MensajeExito("ABONO EXITOSO");
+                mensajeExito.Show();
+                //MessageBox.Show("Abono exitoso");
                 this.Dispose();
             }
         }
