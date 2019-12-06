@@ -36,7 +36,7 @@ namespace Hnos_Rojas
             lblTitulo.Text = "Editar Proveedor";
             txtNombreProveedor.Enabled = false;
             llenarCboDias();
-            if (nombreProveedor.Equals(""))
+            if (!nombreProveedor.Equals(""))
             {
                 rellenarFormulario(nombreProveedor);
                 editable = true;
