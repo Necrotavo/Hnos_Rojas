@@ -240,6 +240,17 @@ namespace Hnos_Rojas
             else
             {
                 this.ActiveControl = tbNombre;
+                if (tbSegundoApellido.Text.Equals(""))
+                {
+                    tbSegundoApellido.Text = "No Aplica";
+                }
+                if (tbDireccion.Text.Equals("")) {
+                    tbDireccion.Text = "No Aplica";
+                }
+                if (tbTelefono.Text.Equals("")) {
+                    tbTelefono.Text = "No Aplica";
+                }
+                
             }
         }
 
