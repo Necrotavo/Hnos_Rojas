@@ -239,18 +239,7 @@ namespace Hnos_Rojas
             }
             else
             {
-                this.ActiveControl = tbNombre;
-                if (tbSegundoApellido.Text.Equals(""))
-                {
-                    tbSegundoApellido.Text = "No Aplica";
-                }
-                if (tbDireccion.Text.Equals("")) {
-                    tbDireccion.Text = "No Aplica";
-                }
-                if (tbTelefono.Text.Equals("")) {
-                    tbTelefono.Text = "No Aplica";
-                }
-                
+                this.ActiveControl = tbNombre; 
             }
         }
 
@@ -277,7 +266,7 @@ namespace Hnos_Rojas
 
         public bool validarCampos()
         {
-            if (tbNombre.Text.Trim()=="" || tbTelefono.Text.Trim() == "" || tbPrimerApellido.Text.Trim() == "" || tbDireccion.Text.Trim() == "")
+            if (tbNombre.Text.Trim()=="" || tbLimite.Text.Trim() == "" || tbPrimerApellido.Text.Trim() == "")
             {
                 return false;
             }

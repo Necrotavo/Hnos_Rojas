@@ -163,7 +163,6 @@
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(252, 29);
             this.tbTelefono.TabIndex = 4;
-            this.tbTelefono.Text = "No Aplica";
             this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // tbDireccion
@@ -172,7 +171,6 @@
             this.tbDireccion.Name = "tbDireccion";
             this.tbDireccion.Size = new System.Drawing.Size(252, 29);
             this.tbDireccion.TabIndex = 3;
-            this.tbDireccion.Text = "No Aplica";
             // 
             // tbSegundoApellido
             // 
@@ -180,7 +178,6 @@
             this.tbSegundoApellido.Name = "tbSegundoApellido";
             this.tbSegundoApellido.Size = new System.Drawing.Size(252, 29);
             this.tbSegundoApellido.TabIndex = 2;
-            this.tbSegundoApellido.Text = "No Aplica";
             // 
             // tbPrimerApellido
             // 
