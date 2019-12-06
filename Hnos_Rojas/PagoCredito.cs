@@ -164,6 +164,7 @@ namespace Hnos_Rojas
         {
             Agregar_EditarCliente agregarEditarCliente = new Agregar_EditarCliente();
             agregarEditarCliente.Show();
+            agregarEditarCliente.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
